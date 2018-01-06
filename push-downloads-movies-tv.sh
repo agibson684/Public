@@ -50,12 +50,12 @@ function  push_movies_tv {
 #syncing up with the  seedbox
 #checking to see if there are any incomplete files in downloads dir
 #if not then move the files there to the next dir COMPLETE
-FILES=($incomplete/*.part.*); if [ ! -e  "${FILES[0]}" ] ; then 
-FILES=($incomplete/*.part); if [ ! -e  "${FILES[0]}" ] ; then 
- FILES=($incomplete/*/*.part); if [ ! -e  "${FILES[0]}" ] ; then 
-  FILES=($incomplete/*/*/*.part); if [ ! -e  "${FILES[0]}" ] ; then 
-  FILES=($incomplete/*/*/*/*.part); if [ ! -e  "${FILES[0]}" ] ; then
-   DOWNLOADS=("$incomplete"/*); if [  -e  "${DOWNLOADS[0]}" ] ; then 
+FILES=(${incomplete}/*.part.*); if [ ! -e  "${FILES[0]}" ] ; then
+FILES=(${incomplete}/*.part); if [ ! -e  "${FILES[0]}" ] ; then
+ FILES=(${incomplete}/*/*.part); if [ ! -e  "${FILES[0]}" ] ; then
+  FILES=(${incomplete}/*/*/*.part); if [ ! -e  "${FILES[0]}" ] ; then
+  FILES=(${incomplete}/*/*/*/*.part); if [ ! -e  "${FILES[0]}" ] ; then
+   DOWNLOADS=("${incomplete}"/*); if [  -e  "${DOWNLOADS[0]}" ] ; then
    for i in "${DOWNLOADS[@]}";do
    mv -v "${i}" /pool/COMPLETE/
   if [ $? ==  1 ] ;  then
@@ -72,9 +72,9 @@ fi
 fi
 #checks for part files in complete in case it somehow got there.
 #then it works the array to  move the files  to the proper destination
-FILES=($complete/*.part); if [ ! -e  "${FILES[0]}" ] ; then 
- FILES=($complete/*/*.part); if [ ! -e  "${FILES[0]}" ] ; then 
-  FILES=($complete/*/*/*.part); if [ ! -e  "${FILES[0]}" ] ; then 
+FILES=(${complete}/*.part); if [ ! -e  "${FILES[0]}" ] ; then
+ FILES=(${complete}/*/*.part); if [ ! -e  "${FILES[0]}" ] ; then
+  FILES=(${complete}/*/*/*.part); if [ ! -e  "${FILES[0]}" ] ; then
     array_source_name=(
       "tvshow1"
       "tvshow2"
@@ -104,7 +104,7 @@ fi
  fi
   fi
 }
-     #this  function will go through the files in complete to move stuff i dont got checks for, wont normally run this way
+     #this  function will go through the files in complete to move stuff i don't got checks for, wont normally run this way
 
       function sync_seedbox {
         echo 'syncing up with the  seedbox'
@@ -173,7 +173,7 @@ fi
   echo  'push_complete this moves all the files and steps through what you want to do with each one.'
   echo  'sync_seedbox this copies the files from the seedbox to the server'
   echo  'push_movies_tv this is the normal operations with out an option, it moves the files to the proper dir for tv shows, and leaves movies alone.'
-  echo 'debug will turn on debuging mode'
+  echo 'debug will turn on debugging mode'
   exit 0
  fi
  if [ "$1" = '-help' ]; then 
@@ -181,7 +181,7 @@ fi
   echo  'push_complete this moves all the files and steps through what you want to do with each one.'
   echo  'sync_seedbox this copies the files from the seedbox to the server'
   echo  'push_movies_tv this is the normal operations with out an option, it moves the files to the proper dir for tvshows, and leaves movies alone.'
-  echo 'debug will turn on debuging mode'
+  echo 'debug will turn on debugging mode'
   exit 0
  fi
  if [ "$1" = '' ]; then 
