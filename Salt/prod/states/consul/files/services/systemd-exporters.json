@@ -1,0 +1,19 @@
+{
+  "service": {
+    "name": "systemd-exporter",
+    "tags": [
+      "metrics"
+    ],
+    "port": 9558,
+     "checks": [
+      {
+          "interval" :"10s",
+          "timeout" : "2s",
+          "id": "systemd",
+          "name": "systemd Exporter HTTP 9558",
+          "http": "http://127.0.0.1:9558/metrics"
+      }
+    ]
+}
+}
+

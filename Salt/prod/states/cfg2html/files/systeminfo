@@ -1,0 +1,9 @@
+#managed by class  ['cfg2html.pp']
+Comments:  This config has been created by puppet please DO NOT modify will be OVER Written!
+Company:        Pink and Purple Dynamic
+Location:       Pink Cave 01
+Contact:        eryn <erin_1983_fl@gmail.com>
+Main Server:    {{ salt['grains.get']('localhost') }}
+URL:            http://www.thrace.lan/
+
+

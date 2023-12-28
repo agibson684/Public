@@ -1,0 +1,18 @@
+{
+  "service": {
+    "name": "blackbox-exporter",
+    "tags": [
+      "metrics"
+    ],
+    "port": 9115,
+     "checks": [
+      {
+          "interval" :"10s",
+          "timeout" : "2s",
+          "id": "blackbox",
+          "name": "blackbox Exporter HTTP 9115",
+          "http": "http://127.0.0.1:9115/metrics"
+      }
+    ]
+}
+}

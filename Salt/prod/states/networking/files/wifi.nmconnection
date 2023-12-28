@@ -1,0 +1,22 @@
+[connection]
+id={{ configs.id }}
+type=wifi
+
+
+[wifi]
+mode=infrastructure
+ssid={{ configs.ssid }}
+
+[wifi-security]
+auth-alg=open
+key-mgmt=wpa-psk
+psk={{ configs.psk }}
+
+[ipv4]
+method=auto
+
+[ipv6]
+addr-gen-mode=stable-privacy
+method=auto
+
+[proxy]

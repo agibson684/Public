@@ -1,0 +1,19 @@
+{
+  "service": {
+    "name": "ssh-check-exporter",
+    "tags": [
+      "metrics"
+    ],
+    "port": 9312,
+     "checks": [
+      {
+          "interval" :"10s",
+          "timeout" : "2s",
+          "id": "ssh",
+          "name": "ssh-check exporter 9312",
+          "http": "http://10.132.113.9:9312/metrics"
+      }
+    ]
+}
+}
+

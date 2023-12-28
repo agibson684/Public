@@ -1,0 +1,17 @@
+[Unit]
+Description=Supervisor process control system for UNIX
+After=syslog.target network.target
+Documentation=https://wiki.bookit.com/display/dspace/Supervisor \
+http://supervisord.org
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/python /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
+ExecStop=/usr/bin/supervisorctl $OPTIONS shutdown
+ExecReload=/usr/bin/supervisorctl $OPTIONS reload
+KillMode=process
+Restart=on-failure
+RestartSec=50s
+
+[Install]
+WantedBy=multi-user.target

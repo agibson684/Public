@@ -1,0 +1,19 @@
+{
+  "service": {
+    "name": "nrpe-exporter",
+    "tags": [
+      "metrics"
+    ],
+    "port": 9275,
+     "checks": [
+      {
+          "interval" :"10s",
+          "timeout" : "2s",
+          "id": "nrpe",
+          "name": "nrpe Exporter HTTP 9275",
+          "http": "http://127.0.0.1:9275/metrics"
+      }
+    ]
+}
+}
+

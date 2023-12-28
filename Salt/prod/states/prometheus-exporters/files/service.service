@@ -1,0 +1,33 @@
+[Unit]
+{%- if pillar['service']['descp'] %}
+Description={{ pillar['service']['descp'] }}
+{%- endif %}
+{%- if pillar['service']['requires']  %}
+Requires={{ pillar['service']['requires'] }}
+{%- endif %}
+{%- if pillar['service']['after']  %}
+After={{ pillar['service']['after'] }}
+{%- endif %}
+{%- if pillar['service']['wants'] %}
+Wants={{ pillar['service']['wants'] }}
+{%- endif %}
+[Service]
+{%- if pillar['service']['user'] %}
+User={{ pillar['service']['user'] }}
+{%- endif %}
+{%- if pillar['service']['servicetype'] %}
+Type={{ pillar['service']['servicetype'] }}
+{%- endif %}
+{%- if pillar['service']['env'] %}
+Environment={{ pillar['service']['env'] }}
+{%- endif %}
+{%- if pillar['service']['exec'] %}
+ExecStart={{ pillar['service']['exec'] }}
+{%- endif %}
+Restart=on-failure
+StandardOutput=syslog
+[Install]
+{%- if pillar['service']['defined'] %}
+WantedBy={{ pillar['service']['wantedby'] }}
+{%- endif %}
+

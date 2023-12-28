@@ -1,0 +1,26 @@
+{% from 'bind/init.sls' import named with context %}
+
+// Managing acls
+acl internals { 127.0.0.0/8; {{ pillar["network"] }}; };
+
+// Load options
+include "/etc/{{ named }}/named.conf.options";
+
+// TSIG key used for the dynamic update
+include "/etc/{{ named }}/{{ pillar["domain"] }}.key";
+
+// Configure the communication channel for Administrative BIND9 with rndc
+// By default, they key is in the rndc.key file and is used by rndc and bind9 
+// on the localhost
+controls {
+        inet 127.0.0.1 port 953 allow { 127.0.0.1; };
+};
+
+// prime the server with knowledge of the root servers
+zone "." {
+        type hint;
+	file "/etc/{{ named }}/db.root";
+};
+
+include "/etc/{{ named }}/named.conf.default-zones";
+include "/etc/{{ named }}/named.conf.local";

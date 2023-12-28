@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [[ "${#1}" -gt 30 ]]
+then 
+visual="${1:0:20}"..."${1: -7}"
+else 
+visual="$1"
+fi 
+echo $visual
+x=$(echo -e "mpv\nmpv (loop)\nwget\nfeh\nbrave\nw3m\nmpv (Random in terminal)\nmpv (Play my stream)\nmpv (float Random)" | dmenu -i -p "How should I open '$visual'?")
+
+case "$x" in 
+      mpv) mpv -quiet "$1" 2&>/dev/null &disown ;;
+      "mpv (loop)") mpv -quiet --loop "$1" 2&>/dev/null & disown ;;
+      wget) wget "$1" 2&>/dev/null &disown ;;
+      brave) brave-browser "$1" 2&>/dev/null &disown ;;
+      feh) feh "$1" 2&>/dev/null &disown ;;
+      w3m) w3m "$1" 2&>/dev/null &disown ;;
+      "mpv (Random in terminal)") urxvt -e mpv --shuffle "$1" &disown ;;
+      "mpv (Play my stream)") urxvt -e  mpv  --profile=low-latency http://solan.thrace.lan:8000 &disown ;;
+      "mpv (float Random)") find -type f -iname "*.avi"  -exec mpv  --shuffle {} \; 2&>/dev/null &disown ;;
+esac 

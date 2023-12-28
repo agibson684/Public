@@ -1,0 +1,179 @@
+<!DOCTYPE HTML >
+<html>
+    <head>
+            <script src="jquery.js"></script>
+            <script>
+                $(function(){
+                $("#includedContent").load("/personal/include.html");
+                });
+            </script>
+        <title>Weather</title>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+            <meta http-equiv="refresh" content="60">
+        <script src="/personal/clock.js"></script>
+        <script type="text/javascript" src="/personal/menu.js"></script>
+        <link rel="stylesheet" type="text/css" href="/personal/styles.css" >
+    </head>
+    <body>
+        <div id="hd" class="hd">
+            <div id="header"><h1>Weather Maps</h1>
+            </div>
+
+
+        </div>
+      <script type="text/javascript">
+            var menu=new menu.dd("menu");
+            menu.init("menu","menuhover");
+        </script>
+        <div class="included">
+            <div id="includedContent">
+            </div>
+        </div>
+
+<!--<a class="weatherwidget-io" href="https://forecast7.com/en/29d62n81d89/interlachen/?unit=us" data-label_1="INTERLACHEN" data-label_2="WEATHER" data-theme="kitty" >INTERLACHEN WEATHER</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script> -->
+<script>
+        (function(d, s, id) {
+            if (d.getElementById(id)) {
+                if (window.__TOMORROW__) {
+                    window.__TOMORROW__.renderWidget();
+                }
+                return;
+            }
+            const fjs = d.getElementsByTagName(s)[0];
+            const js = d.createElement(s);
+            js.id = id;
+            js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
+
+            fjs.parentNode.insertBefore(js, fjs);
+        })(document, 'script', 'tomorrow-sdk');
+        </script>
+
+        <div class="tomorrow"
+           data-location-id="323756"
+           data-language="EN"
+           data-unit-system="IMPERIAL"
+           data-skin="light"
+           data-widget-type="upcoming"
+           style="padding-bottom:22px;position:relative;"
+        >
+          <a
+            href="https://www.tomorrow.io/weather-api/"
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%;"
+          >
+            <img
+              alt="Powered by the Tomorrow.io Weather API"
+              src="https://weather-website-client.tomorrow.io/img/powered-by.svg"
+              width="250"
+              height="18"
+            />
+          </a>
+        </div>
+
+           <div id='wrapper'>
+                <img src="https://vortex.accuweather.com/adc2010/images/keys/radarsirf.png" alt="radar picture south"/>
+                <a href="http://sirocco.accuweather.com">
+
+		 <img src="http://sirocco.accuweather.com/nx_mosaic_640x480_public/sir/inmaSIRSE.gif"/></a>
+		<!-- <img src="https://radar.weather.gov/ridge/Conus/Loop/southeast_loop.gif"  alt="radar picture south" /> -->
+	        <img src="https://vortex.accuweather.com/adc2010/images/keys/radarsirf.png"  alt="radar picture south" /></a>
+
+                <a href="http://sirocco.accuweather.com">
+		<!-- <img src="https://radar.weather.gov/ridge/Conus/Loop/NatLoop_Small.gif" alt="radar picture national"/> -->
+		<img src="http://sirocco.accuweather.com/nx_mosaic_640x480_public/sir/inmaSIRSW.gif"/></a> 
+		<img src="https://vortex.accuweather.com/adc2010/images/keys/radarsirf.png"  alt="radar picture key"/></a>
+
+
+                <a href="http://sirocco.accuweather.com">
+			<!-- <img src="https://radar.weather.gov/ridge/Conus/RadarImg/northeast.gif"  alt="radar picture northeast" /></a> -->
+	         <img src="http://sirocco.accuweather.com/nx_mosaic_640x480_public/sir/inmaSIRNE.gif"/></a>
+
+		<!-- <h4>United States SE Enhanced Satellite</h4> -->
+                <a href="http://www.accuweather.com/en/us/national/satellite?play=1">
+		<img src="http://sirocco.accuweather.com/sat_mosaic_640x480_public/ei/isaese.gif"/>
+		<!-- <img src="https://radar.weather.gov/lite/NCR/JAX_loop.gif"  alt="radar jax loop "/> -->
+                <img src="http://vortex.accuweather.com/adc2010/images/keys/sateif.png"  alt="radar jax loop " /></a>
+
+		<!-- <h4>United States Florida Enhanced Satellite</h4> -->
+                <a href="http://www.accuweather.com/en/us/national/satellite?play=1">
+		<!-- <img src="https://radar.weather.gov/lite/NCR/MLB_loop.gif" alt="radar melbourne loop" /> -->
+		 <img src="http://sirocco.accuweather.com/sat_mosaic_640x480_public/ei/isaefl_.gif"/> 
+                <img src="http://vortex.accuweather.com/adc2010/images/keys/sateif.png" alt="radar melbourne loop"  /></a>
+
+		<!-- <h4>United States Enhanced Satellite</h4> -->
+                <a href="http://www.accuweather.com/en/us/national/satellite?play=1">
+			<!-- <img src="https://radar.weather.gov/lite/NCR/TBW_loop.gif" alt="radar tampa loop" /> -->
+		 <img src="http://sirocco.accuweather.com/sat_mosaic_640x480_public/ei/isaeun.gif" /> 
+                <img src="http://vortex.accuweather.com/adc2010/images/keys/sateif.png" alt="radar tampa loop" /></a>
+
+                <a href="http://www.accuweather.com/maps-watches.asp?partner=accuweather&traveler=0&type=WW&level=FL_">
+			<!-- <img src="https://www.weather.gov/wwamap/png/tbw.png"  alt="radar tampa bay loop "/></a> --> 
+	        <img src="http://sirocco.accuweather.com/adc_images2/english/current/svrwx/400x300/isvrwxFL_.gif"/></a>
+		<img src="http://sirocco.accuweather.com/web_images/svrwx/key/swskeys.gif"/> 
+                <a href="http://www.accuweather.com/maps-watches.asp?partner=accuweather&traveler=0&type=WW&level=US">
+			<!-- <img src="https://www.weather.gov/wwamap/png/mlb.png"  alt="melbourne warnings" /></a> -->
+		<img src="http://sirocco.accuweather.com/adc_images2/english/current/svrwx/400x300/isvrwxUS_.gif"/></a> 
+		 <img src="http://sirocco.accuweather.com/web_images/svrwx/key/swskeys.gif"/> 
+
+                <a href="http://www.accuweather.com/maps-watches.asp?partner=accuweather&traveler=0&type=WW&level=SE">
+			<!-- <img src="https://www.weather.gov/wwamap/png/jax.png"  alt="jax warnings "/></a> -->
+		<img src="http://sirocco.accuweather.com/adc_images2/english/current/svrwx/400x300/isvrwxSE.gif"/></a> 
+	         <img src="http://sirocco.accuweather.com/web_images/svrwx/key/swskeys.gif"/> 
+
+                <a href="http://www.iris.edu/seismon/views/eveday_big/imgs/topMap.eveday_big.gif">
+                <img src="http://www.iris.edu/seismon/views/eveday/imgs/topMap.eveday.gif"  alt="seismon top for everyday" /></a>
+                  <h4>United States High Temperatures</h4>
+                <a href="http://www.accuweather.com/en/us/national/weather-forecast-maps?day=1">
+                <img src="https://graphical.weather.gov/images/conus/MaxT1_conus.png" alt="continous usa temp" /></a>
+                <!--    <div class="peskyimg" style="height:50px;">
+                <img src=""/>
+                </div> -->
+                <h4>United States Low Temperatures</h4>
+                <a href="http://www.accuweather.com/en/us/national/weather-forecast-maps?day=1">
+                <img src="https://graphical.weather.gov/images/conus/MinT1_conus.png" alt="low usa temp"/></a>
+                <!--     <div class="peskyimg" style="height:50px;">
+                <img src=""/>
+                </div> -->
+                <h4>Wind Chill</h4>
+                <a href="http://www.accuweather.com/en/us/national/weather-forecast-maps?day=1">
+                <img src="https://graphical.weather.gov/images/conus/WindSpd1_conus.png" alt="continous usa wind" /></a>
+                <!--    <div class="peskyimg" style="height:50px;">
+                <img src=""/>
+                </div> -->
+		<!--<h3>Heat Index</h3>
+                <a href="http://www.accuweather.com/en/us/national/weather-forecast-maps?day=1">
+                <img src="" /></a>
+                <div class="peskyimg" style="height:50px;">
+                <img src="http://vortex.accuweather.com/adc2010/images/keys/heat1f.jpg"/>
+                </div> -->
+
+                <h4>Winds</h4>
+                <a href="http://www.accuweather.com/en/us/national/weather-forecast-maps?day=1">
+		<img src="https://graphical.weather.gov/images/southeast/WindGust1_southeast.png" alt="wind" /></a>
+		<!-- <img src="http://sirocco.accuweather.com/adc_images2/english/forecast/wsp/400x300/US__72wsp.gif" alt="wind" /></a> -->
+                <img src="http://vortex.accuweather.com/adc2010/images/keys/windf.png" alt="wind"/>
+
+                <h4>Gusts</h4>
+                <a href="http://www.accuweather.com/en/us/national/weather-forecast-maps?day=1">
+		<!-- <img src="http://sirocco.accuweather.com/adc_images2/english/forecast/gus/400x300/US__72gus.gif" alt="wind"  /></a> -->
+		<img src="https://graphical.weather.gov/images/southeast/WindSpd1_southeast.png" alt="wind"  /></a>
+                <img src="http://vortex.accuweather.com/adc2010/images/keys/windf.png" alt="wind" />
+
+                <h4>Precipitation Probability</h4>
+                <a href="http://www.accuweather.com/en/us/national/weather-forecast-maps?day=1">
+		<img src="https://graphical.weather.gov/images/southeast/PoP121_southeast.png" alt="continous usa rain"/></a>
+		<!-- <img src="http://sirocco.accuweather.com/adc_images2/english/forecast/polp/400x300/US__72polp.gif" alt="continous usa rain"/></a> -->
+                <img src="http://vortex.accuweather.com/adc2010/images/keys/precipprob.png" alt="continous usa rain"/>
+
+                <h4>Rain Amount</h4>
+                <a href="http://www.accuweather.com/en/us/national/weather-forecast-maps?day=1">
+    	        <img src="https://graphical.weather.gov/images/southeast/QPF1_southeast.png" alt="continous usa rain"/></a>
+		<!-- <img src="http://sirocco.accuweather.com/adc_images2/english/forecast/rain/400x300/US__4872rain.gif"  alt="continous usa rain" /></a> -->
+                <img src="http://vortex.accuweather.com/adc2010/images/keys/precipamtf.png"  alt="continous usa rain" />
+        </div>
+    </body>
+</html>

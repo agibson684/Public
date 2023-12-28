@@ -1,0 +1,22 @@
+{% if grains['os'] == 'CentOS' %}
+{% set named  = 'named' %}
+{% elif grains['os'] == 'Debian' %}
+{% set named  = 'bind' %}
+{% endif  %}
+// This is the primary configuration file for the BIND DNS server named.
+//
+// Please read /usr/share/doc/bind9/README.Debian.gz for information on the 
+// structure of BIND configuration files in Debian, *BEFORE* you customize 
+// this configuration file.
+//
+// If you are just adding zones, please do that in /etc/bind/named.conf.local
+
+include "/etc/{{named}}/named.conf.options";
+include "/etc/{{named}}/named.conf.local";
+{% if grains['os'] == 'Debian' %}
+include "/etc/{{named}}/named.conf.default-zones";
+{% endif  %}
+//this needs to be here for the exporter to work right 
+statistics-channels {
+  inet 127.0.0.1 port 8053 allow { 127.0.0.1; };
+};

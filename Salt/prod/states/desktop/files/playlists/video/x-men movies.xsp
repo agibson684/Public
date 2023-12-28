@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name></name>
+    <match>any</match>
+    <rule field="title" operator="contains">
+        <value>x-men</value>
+    </rule>
+    </rule>
+    <rule field="plot" operator="contains">
+      <value>x-men</value>
+    </rule>
+	
+</smartplaylist>

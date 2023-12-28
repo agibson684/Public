@@ -1,0 +1,25 @@
+ag (1)               - The Silver Searcher. Like ack, but faster.
+bash-functions       - custom bash functions 
+calcurse (1)         - text-based organizer
+powertop (8)         - a power consumption and power management diagnosis tool.
+git-check-ignore (1) - Debug gitignore / exclude files
+gitignore (5)        - Specifies intentionally untracked files to ignore
+ss (8)               - another utility to investigate sockets
+tig (1)              - text-mode interface for Git
+tigmanual (7)        - text-mode interface for Git
+tigrc (5)            - Tig configuration file
+XkbSetIgnoreLockMods (3) - Sets the modifiers that, if locked, are not to be reported in matching events to passive grabs
+task-color (5)       - A color tutorial for the taskwarrior command line todo manager.
+tasksh (1)           - Interactive taskwarrior shell
+slurm (1)            - yet another network load monitor
+unison (1)           - a file-synchronization tool for Unix and Windows
+unison-2.40 (1)      - a file-synchronization tool for Unix and Windows
+unison-2.40.102 (1)  - a file-synchronization tool for Unix and Windows
+unison-latest-stable (1) - a file-synchronization tool for Unix and Windows
+xprop (1)            - property displayer for X
+xev (1)              - print contents of X events
+xwininfo (1)         - window information utility for X
+glances              - A cross-platform curses-based system monitoring tool
+sipcalc              - Advanced console-based ip subnet calculator
+mtr                  - Full screen ncurses and X11 traceroute tool
+siege                - command line load test tool

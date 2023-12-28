@@ -1,0 +1,1 @@
+HAPROXYLOG %{NOTSPACE:check_name} check for server %{NOTSPACE:server_name} %{NOTSPACE:result} %{GREEDYDATA:reason}

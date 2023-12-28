@@ -1,0 +1,14 @@
+[Unit]
+Description=Disable Transparent Hugepage support
+
+[Service]
+Type=oneshot
+ExecStart="echo never > /sys/kernel/mm/transparent_hugepage/enabled ; echo never > /sys/kernel/mm/transparent_hugepage/defrag"
+TimeoutSec=0
+StandardInput=tty
+RemainAfterExit=yes
+Before=mysqld.service
+
+[Install]
+Target=multi-user.target
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="tvshows">
+    <name>ceral bowl</name>
+    <match>one</match>
+    <rule field="title" operator="contains">
+        <value>prodigal son</value>
+    </rule>
+    <rule field="plot" operator="contains">
+        <value>red john</value>
+    </rule>
+    <rule field="title" operator="contains">
+        <value>Bates Motel</value>
+    </rule>
+    <rule field="title" operator="contains">
+        <value>Marcella</value>
+    </rule>
+    <rule field="title" operator="contains">
+        <value>Dexter</value>
+    </rule>
+    <rule field="title" operator="contains">
+        <value>Lincoln Rhyme: Hunt for the Bone Collector</value>
+    </rule>
+    <rule field="title" operator="contains">
+        <value>hannibal</value>
+    </rule>
+    <rule field="title" operator="contains">
+        <value>Clarice</value>
+    </rule>
+</smartplaylist>

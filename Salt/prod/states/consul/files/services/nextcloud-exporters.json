@@ -1,0 +1,19 @@
+{
+  "service": {
+    "name": "next-exporter",
+    "tags": [
+      "metrics"
+    ],
+    "port": 9205,
+     "checks": [
+      {
+          "interval" :"10s",
+          "timeout" : "2s",
+          "id": "nextcloud",
+          "name": "nextcloud Exporter HTTP 9205",
+          "http": "http://127.0.0.1:9205/metrics"
+      }
+    ]
+}
+}
+

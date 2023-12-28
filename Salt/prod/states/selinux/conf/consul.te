@@ -1,0 +1,68 @@
+
+module consul 1.0;
+
+require {
+	type init_t;
+	type bin_t;
+	type http_port_t;
+	type passwd_file_t;
+	type proc_t;
+	type unreserved_port_t;
+	type myconsul_t;
+	type sysctl_net_t;
+	type node_t;
+	type cert_t;
+	type var_t;
+	type hplip_port_t;
+	type user_tmp_t;
+	class file { append create execute execute_no_trans getattr lock map open read unlink write };
+	class tcp_socket { accept bind connect create getattr getopt listen name_bind name_connect node_bind setopt };
+	class netlink_route_socket { bind create getattr nlmsg_read };
+	class udp_socket { bind connect create getattr name_bind node_bind setopt };
+	class dir { add_name open read remove_name search write };
+	class lnk_file { getattr read };
+}
+
+#============= init_t ==============
+allow init_t hplip_port_t:tcp_socket name_connect;
+
+#!!!! This avc can be allowed using the boolean 'nis_enabled'
+allow init_t http_port_t:tcp_socket name_connect;
+
+#!!!! This avc can be allowed using the boolean 'nis_enabled'
+allow init_t unreserved_port_t:tcp_socket name_connect;
+
+#!!!! This avc can be allowed using the boolean 'domain_can_mmap_files'
+allow init_t user_tmp_t:file map;
+allow init_t user_tmp_t:file { execute execute_no_trans };
+
+#!!!! This avc can be allowed using the boolean 'domain_can_mmap_files'
+allow init_t var_t:file map;
+allow init_t var_t:file { append create lock open read unlink write };
+
+#============= myconsul_t ==============
+
+#!!!! This avc can be allowed using the boolean 'domain_can_mmap_files'
+allow myconsul_t bin_t:file map;
+allow myconsul_t bin_t:file { execute execute_no_trans };
+allow myconsul_t cert_t:dir { open read search };
+allow myconsul_t cert_t:file { getattr open read };
+allow myconsul_t cert_t:lnk_file { getattr read };
+allow myconsul_t hplip_port_t:tcp_socket name_connect;
+allow myconsul_t http_port_t:tcp_socket name_connect;
+allow myconsul_t node_t:tcp_socket node_bind;
+allow myconsul_t node_t:udp_socket node_bind;
+allow myconsul_t passwd_file_t:file { open read };
+allow myconsul_t proc_t:file { open read };
+allow myconsul_t self:netlink_route_socket { bind create getattr nlmsg_read };
+allow myconsul_t self:tcp_socket { accept bind connect create getattr getopt listen setopt };
+allow myconsul_t self:udp_socket { bind connect create getattr setopt };
+allow myconsul_t sysctl_net_t:dir search;
+allow myconsul_t sysctl_net_t:file { open read };
+allow myconsul_t unreserved_port_t:tcp_socket { name_bind name_connect };
+allow myconsul_t unreserved_port_t:udp_socket name_bind;
+allow myconsul_t var_t:dir { add_name read remove_name write };
+
+#!!!! This avc can be allowed using the boolean 'domain_can_mmap_files'
+allow myconsul_t var_t:file map;
+allow myconsul_t var_t:file { append create getattr lock open read unlink write };

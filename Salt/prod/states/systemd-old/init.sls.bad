@@ -1,0 +1,33 @@
+# SystemD 
+# Services controlled by pillar
+{% for service_type, config in salt['pillar.get']('mounts', {}).items() %}
+service{{ service_type }}:
+  file.managed:
+    - name:  /lib/systemd/system/{{ service_type }}.service 
+    - users: root
+    - group: root
+    - mode: "0740"
+    - template: jinja
+    - source: salt://backup/files/backup.sh
+    - context:
+      config: {{ config|tojson }}
+
+# Reload Service on change
+{{ service_type }}-systemd-reload:
+  cmd.wait:
+    - name: systemctl daemon-reload
+    - user: root
+    - watch:
+      - file: {{ file }}
+
+# Enable Service
+{{ service_type }}-systemd:
+  service.enabled:
+    - name: {{ service_type }}
+    - require:
+      - file: {{ file }}
+      - cmd: {{ service_type }}-systemd-reload
+
+{% endfor %}
+
+

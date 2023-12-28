@@ -1,0 +1,2 @@
+# clamscan log messages SA-189
+(?:%{SYSLOGTIMESTAMP:syslog_timestamp}|%{TIMESTAMP_ISO8601:timestamp8601}) %{IPORHOST:syslog_server} %{SYSLOGPROG}: %{GREEDYDATA:clamscanmessage}

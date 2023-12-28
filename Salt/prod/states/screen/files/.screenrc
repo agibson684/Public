@@ -1,0 +1,28 @@
+#This is the .screenrc file
+# Please do not modify this file it is being controlled by puppet
+#Thank you for your cooperation!
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
+screen -t glances@solan top
+screen -t erin@solan ssh -X erin@solan
+screen -t erin@terreis ssh -X erin@terreis
+screen -t erin@gabrielle ssh -X gabrielle
+screen -t erin@xena ssh -X xena 
+#screen -t erin@ephiny ssh -X ephiny
+screen -t erin@calisto ssh -X erin@calisto
+#screen -t weechat-help links http://www.weechat.org/files/doc/devel/weechat_quickstart.en.html
+screen -t transmission watch "transmission-remote docker.thrace.lan  -l"
+#screen -t erin@gabrielle ssh -X  erin@gabrielle 
+screen -t erin@terreis ssh -X erin@terreis
+#screen -t erin@lyceus ssh -X erin@lyceus
+#screen -t erin@joxer ssh -X erin@joxer 
+#screen -t IRC weechat-curses
+#iscreen -t erin@aries ssh -X erin@aries
+screen -t root@zeus ssh -X -i ~/.ssh/zeus.thrace-lan.info root@zeus.thrace-lan.site top
+screen -t root@athena ssh -X -i ~/.ssh/athena.thrace-lan-5-5-2019.info root@athena.thrace-lan.site top
+#screen -t erin@services ssh -X erin@services
+#screen -t erin@eve ssh -X erin@eve  
+defscrollback 50000
+layout autosave on
+layout attach :last
+
+

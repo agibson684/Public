@@ -1,0 +1,18 @@
+{
+  "service": {
+    "name": "mysqld-exporter",
+    "tags": [
+      "metrics"
+    ],
+    "port": 9104,
+     "checks": [
+      {
+          "interval" :"10s",
+          "timeout" : "2s",
+          "id": "mysqld",
+          "name": "mysqld Exporter HTTP 9104",
+          "http": "http://127.0.0.1:9104/metrics"
+      }
+    ]
+}
+}

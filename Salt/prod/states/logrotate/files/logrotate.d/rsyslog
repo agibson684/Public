@@ -1,0 +1,300 @@
+/var/log/syslog {
+        rotate 4
+        create
+        daily
+        
+        notifempty
+        delaycompress
+        compress
+	size 5M
+        postrotate
+                invoke-rc.d rsyslog rotate > /dev/null
+        endscript
+}
+/var/log/catchall.log {
+	rotate 3
+        create
+	daily
+	notifempty
+	delaycompress
+	compress
+	size 5M
+	postrotate
+		invoke-rc.d rsyslog rotate > /dev/null
+	endscript
+}
+/var/log/mail.info {
+        rotate 4
+        create
+        daily
+        missingok
+        notifempty
+        delaycompress
+        compress
+        postrotate
+                invoke-rc.d rsyslog rotate > /dev/null
+        endscript
+}
+
+/var/log/mail.warn
+{
+        rotate 4
+        create
+        daily
+        missingok
+        notifempty
+        delaycompress
+        compress
+        postrotate
+                invoke-rc.d rsyslog rotate > /dev/null
+        endscript
+}
+
+/var/log/mail.err
+
+{
+        rotate 4
+        create
+        daily
+        missingok
+        notifempty
+        delaycompress
+        compress
+        postrotate
+                invoke-rc.d rsyslog rotate > /dev/null
+        endscript
+}
+
+/var/log/mail.log
+
+{
+        rotate 4
+        create
+        daily
+        missingok
+        notifempty
+        delaycompress
+        compress
+        postrotate
+                invoke-rc.d rsyslog rotate > /dev/null
+        endscript
+}
+
+/var/log/daemon.log
+
+{
+        rotate 4
+        create
+        daily
+        
+        notifempty
+        delaycompress
+        compress
+        postrotate
+                invoke-rc.d rsyslog rotate > /dev/null
+        endscript
+}
+
+/var/log/kern.log
+
+{
+        rotate 4
+        create
+        daily
+        
+        notifempty
+        delaycompress
+        compress
+        postrotate
+                invoke-rc.d rsyslog rotate > /dev/null
+        endscript
+}
+
+/var/log/auth.log
+
+{
+        rotate 4
+        create
+        daily
+        notifempty
+        delaycompress
+        compress
+        postrotate
+                invoke-rc.d rsyslog rotate > /dev/null
+        endscript
+}
+
+/var/log/user.log
+
+{
+        rotate 4
+        create
+        daily
+        
+        notifempty
+        delaycompress
+        compress
+        postrotate
+                invoke-rc.d rsyslog rotate > /dev/null
+        endscript
+}
+/var/log/cron.log {
+        rotate 4
+        create
+        daily
+        
+        notifempty
+        delaycompress
+        compress
+        postrotate
+                invoke-rc.d rsyslog rotate > /dev/null
+        endscript
+}
+
+/var/log/debug {
+        rotate 4
+        create
+        daily
+        
+        notifempty
+        delaycompress
+        compress
+        postrotate
+                invoke-rc.d rsyslog rotate > /dev/null
+        endscript
+}
+/var/log/messages {
+        rotate 4
+        create
+        daily
+        
+        notifempty
+        delaycompress
+        compress
+        postrotate
+                invoke-rc.d rsyslog rotate > /dev/null
+        endscript
+}
+
+/var/log/dbconfig-common/dbc.log {
+        rotate 4
+        create
+        daily
+        missingok
+        notifempty
+        delaycompress
+        compress
+        postrotate
+                invoke-rc.d rsyslog rotate > /dev/null
+        endscript
+}
+/var/log/sudo.log
+
+{
+        rotate 4
+        create
+        daily
+        
+        notifempty
+        delaycompress
+        compress
+        postrotate
+                invoke-rc.d rsyslog rotate > /dev/null
+        endscript
+}
+
+/var/log/cfg2html.log
+
+{
+        rotate 4
+        create
+        daily
+        
+        notifempty
+        delaycompress
+        compress
+        postrotate
+                invoke-rc.d rsyslog rotate > /dev/null
+        endscript
+}
+/var/log/pycentral.log {
+        rotate 4
+        create
+        daily
+        missingok
+        notifempty
+        delaycompress
+        compress
+        postrotate
+                invoke-rc.d rsyslog rotate > /dev/null
+        endscript
+}
+/var/log/apache-pam.log {
+        rotate 4
+        create
+        daily
+        
+        notifempty
+        delaycompress
+        compress
+        postrotate
+                invoke-rc.d rsyslog rotate > /dev/null
+        endscript
+}
+
+/var/log/error.log
+
+{
+        rotate 4
+        create 
+        daily
+        
+        notifempty
+        delaycompress
+        compress
+        postrotate
+                invoke-rc.d rsyslog rotate > /dev/null
+        endscript
+}
+
+/var/log/ssh.log
+
+{
+        rotate 4
+        create
+        daily
+        
+        notifempty
+        delaycompress
+        compress
+        postrotate
+                invoke-rc.d rsyslog rotate > /dev/null
+        endscript
+}
+/var/log/sftp.log {
+	rotate 4
+	weekly
+	
+	notifempty
+	compress
+	delaycompress
+	sharedscripts
+	postrotate
+		invoke-rc.d rsyslog rotate > /dev/null
+	endscript
+}
+
+/var/log/nagiosgraph/nagiosgraph.log {
+        rotate 4
+        create
+	size=100k
+        weekly
+        
+        notifempty
+        compress
+        delaycompress
+        sharedscripts
+        postrotate
+                invoke-rc.d rsyslog rotate > /dev/null
+        endscript
+}

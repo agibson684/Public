@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name></name>
+    <match>all</match>
+    <rule field="tag" operator="contains">
+        <value>time travel</value>
+    </rule>
+    <rule field="tag" operator="contains">
+        <value>time machine</value>
+    </rule>
+</smartplaylist>

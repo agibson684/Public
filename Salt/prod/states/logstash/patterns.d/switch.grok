@@ -1,0 +1,1 @@
+BOOKITSWITCH <%{INT}>%{INT}: %{SYSLOGTIMESTAMP:timestamp}: %{NOTSPACE:alerttype}: %{GREEDYDATA:reason}

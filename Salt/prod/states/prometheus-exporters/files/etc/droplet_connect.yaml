@@ -1,0 +1,14 @@
+sockets:
+  - name: hostname-http
+    host: 127.0.0.1
+    port: 80
+    protocol: tcp
+  - name: hostname-https
+    host: 127.0.0.1
+    port: 8080
+    timeout: 2
+  - name: zeus-https
+    host: zeus.thrace-lan.info
+    port: 443
+    timeout: 300
+

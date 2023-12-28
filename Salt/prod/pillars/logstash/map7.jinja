@@ -1,0 +1,22 @@
+# Logstash
+{% set logstash = salt['grains.filter_by']({
+    'phx': {
+        'elasticsearchhost': ['172.24.1.71']
+    },
+    'home': {
+        'elasticsearchhost': ['http://192.168.1.220:9200','http://192.168.1.201:9200']
+    },
+    'droplet': {
+        'elasticsearchhost': ['172.26.1.71']
+    },
+    'vagrant': {
+        'elasticsearchhost': ['172.19.1.47']
+    },
+    'testing': {
+       'elasticsearchhost': ['http://192.168.33.2:9200','http://192.168.33.3:9200']
+    },
+    'ecp': {
+        'elasticsearchhost': ['172.19.1.47']
+    },
+}, grain='datacenter') %}
+

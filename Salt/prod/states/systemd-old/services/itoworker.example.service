@@ -1,0 +1,15 @@
+[Unit]
+Description={{ description }}
+After=syslog.target network.target
+
+[Service]
+Type=simple
+
+# /usr/local/bin/php /home/httpd/htdocs/cli/itoworker.php tcp://172.20.1.61:61613 '\EmailQueue\Transactional' '\EmailQueue\SendGridProcessor'
+ExecStart=/usr/local/bin/php {{ script }}
+Restart=always
+RestartSec=5s
+User=bookitcron
+
+[Install]
+WantedBy=basic.target

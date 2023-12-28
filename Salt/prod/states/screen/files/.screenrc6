@@ -1,0 +1,13 @@
+#This is the .screenrc file
+# Please do not modify this file it is being controlled by puppet
+#Thank you for your cooperation!
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
+screen -t root@apollo ssh  -i ~/.ssh/apollo.thrace-lan.info root@apollo.thrace-lan.info
+screen -t root@zeus  ssh  -i ~/.ssh/zeus.thrace-lan.info root@zeus.thrace-lan.info
+screen -t root@hades ssh -i ~/.ssh/hades.thrace-lan.info root@hades.thrace-lan.info
+screen -t root@athena ssh  -i ~/.ssh/athena.thrace-lan-5-5-2019.info root@athena.thrace-lan.info
+defscrollback 50000
+layout autosave on
+layout attach :last
+
+

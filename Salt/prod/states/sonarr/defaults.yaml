@@ -1,0 +1,19 @@
+sonarr:
+  package: nzbdrone
+
+  package_dependencies:
+    - mono-runtime
+    - libmono-cil-dev
+    - libmediainfo0v5
+
+  user: sonarr
+  group: sonarr
+
+  install_dir: /opt/NzbDrone
+  data_dir: /media/donwloads
+
+  mono_bin: /usr/bin/mono
+  sonarr_bin: /opt/NzbDrone/NzbDrone.exe
+
+  release:
+    reference_doc: https://sonarr.tv/#support

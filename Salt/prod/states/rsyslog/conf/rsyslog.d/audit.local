@@ -1,0 +1,3 @@
+# Local6 local logging
+# This should be used for auditd
+local6.* action(type="omfile" File="/var/log/audit.log")

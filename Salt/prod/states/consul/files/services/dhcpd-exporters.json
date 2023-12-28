@@ -1,0 +1,19 @@
+{
+  "service": {
+    "name": "dhcpd-exporter",
+    "tags": [
+      "metrics"
+    ],
+    "port": 9198,
+     "checks": [
+      {
+          "interval" :"10s",
+          "timeout" : "2s",
+          "id": "dhcpd",
+          "name": "dhcpd Exporter HTTP 9198",
+          "http": "http://127.0.0.1:9198/metrics"
+      }
+    ]
+}
+}
+

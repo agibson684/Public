@@ -1,0 +1,74 @@
+#managed by class  ['sshd']
+# Package generated configuration file
+# See the sshd(8) manpage for details
+
+# What ports, IPs and protocols we listen for
+Port {{ pillar['ssh']['port'] }}
+
+# Use these options to restrict which interfaces/protocols sshd will bind to
+#ListenAddress ::
+#ListenAddress 0.0.0.0
+Protocol 2
+# HostKeys for protocol version 2
+HostKey /etc/ssh/ssh_host_rsa_key
+#HostKey /etc/ssh/ssh_host_dsa_key
+#Privilege Separation is turned on for security
+#UsePrivilegeSeparation {{ pillar['ssh']['separation'] }}
+
+AllowUsers  {{ pillar['ssh']['users'] }}
+# Lifetime and size of ephemeral version 1 server key
+#KeyRegenerationInterval {{ pillar['ssh']['keyregen'] }}
+#ServerKeyBits {{ pillar['ssh']['serverkeybit'] }}
+
+# Logging
+SyslogFacility {{ pillar['ssh']['syslogfac'] }}
+LogLevel {{ pillar['ssh']['loglevelsshd'] }}
+
+# Authentication:
+LoginGraceTime {{ pillar['ssh']['logingrace'] }}
+PermitRootLogin {{ pillar['ssh']['rootlogin'] }}
+StrictModes {{ pillar['ssh']['strictmode'] }}
+
+#RSAAuthentication {{ pillar['ssh']['rsaauth'] }}
+PubkeyAuthentication {{ pillar['ssh']['pubkeyauth'] }}
+AuthorizedKeysFile	%h/.ssh/authorized_keys
+
+#Kerberos Authentication yes no
+GSSAPIAuthentication  {{ pillar['ssh']['gssapiauth'] }}
+GSSAPIStrictAcceptorCheck {{ pillar['ssh']['gssapistrict'] }}
+
+# Don't read the user's ~/.rhosts and ~/.shosts files
+IgnoreRhosts {{ pillar['ssh']['ignorerhosts'] }}
+# For this to work you will also need host keys in /etc/ssh_known_hosts
+# similar for protocol version 2
+HostbasedAuthentication {{ pillar['ssh']['hostbauth'] }} 
+
+# To enable empty passwords, change to yes (NOT RECOMMENDED)
+PermitEmptyPasswords {{ pillar['ssh']['emptypass'] }}
+
+# Change to yes to enable challenge-response passwords (beware issues with
+# some PAM modules and threads)
+ChallengeResponseAuthentication {{ pillar['ssh']['challengerespauth'] }}
+
+# Change to no to disable tunnelled clear text passwords
+PasswordAuthentication {{ pillar['ssh']['passwordauth']  }}
+
+AllowTcpForwarding {{ pillar['ssh']['tcpforward'] }}
+GatewayPorts {{ pillar['ssh']['gatewayport'] }}
+
+X11Forwarding {{ pillar['ssh']['x11forward'] }}
+X11DisplayOffset {{ pillar['ssh']['displayoffset'] }}
+PrintMotd {{ pillar['ssh']['printmotd'] }}
+PrintLastLog {{ pillar['ssh']['printlastlog'] }}
+TCPKeepAlive {{ pillar['ssh']['tcpkeepalive'] }}
+
+Banner {{ pillar['ssh']['banner'] }}
+
+
+# Allow client to pass locale environment variables
+AcceptEnv LANG LC_*
+
+Subsystem {{ pillar['ssh']['subsystemsftp'] }}
+
+UsePAM {{ pillar['ssh']['usepam'] }}
+

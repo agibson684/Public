@@ -1,0 +1,22 @@
+[Unit]
+Description=Alertmanager Daemon
+Requires=network-online.target
+After=syslog.target network-online.target
+Documentation=https://prometheus.io/docs/alerting/
+
+[Service]
+User=prometheus
+Type=simple
+{% if grains['localhost'] == 'solan' %}
+ExecStart=/etc/prometheus/alert_manager/alertmanager --config.file=/etc/prometheus/alert_manager/alertmanager.yml --cluster.peer=alertmanager2:9094 --cluster.peer=alertmanager3:9094
+{% elif grains['localhost'] == 'aries' %}
+ExecStart=/etc/prometheus/alert_manager/alertmanager --config.file=/etc/prometheus/alert_manager/alertmanager.yml --cluster.peer=alertmanager1:9094 --cluster.peer=alertmanager3:9094
+{% elif grains['localhost'] == 'Zeus' %}
+ExecStart=/etc/prometheus/alert_manager/alertmanager --config.file=/etc/prometheus/alert_manager/alertmanager.yml --cluster.peer=alertmanager1:9094 --cluster.peer=alertmanager2:9094
+{% endif %}
+
+Restart=on-failure
+StandardOutput=syslog
+
+[Install]
+WantedBy=multi-user.target

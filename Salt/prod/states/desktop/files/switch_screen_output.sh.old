@@ -1,0 +1,40 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "Usage: $0 hdmi/dvi" >&2
+    echo "Valid outputs:" >&2
+    xrandr  >&2
+    exit 1
+fi
+#REZ for  smaller hdmi screen# xrandr --output HDMI-0 --mode 1360x768
+
+#big acer and small acer 
+output="$1"
+if [[ $output -eq 1 ]]; then 
+xrandr --output DFP9 --off
+xrandr --output DFP13 --off
+xrandr --output DFP5 --mode 1920x1080 --right-of DFP1 --output DFP1 --auto  --primary
+exit 
+fi
+#small screen and  big sanyo tv
+if [[ $output -eq 2 ]]; then 
+xrandr --output DFP5 --off
+xrandr --output DFP13 --off
+xrandr --output DFP9 --mode 1280x1024 --left-of  DFP1 --output DFP1 --mode 1600x900
+exit
+fi
+#small tv and big acer
+if [[ $output -eq 3 ]]; then 
+xrandr --output DFP9 --off
+xrandr --output DFP1 --off
+xrandr --output DFP13 --mode 1360x768 --primary --left-of DFP5 --output DFP5 --mode 1920x1080
+exit
+fi
+#big  screen and  big sanyo tv
+if [[ $output -eq 4 ]]; then
+xrandr --output DFP1 --off
+xrandr --output DFP13 --off
+xrandr --output DFP9 --mode 1920x1080 --left-of DFP5 --output DFP5 --mode 1920x1080 --primary
+exit
+fi
+

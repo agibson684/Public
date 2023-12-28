@@ -1,0 +1,37 @@
+<sources>
+    <programs>
+        <default pathversion="1"></default>
+    </programs>
+    <video>
+        <default pathversion="1"></default>
+        <source>
+            <name>MOVIES</name>
+            <path pathversion="1">/media/sync_movies/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>TV_SHOWS</name>
+            <path pathversion="1">/media/tv/</path>
+            <path pathversion="1">/media/sync_tv/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>transition</name>
+            <path pathversion="1">/media/complete/</path>
+            <path pathversion="1">/media/downloads/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+    </video>
+    <music>
+        <default pathversion="1"></default>
+    </music>
+    <pictures>
+        <default pathversion="1"></default>
+    </pictures>
+    <files>
+        <default pathversion="1"></default>
+    </files>
+    <games>
+        <default pathversion="1"></default>
+    </games>
+</sources>

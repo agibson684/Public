@@ -1,0 +1,31 @@
+#This is the .screenrc file
+# Please do not modify this file it is being controlled by puppet
+#Thank you for your cooperation!
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
+screen -t lyceus:dstat dstat -t -c -C 0,1,2,3,total -d -D total
+screen -t lyceus:dstat dstat -m -n -N eth0,total -p -r -s -S swap1,total -y -g  -l
+screen -t calisto:dstat ssh -t erin@calisto 'dstat -t -c -C 0,1,2,3,total'
+screen -t calisto:dstat ssh -t erin@calisto 'dstat  -m -n -N eth0,total -p  -y -d -D total-g  -l'
+screen -t gabrielle:dstat ssh -t erin@gabrielle 'dstat -t -c -C 0,1,2,3,total'
+screen -t gabrielle:dstat ssh -t erin@gabrielle 'dstat -m -n -N eth0,total -p -s -S swap1,total -y -d -D total-g  -l'
+screen -t  top@calisto ssh -t erin@calisto 'top'
+split
+focus
+screen -t  top@gabrielle ssh -t erin@gabrielle 'top'
+focus
+screen -t iotop@calisto ssh -t erin@calisto 'iotop'
+split -v
+focus
+screen -t iotop@gabrielle ssh -t erin@gabrielle 'iotop'
+focus
+split -v
+focus 
+screen -t iotop@lyceus  iotop
+select 8
+focus up 
+select 7 
+defscrollback 5000
+ bind = resize =
+ bind + resize +1
+ bind - resize -1
+ bind _ resize max

@@ -1,0 +1,49 @@
+<profiles>
+    <lastloaded>0</lastloaded>
+    <useloginscreen>false</useloginscreen>
+    <autologin>-1</autologin>
+    <nextIdProfile>2</nextIdProfile>
+    <profile>
+        <id>0</id>
+        <name>Master user</name>
+        <directory pathversion="1">special://masterprofile/</directory>
+        <thumbnail pathversion="1"></thumbnail>
+        <hasdatabases>true</hasdatabases>
+        <canwritedatabases>true</canwritedatabases>
+        <hassources>true</hassources>
+        <canwritesources>true</canwritesources>
+        <lockaddonmanager>true</lockaddonmanager>
+        <locksettings>1</locksettings>
+        <lockfiles>true</lockfiles>
+        <lockmusic>false</lockmusic>
+        <lockvideo>false</lockvideo>
+        <lockpictures>true</lockpictures>
+        <lockprograms>true</lockprograms>
+        <lockgames>false</lockgames>
+        <lockmode>1</lockmode>
+        <lockcode>2939624d39752197a87a9bf03b4c66e8</lockcode>
+        <lastdate></lastdate>
+    </profile>
+    <profile>
+        <id>1</id>
+        <name>kodi user</name>
+	<directory pathversion="1">profiles/kodi/</directory>
+        <thumbnail pathversion="1"></thumbnail>
+        <hasdatabases>true</hasdatabases>
+        <canwritedatabases>true</canwritedatabases>
+        <hassources>true</hassources>
+        <canwritesources>true</canwritesources>
+        <lockaddonmanager>true</lockaddonmanager>
+        <locksettings>1</locksettings>
+        <lockfiles>true</lockfiles>
+        <lockmusic>false</lockmusic>
+        <lockvideo>false</lockvideo>
+        <lockpictures>true</lockpictures>
+        <lockprograms>true</lockprograms>
+        <lockgames>false</lockgames>
+        <lockmode>1</lockmode>
+        <lockcode>2939624d39752197a87a9bf03b4c66e8</lockcode>
+        <lastdate></lastdate>
+    </profile>
+
+</profiles>

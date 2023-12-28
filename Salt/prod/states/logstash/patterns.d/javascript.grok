@@ -1,0 +1,3 @@
+# Patterns that relate to javascript 
+
+JSERROR %{IPORHOST:ip} "%{GREEDYDATA:className}" "%{GREEDYDATA:methodName}" %{URI:url} \[%{GREEDYDATA:mH}\] %{GREEDYDATA:error} 

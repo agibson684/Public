@@ -1,0 +1,41 @@
+host git.thrace.lan
+    user git
+    hostname git.thrace.lan
+    port 22
+    identityfile ~/.ssh/server-services
+host zeus.thrace-lan.site	
+    user git
+    hostname zeus.thrace-lan.site
+    port 22
+    identityfile ~/.ssh/server-services
+host zeus
+    user root
+    hostname zeus.thrace-lan.site
+    port 22
+    identityfile ~/.ssh/zeus.thrace-lan.site
+host athena
+    user root
+    hostname athena.thrace-lan.site
+    port 22
+    identityfile ~/.ssh/athena.thrace-lan-5-5-2019.site
+host hades
+    user root
+    hostname hades.thrace-lan.site
+    port 22
+    identityfile ~/.ssh/digital-ocean
+host atreyu
+    user root
+    hostname 159.65.178.119
+    port 22
+    identityfile ~/.ssh/digital_ocean_api
+#Host *.bookit.com *.ism.ld *.ewr.ld *.phx.ld *.ecp.ld *.mco.ld 172.26.1.99 172.24.1.99 172.20.1.99 172.19.15.10  172.* 10.*
+#    User erin.sims
+#    KeepAlive yes
+#    ServerAliveInterval 60
+#    ForwardAgent no
+#    ForwardX11 no
+#    ForwardX11Trusted no
+#    GSSAPIAuthentication no
+#    GSSAPIDelegateCredentials no
+#    identityfile ~/.ssh/esims.bookit
+

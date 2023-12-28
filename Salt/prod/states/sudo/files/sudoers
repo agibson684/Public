@@ -1,0 +1,55 @@
+# /etc/sudoers
+#
+# This file MUST be edited with the 'visudo' command as root. 
+#THIS FILE IS BEING MANAGED BY PUPPET DO NOT MODIFY ON THE SYSTEM OR YOUR CHANGES WILL BE OVER-WRITTEN!!!!!
+# See the man page for details on how to write a sudoers file.
+#
+
+ Defaults        env_reset
+ # Host alias specification
+ User_Alias L3=erins 
+ User_Alias L2=kim
+ User_Alias L1=jenkins
+ User_Alias L5=root,erin
+########################################
+ # Allow members of group sudo to execute any command
+ # (Note that later entries override this, so you might need to move
+ # it further down)
+##the SHELL command alias is for logging into the terminal as root
+#L3 has shell access
+ L3 ALL= VIM,APT,TOOLS,MYSQLAPACHE,FILES,SHELL,PUPPET,SAMBA,SERVICES,SCRIPTS,DESKTOP,ZPOOL,LXC
+#l2 has no shell access must use sudo application, and no passwd.
+ L2 ALL= NOPASSWD: VIM,APT,TOOLS,MYSQLAPACHE,FILES,PUPPET,SAMBA,SERVICES,SCRIPTS,DESKTOP
+#l1 is for scripts and tools to run no password
+ L1 ALL= NOPASSWD: APT,SERVICES,SCRIPTS,PUPPET,SAMBA,TOOLS,ZPOOL
+#l5 is for god mode
+ L5 ALL=(ALL) ALL
+########################################
+# User alias specification
+
+# Cmnd alias specification
+Cmnd_Alias  SHELL = /bin/bash, /bin/dash/, /bin/sh
+Cmnd_Alias  ZPOOL = /sbin/zpool import pool, /sbin/zpool, /sbin/zfs, /opt/scripts/clean_up_zfs.sh
+Cmnd_Alias  VIM = /usr/bin/vim 
+Host_Alias  WWW = lyceus.thrace.lan, eve.thrace.lan
+Host_Alias  KB = lyceus.thrace.lan, eve.thrace.lan, xena.thrace.lan
+
+# User privilege specification
+#root   ALL=(ALL) ALL
+#themis ALL=(ALL) ALL
+%NoPasswd   ALL=NOPASSWD: VIM,APT,TOOLS,MYSQLAPACHE,FILES,PUPPET,SAMBA,SERVICES,SCRIPTS,DESKTOP
+
+# Allow "Domain Admins" from the domain "DOMAIN" to run all commands
+#%DOMAIN\\Domain\ Admins  ALL=(ALL) ALL
+
+#includedir /etc/sudoers.d
+Defaults !lecture,tty_tickets,!fqdn,!syslog
+Defaults logfile=/var/log/sudo.log
+Defaults mailto="agibson684@gmail.com"
+Defaults mail_badpass, mailsub="** BAD AUTHENICATION: %u %h **"
+Defaults mail_no_user, mailsub="** USER NOT IN SUDOERS: %u %h **"
+Defaults secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/scripts"
+Defaults passwd_tries = 3, passwd_timeout = 1
+Defaults timestamp_timeout=30
+Defaults env_keep += "HOME"
+

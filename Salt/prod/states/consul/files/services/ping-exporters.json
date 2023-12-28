@@ -1,0 +1,20 @@
+
+{
+  "service": {
+    "name": "ping-exporter",
+    "tags": [
+      "metrics"
+    ],
+    "port": 9427,
+     "checks": [
+      {
+          "interval" :"10s",
+          "timeout" : "2s",
+          "id": "ping",
+          "name": "ping Exporter HTTP 9427",
+          "http": "http://127.0.0.1:9427/metrics"
+      }
+    ]
+}
+}
+

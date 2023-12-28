@@ -1,0 +1,30 @@
+#This is the .screenrc file
+# Please do not modify this file it is being controlled by puppet
+#Thank you for your cooperation!
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
+screen -t lyceus:top top
+screen -t lyceus:dstat dstat -t -c -C 0,1,2,3,total -d -D total-g  -l
+screen -t lyceus:dstat dstat -m -n -N eth0,total -p -r -s -S swap1,total -y
+screen -t calisto:dstat ssh -t erin@calisto 'dstat -t -c -C 0,1,2,3,total -d -D total-g  -l'
+screen -t calisto:dstat ssh -t erin@calisto 'dstat -m -n -N eth0,total -p -s -S swap1,total -y'
+screen -t gabrielle:dstat ssh -t erin@gabrielle 'dstat -t -c -C 0,1,2,3,total -d -D total-g  -l'
+screen -t gabrielle:dstat ssh -t erin@gabrielle 'dstat -m -n -N eth0,total -p -s -S swap1,total -y'
+screen -t  top@calisto ssh -t erin@calisto 'top'
+split
+focus
+screen -t  top@gabrielle ssh -t erin@gabrielle 'top'
+focus
+split -v
+focus
+focus
+split -v
+focus down
+screen -t dnstop@gabrielle ssh -t erin@gabrielle dnstop -l 5  br0
+screen -t ethtool@gabrielle ssh -t erin@gabrielle ethtool br0
+screen -t iftop@gabrielle ssh -t erin@gabrielle iftop -i br0
+screen -t vnstat@gabrielle ssh -t erin@gabrielle vnstat -i br0
+defscrollback 50000
+ bind = resize =
+ bind + resize +1
+ bind - resize -1
+ bind _ resize max

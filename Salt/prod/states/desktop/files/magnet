@@ -1,0 +1,5 @@
+#!/bin/sh
+#/usr/bin/transmission-remote gabrielle --add "$1"
+#/usr/bin/transmission-remote feathers.chmuranet.net:9091 --auth eryn684:agibson684@gmail.com --add "$1"
+/usr/bin/transmission-remote docker.thrace.lan:9091 --auth erin:password --add "$1"
+

@@ -1,0 +1,52 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
+systemd:
+  pkg: systemd
+  pkgs_libs: []
+  pkgs_extra: []
+
+
+  timesyncd:
+    pkg: {}
+    timezone: 'UTC'
+    config_source: file
+    config:
+      NTP: ''
+      FallbackNTP: 0.pool.ntp.org 1.pool.ntp.org 2.pool.ntp.org 3.pool.ntp.org
+      RootDistanceMaxSec: 5
+      PollIntervalMinSec: 32
+      PollIntervalMaxSec: 2048
+
+  networkd:
+    # networkctl reload is available since systemd 244
+    networkctl_reload: false
+    pkg: {}
+    fileattr: {}
+    path: /etc/systemd/network
+    service: systemd-networkd
+    wait_online: false
+
+  resolved:
+    config_source: file
+    pkg: {}
+    resolv_file: /etc/resolv.conf
+    resolv_target: /usr/lib/systemd/resolv.conf
+    config:
+      DNS: ''
+      FallbackDNS: 8.8.8.8 8.8.4.4 2001:4860:4860::8888 2001:4860:4860::8844
+      Domains: ''
+      LLMNR: 'no'
+      MulticastDNS: 'no'
+      DNSSEC: 'allow-downgrade'
+      DNSOverTLS: 'off'
+      Cache: 'yes'
+      DNSStubListener: 'yes'
+      ReadEtcHosts: 'yes'
+
+  journald:
+    config_source: file
+    config:
+      Storage: auto
+      Compress: 'yes'
+      Seal: 'yes'

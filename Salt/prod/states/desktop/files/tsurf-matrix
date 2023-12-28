@@ -1,0 +1,6 @@
+#!/bin/bash 
+##open  surf in tabbed  
+##quit on last tab
+tabbed -r2 surf -pe x  https://app.element.io/
+#didn work right the above works right 
+#tabbed -c surf -e "$1" "$1" & disown

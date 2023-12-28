@@ -1,0 +1,9 @@
+# Mysql Logging:
+local3.*  action(type="omfile" file="/var/log/mysqld.log")
+local3.*  action(type="omfwd"  Target="{{ pillar['rsyslog']['serverip'] }}" Port="{{ pillar['rsyslog']['serverport'] }}" Protocol="{{ pillar['rsyslog']['protocol'] }}" )
+if $programname == 'mysqld' then {
+   action(type="omfile" file="/var/log/mysqld.log")
+}
+  stop
+
+

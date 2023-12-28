@@ -1,0 +1,45 @@
+#!/bin/bash
+/etc/init.d/smbd restart
+sleep 5
+#systemctl stop media-Backup.mount
+#systemctl stop media-backup.mount
+#systemctl stop media-files_apps.mount
+#systemctl stop media-files_music.mount 
+systemctl stop media-sync_misc.mount
+#systemctl stop media-tv.mount
+#systemctl stop media-complete.mount   
+#systemctl stop media-files_misc.mount  
+#systemctl stop media-private.mount    
+systemctl stop media-sync_movies.mount   
+#systemctl stop media-downloads.mount   
+#systemctl stop media-files_movies.mount
+systemctl stop media-sync_apps.mount   
+systemctl stop media-sync_music.mount
+systemctl stop media-sync_private.mount
+systemctl stop media-sync_downloads.mount
+systemctl stop media-sync_complete.mount
+systemctl stop media-sync_misc.mount
+systemctl stop media-sync_tv.mount
+systemctl stop media-sync_backup.mount
+systemctl stop media-bittorrent.mount
+systemctl start media-bittorrent.mount
+systemctl start media-sync_tv.mount
+#systemctl start media-Backup.mount
+#systemctl start media-backup.mount
+#systemctl start media-files_apps.mount
+#systemctl start media-files_music.mount 
+systemctl start media-sync_misc.mount
+#systemctl start media-tv.mount
+#systemctl start media-complete.mount   
+#systemctl start media-files_misc.mount  
+#systemctl start media-private.mount    
+systemctl start media-sync_movies.mount   
+#systemctl start media-downloads.mount   
+#systemctl start media-files_movies.mount
+systemctl start media-sync_apps.mount   
+systemctl start media-sync_music.mount
+systemctl start media-sync_private.mount
+systemctl start media-sync_downloads.mount
+systemctl start media-sync_complete.mount
+systemctl start media-sync_misc.mount
+systemctl start  media-sync_backup.mount

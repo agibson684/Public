@@ -1,0 +1,3 @@
+# Daemon local logging
+# This is the default facility for xinetd
+daemon.* action(type="omfile" File="/var/log/xinetd.log")

@@ -1,0 +1,13 @@
+[Unit]
+Description=Redis persistent key-value database
+After=network.target
+Documentation=https://wiki.bookit.com/display/dspace/Redis+Role \
+    https://wiki.bookit.com/display/dspace/Redis
+
+[Service]
+ExecStart=/usr/local/bin/redis-server /etc/redis/redis.conf --daemonize no
+ExecStop=/usr/local/bin/redis-cli shutdown
+User=root
+
+[Install]
+WantedBy=multi-user.target

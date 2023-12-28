@@ -1,0 +1,58 @@
+#!/bin/bash 
+
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+xcompmgr -c &
+xrdb -merge .Xresources
+xmodmap -e "clear Lock" -e "keycode 0x42 = Escape"
+sleep 10 
+#xrandr --output HDMI-1  --rotate right  
+#xrandr --output DP-3  --rotate left
+#xrandr  --output HDMI-1  --right-of DP-2  
+#xrandr  --output DP-3 --left-of DP-2
+#xrandr  --output DVI-I-1 --above DP-2
+xrandr --output DP-1 --above HDMI-1
+sleep 5
+xrandr --output HDMI-1  --auto --left-of DP-3
+xrandr --output DP-2 --auto --left-of HDMI-1
+xrandr --output DP-3 --auto --right-of HDMI-1
+xrandr --output  DP-2 --rotate left
+xrandr --output  DP-3 --rotate right
+xrandr --output  HDMI-1 --rotate normal
+xset s off -dpms
+
+xsetroot -cursor_name left_ptr
+xsetroot -solid 'purple'
+#going random now peeps
+/home/THRACE/erin/bin/wallpaper.sh &
+PATH=$HOME/bin:/usr/sbin:$PATH
+#tint2 &
+#sleep 10
+#slstatus &
+sleep 10 
+discord &
+tilix &
+sleep 10 
+#tilix &
+teams &
+#/home/erin/bin/tsurf &
+#sleep 10
+#/home/erin/bin/tsurf-bookmarks &
+#sleep 10
+#/home/erin/bin/tsurf-matrix & 
+#surf -pe x https://zeus.thrace-lan.info/personal/weather.html &
+sleep 10
+/home/THRACE/erin/bin/mount-sshfs.sh 1  &
+sleep 10 
+quasselclient &
+sleep 10 
+udiskie &
+sleep  10 
+/usr/bin/cantata &
+sleep 10 
+/usr/bin/firefox &
+xrandr --output DP-1 --above HDMI-1
+sleep 10 
+redshift &
+#dbus-launch --exit-with-session /usr/local/bin/dwm
+#wait $!
+#/home/THRACE/erin/bin/mount-sshfs.sh 2 &

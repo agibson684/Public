@@ -1,0 +1,341 @@
+{
+   "0":{ 
+	"destination":"SuperGirl",
+	"source":"*supergirl*"
+   },
+   "1":{"destination": 
+	"source":
+	"The Simpsons":"*the*simpsons*"
+       },
+   "3":{ "destination": 
+	"source":
+
+	"NCIS New Orleans":"ncis*new*orleans*"
+       }, 
+   "4":{ "destination": 
+	"source":
+
+	"Doctor Who Series":"doctor*who*"
+       },
+    "5":{ "destination": 
+	"source":
+
+	 "American Horror Story":"american*horror*story*"
+       },
+  "6": {  "destination": 
+	"source":
+
+         "WestWorld":"*westworld*"
+       },
+  "7": { "destination": 
+	"source":
+
+	  "Saturday Night Live":"*saturday*night*live*"
+       },
+  "8": { "destination": 
+	"source":
+
+	  "The Flash":"the*flash*"
+       },
+  "9": { "destination": 
+	"source":
+
+	  "RuPauls Drag Race UK":"*rupauls*drag*race*uk*"
+        },
+  "10": { "destination": 
+	"source":
+
+	  "RuPauls Drag Race Down Under":"*rupauls*drag*race*down*under*"
+        },
+
+  "11": { "destination": 
+	"source":
+
+	  "RuPauls Drag Race All Stars":"*rupauls*drag*race*all*stars*"
+        },
+  "12": { "destination": 
+	"source":
+
+	  "60 Minutes":"*60*minutes*"
+        },
+  "13": { "destination": 
+	"source":
+
+	  "Outlander":"*outlander*"
+        },
+  "14": { "destination": 
+	"source":
+
+	  "Stranger Things":"*stranger*things*"
+        },
+  "15": { "destination": 
+	"source":
+
+	  "Orville":"*orville*"
+        },
+  "16": { "destination": 
+	"source":
+
+	  "The Good Doctor":"*the*good*doctor"
+  },
+
+  "17": { "destination": 
+	"source":
+
+	  "Titans":"*titans*"
+  },
+
+  "18": { "destination": 
+	"source":
+
+	  "Roswell":"*roswell*"
+  },
+
+  "19": { "destination": 
+	"source":
+
+	  "The Good Fight":"*the*good*fight*"
+  },
+
+  "20": { "destination": 
+	"source":
+
+	  "Evil":"*evil*"
+  },
+
+  "21": { "destination": 
+	"source":
+
+	  "Star Trek Picard":"*star*trek*picard*"
+  },
+
+  "22": { "destination": 
+	"source":
+
+	  "This Old House":"*this*old*house*"
+  },
+
+  "23": { "destination": 
+	"source":
+
+	  "The Witcher": "*the*witcher*"
+  },
+
+  "24": { "destination": 
+	"source":
+
+	  "Graham Norton": "*graham*norton*"
+  },
+  "25": { "destination": 
+	"source":
+
+	  "Jeopardy": "*jeopardy*"
+  },
+  "26": { "destination": 
+	"source":
+
+	  "Battle Bots": "*battle*bots*"
+  },
+  "27": { "destination": 
+	"source":
+
+	  "Killing Eve": "*killing*eve*"
+  },
+  "28": { "destination": 
+	"source":
+
+	  "Motherland: fort salem":"*motherland*fort*salem*" 
+  
+  },
+
+  "29": { "destination": 
+	"source":
+
+	  "Forged in Fire": "*forged in fire*"
+  },
+
+  "30": {"destination": 
+	"source":
+ 
+	  "Perry Mason": "*perry*mason**"
+  },
+
+  "31": { "destination": 
+	"source":
+
+	  "Warrior Nun": "*warrior*nun*"
+  },
+
+  "32": { "destination": 
+	"source":
+
+	  "LoveCraft Country": "*lovecraft*country*"
+  },
+
+  "33": { "destination": 
+	"source":
+
+	  "NeXt": "*next*"
+  },
+
+  "34": { "destination": 
+	"source":
+
+	   "*his*dark*materials*":"His Dark Materials"
+  },
+
+  "35": {  "destination": 
+	"source":
+	  "NCIS Los Angeles":"*ncis*los*angeles*"
+  }, 
+  "36": {  "destination": 
+	"source":
+	  "NCIS":"*ncis*"
+  	},
+
+  "37": {  "destination": 
+	"source":
+	  "Pennyworth":"*pennyworth*"
+  },
+
+  "38": {  "destination": 
+	"source":
+	  "Trickster":"*trickster*"
+  },
+
+  "39": {  "destination": 
+	"source": 
+	  "Young Sheldon":"*youn*sheldon*"
+  },
+
+  "40": {  "destination": 
+	"source":
+	  "Legacies":"*legacies*"
+  },
+
+  "41": {  "destination": 
+	"source":
+	  "Clarice":"*clarice*"
+  },
+
+  "42": {  "destination": 
+	"source":
+	  "RuPauls Drag Race":"*drag race*"
+  },
+
+  "43": {  "destination": 
+	"source":
+	  "Kung Fu 2021":"*kung*fu*"
+  },
+
+  "44": {  "destination": 
+	"source":
+	  "Miss Scarlet and The Duke":"*miss*scarlet*and*the*duke*"
+  },
+
+  "45": {  "destination": 
+	"source":
+	  "Loki":"*loki*"
+  },
+
+  "46": {  "destination": 
+	"source":
+	  "The Falcon and the Winter Soldier":"*the*falcon*and*the*winter*soldier*"
+  },
+
+  "47": {  "destination": 
+	"source":
+	  "The Marvelous Mrs Maisel":"*the*marvelous*mrs*maisel*"
+  },
+  "48": {  "destination": 
+	"source":
+	  "The Watch" :"*the*watch*"
+  },
+  "49": {  "destination": 
+	"source":
+	  "Superman and Lois":"*superman*and*lois*"
+  },
+  "50": {  "destination": 
+	"source":
+	  "American Horror Stories":"*american*horror*stories*"
+  },
+ 
+"51": {   "destination": 
+	"source": 
+	"Foundation":"*foundation*"
+},
+
+"52": {  "destination": 
+	"source": 
+       	"What We Do In The Shadows":"*what*we*do*in*the*shadows*"
+},
+
+"53": {  "destination": 
+	"source":
+      	"Nova":"*nova*"
+},
+
+"54": {  "destination": 
+	"source":
+      	"Leverage Redemption":"*leverage*redemption*"
+},
+
+"55": {  "destination": 
+	"source":
+      	"CSI Vegas":"*csi*vegas*"
+},
+
+"56": {  "destination": 
+	"source":
+      	"4400(2021)":"*4400*"
+},
+
+"57": {  "destination": 
+	"source":
+       	"Wheel Of Time":"*wheel*of*time*"
+},
+ 
+"58": {  "destination": 
+	"source":
+       	"Hawkeye":"*hawkeye*"
+},
+ 
+"59": {  "destination": 
+	"source":
+	"Yellowstone":"*yellowstone*"
+},
+  
+"60": {  "destination": 
+	"source":
+       	"Queen Of The Universe":"*queen*of*the*universe*"
+},
+ 
+"61": {  "destination": 
+	"source":
+       	"Peacemaker":"*peacemaker*"
+},
+ 
+"62": {  "destination":"Batwoman",
+	"source":"*batwoman*"
+       	},
+ 
+"63": {  "destination":"The Girl In The Woods",
+	"source":"*the*girl*in*the*woods*"
+       	
+},
+ 
+"64": {  "destination":"Nature",
+	"source":"*nature*"
+
+       	}
+"65": {  "destination":"Manifest",
+	"source":"*manifest*"
+
+       	}
+
+
+
+
+
+}
+        

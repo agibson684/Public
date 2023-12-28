@@ -1,0 +1,19 @@
+{
+  "service": {
+    "name": "bind-query-exporter",
+    "tags": [
+      "metrics"
+    ],
+    "port": 9197,
+     "checks": [
+      {
+          "interval" :"10s",
+          "timeout" : "2s",
+          "id": "bind",
+          "name": "Bind Euery Exporter HTTP 9197",
+          "http": "http://127.0.0.1:9197/metrics"
+      }
+    ]
+}
+}
+

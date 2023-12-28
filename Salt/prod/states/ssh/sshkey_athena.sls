@@ -1,0 +1,6 @@
+
+? AAAAB3NzaC1yc2EAAAADAQABAAABAQDL7JA0+Q3bDcwanwG/LiPoGB11/1PiAXBXGWfj1QoPPy2CpJiCA4pSX86PtdiFgPR/uv6jFYyXqPMKHB4iilsmPHb42RU27fZ5qO6zg343MXgetXFJCk3CY1U6e6WX3MLWkekxEO5yatd9AC9QozcTb8H+OPzbA9StOrjMJR3bKUedOXmF/nY+q2Q2EmtWo7v2399igwA7E+3wrA/ur5oE1KdGysy0pq6MCEr5ugc00AIPgpsQav/WZWptT3JF63FNRljVNpdmCAoJRATvAuWzecKIdrfTvmPggDTgpErEsawgi9KtKFsxRx5PXgFRYnErVkWeJrNwTJRgi/InF5u1
+:
+  ssh_auth.present:
+    - user: erin
+    - enc: ssh-rsa

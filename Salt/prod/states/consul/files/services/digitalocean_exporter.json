@@ -1,0 +1,18 @@
+{
+  "service": {
+    "name": "digitalocean_exporter",
+    "tags": [
+      "metrics"
+    ],
+    "port": 9212,
+     "checks": [
+      {
+          "interval" :"20s",
+          "timeout" : "10s",
+          "id": "digitalocean",
+          "name": "digitalocean_exporter 9212",
+          "http": "http://127.0.0.1:9212/metrics"
+      }
+    ]
+}
+}

@@ -1,0 +1,11 @@
+[Unit]
+Description=Haproxy ip rules and routes
+After=haproxy-iptables.target network.target
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/ip rule add fwmark 1 lookup 100
+ExecStart=/sbin/ip route add local 0.0.0.0/0 dev lo table 100
+
+[Install]
+WantedBy=multi-user.target

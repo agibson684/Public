@@ -1,0 +1,29 @@
+{% from 'bind/map.jinja' import bind with context %}
+// Manage the file logs
+//include "/etc/named/named.conf.log";
+
+// Domain Management example.com
+// ------------------------------
+//  - The server is defined as the master on the domain.
+//  - There are no forwarders for this domain.
+//  - Entries in the domain can be added dynamically 
+//    with the key ns-example-com_rndc-key
+zone "{{ pillar["domain"] }}"  IN {
+        type master;
+        file "/var/cache/{{ bind.named }}/db.{{ pillar["domain"] }}";
+        allow-update { none; };
+};
+zone "{{ pillar["invip"] }}.in-addr.arpa" IN {
+        type master;
+	file "/var/cache/{{ bind.named }}/db.{{ pillar["domain"] }}.inv";
+        allow-update { none; };
+};
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//took these out for now
+{% if grains['os'] == 'Debian' %}
+include "/etc/{{ bind.named }}/zones.rfc1918";
+{% endif  %}
+
+

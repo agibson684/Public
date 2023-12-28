@@ -1,0 +1,27 @@
+scripts-desktop:
+  file.managed:
+    - user: erin
+    - group: erin
+    - mode: 500
+    - template: jinja
+    - names:
+      - /opt/scripts/rsync-playlist-usbdisk.sh:
+        - source: salt://scripts/files/rsync-playlist-usbdisk.sh
+      - /opt/scripts/release-bump.sh:
+        - source: salt://scripts/files/release-bump.sh
+      - /opt/scripts/feature.sh:
+        - source: salt://scripts/files/feature.sh
+      - /opt/scripts/startup_vagrant_lab.sh:
+        - source: salt://scripts/files/startup_vagrant_lab.sh
+      - /opt/scripts/check-salt.sh:
+        - source: salt://scripts/files/check-salt.sh
+      - /opt/scripts/cmd-salt.sh:
+        - source: salt://scripts/files/cmd-salt.sh
+      - /opt/scripts/playlist.sh:
+        - source: salt://scripts/files/playlist.sh
+      - /opt/scripts/playlist-random.sh:
+        - source: salt://scripts/files/playlist-random.sh
+      - /opt/scripts/cli-salt.sh:
+        - source: salt://scripts/files/cli-salt.sh
+      - /opt/scripts/terreria.sh:
+        - source: salt://scripts/files/terreria.sh

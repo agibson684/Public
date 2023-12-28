@@ -1,0 +1,19 @@
+# Logstash
+{% set logstash = salt['grains.filter_by']({
+    'phx': {
+        'elasticsearchhost': '172.24.1.71',
+    },
+    'ewr': {
+        'elasticsearchhost': '172.20.1.72'
+    },
+    'ism': {
+        'elasticsearchhost': '172.26.1.71'
+    },
+    'mco': {
+        'elasticsearchhost': '172.19.1.47'
+    },
+    'ecp': {
+        'elasticsearchhost': '172.19.1.47'
+    },
+}, grain='datacenter') %}
+

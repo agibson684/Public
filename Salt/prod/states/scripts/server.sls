@@ -1,0 +1,106 @@
+scripts-server:
+  file.managed:
+    - user: root
+    - group: admins
+    - mode: '0750'
+    - template: jinja
+    - names:
+      - /opt/scripts/wakeup.sh:
+        - source: salt://scripts/files/wakeup.sh
+      - /opt/scripts/unlock-permissions.sh:
+        - source: salt://scripts/files/unlock-permissions.sh
+      - /opt/scripts/lock-permissions.sh:
+        - source: salt://scripts/files/lock-permissions.sh
+      - /opt/scripts/change-folder.sh:
+        - source: salt://scripts/files/change-folder.sh
+      - /opt/scripts/chmod-apps.sh:
+        - source: salt://scripts/files/chmod-apps.sh
+      - /opt/scripts/chmod-backup.sh:
+        - source: salt://scripts/files/chmod-backup.sh
+      - /opt/scripts/chmod-complete.sh:
+        - source: salt://scripts/files/chmod-complete.sh
+      - /opt/scripts/chmod-downloads.sh:
+        - source: salt://scripts/files/chmod-downloads.sh
+      - /opt/scripts/chmod-misc.sh:
+        - source: salt://scripts/files/chmod-misc.sh
+      - /opt/scripts/chmod-private.sh:
+        - source: salt://scripts/files/chmod-private.sh
+      - /opt/scripts/chmod-tvshow.sh:
+        - source: salt://scripts/files/chmod-tvshow.sh
+      - /opt/scripts/chmod-movies.sh:
+        - source: salt://scripts/files/chmod-movies.sh
+      - /opt/scripts/clean-up-meta-sneakernet.sh:
+        - source: salt://scripts/files/clean-up-meta-sneakernet.sh
+      - /opt/scripts/clean-up-meta-nas.sh:
+        - source: salt://scripts/files/clean-up-meta-nas.sh
+      - /opt/scripts/sync-sneakernet.sh:
+        - source: salt://scripts/files/sync-sneakernet.sh
+      - /opt/scripts/sync-sneakernet-music.sh:
+        - source: salt://scripts/files/sync-sneakernet-music.sh
+      - /opt/scripts/push-downloads-movies-tv.sh:
+        - source: salt://scripts/files/push-downloads-movies-tv.sh
+      - /opt/scripts/push-downloads-movies-tv.py:
+        - source: salt://scripts/files/push-downloads-movies-tv.py
+      - /opt/scripts/shows.yaml:
+        - source: salt://scripts/files/shows.yaml
+      - /opt/scripts/ext.yaml:
+        - source: salt://scripts/files/ext.yaml
+      - /opt/scripts/mkdir-mv-avi.sh:
+        - source: salt://scripts/files/mkdir-mv-avi.sh
+      - /opt/scripts/zfs-auto-snapshot.hourly:
+        - source: salt://scripts/files/zfs-auto-snapshot.hourly
+      - /opt/scripts/zfs-auto-snapshot.daily:
+        - source: salt://scripts/files/zfs-auto-snapshot.daily
+      - /opt/scripts/zfs-auto-snapshot.monthly:
+        - source: salt://scripts/files/zfs-auto-snapshot.monthly
+      - /opt/scripts/clean_up_zfs.sh:
+        - source: salt://scripts/files/clean_up_zfs.sh
+      - /opt/scripts/mkdir-seasons.sh:
+        - source: salt://scripts/files/mkdir-seasons.sh
+      - /opt/scripts/push_tv_show_test.sh:
+        - source: salt://scripts/files/push_tv_show_test.sh
+      - /opt/scripts/push_tv_show_test_cleanup.sh:
+        - source: salt://scripts/files/push_tv_show_test_cleanup.sh
+      - /opt/scripts/sync-files-gabrielle-calisto.sh:
+        - source: salt://scripts/files/sync-files-gabrielle-calisto.sh
+      - /opt/scripts/flexget-execute.sh:
+        - source: salt://scripts/files/flexget-execute.sh
+      - /opt/scripts/sort-seasons.sh:
+        - source: salt://scripts/files/sort-seasons.sh
+      - /opt/scripts/magnet_multi.sh:
+        - source: salt://scripts/files/magnet_multi.sh
+      - /opt/scripts/find-movies.sh:
+        - source: salt://scripts/files/find-movies.sh
+      - /opt/scripts/pull-backups.sh:
+        - source: salt://scripts/files/pull-backups.sh
+      - /opt/scripts/pull-backups.sh:
+        - source: salt://scripts/files/pull-backups.sh
+      - /opt/scripts/clean-up-backups.sh:
+        - source: salt://scripts/files/clean-up-backups.sh
+      - /opt/scripts/fix-backups.sh:
+        - source: salt://scripts/files/fix-backups.sh
+      - /opt/scripts/fix-memory.sh:
+        - source: salt://scripts/files/fix-memory.sh
+      - /opt/scripts/sync-camera.sh:
+        - source: salt://scripts/files/sync-camera.sh
+      - /opt/scripts/clean-camera.sh:
+        - source: salt://scripts/files/clean-camera.sh
+      - /opt/scripts/weather.py:
+        - source: salt://scripts/files/weather.py
+      - /opt/scripts/feeds.json:
+        - source: salt://scripts/files/feeds.json
+      - /opt/scripts/weather.config:
+        - source: salt://scripts/files/weather.config
+      - /opt/scripts/network-limit-monitoring.py:
+        - source: salt://scripts/files/network-limit-monitoring.py
+      - /opt/scripts/encrypt-secrect-gpg-pillar.sh:
+        - source: salt://scripts/files/encrypt-secrect-gpg-pillar.sh
+      - /opt/scripts/b2:
+        - source: salt://scripts/files/b2-linux
+      - /opt/scripts/cli-salt.sh:
+        - source: salt://scripts/files/cli-salt.sh
+      - /opt/scripts/chmod-bittorrent.sh:
+        - source: salt://scripts/files/chmod-bittorrent.sh
+      - /opt/scripts/link_jess.sh:
+        - source: salt://scripts/files/link_jess.sh
+

@@ -1,0 +1,19 @@
+{
+  "service": {
+    "name": "cifs-exporter",
+    "tags": [
+      "metrics"
+    ],
+    "port": 9965,
+     "checks": [
+      {
+          "interval" :"10s",
+          "timeout" : "2s",
+          "id": "cifs",
+          "name": "cifs  Exporter HTTP 9965",
+          "http": "http://127.0.0.1:9965/metrics"
+      }
+    ]
+}
+}
+

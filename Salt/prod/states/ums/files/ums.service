@@ -1,0 +1,18 @@
+[Unit]
+Description={{ pillar['ums']['descp']}}
+After={{ pillar['ums']['after']}}  
+
+[Service]
+#Environment=/usr/local/sbin/ums/
+#ExecStartPre=/bin/sh -c '/usr/bin/test -d "${Environment}" || /bin/mkdir -p "${Environment}"'
+ExecStart={{ pillar['ums']['execstart']}} 
+Type={{ pillar['ums']['type']}} 
+User=ums
+Group=ums
+Restart={{ pillar['ums']['restart']}} 
+RestartSec={{ pillar['ums']['restartsec']}}
+StartLimitInterval={{ pillar['ums']['timeout']}}
+StartLimitBurst=3
+
+[Install]
+WantedBy={{ pillar['ums']['wantedby']}}

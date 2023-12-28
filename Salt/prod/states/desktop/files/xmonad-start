@@ -1,0 +1,140 @@
+#!/bin/bash 
+
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+xcompmgr -c &
+xrdb -merge .Xresources
+xmodmap -e "clear Lock" -e "keycode 0x42 = Escape"
+
+#xrandr --output DVI-I-3 --rotate  right
+#xrandr --output DVI-I-2 --rotate  left
+#xrandr --output DVI-I-2 --left-of DVI-I-3
+xrandr --output HDMI-1  --rotate right  
+xrandr --output DP-3  --rotate left
+xrandr  --output HDMI-1  --right-of DP-2  
+xrandr  --output DP-3 --left-of DP-2
+xrandr  --output DVI-I-1 --above DP-2
+xset s off -dpms
+
+xsetroot -cursor_name left_ptr
+xsetroot -solid 'purple'
+#feh --bg-fill  /home/THRACE/erin/backgrounds/honeybear-1600.jpg
+#feh --bg-fill  /home/THRACE/erin/backgrounds/997347-1680x1050-iwai_ryo-iwakura_lain-serial_experiments_lain-shor.jpg
+#going random now peeps
+/home/THRACE/erin/bin/wallpaper.sh &
+PATH=$HOME/bin:/usr/sbin:$PATH
+#if [ -x /usr/bin/gnome-power-manager ] ; then
+#   sleep 3
+#  gnome-power-manager &
+#fi
+#/usr/bin/terminator  -b --geometry 2000x2000-10-10 --layout Erin &
+#urxvt &
+#urxvt --hold -e sh -c "ssh erin@solan" &
+#urxvt --hold -e sh -c "cat /home/erin/bin/nifty_apps.txt" &
+#urxvt --hold -e sh -c "grep alias ~/.bashrc" &
+#urxvt --hold -e sh -c "screen -c ~/.screenrc3 -d -x -RR -S admin3" &
+#urxvt --hold -e sh -c "screen -c ~/.screenrc7 -d -x -RR -S mail" &
+#urxvt &
+#urxvt &
+#urxvt &
+#urxvt &
+#urxvt &
+#urxvt -e su  &
+#sleep 20
+#xscreensaver &
+#sleep 20
+#/home/erin/bin/tsurf &
+#/usr/bin/firefox &
+#brave &
+#sleep 20
+#evolution &
+#sleep 20 
+#transmission-qt &
+#sleep 20 
+#/usr/bin/keepassx &
+#sleep 20 
+#kodi  &
+#Thunar &
+#sleep 20
+#mpv /media/tv/Xena_tapes/Xena.1/*.avi  --shuffle &
+#sleep 20 
+#nautilus --no-desktop &
+#sleep 20 
+#synergy &
+#redshift-gtk &
+#sleep 20 
+#/usr/bin/cantata &
+#sleep 20 
+#xwinwrap -b -fs -sp -fs -nf -ov -- /usr/lib/xscreensaver/gleidescope -root -window-id WID &
+#xrandr --output HDMI2 --primary  --left-of HDMI1 ;xrandr --output HDMI2  --auto  --output HDMI1  --auto
+#trayer --edge Top  --align left --SetDockType true --SetPartialStrut true  --expand true --transparent true --tint 0x191970  &
+#sleep 20
+#xmobar &
+#sleep 20
+#ckb &
+#sleep 20
+#/home/THRACE/erin/bin/mount-sshfs.sh 1  &
+#udiskie &
+#sleep 20 
+#nm-applet &
+#sleep 20
+#slack &
+#sleep 20 
+
+urxvt &
+sleep 10 
+urxvt &
+#sleep 10
+#xscreensaver &
+#sleep  10
+/home/erin/bin/tsurf &
+sleep 10
+/home/erin/bin/tsurf-bookmarks &
+#/usr/bin/firefox &
+#tabbed -r2 surf -pe x https://app.plex.tv &
+sleep 10
+surf -pe x https://athena.thrace-lan.info/weather.html &
+sleep 10
+surf -pe x http://192.168.1.32:82 &
+sleep 10
+surf -pe x http://192.168.1.34:81 &
+sleep 10
+surf -pe x http://192.168.1.32:81 &
+sleep 10
+surf -pe x http://192.168.1.28:81 &
+sleep 10
+surf -pe x http://192.168.1.36:81 &
+brave-browser  &
+sleep  10
+#evolution &
+sleep  10 
+#transmission-qt &
+#sleep  10 
+#/usr/bin/keepassx &
+#sleep  10 
+#kodi  &
+#Thunar &
+#sleep  10 
+#nautilus --no-desktop &
+#sleep  10 
+redshift-gtk &
+sleep  10 
+#/usr/bin/cantata &
+#trayer --edge Top  --align left --SetDockType true --SetPartialStrut true  --expand true --transparent true --tint 0x191970  &
+#trayer --transparent true --tint 0x191970 --width 20 &
+#dwmblocks &
+#sleep  10
+#xmobar &
+#sleep  10
+/home/THRACE/erin/bin/mount-sshfs.sh 1  &
+udiskie &
+sleep  10 
+#nm-applet &
+sleep  10
+slack &
+sleep  10 
+redshift &
+xrandr  --output DVI-I-1 --above DP-2
+dbus-launch --exit-with-session /usr/local/bin/dwm
+#dbus-launch --exit-with-session xmonad
+wait $!
+/home/THRACE/erin/bin/mount-sshfs.sh 2 &

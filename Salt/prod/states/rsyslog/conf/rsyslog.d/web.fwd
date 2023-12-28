@@ -1,0 +1,7 @@
+# Local1: Apache Access logging
+# Apache set-up handles local logging to /var/log/httpd/
+local1.* action(type="omfwd" Target="{{ pillar['rsyslog']['serverip'] }}" Port="{{ pillar['rsyslog']['serverport'] }}" Protocol="{{ pillar['rsyslog']['protocol'] }}")
+# Local2: Apache Error Logging (with mod_php, will include php runtime errors/warnings)
+local2.* action(type="omfwd" Target="{{ pillar['rsyslog']['serverip'] }}" Port="{{ pillar['rsyslog']['serverport'] }}" Protocol="{{ pillar['rsyslog']['protocol'] }}")
+# Local6: Clamscan Logging
+local6.* action(type="omfwd" Target="{{ pillar['rsyslog']['serverip'] }}" Port="{{ pillar['rsyslog']['serverport'] }}" Protocol="{{ pillar['rsyslog']['protocol'] }}")

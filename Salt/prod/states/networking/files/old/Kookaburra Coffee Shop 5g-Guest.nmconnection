@@ -1,0 +1,22 @@
+[connection]
+id=Kookaburra Coffee Shop 5g-Guest
+uuid=d223ee91-4e1d-4573-b23f-73b700ad4d5b
+type=wifi
+interface-name=wlp4s0
+permissions=user:erin:;
+
+[wifi]
+mac-address-blacklist=
+mode=infrastructure
+ssid=Kookaburra Coffee Shop 5g-Guest
+
+[ipv4]
+dns-search=
+method=auto
+
+[ipv6]
+addr-gen-mode=stable-privacy
+dns-search=
+method=auto
+
+[proxy]

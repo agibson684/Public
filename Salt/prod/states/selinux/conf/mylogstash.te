@@ -1,0 +1,46 @@
+policy_module(mylogstash, 1.0.0)
+type mylogstash_t;
+type mylogstash_exec_t;
+init_daemon_domain(mylogstash_t, mylogstash_exec_t)
+allow mylogstash_t cgroup_t:dir { getattr search };
+allow mylogstash_t cgroup_t:file { getattr ioctl open read };
+
+#!!!! This avc can be allowed using the boolean 'domain_can_mmap_files'
+allow mylogstash_t etc_t:file map;
+allow mylogstash_t net_conf_t:file { getattr open read };
+allow mylogstash_t node_t:tcp_socket node_bind;
+allow mylogstash_t node_t:udp_socket node_bind;
+allow mylogstash_t proc_net_t:file { getattr open read };
+allow mylogstash_t proc_t:file { getattr ioctl open read };
+allow mylogstash_t random_device_t:chr_file { getattr open read };
+allow mylogstash_t self:process execmem;
+allow mylogstash_t self:tcp_socket { bind connect create getattr getopt listen setopt };
+allow mylogstash_t self:udp_socket { bind create getattr setopt };
+allow mylogstash_t shell_exec_t:file execute;
+
+#!!!! This avc can be allowed using the boolean 'domain_can_mmap_files'
+allow mylogstash_t shell_exec_t:file map;
+allow mylogstash_t sssd_public_t:dir search;
+
+#!!!! This avc can be allowed using the boolean 'domain_can_mmap_files'
+allow mylogstash_t sssd_public_t:file map;
+allow mylogstash_t sssd_public_t:file { getattr open read };
+allow mylogstash_t sssd_var_lib_t:dir search;
+allow mylogstash_t sysfs_t:dir read;
+allow mylogstash_t tmp_t:dir { add_name create read remove_name write };
+
+#!!!! This avc can be allowed using the boolean 'domain_can_mmap_files'
+allow mylogstash_t tmp_t:file map;
+allow mylogstash_t tmp_t:file { create execute unlink write };
+allow mylogstash_t tmpfs_t:lnk_file read;
+allow mylogstash_t unreserved_port_t:tcp_socket name_bind;
+allow mylogstash_t unreserved_port_t:udp_socket name_bind;
+allow mylogstash_t usr_t:dir write;
+
+#!!!! This avc can be allowed using the boolean 'domain_can_mmap_files'
+allow mylogstash_t usr_t:file map;
+allow mylogstash_t var_lib_t:dir write;
+allow mylogstash_t var_lib_t:file { getattr ioctl lock open read write };
+allow mylogstash_t var_log_t:file open;
+allow mylogstash_t wap_wsp_port_t:tcp_socket name_connect;
+

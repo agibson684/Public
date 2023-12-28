@@ -1,0 +1,47 @@
+<+johnny> oh, i see a mistake i made, that ready in there should have just been item, not ready
+<+johnny> i just codln't think of a good name so i went with item, but didn't fix it there in the exec() call
+<+Eryn_FL> ok i see that 
+<+johnny> i could have also added console.log(item) . i somehow i missed doing that before the subprocess call
+<+johnny> since you do print(ready) i should have written console.log(item)
+<-- deepSleep (~deepSleep@216.73.163.118) has quit (Killed (erbium.libera.chat (Nickname regained by services)))
+--> deepSleep (~deepSleep@45.146.54.107) has joined #r/linux
+<+johnny> so, what i do .. is filter out al the 100%s, then trim the result and that's all in ready now. 
+<+johnny> map and filter and very nice. python has them too somewhere they're worth looking into 
+<+johnny> are very nice
+<+johnny> it's nice to separate the logic in which you transform data from where you act on it
+<+johnny> and that's often a good principle when writing programs
+<+johnny> sometimes you can't reasonably do that, but a lot of times you can
+<+johnny> also python has f strings for a similiar ting i'm doing withhe ` ` there  where you can do `some text ${someVariable}`
+<+johnny> it is nice that subprocess.run takes an array of args, childProcess.exec probably does about the same thing, but only takes a whole string i think
+<+johnny> and now i'm going to bed
+<+Eryn_FL> ok johhny
+<+Eryn_FL> thanks ill check this out 
+for line in p1.stdout.splitlines():
+        if '100%' not in line:
+          continue
+        line_strip = line.strip()  
+        ready = line_strip.partition(' ')[0]
+        print(repr(line))
+        print(ready)
+        s = subprocess.run(
+            [
+                "/usr/bin/transmission-remote",
+                "xena.thrace.lan:9091",
+                "--auth",
+                "erin:password",
+                "-t",
+                ready,
+                "--remove",
+            ]
+        )
+// my code
+import childProcess from 'child_process');
+const ready = p1.stdout.splitlines().filter(line => /100%/.test(line)).map(line => {
+  return line.trim().split(' ')[0];
+});
+ 
+ready.forEach(items => {
+  childProcess.exec(`/usr/bin/transmission-remote xena.thrace.lan:9091 --auth erin:password -t ${ready} --remove`, (error, stdout) => {
+ console.log(stdout);
+       });
+});

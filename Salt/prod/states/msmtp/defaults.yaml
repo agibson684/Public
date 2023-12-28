@@ -1,0 +1,8 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+
+msmtp:
+  config:
+    auth: 'on'
+    tls: 'on'
+    syslog: LOG_MAIL

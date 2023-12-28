@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="tvshows">
+    <name>fantasy</name>
+    <match>all</match>
+    <rule field="genre" operator="contains">
+        <value>Fantasy</value>
+    </rule>
+    <rule field="genre" operator="doesnotcontain">
+        <value>Animation</value>
+        <value>Anime</value>
+        <value>Science Fiction</value>
+    </rule>
+</smartplaylist>

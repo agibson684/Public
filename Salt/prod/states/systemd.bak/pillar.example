@@ -1,0 +1,191 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
+systemd:
+  ## tofs pattern
+  tofs:
+    # The files_switch key serves as a selector for alternative
+    # directories under the formula files directory. See TOFS pattern
+    # doc for more info.
+    # Note: Any value not evaluated by `config.get` will be used literally.
+    # This can be used to set custom paths, as many levels deep as required.
+    files_switch:
+      - any/path/can/be/used/here
+      - id
+      - osfinger
+      - os
+      - os_family
+    # All aspects of path/file resolution are customisable using the options below.
+    # This is unnecessary in most cases; there are sensible defaults.
+    # dirs:
+    #   files: files_alt
+    #   default: default_alt
+    source_files:
+      networkd:
+        - 'alt_network'
+      resolved:
+        - 'alt_resolved.conf'
+      timesyncd:
+        - 'alt_timesyncd.conf'
+
+  ## units
+  # The valid units type are listed in
+  # https://github.com/saltstack-formulas/systemd-formula/blob/master/systemd/units/unittypes.yaml
+  service:
+    syncthing-someuser:
+      # these two parameters are passed to systemctl to manage the unit status
+      # (enabled / disabled) and (running / stopped) and are not passed to the
+      # service file contents.
+      # Default to
+      #   enabled: true
+      #   status: stop
+      # to be backward compatible
+      enabled: true
+      status: stop
+      Unit:
+        Description: Syncthing P2P sync service for someuser
+        After: network.target
+
+      Service:
+        ExecStart: /usr/bin/syncthing
+        User: someuser
+        Group: someuser
+        Environment: STNORESTART=yes HOME=/home/someuser
+
+      Install:
+        WantedBy: multi-user.target
+
+    rsync:
+      status: start
+      Unit:
+        Description: fast remote file copy program daemon
+        Documentation: 'man:rsync(1) man:rsyncd.conf(5)'
+        ConditionPathExists:
+          - /etc/rsyncd.conf
+          - /etc/passwd
+        After: network.target
+      Service:
+        ExecStart: /usr/bin/rsync --daemon --no-detach
+      Install:
+        WantedBy: multi-user.target
+
+    systemd-journald:
+      enabled: true
+      status: start
+      dropin: true
+      Unit:
+        Description: Fancy new description
+      Service:
+        WatchdocSec: 2min
+        RestartSec: 2
+
+  path:
+    trigger-service-on-changes:
+      # this parameter is passed to systemctl to enable/disable the unit
+      # Defaults to
+      #   enabled: true
+      # to be backward compatible
+      # enabled: true
+      Path:
+        PathModified: /path/to/watch
+        Unit: oneshot_service_to_trigger.service
+
+      Install:
+        WantedBy: multi-user.target
+
+  ## resolved
+  resolved:
+    config_source: pillar
+    config:
+      DNS: 1.1.1.1 1.0.0.1 2606:4700:4700::1111 2606:4700:4700::1001
+      FallbackDNS: 8.8.8.8 8.8.4.4 2001:4860:4860::8888 2001:4860:4860::8844
+      Domains: ''
+      LLMNR: 'no'
+      MulticastDNS: 'no'
+      DNSSEC: 'allow-downgrade'
+      DNSOverTLS: 'off'
+      Cache: 'yes'
+      DNSStubListener: 'yes'
+      ReadEtcHosts: 'yes'
+
+  ## timesyncd
+  timesyncd:
+    timezone: 'UTC'
+    config_source: pillar
+    config:
+      NTP: 0.europe.pool.ntp.org 1.europe.pool.ntp.org 2.europe.pool.ntp.org
+      FallbackNTP: 0.pool.ntp.org 1.pool.ntp.org 2.pool.ntp.org
+      RootDistanceMaxSec: 5
+      PollIntervalMinSec: 32
+      PollIntervalMaxSec: 2048
+
+  ## networkd
+  networkd:
+    fileattr:
+      br0.network:
+        user: systemd-network
+        group: systemd-network
+        mode: "0600"
+    profiles:
+      network:
+        # br0.network
+        br0:
+          - Match:
+              - Name: br0
+          - Network:
+              - DHCP: "yes"
+
+      netdev:
+        # br0.netdev
+        br0:
+          - NetDev:
+              - Name: br0
+              - Kind: bridge
+          - Bridge:
+              - HelloTimeSec: 0
+              - MaxAgeSec: 0
+              - ForwardDelaySec: 0
+              - STP: 'no'
+
+      link:
+        # 10-dmz.link
+        10-dmz:
+          - Match:
+              - MACAddress: '00:a0:de:63:7a:e6'
+          - Link:
+              - Name: dmz0
+
+        # 10-internet.link
+        10-internet:
+          - Match:
+              - Path: 'pci-0000:00:1a.0-*'
+          - Link:
+              - Name: internet0
+
+  ## journald
+  journald:
+    config_source: pillar
+    config:
+      SplitMode: uid
+      SyncIntervalSec: 5m
+      RateLimitIntervalSec: 30s
+      RateLimitBurst: 10000
+      SystemMaxUse: 2g
+      SystemKeepFree: 3g
+      SystemMaxFileSize: 4g
+      SystemMaxFiles: 100
+      RuntimeMaxFiles: 100
+      MaxFileSec: 1month
+      ForwardToSyslog: 'yes'
+      ForwardToKMsg: 'no'
+      ForwardToConsole: 'no'
+      ForwardToWall: 'yes'
+      TTYPath: /dev/console
+      MaxLevelStore: debug
+      MaxLevelSyslog: debug
+      MaxLevelKMsg: notice
+      MaxLevelConsole: info
+      MaxLevelWall: emerg
+      LineMax: 48K
+      ReadKMsg: 'yes'
+      Audit: 'no'

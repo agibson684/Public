@@ -1,0 +1,15 @@
+# Example Service for a nodejs app
+
+[Service]
+ExecStart=/opt/nodejs/bin/node /path/to/myapp.js
+Restart=always
+StandardOutput=syslog
+SyslogIdentifier=myapp
+User=nobody
+Group=nobody
+Environment=PATH=/opt/nodejs/
+Environment=NODE_ENV=production
+
+
+[Install]
+WantedBy=multi-user.target

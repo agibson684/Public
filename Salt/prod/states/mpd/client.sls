@@ -1,0 +1,3 @@
+mpc:
+  pkg:
+    - installed

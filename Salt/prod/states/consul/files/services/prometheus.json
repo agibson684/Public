@@ -1,0 +1,19 @@
+{
+  "service": {
+    "name": "prometheus-exporter",
+    "tags": [
+      "metrics"
+    ],
+    "port": 9100,
+     "checks": [
+      {
+          "interval" :"10s",
+          "timeout" : "2s",
+          "id": "prometheus",
+          "name": "prometheus Exporter HTTP 9100",
+          "http": "http://127.0.0.1:9100/metrics"
+      }
+    ]
+}
+}
+

@@ -1,0 +1,40 @@
+#!/bin/bash
+# originally created 2014-01-15 by phogg
+
+PATH=/usr/bin
+
+dirs=(~/img/chan/wallpaper ~/img/wallpaper)
+
+mapfile -t walls < <(
+	find "${dirs[@]}" \
+		-maxdepth 1 \
+		-type f '(' \
+			-iname '*.jp*g' -o -iname '*.png' -o -iname '*.gif' \
+		')' \
+		-not -path '*/nsfw/*'
+)
+
+img="${walls[$(( RANDOM %  ${#walls[@]} ))]}"
+Esetroot -scale "$img"
+echo "$img" > ~/.currentbg
+
+exit;
+
+# now the original for nostalgia:
+PATH=/home/sorpigal/bin:~/bin:/usr/local/bin:/usr/bin:/bin
+
+declare -a dirs
+
+dirs=(~/img/chan/wallpaper ~/img/wallpaper)
+
+IFS=$'\n' read -r -d '' -a list < <(find "${dirs[@]}" -maxdepth 1 -type f '(' -iname '*.jp*g' -o -iname '*.png' -o -iname '*.gif' ')' -not -path '*/nsfw/*')
+
+total="${#list[@]}"
+selection=$[ ( $RANDOM % $total )  + 1 ]
+
+img="${list[$selection]}"
+
+Esetroot -scale "$img"
+
+echo "$img" > ~/.currentbg
+

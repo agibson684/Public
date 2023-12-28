@@ -1,0 +1,30 @@
+<sources>
+    <programs>
+        <default pathversion="1"></default>
+    </programs>
+    <video>
+        <default pathversion="1"></default>
+        <source>
+            <name>movies</name>
+            <path pathversion="1">/media/sync_movies/Jess/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>TV</name>
+	    <path pathversion="1">/media/sync_tv/Jess/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+    </video>
+    <music>
+        <default pathversion="1"></default>
+    </music>
+    <pictures>
+        <default pathversion="1"></default>
+    </pictures>
+    <files>
+        <default pathversion="1"></default>
+    </files>
+    <games>
+        <default pathversion="1"></default>
+    </games>
+</sources>

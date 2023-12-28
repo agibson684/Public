@@ -1,0 +1,17 @@
+
+# sSMTP aliases
+#
+# Format:       local_account:outgoing_address:mailhub
+#
+# Example: root:your_login@your.domain:mailhub.your.domain[:port]
+# where [:port] is an optional port number that defaults to 25.
+#root:agibson684@gmail.com:74.125.136.108:587
+#not sure what this should be now comment seems to work i get hostname in email txt though
+#root:agibson684@gmail.com:imap.gmail.com:587
+root:postmaster@mailgun.thrace-lan.info:smtp.mailgun.org:587
+postmaster:postmaster@mailgun.thrace-lan.info:smtp.mailgun.org:587
+erin:postmaster@mailgun.thrace-lan.info:smtp.mailgun.org:587
+themis:postmaster@mailgun.thrace-lan.info:smtp.mailgun.org:587
+netdata:postmaster@mailgun.thrace-lan.info:smtp.mailgun.org:587
+cron:postmaster@mailgun.thrace-lan.info:smtp.mailgun.org:587
+

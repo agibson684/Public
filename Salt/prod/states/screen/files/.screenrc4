@@ -1,0 +1,23 @@
+#This is the .screenrc file
+# Please do not modify this file it is being controlled by puppet
+#Thank you for your cooperation!
+#release 1.00008
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
+screen -t EMACS-commands links http://www.math.uh.edu/~bgb/emacs_keys.html
+screen -t dwm-commands  less /home/erin/Documents/dwm-cheatsheet.txt
+screen -t tabbed-commands less /home/erin/Documents/tabbed-cheatsheet.txt
+screen -t surf-commands less /home/erin/Documents/surf-cheatsheet.txt
+screen -t vim-commands links http://www.fprintf.net/vimCheatSheet.html 
+screen -t nifty_apps  less  /home/erin/bin/nifty_apps.txt
+screen -t alias-commands less  /home/erin/Documents/alias-cheatsheet.txt
+screen -t weechat-help links http://www.weechat.org/files/doc/devel/weechat_quickstart.en.html
+screen -t bash-commands links http://www.ice2o.com/bash_quick_ref.html
+screen -t linux-commands links http://www.pixelbeat.org/cmdline.html
+screen -t linux-commands2 links http://www.pixelbeat.org/docs/linux_commands.html
+screen -t git-flow-commands links http://github.com/nvie/gitflow/blob/0.2/README.mdown
+screen -t git-commands links http://gitref.org/
+screen -t sysstat links http://sebastien.godard.pagesperso-orange.fr/tutorial.html
+screen -t docbook links http://tdg.docbook.org/tdg/5.0/index.html
+screen -t gomuks  links https://docs.mau.fi/gomuks/shortcuts.html
+
+

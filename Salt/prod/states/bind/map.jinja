@@ -1,0 +1,17 @@
+{% set bind = salt['grains.filter_by']({
+    'Debian': {
+        'named': 'bind',
+        'user': 'bind',
+        'group': 'bind'
+    },
+    'CentOS': {
+        'named': 'named',
+        'user': 'named',
+        'group': 'named'
+    },
+    'Arch': {
+        'named': 'bind',
+        'user': 'bind',
+        'group': 'bind'
+    },
+}, grain='os',) %}

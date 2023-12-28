@@ -1,0 +1,18 @@
+cdrom:
+  group.present
+floppy:
+  group.present
+audio:
+  group.present
+dip:
+  group.present
+video:
+  group.present
+plugdev:
+  group.present
+scanner:
+  group.present
+bluetooth:
+  group.present
+netdev:
+  group.present

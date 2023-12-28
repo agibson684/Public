@@ -1,0 +1,18 @@
+[Unit]
+Description=<%= @descp %>
+Documentation=<%= @docu %>
+Requires=<%= @requires %> 
+After=<%= @after %>
+
+[Service]
+<%= "User=#{@user}" if @user %>
+<%= "Group=#{@group}" if @group %>
+Type=<%= @type %>
+ExecStart=<%= @execstart %>
+<%= "Restart=#{@restart}" if @restart %>
+<%= "RestartSec=#{@restartsec}" if @restartsec %>
+<%= "TimeoutSec=#{@timeout}" if @timeout %>
+
+
+[Install]
+<%= "WantedBy=#{@wantedby}" if @wantedby %>

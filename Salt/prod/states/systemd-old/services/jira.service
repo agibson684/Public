@@ -1,0 +1,9 @@
+[Unit]
+Description=Jira server daemon
+After=network.target 
+
+[Service]
+ExecStart=/usr/local/jira5/bin/start-jira.sh
+ExecStop=/usr/local/jira5/bin/stop-jira.sh
+[Install]
+WantedBy=multi-user.target

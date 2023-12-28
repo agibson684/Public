@@ -1,0 +1,3 @@
+cantata:
+   pkg:
+     - installed 

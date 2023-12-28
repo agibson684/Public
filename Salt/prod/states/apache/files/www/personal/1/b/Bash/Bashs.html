@@ -1,0 +1,2923 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY>
+<A name=1></a><IMG src="Bash-1_1.png"><br>
+<IMG src="Bash-1_2.png"><br>
+<IMG src="Bash-1_3.png"><br>
+<IMG src="Bash-1_4.png"><br>
+<IMG src="Bash-1_5.png"><br>
+<IMG src="Bash-1_6.png"><br>
+<IMG src="Bash-1_7.png"><br>
+<IMG src="Bash-1_8.png"><br>
+<IMG src="Bash-1_9.png"><br>
+<IMG src="Bash-1_10.png"><br>
+<IMG src="Bash-1_11.png"><br>
+<IMG src="Bash-1_12.png"><br>
+<IMG src="Bash-1_13.png"><br>
+<IMG src="Bash-1_14.png"><br>
+<IMG src="Bash-1_15.png"><br>
+<b>bash Quick&nbsp;&nbsp;Contents&nbsp;</b><br>
+<b>History&nbsp;........................................................2</b><br>
+<b>Overview&nbsp;of&nbsp;Features.................................2</b><br>
+<b>Reference&nbsp;</b><br>
+<b>Invoking the Shell&nbsp;......................................3</b><br>
+<b>Syntax..........................................................4</b><br>
+By&nbsp;Arnold&nbsp;Robbins&nbsp;<br>
+<b>Functions&nbsp;..................................................10</b><br>
+<b>Variables&nbsp;...................................................10</b><br>
+Copyright ©&nbsp;2006 O'Reilly&nbsp;Media, Inc.&nbsp;<br>
+ISBN: 0596527764&nbsp;<br>
+<b>Arithmetic Expressions&nbsp;...........................19</b><br>
+<i>In this&nbsp;quick reference,&nbsp;you'll&nbsp;find&nbsp;</i><br>
+<b>Command History&nbsp;...................................20</b><br>
+<i>everything you need&nbsp;to&nbsp;know about the&nbsp;</i><br>
+<b>Job Control...............................................25&nbsp;</b><br>
+<i>bash&nbsp;shell.&nbsp;Whether you&nbsp;print it&nbsp;out&nbsp;or&nbsp;</i><br>
+<b>Shell Options&nbsp;............................................26&nbsp;</b><br>
+<i>read&nbsp;it on the&nbsp;screen,&nbsp;this book gives&nbsp;</i><br>
+<b>Command Execution&nbsp;...............................28&nbsp;</b><br>
+<i>you&nbsp;the answers to&nbsp;the annoying&nbsp;<br>questions&nbsp;that&nbsp;always&nbsp;come up&nbsp;when&nbsp;</i><br>
+<b>Restricted Shells.......................................29&nbsp;</b><br>
+<i>you're&nbsp;writing shell&nbsp;scripts: What&nbsp;</i><br>
+<b>Built-in Commands..................................29&nbsp;</b><br>
+<i>characters&nbsp;do&nbsp;you&nbsp;need to&nbsp;quote?&nbsp;How&nbsp;</i><br>
+<b>Resources&nbsp;..................................................64&nbsp;</b><br>
+<i>do you get variable&nbsp;substitution&nbsp;to&nbsp;do&nbsp;<br>exactly&nbsp;what&nbsp;you want? How&nbsp;do&nbsp;you&nbsp;<br>use&nbsp;arrays?&nbsp;It's&nbsp;also&nbsp;helpful&nbsp;for&nbsp;<br>interactive use.&nbsp;</i><br>
+<i>If&nbsp;you're&nbsp;a Unix&nbsp;user or&nbsp;programmer,&nbsp;<br>or&nbsp;if&nbsp;you're&nbsp;using bash&nbsp;on&nbsp;Windows,&nbsp;<br>you'll&nbsp;find&nbsp;this&nbsp;quick&nbsp;reference&nbsp;<br>indispensable.&nbsp;</i><br>
+<b>&nbsp;&nbsp;</b><br>
+<b>Find&nbsp;</b><br>
+<b>more&nbsp;</b><br>
+<b>at&nbsp;</b><br>
+<i><b>pdfs.oreilly.com</b></i><br>
+<hr>
+<A name=2></a><hr>
+<A name=3></a><IMG src="Bash-3_1.png"><br>
+CHAPTER 1<br>
+<i><b>The Bash Shell</b></i><br>
+This reference covers Bash, which is the primary&nbsp;shell for GNU/Linux and Mac OS X. In<br>par&nbsp;ticular,&nbsp;it&nbsp;cov&nbsp;ers version 3.1 of Bash. Bash is available for Solaris and can be easily com-<br>piled for just about any other Unix system. This reference presents the following topics:<br>
+•<br>
+Histor y<br>
+•<br>
+Overvie w&nbsp;of&nbsp;&nbsp;features<br>
+•<br>
+Invoking the shell<br>
+•<br>
+Syntax<br>
+•<br>
+Functions<br>
+•<br>
+Variables<br>
+•<br>
+Arithmetic expressions<br>
+•<br>
+Command history<br>
+•<br>
+Job control<br>
+•<br>
+Shell options<br>
+•<br>
+Command execution<br>
+•<br>
+Restricted shells<br>
+•<br>
+Built-in commands<br>
+•<br>
+Resources<br>
+1<br>
+<hr>
+<A name=4></a><i><b>Histor y</b></i><br>
+The original Bourne shell distributed with V7 Unix in 1979 became the standard&nbsp;shell for<br>writing shell scripts. The Bourne shell is still be found in&nbsp;/bin/sh&nbsp;on many commercial<br>Unix systems. The Bourne shell itself has not changed that much since its initial release,<br>although it has seen modest enhancements over&nbsp;the years. The most notable new&nbsp;features<br>were&nbsp;the CDPATH&nbsp;variable and a built-in&nbsp;test&nbsp;command with System III (circa 1980),<br>command hashing and shell functions for System V Release 2 (circa 1984), and the addition<br>of job control features for System V Release 4 (1989).<br>
+Because the Berkeley C shell (csh)&nbsp;offered features that were&nbsp;more&nbsp;pleasant for interactive<br>use, such as command history&nbsp;and job control, for a long time the standard&nbsp;practice in the<br>Unix world was to use the Bourne shell for programming and the C shell for daily use. David<br>Korn at Bell Labs was the ﬁrst developer to enhance the Bourne shell by&nbsp;adding&nbsp;csh-like fea-<br>tures to it: history,&nbsp;job control, and additional programmability.&nbsp;Eventually,&nbsp;the Korn shell’s<br>feature&nbsp;set surpassed both the Bourne shell and the C shell, while remaining compatible with<br>the Bourne shell for shell programming. Today,&nbsp;the POSIX standard&nbsp;deﬁnes the “standard<br>shell”&nbsp;language and behavior based on the System V Bourne shell, with a selected subset of<br>features from the Korn shell.<br>
+The Free&nbsp;Software&nbsp;Foundation, in keeping with its goal to produce a complete Unix work-<br>alike system, developed a clone of the Bourne shell, written from scratch, named “Bash,” the<br>Bourne-Again SHell. Over time, Bash has become a POSIX-compliant version of the shell,<br>with many additional features. A large part&nbsp;of&nbsp;these additional features overlap the features of<br>the Korn shell, but Bash is not an exact Korn shell clone.<br>
+<i><b>Over view&nbsp;of&nbsp;&nbsp;Features</b></i><br>
+The Bash shell provides the following features:<br>
+•<br>
+Input/output redirection<br>
+•<br>
+Wildcard&nbsp;characters (metacharacters) for ﬁlename abbreviation<br>
+•<br>
+Shell variables and options for customizing your environment<br>
+•<br>
+A&nbsp;built-in command set for writing shell programs<br>
+•<br>
+Shell functions, for modularizing tasks within a shell program<br>
+•<br>
+Job control<br>
+•<br>
+Command-line editing (using the command syntax of either&nbsp;vi&nbsp;or Emacs)<br>
+•<br>
+Access to previous commands (command history)<br>
+•<br>
+Integer arithmetic<br>
+•<br>
+Arrays and arithmetic expressions<br>
+•<br>
+Command-name abbreviation (aliasing)<br>
+•<br>
+Upwards compliance with POSIX<br>
+<i>2</i><br>
+<i>Chapter 1 – The Bash Shell</i><br>
+<hr>
+<A name=5></a>•<br>
+Internationalization facilities<br>
+•<br>
+An&nbsp;arithmetic&nbsp;for&nbsp;loop<br>
+<i><b>Invoking the Shell</b></i><br>
+The command interpreter for the Bash shell (bash)&nbsp;can be invoked as follows:<br>
+bash [<i>options</i>]<br>
+[<i>arguments</i>]<br>
+Bash can execute commands from a terminal, from a ﬁle (when the ﬁrst&nbsp;<i>argument&nbsp;</i>is a script),<br>or from standard&nbsp;input (if no arguments remain or if&nbsp;-s&nbsp;is speciﬁed). The shell automatically<br>prints prompts if standard&nbsp;input is a terminal, or if&nbsp;-i&nbsp;is given on the command line.<br>
+On&nbsp;many&nbsp;systems,&nbsp;/bin/sh&nbsp;is a link to Bash. When invoked as&nbsp;sh,&nbsp;Bash acts more&nbsp;like the<br>traditional Bourne shell: login shells read&nbsp;/etc/profile&nbsp;and&nbsp;˜/.profile,&nbsp;and regular<br>shells read $ENV,&nbsp;if&nbsp;it’s&nbsp;set. Full details are&nbsp;available in the&nbsp;<i>bash</i>(1) manpage.<br>
+<i><b>Options</b></i><br>
+-c&nbsp;<i>str</i><br>
+Read commands from string&nbsp;<i>str</i>.<br>
+-D,&nbsp;--dump-strings<br>
+Print all&nbsp;$&quot;...&quot;&nbsp;strings in the program.<br>
+-i<br>
+Create an interactive&nbsp;shell (prompt for input).<br>
+-O&nbsp;<i>option</i><br>
+Enable&nbsp;shopt&nbsp;option&nbsp;<i>option</i>.<br>
+-p<br>
+Star&nbsp;t&nbsp;up as a privileged user.&nbsp;Don’t&nbsp;read $ENV or $BASH_ENV,&nbsp;don’t&nbsp;impor&nbsp;t&nbsp;functions<br>from the environment, and ignore&nbsp;the value of $SHELLOPTS.&nbsp;&nbsp;The&nbsp;normal ﬁxed-<br>name startup ﬁles (such as&nbsp;$HOME/.bash_profile)&nbsp;are&nbsp;read.<br>
+-r,&nbsp;--restricted<br>
+Create a restricted shell.<br>
+-s<br>
+Read commands from standard&nbsp;input. Output from built-in commands goes to ﬁle<br>descriptor 1; all other shell output goes to ﬁle descriptor 2.<br>
+-&nbsp;-debugger<br>
+Read the debugging proﬁle at startup,&nbsp;turn on the&nbsp;extdebug&nbsp;option to&nbsp;shopt,&nbsp;and<br>enable function tracing. For use by&nbsp;the Bash debugger (see&nbsp;<i>http://bashdb.sourceforge.net</i>).<br>
+-&nbsp;-dump-po-strings<br>
+Same as&nbsp;-D,&nbsp;but output in GNU&nbsp;gettext&nbsp;format.<br>
+-&nbsp;-help<br>
+Print a usage message and exit successfully.<br>
+-&nbsp;-init-file&nbsp;<i>file</i>,&nbsp;--rcfile&nbsp;<i>file</i><br>
+Use&nbsp;<i>ﬁle&nbsp;</i>as the startup ﬁle instead of&nbsp;˜/.bashrc&nbsp;for interactive&nbsp;shells.<br>
+<i>Invoking the Shell&nbsp;&nbsp;3</i><br>
+<hr>
+<A name=6></a>-&nbsp;-login<br>
+Shell is a login shell.<br>
+-&nbsp;-noediting<br>
+Do&nbsp;not use the&nbsp;<i>readline&nbsp;</i>librar&nbsp;y&nbsp;for input, even in an interactive&nbsp;shell.<br>
+-&nbsp;-noprofile<br>
+Do&nbsp;not&nbsp;read&nbsp;/etc/profile&nbsp;or any of the personal startup ﬁles.<br>
+-&nbsp;-norc<br>
+Do&nbsp;not&nbsp;read&nbsp;˜/.bashrc.&nbsp;Enabled automatically when invoked as&nbsp;sh.<br>
+-&nbsp;-posix<br>
+Turn on POSIX mode.<br>
+-&nbsp;-verbose<br>
+Same as&nbsp;set -v;&nbsp;the shell prints lines as it reads them.<br>
+-&nbsp;-version<br>
+Print a version message and exit.<br>
+-,&nbsp;--<br>
+End&nbsp;option processing.<br>
+The remaining options are&nbsp;listed under the&nbsp;set&nbsp;built-in command.<br>
+<i><b>Ar&nbsp;guments</b></i><br>
+Arguments are&nbsp;assigned in order to the positional parameters&nbsp;$1,&nbsp;$2,&nbsp;etc. If&nbsp;the ﬁrst argument<br>is a script, commands are&nbsp;read from it, and the remaining arguments are&nbsp;assigned to&nbsp;$1,&nbsp;$2,<br>etc. The name of the script is available as&nbsp;$0.&nbsp;The script ﬁle itself need not be executable, but<br>it must be readable.<br>
+<i><b>Syntax</b></i><br>
+This section describes the many symbols peculiar to the shell. The topics are&nbsp;arranged as fol-<br>lows:<br>
+•<br>
+Special ﬁles<br>
+•<br>
+Filename metacharacters<br>
+•<br>
+Quoting<br>
+•<br>
+Command forms<br>
+•<br>
+Redirection forms<br>
+<i><b>Special Files</b></i><br>
+The shell reads one or more&nbsp;star&nbsp;tup&nbsp;ﬁles. Some of the ﬁles are&nbsp;read only when a shell is a<br>login shell. Bash reads these ﬁles:<br>
+<i>4</i><br>
+<i>Chapter 1 – The Bash Shell</i><br>
+<hr>
+<A name=7></a>1.<br>
+/etc/profile.&nbsp;Executed automatically at login.<br>
+2.&nbsp;&nbsp;The&nbsp;ﬁrst ﬁle found from this list:&nbsp;˜/.bash_profile,&nbsp;˜/.bash_login,&nbsp;or&nbsp;˜/.pro-<br>
+file.&nbsp;Executed automatically at login.<br>
+3.<br>
+˜/.bashrc&nbsp;is read by&nbsp;every&nbsp;nonlogin shell.&nbsp;Ho&nbsp;wever,&nbsp;if&nbsp;invoked as&nbsp;sh,&nbsp;Bash instead<br>reads $ENV,&nbsp;for POSIX compatibility.<br>
+The&nbsp;getpwnam()&nbsp;and&nbsp;getpwuid()&nbsp;functions are&nbsp;the sources of home directories for&nbsp;˜<i>name<br></i>abbreviations. (On&nbsp;single-user systems, the user database is stored in&nbsp;/etc/passwd.<br>Ho&nbsp;wever,&nbsp;on&nbsp;networked systems, this information may come from NIS, NIS+, or LDAP,&nbsp;not<br>your workstation password&nbsp;ﬁle.)<br>
+<i><b>Filename Metacharacters</b></i><br>
+*<br>
+Match any string of zero&nbsp;or&nbsp;more&nbsp;characters.<br>
+?<br>
+Match any single character.<br>
+[<i>abc</i>...]<br>
+Match any one of the enclosed characters; a hyphen can specify a<br>range (e.g.,&nbsp;a-z,&nbsp;A-Z,&nbsp;0–9).<br>
+[!<i>abc</i>...]<br>
+Match any character&nbsp;<i>not&nbsp;</i>enclosed as above.<br>
+˜<br>
+Home director&nbsp;y&nbsp;of the current user.<br>
+˜<i>name</i><br>
+Home director&nbsp;y&nbsp;of user&nbsp;<i>name</i>.<br>
+˜+<br>
+Current working director&nbsp;y&nbsp;($PWD).<br>
+˜-<br>
+Pr&nbsp;evious working director&nbsp;y&nbsp;($OLDPWD).<br>
+With the&nbsp;extglob&nbsp;option on:<br>
+?(<i>pattern</i>)<br>
+Match zero&nbsp;or&nbsp;one instance of&nbsp;<i>patter n</i>.<br>
+*(<i>pattern</i>)<br>
+Match zero&nbsp;or&nbsp;more&nbsp;instances of&nbsp;<i>patter n</i>.<br>
++(<i>pattern</i>)<br>
+Match one or more&nbsp;instances of&nbsp;<i>patter n</i>.<br>
+@(<i>pattern</i>)<br>
+Match exactly one instance of&nbsp;<i>patter n</i>.<br>
+!(<i>pattern</i>)<br>
+Match any strings that don’t&nbsp;match&nbsp;<i>patter n</i>.<br>
+This&nbsp;<i>patter n&nbsp;</i>can be a sequence of patterns separated by&nbsp;|,&nbsp;meaning that the match applies to<br>any of the patterns. This extended syntax resembles that available in&nbsp;egrep&nbsp;and&nbsp;awk.<br>
+Bash supports the POSIX&nbsp;[[=<i>c</i>=]]&nbsp;notation for matching characters that have&nbsp;the same<br>weight, and&nbsp;[[.<i>c</i>.]]&nbsp;for specifying collating sequences. In&nbsp;addition, character classes, of the<br>form&nbsp;[[:<i>class</i>:]],&nbsp;allow&nbsp;you to match the following classes of characters:<br>
+<i>Class</i><br>
+<i>Characters matched</i><br>
+<i>Class</i><br>
+<i>Characters matched</i><br>
+alnum<br>
+Alphanumeric characters<br>
+graph<br>
+Nonspace characters<br>
+alpha<br>
+Alphabetic characters<br>
+print<br>
+Printable characters<br>
+blank<br>
+Space or Tab<br>
+punct<br>
+Punctuation characters<br>
+cntrl<br>
+Control characters<br>
+space<br>
+Whitespace characters<br>
+digit<br>
+Decimal digits<br>
+upper<br>
+Uppercase characters<br>
+lower<br>
+Lowercase characters<br>
+xdigit<br>
+Hexadecimal digits<br>
+<i>Syntax 5</i><br>
+<hr>
+<A name=8></a>Bash also accepts the&nbsp;[:word:]&nbsp;character class, which is not in POSIX.&nbsp;[[:word:]]&nbsp;is equiv-<br>alent to&nbsp;[[:alnum:]_].<br>
+<i><b>Examples</b></i><br>
+$&nbsp;<b>ls new*</b><br>
+<i>List new and new.1</i><br>
+$&nbsp;<b>cat ch?</b><br>
+<i>Match ch9 but not ch10</i><br>
+$&nbsp;<b>vi</b>[<b>D-R</b>]<b>*</b><br>
+<i>Match files that begin with uppercase D through R</i><br>
+$&nbsp;<b>pr !(*.o|core) | lp</b><br>
+<i>Print files that are&nbsp;not object files or core&nbsp;dumps</i><br>
+<b>NOTE:&nbsp;</b>On&nbsp;modern systems, ranges such as&nbsp;[D-R]&nbsp;are&nbsp;not portable; the system’s&nbsp;locale may<br>include more&nbsp;than just the uppercase letters from&nbsp;D&nbsp;to&nbsp;R&nbsp;in the range.<br>
+<i><b>Quoting</b></i><br>
+Quoting disables a character’s&nbsp;special meaning and allows it to be used literally.&nbsp;The follow-<br>ing table displays characters that have&nbsp;special meaning:<br>
+<i>Character Meaning</i><br>
+;<br>
+Command separator<br>
+&amp;<br>
+Background execution<br>
+()<br>
+Command grouping<br>
+|<br>
+Pipe<br>
+&lt;&nbsp;&gt;&nbsp;&amp;<br>
+Redirection symbols<br>
+*&nbsp;?&nbsp;[&nbsp;]&nbsp;˜&nbsp;+&nbsp;-&nbsp;@&nbsp;!<br>
+Filename metacharacters<br>
+&quot;&nbsp;’&nbsp;\<br>
+Used in quoting other characters<br>
+‘<br>
+Command substitution<br>
+$<br>
+Variable substitution (or command or arithmetic substitution)<br>
+space tab newline<br>
+Word&nbsp;separators<br>
+These characters can be used for quoting:<br>
+&quot;&nbsp;&quot;&nbsp;Ev&nbsp;erything&nbsp;&nbsp;between&nbsp;&quot;&nbsp;and&nbsp;&quot;&nbsp;is taken literally,&nbsp;except for the following characters that<br>
+keep their special meaning:<br>
+$<br>
+Variable (or command and arithmetic) substitution will occur.<br>
+‘<br>
+Command substitution will occur.<br>
+&quot;<br>
+This marks the end of the double quote.<br>
+’&nbsp;’&nbsp;Ev&nbsp;erything&nbsp;&nbsp;between&nbsp;’&nbsp;and&nbsp;’&nbsp;is taken literally,&nbsp;except for another&nbsp;’.&nbsp;You cannot embed<br>
+another&nbsp;’&nbsp;within such a quoted string.<br>
+\<br>
+The character following a&nbsp;\&nbsp;is taken literally.&nbsp;Use within&nbsp;&quot;&nbsp;&quot;&nbsp;to escape&nbsp;&quot;,&nbsp;$,&nbsp;and&nbsp;‘.<br>Often used to escape itself,&nbsp;spaces, or newlines.<br>
+$&quot; &quot;<br>
+Just like&nbsp;&quot;&nbsp;&quot;,&nbsp;except that locale translation is done.<br>
+$’ ’<br>
+Similar to&nbsp;’&nbsp;’,&nbsp;but the quoted text is processed for the following escape sequences:<br>
+<i>6</i><br>
+<i>Chapter 1 – The Bash Shell</i><br>
+<hr>
+<A name=9></a><i>Sequence</i><br>
+<i>Value</i><br>
+<i>Sequence</i><br>
+<i>Value</i><br>
+\a<br>
+Aler t<br>
+\t<br>
+Tab<br>
+\b<br>
+Backspace<br>
+\v<br>
+Vertical tab<br>
+\c<i>X</i><br>
+Control character&nbsp;<i>X</i><br>
+\<i>nnn</i><br>
+Octal value&nbsp;<i>nnn</i><br>
+\e<br>
+Escape<br>
+\x<i>nn</i><br>
+Hexadecimal value&nbsp;<i>nn</i><br>
+\E<br>
+Escape<br>
+\’<br>
+Single quote<br>
+\f<br>
+Form feed<br>
+\&quot;<br>
+Double quote<br>
+\n<br>
+Ne&nbsp;wline<br>
+\\<br>
+Backslash<br>
+\r<br>
+Carriage return<br>
+<i><b>Examples</b></i><br>
+$&nbsp;<b>echo ’Single quotes &quot;protect&quot; double quotes’</b><br>
+Single quotes &quot;protect&quot; double quotes<br>
+$&nbsp;<b>echo &quot;Well, isn’t that \&quot;special\&quot;?&quot;</b><br>
+Well, isn’t that &quot;special&quot;?<br>
+$&nbsp;<b>echo &quot;You have ‘ls | wc -l‘ files in ‘pwd‘&quot;</b><br>
+You have<br>
+43 files in /home/bob<br>
+$&nbsp;<b>echo &quot;The value of \$x is $x&quot;</b><br>
+The value of $x is 100<br>
+<i><b>Command For&nbsp;ms</b></i><br>
+<i>cmd&nbsp;</i>&amp;<br>
+Execute&nbsp;<i>cmd&nbsp;</i>in background.<br>
+<i>cmd1&nbsp;</i>;&nbsp;<i>cmd2</i><br>
+Command sequence; execute multiple&nbsp;<i>cmd</i>s&nbsp;on&nbsp;the same line.<br>
+{&nbsp;<i>cmd1&nbsp;</i>;&nbsp;<i>cmd2&nbsp;</i>;&nbsp;}<br>
+Execute commands as a group in the current shell.<br>
+(<i>cmd1&nbsp;</i>;&nbsp;<i>cmd2</i>)<br>
+Execute commands as a group in a subshell.<br>
+<i>cmd1&nbsp;</i>|&nbsp;<i>cmd2</i><br>
+Pipe; use output from&nbsp;<i>cmd1&nbsp;</i>as input to&nbsp;<i>cmd2</i>.<br>
+<i>cmd1&nbsp;</i>‘<i>cmd2</i>‘<br>
+Command substitution; use&nbsp;<i>cmd2&nbsp;</i>output as arguments to&nbsp;<i>cmd1</i>.<br>
+<i>cmd1&nbsp;</i>$(<i>cmd2</i>)<br>
+POSIX shell command substitution; nesting is allowed.<br>
+<i>cmd&nbsp;</i>$((<i>expression</i>))<br>
+POSIX shell arithmetic substitution. Use the result of&nbsp;<i>expression&nbsp;</i>as<br>argument to&nbsp;<i>cmd</i>.<br>
+<i>cmd1&nbsp;</i>&amp;&amp;&nbsp;<i>cmd2</i><br>
+AND; execute&nbsp;<i>cmd1&nbsp;</i>and then (if&nbsp;<i>cmd1&nbsp;</i>succeeds)&nbsp;<i>cmd2</i>.&nbsp;This is a<br>“shor t&nbsp;circuit”&nbsp;operation:&nbsp;<i>cmd2&nbsp;</i>is never executed if&nbsp;<i>cmd1&nbsp;</i>fails.<br>
+<i>cmd1&nbsp;</i>||&nbsp;<i>cmd2</i><br>
+OR; execute either&nbsp;<i>cmd1&nbsp;</i>or (if&nbsp;<i>cmd1&nbsp;</i>fails)&nbsp;<i>cmd2</i>.&nbsp;This is a “shor&nbsp;t<br>circuit”&nbsp;operation;&nbsp;<i>cmd2&nbsp;</i>is never executed if&nbsp;<i>cmd1&nbsp;</i>succeeds.<br>
+!&nbsp;<i>cmd</i><br>
+NOT;&nbsp;execute&nbsp;<i>cmd</i>,&nbsp;and produce a zero&nbsp;exit status if&nbsp;<i>cmd&nbsp;</i>exits<br>with a nonzero&nbsp;status. Other&nbsp;wise,&nbsp;produce a nonzero&nbsp;status when<br><i>cmd&nbsp;</i>exits with a zero&nbsp;status.<br>
+<i><b>Examples</b></i><br>
+$&nbsp;<b>nroff file &gt; file.txt &amp;</b><br>
+<i>Format in the background</i><br>
+$&nbsp;<b>cd; ls</b><br>
+<i>Execute sequentially</i><br>
+$&nbsp;<b>(date; who; pwd) &gt; logfile</b><br>
+<i>All&nbsp;output is redirected</i><br>
+$&nbsp;<b>sort file | pr -3 | lp</b><br>
+<i>Sor&nbsp;t&nbsp;file, page output, then print</i><br>
+$&nbsp;<b>vi ‘grep -l ifdef *.c‘</b><br>
+<i>Edit files found by&nbsp;grep</i><br>
+$&nbsp;<b>egrep ’(yes|no)’ ‘cat list‘</b><br>
+<i>Specify a list of files to search</i><br>
+$&nbsp;<b>egrep ’(yes|no)’ $(cat list)</b><br>
+<i>POSIX version of previous</i><br>
+<i>Syntax 7</i><br>
+<hr>
+<A name=10></a>$&nbsp;<b>egrep ’(yes|no)’ $(&lt; list)</b><br>
+<i>Faster; not in POSIX</i><br>
+$&nbsp;<b>grep XX file &amp;&amp; lp file</b><br>
+<i>Print file if it contains the pattern</i><br>
+$&nbsp;<b>grep XX file || echo &quot;XX not found&quot;</b><br>
+<i>Other&nbsp;wise,&nbsp;echo an error message</i><br>
+<i><b>Redirection For&nbsp;ms</b></i><br>
+<i>File descriptor</i><br>
+<i>Name</i><br>
+<i>Common abbreviation</i><br>
+<i>Typical default</i><br>
+0<br>
+Standard&nbsp;input<br>
+stdin<br>
+Keyboard<br>
+1<br>
+Standard&nbsp;output<br>
+stdout<br>
+Screen<br>
+2<br>
+Standard&nbsp;error<br>
+stderr<br>
+Screen<br>
+The usual input source or output destination can be changed, as seen in the following<br>sections.<br>
+<i><b>Simple redirection</b></i><br>
+<i>cmd&nbsp;</i>&gt;&nbsp;<i>file</i><br>
+Send output of&nbsp;<i>cmd&nbsp;</i>to&nbsp;<i>ﬁle&nbsp;</i>(overwrite).<br>
+<i>cmd&nbsp;</i>&gt;&gt;&nbsp;<i>file</i><br>
+Send output of&nbsp;<i>cmd&nbsp;</i>to&nbsp;<i>ﬁle&nbsp;</i>(append).<br>
+<i>cmd&nbsp;</i>&lt;&nbsp;<i>file</i><br>
+Take input for&nbsp;<i>cmd&nbsp;</i>from&nbsp;<i>ﬁle</i>.<br>
+<i>cmd&nbsp;</i>&lt;&lt;&nbsp;<i>text</i><br>
+The contents of the shell script up to a line identical to&nbsp;<i>text&nbsp;</i>become the standard&nbsp;input<br>for&nbsp;<i>cmd&nbsp;</i>(<i>text&nbsp;</i>can be stored in a shell variable). This command form is sometimes called<br>a&nbsp;<i>here&nbsp;document</i>.&nbsp;Input is usually typed at the keyboard&nbsp;or&nbsp;in&nbsp;the shell program. Com-<br>mands that typically use this syntax include&nbsp;cat,&nbsp;ex,&nbsp;and&nbsp;sed.&nbsp;(If&nbsp;&lt;&lt;-&nbsp;is used, leading<br>tabs are&nbsp;stripped from the contents of the here&nbsp;document, and the tabs are&nbsp;ignored<br>when comparing input with the end-of-input&nbsp;<i>text&nbsp;</i>marker.) If&nbsp;any part&nbsp;of&nbsp;<i>text&nbsp;</i>is quoted,<br>the input is passed through verbatim. Other&nbsp;wise,&nbsp;the contents are&nbsp;processed for variable,<br>command, and arithmetic substitutions.<br>
+<i>cmd&nbsp;</i>&lt;&lt;&lt;&nbsp;<i>word</i><br>
+Supply text of&nbsp;<i>word</i>,&nbsp;with trailing newline, as input to&nbsp;<i>cmd</i>.&nbsp;(This is known as a&nbsp;<i>here<br>string</i>,&nbsp;from&nbsp;the free version of the&nbsp;rc&nbsp;shell.)<br>
+<i>cmd&nbsp;</i>&lt;&gt;&nbsp;<i>file</i><br>
+Open&nbsp;<i>ﬁle&nbsp;</i>for reading&nbsp;<i>and&nbsp;</i>writing on the standard&nbsp;input. The contents are&nbsp;not<br>destroy&nbsp;ed.*<br>
+<i>cmd&nbsp;</i>&gt;|&nbsp;<i>file</i><br>
+Send output of&nbsp;<i>cmd&nbsp;</i>to&nbsp;<i>ﬁle&nbsp;</i>(overwrite), even if the shell’s&nbsp;noclobber&nbsp;option is set.<br>
+*&nbsp;With&nbsp;&lt;,&nbsp;the ﬁle is opened read-only,&nbsp;and writes on the ﬁle descriptor will fail. With&nbsp;&lt;&gt;,&nbsp;the ﬁle is opened read-write;<br>it is up to the application to actually take advantage of this.<br>
+<i>8</i><br>
+<i>Chapter 1 – The Bash Shell</i><br>
+<hr>
+<A name=11></a><i><b>Redirection using file descriptors</b></i><br>
+<i>cmd&nbsp;</i>&gt;&amp;<i>n</i><br>
+Send&nbsp;<i>cmd&nbsp;</i>output to ﬁle descriptor&nbsp;<i>n</i>.<br>
+<i>cmd m</i>&gt;&amp;<i>n</i><br>
+Same as previous, except that output that would normally go to ﬁle descriptor&nbsp;<i>m<br></i>is sent to ﬁle descriptor&nbsp;<i>n&nbsp;</i>instead.<br>
+<i>cmd&nbsp;</i>&gt;&amp;-<br>
+Close standard&nbsp;output.<br>
+<i>cmd&nbsp;</i>&lt;&amp;<i>n</i><br>
+Take input for&nbsp;<i>cmd&nbsp;</i>from ﬁle descriptor&nbsp;<i>n</i>.<br>
+<i>cmd m</i>&lt;&amp;<i>n</i><br>
+Same as previous, except that input that would normally come from ﬁle descrip-<br>tor&nbsp;<i>m&nbsp;</i>comes from ﬁle descriptor&nbsp;<i>n&nbsp;</i>instead.<br>
+<i>cmd&nbsp;</i>&lt;&amp;-<br>
+Close standard&nbsp;input.<br>
+<i>cmd&nbsp;</i>&lt;&amp;<i>n</i>-<br>
+Mo&nbsp;ve&nbsp;input ﬁle descriptor&nbsp;<i>n&nbsp;</i>instead of duplicating it.<br>
+<i>cmd&nbsp;</i>&gt;&amp;<i>n</i>-<br>
+Mo&nbsp;ve&nbsp;output ﬁle descriptor&nbsp;<i>n&nbsp;</i>instead of duplicating it.<br>
+<i><b>Multiple redirection</b></i><br>
+<i>cmd&nbsp;</i>2&gt;<i>file</i><br>
+Send standard&nbsp;error to&nbsp;<i>ﬁle</i>;&nbsp;standard&nbsp;output remains the same<br>(e.g., the screen).<br>
+<i>cmd&nbsp;</i>&gt;&nbsp;<i>file&nbsp;</i>2&gt;&amp;1<br>
+Send both standard&nbsp;error and standard&nbsp;output to&nbsp;<i>ﬁle</i>.<br>
+<i>cmd&nbsp;</i>&amp;&gt;&nbsp;<i>file</i><br>
+Same as previous. Preferred form.<br>
+<i>cmd&nbsp;</i>&gt;&amp;&nbsp;<i>file</i><br>
+Same as previous.<br>
+<i>cmd&nbsp;</i>&gt;&nbsp;<i>f1&nbsp;</i>2&gt;<i>f2</i><br>
+Send standard&nbsp;output to ﬁle&nbsp;<i>f1&nbsp;</i>and standard&nbsp;error to ﬁle&nbsp;<i>f2</i>.<br>
+<i>cmd&nbsp;</i>|&nbsp;tee&nbsp;<i>files</i><br>
+Send output of&nbsp;<i>cmd&nbsp;</i>to standard&nbsp;output (usually the terminal) and<br>to&nbsp;<i>ﬁles</i>.<br>
+<i>cmd&nbsp;</i>2&gt;&amp;1 | tee&nbsp;<i>files</i><br>
+Send standard&nbsp;output and error output of&nbsp;<i>cmd&nbsp;</i>to standard&nbsp;output<br>(usually the terminal) and to&nbsp;<i>ﬁles</i>.<br>
+No&nbsp;space should appear between ﬁle descriptors and a redirection symbol; spacing is optional<br>in the other cases.<br>
+Bash allows multidigit ﬁle descriptor numbers. Other shells do not.<br>
+<i><b>Examples</b></i><br>
+$&nbsp;<b>cat part1 &gt; book</b><br>
+$&nbsp;<b>cat part2 part3 &gt;&gt; book</b><br>
+$&nbsp;<b>mail tim &lt; report</b><br>
+$&nbsp;<b>sed ’s/ˆ/XX /g’ &lt;&lt; END_ARCHIVE</b><br>
+&gt;&nbsp;<b>This is often how a shell archive is &quot;wrapped&quot;,</b><br>
+&gt;&nbsp;<b>bundling text for distribution. You would normally</b><br>
+&gt;&nbsp;<b>run sed from a shell program, not from the command line.</b><br>
+&gt;&nbsp;<b>END_ARCHIVE</b><br>
+XX This is often how a shell archive is &quot;wrapped&quot;,<br>
+XX bundling text for distribution.<br>
+You would normally<br>
+XX run sed from a shell program, not from the command line.<br>
+To&nbsp;&nbsp;redirect standard&nbsp;output to standard&nbsp;error:<br>
+$&nbsp;<b>echo &quot;Usage error: see administrator&quot; 1&gt;&amp;2</b><br>
+The following command sends output (ﬁles found) to&nbsp;filelist,&nbsp;and error messages (inac-<br>cessible ﬁles) to ﬁle&nbsp;no_access:<br>
+$&nbsp;<b>find / -print &gt; filelist 2&gt;no_access</b><br>
+<i>Syntax 9</i><br>
+<hr>
+<A name=12></a><i><b>Functions</b></i><br>
+A&nbsp;shell&nbsp;<i>function&nbsp;</i>is a grouping of commands within a shell script. Shell functions let you mod-<br>ularize&nbsp;your program by&nbsp;dividing it up into separate tasks. This way,&nbsp;the code for each task<br>need not be repeated ever&nbsp;y&nbsp;time you need to perform the task. The POSIX shell syntax for<br>deﬁning a function follows the Bourne shell:<br>
+<i>name&nbsp;</i>() {<br>
+<i>function body’s code come here</i><br>
+}<br>
+Functions are&nbsp;invoked just as are&nbsp;regular shell built-in commands or external commands. The<br>command-line parameters&nbsp;$1,&nbsp;$2,&nbsp;and so on receive&nbsp;the function’s&nbsp;arguments, temporarily<br>hiding the global values of&nbsp;$1,&nbsp;etc. For example:<br>
+#&nbsp;fatal --- print an error message and die:<br>
+fatal () {<br>
+echo &quot;$0: fatal error:&quot; &quot;$@&quot; &gt;&amp;2<br>
+#&nbsp;messages to standard error<br>
+exit 1<br>
+}<br>
+...<br>
+if [ $# = 0 ]<br>
+#&nbsp;not enough arguments<br>
+then<br>
+fatal not enough arguments<br>
+fi<br>
+A&nbsp;function may use the&nbsp;return&nbsp;command to return an exit value to the calling shell pro-<br>gram. Be&nbsp;careful&nbsp;<i>not&nbsp;</i>to use&nbsp;exit&nbsp;from within a function unless you really wish to terminate<br>the entire&nbsp;program.<br>
+Bash allows you to deﬁne functions using an additional keyword,&nbsp;function,&nbsp;as&nbsp;follows:<br>
+function fatal {<br>
+echo &quot;$0: fatal error:&quot; &quot;$@&quot; &gt;&amp;2<br>
+#&nbsp;messages to standard error<br>
+exit 1<br>
+}<br>
+In&nbsp;Bash, all functions share&nbsp;traps with the “parent”&nbsp;shell (except the&nbsp;DEBUG&nbsp;trap,&nbsp;if&nbsp;function<br>tracing has been turned on). With the&nbsp;errtrace&nbsp;option enabled (either&nbsp;set -E&nbsp;or&nbsp;set -o<br>errtrace), functions also inherit the&nbsp;ERR&nbsp;trap.&nbsp;If&nbsp;function tracing has been enabled, func-<br>tions inherit the&nbsp;RETURN&nbsp;trap.&nbsp;Functions may have&nbsp;local variables, and they may be recursive.<br>Unlike the Korn shell, the syntax used to deﬁne a function is irrelevant.<br>
+<i><b>Variables</b></i><br>
+This section describes the following:<br>
+•<br>
+Variable assignment<br>
+•<br>
+Variable substitution<br>
+•<br>
+Built-in shell variables<br>
+<i>10 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=13></a>•<br>
+Other shell variables<br>
+•<br>
+Arrays<br>
+•<br>
+Special prompt strings<br>
+<i><b>Variable Assignment</b></i><br>
+Variable names consist of any number of letters, digits, or underscores. Uppercase and lower-<br>case letters are&nbsp;distinct, and names may not start&nbsp;with a digit. Variables are&nbsp;assigned values<br>using the&nbsp;=&nbsp;operator.&nbsp;There&nbsp;may&nbsp;<i>not&nbsp;</i>be any whitespace between the variable name and the<br>value. You can make multiple assignments on the same line by&nbsp;separating each one with<br>whitespace:<br>
+firstname=Arnold lastname=Robbins numkids=4<br>
+By&nbsp;convention, names for variables used or set by&nbsp;the shell usually have&nbsp;all uppercase letters;<br>however,&nbsp;you can use uppercase names in your scripts if you use a name that isn’t&nbsp;special to<br>the shell.<br>
+By&nbsp;default, the shell treats variable values as strings, even if the value of the string is all digits.<br>Ho&nbsp;wever,&nbsp;when a value is assigned to an integer variable (created via&nbsp;declare -i), Bash eval-<br>uates the righthand side of the assignment as an expression (see the later section “<i>Arithmetic<br>Expressions</i>”). For example:<br>
+$&nbsp;<b>i=5+3 ; echo $i</b><br>
+5+3<br>
+$&nbsp;<b>declare -i jj ; jj=5+3 ;</b><br>
+<b>echo $jj</b><br>
+8<br>
+Beginning with Bash Version 3.1, the&nbsp;+=&nbsp;operator allows you to add or append the righthand<br>side of the assignment to an existing value. Integer variables treat the righthand side as an<br>expression, which is evaluated and added to the value. Arrays add the new&nbsp;elements to the<br>array (see the later section “<i>Arrays</i>”). For example:<br>
+$&nbsp;<b>name=Arnold</b><br>
+$&nbsp;<b>name+=&quot; Robbins&quot; ; echo $name</b><br>
+<i>String variable</i><br>
+Arnold Robbins<br>
+$&nbsp;<b>declare -i jj ; jj=3+5 ; echo $jj</b><br>
+<i>Integer variable</i><br>
+8<br>
+$&nbsp;<b>jj+=2+4 ; echo $jj</b><br>
+14<br>
+$&nbsp;<b>pets=(blacky rusty)</b><br>
+<i>Array&nbsp;variable</i><br>
+$&nbsp;<b>echo ${pets[*]}</b><br>
+blacky rusty<br>
+$&nbsp;<b>pets+=(raincloud sparky)</b><br>
+$&nbsp;<b>echo ${pets[*]}</b><br>
+blacky rusty raincloud sparky<br>
+<i><b>Variable Substitution</b></i><br>
+No&nbsp;spaces should be used in the following expressions. The colon (:)&nbsp;is&nbsp;optional; if it’s<br>included,&nbsp;<i>var&nbsp;</i>must be nonnull as well as set.<br>
+<i>Variables 11</i><br>
+<hr>
+<A name=14></a><i>var</i>=<i>value&nbsp;</i>...<br>
+Set&nbsp;each variable&nbsp;<i>var&nbsp;</i>to a&nbsp;<i>value</i>.<br>
+${<i>var</i>}<br>
+Use&nbsp;value of&nbsp;<i>var</i>;&nbsp;braces are&nbsp;optional if&nbsp;<i>var&nbsp;</i>is separated from the<br>following text. They are&nbsp;required for array variables.<br>
+${<i>var</i>:-<i>value</i>}<br>
+Use&nbsp;<i>var&nbsp;</i>if set; otherwise, use&nbsp;<i>value</i>.<br>
+${<i>var</i>:=<i>value</i>}<br>
+Use&nbsp;<i>var&nbsp;</i>if set; otherwise, use&nbsp;<i>value&nbsp;</i>and assign&nbsp;<i>value&nbsp;</i>to&nbsp;<i>var</i>.<br>
+${<i>var</i>:?<i>value</i>}<br>
+Use&nbsp;<i>var&nbsp;</i>if set; otherwise, print&nbsp;<i>value&nbsp;</i>and exit (if not interactive). If<br><i>value&nbsp;</i>isn’t&nbsp;supplied, print the phrase “parameter null or not set.”<br>
+${<i>var</i>:+<i>value</i>}<br>
+Use&nbsp;<i>value&nbsp;</i>if&nbsp;<i>var&nbsp;</i>is set; otherwise, use nothing.<br>
+${#<i>var</i>}<br>
+Use&nbsp;the length of&nbsp;<i>var</i>.<br>
+${#*}<br>
+Use&nbsp;the number of positional parameters.<br>
+${#@}<br>
+Same as previous.<br>
+${<i>var</i>#<i>pattern</i>}<br>
+Use&nbsp;value of&nbsp;<i>var&nbsp;</i>after removing&nbsp;<i>patter n&nbsp;</i>from the left. Remove&nbsp;the<br>shor test&nbsp;matching&nbsp;&nbsp;piece.<br>
+${<i>var</i>##<i>pattern</i>}<br>
+Same as&nbsp;#<i>patter n</i>,&nbsp;but remove&nbsp;the longest matching piece.<br>
+${<i>var</i>%<i>pattern</i>}<br>
+Use&nbsp;value of&nbsp;<i>var&nbsp;</i>after removing&nbsp;<i>patter n&nbsp;</i>from the right. Remove<br>the shortest matching piece.<br>
+${<i>var</i>%%<i>pattern</i>}<br>
+Same as&nbsp;%<i>patter n</i>,&nbsp;but remove&nbsp;the longest matching piece.<br>
+${!<i>prefix</i>*},&nbsp;${!<i>prefix</i>@}<br>
+List of variables whose names begin with&nbsp;<i>preﬁx</i>.<br>
+${<i>var</i>:<i>pos</i>},&nbsp;${<i>var</i>:<i>pos</i>:<i>len</i>}<br>
+Star ting&nbsp;at&nbsp;&nbsp;position&nbsp;<i>pos&nbsp;</i>(0-based) in variable&nbsp;<i>var</i>,&nbsp;extract&nbsp;<i>len&nbsp;</i>char-<br>acters, or extract rest of string if no&nbsp;<i>len</i>.&nbsp;<i>pos&nbsp;</i>and&nbsp;<i>len&nbsp;</i>may be arith-<br>metic expressions.<br>
+${<i>var</i>/<i>pat</i>/<i>repl</i>}<br>
+Use&nbsp;value of&nbsp;<i>var</i>,&nbsp;with ﬁrst match of&nbsp;<i>pat&nbsp;</i>replaced with&nbsp;<i>repl</i>.<br>
+${<i>var</i>/<i>pat</i>}<br>
+Use&nbsp;value of&nbsp;<i>var</i>,&nbsp;with ﬁrst match of&nbsp;<i>pat&nbsp;</i>deleted.<br>
+${<i>var</i>//<i>pat</i>/<i>repl</i>}<br>
+Use&nbsp;value of&nbsp;<i>var</i>,&nbsp;with ever&nbsp;y&nbsp;match of&nbsp;<i>pat&nbsp;</i>replaced with&nbsp;<i>repl</i>.<br>
+${<i>var</i>/#<i>pat</i>/<i>repl</i>}<br>
+Use&nbsp;value of&nbsp;<i>var</i>,&nbsp;with match of&nbsp;<i>pat&nbsp;</i>replaced with&nbsp;<i>repl</i>.&nbsp;Match<br>must occur at beginning of the value.<br>
+${<i>var</i>/%<i>pat</i>/<i>repl</i>}<br>
+Use&nbsp;value of&nbsp;<i>var</i>,&nbsp;with match of&nbsp;<i>pat&nbsp;</i>replaced with&nbsp;<i>repl</i>.&nbsp;Match<br>must occur at end of the value.<br>
+Bash provides a special syntax that lets one variable indirectly reference another:<br>
+$&nbsp;<b>greet=&quot;hello, world&quot;</b><br>
+<i>Create initial variable</i><br>
+$&nbsp;<b>friendly_message=greet</b><br>
+<i>Aliasing variable</i><br>
+$&nbsp;<b>echo ${!friendly_message}</b><br>
+<i>Use&nbsp;the alias</i><br>
+hello, world<br>
+<i><b>Examples</b></i><br>
+$&nbsp;<b>u=up d=down blank=</b><br>
+<i>Assign values to three variables (last is null)</i><br>
+$&nbsp;<b>echo ${u}root</b><br>
+<i>Braces are&nbsp;needed here</i><br>
+uproot<br>
+$&nbsp;<b>echo ${u-$d}</b><br>
+<i>Display value of u or d; since u is set, it’s&nbsp;printed</i><br>
+up<br>
+$&nbsp;<b>echo ${tmp-‘date‘}</b><br>
+<i>If&nbsp;tmp is not set, the date command is executed</i><br>
+Sun Jun 11 13:14:54 EDT 2006<br>
+$&nbsp;<b>echo ${blank=&quot;no data&quot;}</b><br>
+<i>blank is set, so it is printed (a blank line)</i><br>
+$&nbsp;<b>echo ${blank:=&quot;no data&quot;}</b><br>
+<i>blank is set but null, so the string is printed</i><br>
+no data<br>
+$&nbsp;<b>echo $blank</b><br>
+<i>blank now&nbsp;has a new value</i><br>
+no data<br>
+$&nbsp;<b>tail=${PWD##*/}</b><br>
+<i>Take the current director&nbsp;y&nbsp;name and remove&nbsp;the<br>longest character string ending with /, which<br>removes&nbsp;the leading pathname and leaves the tail</i><br>
+<i>12 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=15></a><i><b>Built-in Shell Variables</b></i><br>
+Built-in variables are&nbsp;automatically set by&nbsp;the shell and are&nbsp;typically used inside shell scripts.<br>Built-in variables can make use of the variable substitution patterns shown previously.&nbsp;Note<br>that the&nbsp;$&nbsp;is not actually part&nbsp;of&nbsp;the variable name, although the variable is always referenced<br>this way.&nbsp;The following are&nbsp;available in any Bourne-compatible shell:<br>
+$#<br>
+Number of command-line arguments.<br>
+$-<br>
+Options currently in effect (arguments supplied on command line or to<br>set). The shell sets some options automatically.<br>
+$?<br>
+Exit value of last executed command.<br>
+$$<br>
+Pr&nbsp;ocess number of current process.<br>
+$!<br>
+Pr&nbsp;ocess number of last background command.<br>
+$0<br>
+First word; that is, the command name. This will have&nbsp;the full pathname if<br>it was found via a PATH&nbsp;search.<br>
+$<i>n</i><br>
+Individual arguments on command line (positional parameters). The<br>Bourne shell allows only nine parameters to be referenced directly (<i>n&nbsp;</i>=&nbsp;1–9);<br>Bash allows&nbsp;<i>n&nbsp;</i>to be greater than 9 if speciﬁed as&nbsp;${<i>n</i>}.<br>
+$*,&nbsp;$@<br>
+All arguments on command line ($1 $2&nbsp;...).<br>
+&quot;$*&quot;<br>
+All arguments on command line as one string (&quot;$1 $2...&quot;). The values are<br>separated by&nbsp;the ﬁrst character in IFS.<br>
+&quot;$@&quot;<br>
+All arguments on command line, individually quoted (&quot;$1&quot; &quot;$2&quot;&nbsp;...).<br>
+Bash automatically sets the following additional variables. Many of these variables are&nbsp;for use<br>by&nbsp;the Bash Debugger (see&nbsp;<i>http://bashdb.sourceforge.net</i>)&nbsp;or&nbsp;for providing programmable com-<br>pletion (see the section “<i>Pr&nbsp;ogrammable&nbsp;&nbsp;Completion</i>,” later in this reference).<br>
+$_<br>
+Temporar&nbsp;y&nbsp;variable; initialized to pathname of script or pro-<br>gram being executed. Later,&nbsp;stores the last argument of previ-<br>ous command. Also stores name of matching MAIL ﬁle<br>during mail checks.<br>
+BASH<br>
+The full pathname used to invoke this instance of Bash.<br>
+BASH_ARGC<br>
+Array variable. Each element holds the number of arguments<br>for the corresponding function or dot-script invocation. Set<br>only in extended debug mode, with&nbsp;shopt -s extdebug.<br>Cannot be unset.<br>
+BASH_ARGV<br>
+An array variable similar to&nbsp;BASH_ARGC.&nbsp;Each element is one<br>of the arguments passed to a function or dot-script. It&nbsp;func-<br>tions as a stack, with values being pushed on at each call.<br>Thus, the last element is the last argument to the most recent<br>function or script invocation. Set only in extended debug<br>mode, with&nbsp;shopt -s extdebug.&nbsp;Cannot be unset.<br>
+BASH_COMMAND<br>
+The command currently executing or about to be executed.<br>Inside a trap handler,&nbsp;it&nbsp;is&nbsp;the command running when the<br>trap was invoked.<br>
+BASH_EXECUTION_STRING<br>
+The string argument passed to the&nbsp;-c&nbsp;option.<br>
+<i>Variables 13</i><br>
+<hr>
+<A name=16></a>BASH_LINENO<br>
+Array variable, corresponding to&nbsp;BASH_SOURCE&nbsp;and&nbsp;FUNCNAME.<br>For&nbsp;any given function number&nbsp;i&nbsp;(star ting&nbsp;at&nbsp;0),&nbsp;${FUNC-<br>NAME[i]}&nbsp;was invoked in ﬁle&nbsp;${BASH_SOURCE[i]}&nbsp;on line<br>${BASH_LINENO[i]}.&nbsp;The information is stored with the most<br>recent function invocation ﬁrst. Cannot be unset.<br>
+BASH_REMATCH<br>
+Array variable, assigned by&nbsp;the&nbsp;=˜&nbsp;operator of the&nbsp;[[ ]]&nbsp;con-<br>str uct.&nbsp;Index&nbsp;0&nbsp;is the text that matched the entire&nbsp;pattern. The<br>other indices are&nbsp;the text matched by&nbsp;parenthesized subexpres-<br>sions. This variable is read-only.<br>
+BASH_SOURCE<br>
+Array variable, containing source ﬁlenames. Each element<br>corresponds to those in&nbsp;FUNCNAME&nbsp;and&nbsp;BASH_LINENO.&nbsp;Cannot<br>be unset.<br>
+BASH_SUBSHELL<br>
+This variable is incremented by&nbsp;one each time a subshell or<br>subshell environment is created.<br>
+BASH_VERSINFO[0]<br>
+The major version number,&nbsp;or&nbsp;release, of Bash.<br>
+BASH_VERSINFO[1]<br>
+The minor version number,&nbsp;or&nbsp;version, of Bash.<br>
+BASH_VERSINFO[2]<br>
+The patch level.<br>
+BASH_VERSINFO[3]<br>
+The build version.<br>
+BASH_VERSINFO[4]<br>
+The release status.<br>
+BASH_VERSINFO[5]<br>
+The machine type; same value as in&nbsp;MACHTYPE.<br>
+BASH_VERSION<br>
+A&nbsp;string describing the version of Bash.<br>
+COMP_CWORD<br>
+For&nbsp;programmable completion. Index into&nbsp;COMP_WORDS,&nbsp;indi-<br>cating the current cursor position.<br>
+COMP_LINE<br>
+For&nbsp;programmable completion. The current command line.<br>
+COMP_POINT<br>
+For&nbsp;programmable completion. The position of the cursor as<br>a&nbsp;character index in&nbsp;COMP_LINE.<br>
+COMP_WORDBREAKS<br>
+For&nbsp;programmable completion. The characters that the&nbsp;<i>read-<br>line&nbsp;</i>librar&nbsp;y&nbsp;treats as word&nbsp;separators when doing word&nbsp;com-<br>pletion.<br>
+COMP_WORDS<br>
+For&nbsp;programmable completion. Array variable containing the<br>individual words on the command line.<br>
+DIRSTACK<br>
+Array variable, containing the contents of the director&nbsp;y&nbsp;stack<br>as displayed by&nbsp;dirs.&nbsp;Changing existing elements modiﬁes<br>the stack, but only&nbsp;pushd&nbsp;and&nbsp;popd&nbsp;can add or remove&nbsp;ele-<br>ments from the stack.<br>
+EUID<br>
+Read-only variable with the numeric effective&nbsp;UID of the cur-<br>rent user.<br>
+FUNCNAME<br>
+Array variable, containing function names. Each element cor-<br>responds to those in&nbsp;BASH_SOURCE&nbsp;and&nbsp;BASH_LINENO.<br>
+GROUPS<br>
+Array variable, containing the list of numeric group IDs in<br>which the current user is a member.<br>
+HISTCMD<br>
+The history&nbsp;number of the current command.<br>
+HOSTNAME<br>
+The name of the current host.<br>
+HOSTTYPE<br>
+A&nbsp;string that describes the host system.<br>
+LINENO<br>
+Current line number within the script or function.<br>
+MACHTYPE<br>
+A&nbsp;string that describes the host system in the GNU&nbsp;<i>cpu-<br>company-system&nbsp;</i>format.<br>
+OLDPWD<br>
+Pr&nbsp;evious working director&nbsp;y&nbsp;(set by&nbsp;cd).<br>
+<i>14 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=17></a>OPTARG<br>
+Name of argument to last option processed by&nbsp;getopts.<br>
+OPTIND<br>
+Numerical index of OPTARG.<br>
+OSTYPE<br>
+A&nbsp;string that describes the operating system.<br>
+PIPESTATUS<br>
+Array variable, containing the exit statuses of the commands<br>in the most recent foreground pipeline.<br>
+PPID<br>
+Pr&nbsp;ocess number of this shell’s&nbsp;parent.<br>
+PWD<br>
+Current working director&nbsp;y&nbsp;(set by&nbsp;cd).<br>
+RANDOM[=<i>n</i>]<br>
+Generate a new&nbsp;random number with each reference; start<br>with integer&nbsp;<i>n</i>,&nbsp;if&nbsp;given.<br>
+REPLY<br>
+Default reply; used by&nbsp;select&nbsp;and&nbsp;read.<br>
+SECONDS[=<i>n</i>]<br>
+Number of seconds since the shell was started, or,&nbsp;if&nbsp;<i>n&nbsp;</i>is<br>given, number of seconds since the assignment +&nbsp;<i>n</i>.<br>
+SHELLOPTS<br>
+A&nbsp;colon-separated list of shell options (for&nbsp;set -o). If&nbsp;set in<br>the environment at startup,&nbsp;Bash enables each option present<br>in the list.<br>
+SHLVL<br>
+Incremented by&nbsp;one ever&nbsp;y&nbsp;time a new&nbsp;Bash starts up.<br>
+UID<br>
+Read-only variable with the numeric real UID of the current<br>user.<br>
+<i><b>Other Shell Variables</b></i><br>
+The following variables are&nbsp;not automatically set by&nbsp;the shell, although many of them can<br>inﬂuence the shell’s&nbsp;behavior.&nbsp;You typically use them in your&nbsp;.profile&nbsp;ﬁle, where&nbsp;you can<br>deﬁne them to suit your needs. Variables can be assigned values by&nbsp;issuing commands of the<br>form:<br>
+<i>variable</i>=<i>value</i><br>
+This list includes the type of value expected when deﬁning these variables.<br>
+CDPATH=<i>dirs</i><br>
+Directories searched by&nbsp;cd;&nbsp;allows shortcuts in changing directo-<br>ries; unset by&nbsp;default.<br>
+COLUMNS=<i>n</i><br>
+Screen’s&nbsp;column width; used in line edit modes and&nbsp;select&nbsp;lists.<br>
+COMPREPLY=(<i>words ...</i>)<br>
+Array variable from which Bash reads the possible completions<br>generated by&nbsp;a&nbsp;completion function.<br>
+EMACS<br>
+If&nbsp;the value starts with&nbsp;t,&nbsp;Bash assumes it’s&nbsp;running in an Emacs<br>buffer and disables line editing.<br>
+ENV=<i>file</i><br>
+Name of script that gets executed at startup; useful for storing<br>alias and function deﬁnitions. For example,<br>
+ENV=$HOME/.shellrc.<br>
+FCEDIT=<i>file</i><br>
+Editor used by&nbsp;fc&nbsp;command. The default is&nbsp;/bin/ed&nbsp;when Bash<br>is in POSIX mode. Other&nbsp;wise,&nbsp;the default is $EDITOR if set,&nbsp;vi<br>if unset.<br>
+FIGNORE=<i>patlist</i><br>
+Colon-separated list of patterns describing the set of ﬁlenames to<br>ignore&nbsp;when doing ﬁlename completion.<br>
+GLOBIGNORE=<i>patlist</i><br>
+Colon-separated list of patterns describing the set of ﬁlenames to<br>ignore&nbsp;during pattern matching.<br>
+<i>Variables 15</i><br>
+<hr>
+<A name=18></a>HISTCONTROL=<i>list</i><br>
+Colon-separated list of values controlling how&nbsp;commands are<br>saved in the history&nbsp;ﬁle. Recognized values are&nbsp;ignoredups,<br>ignorespace,&nbsp;ignoreboth,&nbsp;and&nbsp;erasedups.<br>
+HISTFILE=<i>file</i><br>
+File in which to store&nbsp;command history.<br>
+HISTFILESIZE=<i>n</i><br>
+Number of lines to be kept in the history&nbsp;ﬁle. This may be differ-<br>ent than the number of commands.<br>
+HISTIGNORE=<i>list</i><br>
+A&nbsp;colon-separated list of patterns that must match the entire&nbsp;com-<br>mand line. Matching lines are&nbsp;<i>not&nbsp;</i>saved in the history&nbsp;ﬁle. An<br>unescaped&nbsp;&amp;&nbsp;in a pattern matches the previous history&nbsp;line.<br>
+HISTSIZE=<i>n</i><br>
+Number of history&nbsp;commands to be kept in the history&nbsp;ﬁle.<br>
+HISTTIMEFORMAT=<i>string</i><br>
+A&nbsp;format string for&nbsp;<i>str ftime</i>(3) to use for printing timestamps<br>along with commands from the&nbsp;history&nbsp;command. If&nbsp;set (even<br>if null), Bash saves timestamps in the history&nbsp;ﬁle along with the<br>commands.<br>
+HOME=<i>dir</i><br>
+Home director&nbsp;y;&nbsp;set by&nbsp;login&nbsp;(from&nbsp;/etc/passwd&nbsp;ﬁle).<br>
+HOSTFILE=<i>file</i><br>
+Name of a ﬁle in the same format as&nbsp;/etc/hosts&nbsp;that Bash<br>should use to ﬁnd hostnames for hostname completion.<br>
+IFS=’<i>chars</i>’<br>
+Input ﬁeld separators; default is space, tab,&nbsp;and newline.<br>
+IGNOREEOF=<i>n</i><br>
+Numeric value indicating how&nbsp;many successive&nbsp;EOF characters<br>must be typed before&nbsp;Bash exits. If&nbsp;null or nonnumeric value,<br>default is 10.<br>
+INPUTRC=<i>file</i><br>
+Initialization ﬁle for the&nbsp;<i>readline&nbsp;</i>librar&nbsp;y.&nbsp;This overrides the default<br>value of&nbsp;˜/.inputrc.<br>
+LANG=<i>locale</i><br>
+Default value for locale; used if no LC_* variables are&nbsp;set.<br>
+LC_ALL=<i>locale</i><br>
+Current locale; overrides LANG and the other LC_* variables.<br>
+LC_COLLATE=<i>locale</i><br>
+Locale to use for character collation (sorting order).<br>
+LC_CTYPE=<i>locale</i><br>
+Locale to use for character class functions. (See the earlier section<br>“<i>Filename Metacharacters</i>.”)<br>
+LC_MESSAGES=<i>locale</i><br>
+Locale to use for translating&nbsp;$&quot;...&quot;&nbsp;strings.<br>
+LC_NUMERIC=<i>locale</i><br>
+Locale to use for the decimal-point character.<br>
+LC_TIME=<i>locale</i><br>
+Locale to use for date and time formats.<br>
+LINES=<i>n</i><br>
+Screen’s&nbsp;height; used for&nbsp;select&nbsp;lists.<br>
+MAIL=<i>file</i><br>
+Default ﬁle to check for incoming mail; set by&nbsp;login.<br>
+MAILCHECK=<i>n</i><br>
+Number of seconds between mail checks; default is 600 (10<br>minutes).<br>
+MAILPATH=<i>files</i><br>
+One&nbsp;or&nbsp;more&nbsp;ﬁles, delimited by&nbsp;a&nbsp;colon, to check for incoming<br>mail. Along with each ﬁle, you may supply an optional message<br>that the shell prints when the ﬁle increases in size. Messages are<br>separated from the ﬁlename by&nbsp;a&nbsp;?&nbsp;character,&nbsp;and the default mes-<br>sage is&nbsp;You have mail in $_.&nbsp;$_&nbsp;is replaced with the name of the<br>ﬁle. For example, you might have:<br>
+MAILPATH=&quot;$MAIL? Candygram!:/etc/motd?New Login Message&quot;<br>
+OPTERR=<i>n</i><br>
+When set to 1 (the default value), Bash prints error messages from<br>the built-in&nbsp;getopts&nbsp;command.<br>
+<i>16 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=19></a>PATH=<i>dirlist</i><br>
+One&nbsp;or&nbsp;more&nbsp;pathnames, delimited by&nbsp;colons, in which to search<br>for commands to execute. Default for many systems is<br>/bin:/usr/bin.&nbsp;On&nbsp;Solaris, the default is&nbsp;/usr/bin:.&nbsp;How&nbsp;ever,<br>the standard&nbsp;star&nbsp;tup&nbsp;scripts change it to:<br>
+/usr/bin:/usr/ucb:/etc:.<br>
+POSIXLY_CORRECT=<i>string</i><br>
+When set at startup or while running, Bash enters POSIX mode,<br>disabling behavior and modifying features that conﬂict with the<br>POSIX standard.<br>
+PROMPT_COMMAND=<i>command</i><br>
+If&nbsp;set, Bash executes this command each time before&nbsp;printing the<br>primar y&nbsp;prompt.<br>
+PS1=<i>string</i><br>
+Primar&nbsp;y&nbsp;prompt string; default is&nbsp;$.<br>
+PS2=<i>string</i><br>
+Secondar&nbsp;y&nbsp;prompt (used in multiline commands); default is&nbsp;&gt;.<br>
+PS3=<i>string</i><br>
+Pr&nbsp;ompt string in&nbsp;select&nbsp;loops; default is&nbsp;#?.<br>
+PS4=<i>string</i><br>
+Pr&nbsp;ompt string for execution trace (bash -x&nbsp;or&nbsp;set -x); default<br>is&nbsp;+.<br>
+SHELL=<i>file</i><br>
+Name of default shell (e.g.,&nbsp;/bin/sh). Bash sets this if it’s&nbsp;not in<br>the environment at startup.<br>
+TERM=<i>string</i><br>
+Terminal type.<br>
+TIMEFORMAT=<i>string</i><br>
+A&nbsp;format string for the output for the&nbsp;time&nbsp;keyword.<br>
+TMOUT=<i>n</i><br>
+If&nbsp;no&nbsp;command is typed after&nbsp;<i>n&nbsp;</i>seconds, exit the shell. Also affects<br>the&nbsp;read&nbsp;command and the&nbsp;select&nbsp;loop.<br>
+TMDIR=<i>directory</i><br>
+Place temporary&nbsp;ﬁles created and used by&nbsp;the shell in&nbsp;<i>director y</i>.<br>
+auto_resume=<i>list</i><br>
+Enables the use of simple strings for resuming stopped jobs. With<br>a&nbsp;value of&nbsp;exact,&nbsp;the string must match a command name<br>exactly.&nbsp;With a value of&nbsp;substring,&nbsp;it&nbsp;can match a substring of<br>the command name.<br>
+histchars=<i>chars</i><br>
+Two&nbsp;or&nbsp;three characters that control Bash’s&nbsp;csh-style history<br>expansion. The ﬁrst character signals a history&nbsp;event; the second is<br>the “quick substitution”&nbsp;character; the third&nbsp;indicates the start&nbsp;of&nbsp;a<br>comment. The default value is&nbsp;!ˆ#.&nbsp;See the section “<i>C-Shell–Style<br>Histor y</i>,” later in this reference.<br>
+<i><b>Arrays</b></i><br>
+Bash supports one-dimensional arrays. The ﬁrst element is numbered 0. Bash has no limit on<br>the number of elements. Arrays are&nbsp;initialized with a special form of assignment:<br>
+message=(hi there how are you today)<br>
+where&nbsp;the speciﬁed values become elements of the array.&nbsp;Individual elements may also be<br>assigned to:<br>
+message[0]=hi<br>
+<i>This is the hard&nbsp;way</i><br>
+message[1]=there<br>
+message[2]=how<br>
+message[3]=are<br>
+message[4]=you<br>
+message[5]=today<br>
+Declaring arrays is not required. Any valid reference to a subscripted variable can create an<br>array.<br>
+<i>Variables 17</i><br>
+<hr>
+<A name=20></a>When referencing arrays, use the&nbsp;${&nbsp;...&nbsp;}&nbsp;syntax. This isn’t&nbsp;needed when referencing arrays<br>inside&nbsp;(( ))&nbsp;(the form of&nbsp;let&nbsp;that does automatic quoting). Note that&nbsp;[&nbsp;and&nbsp;]&nbsp;are&nbsp;typed lit-<br>erally (i.e., they don’t&nbsp;stand for optional syntax).<br>
+${<i>name</i>[<i>i</i>]}<br>
+Use&nbsp;element&nbsp;<i>i&nbsp;</i>of array&nbsp;<i>name</i>.&nbsp;<i>i&nbsp;</i>can be any arithmetic expression as<br>described under&nbsp;let.<br>
+${<i>name</i>}<br>
+Use&nbsp;element 0 of array&nbsp;<i>name</i>.<br>
+${<i>name</i>[*]}<br>
+Use&nbsp;all elements of array&nbsp;<i>name</i>.<br>
+${<i>name</i>[@]}<br>
+Same as previous.<br>
+${#<i>name</i>[*]}<br>
+Use&nbsp;the number of elements in array&nbsp;<i>name</i>.<br>
+${#<i>name</i>[@]}<br>
+Same as previous.<br>
+<i><b>Special Prompt Strings</b></i><br>
+Bash processes the values of PS1, PS2, and PS4 for the following special escape sequences:<br>
+\a<br>
+An ASCII BEL character (octal 07).<br>
+\A<br>
+The current time in 24-hour HH:MM format.<br>
+\d<br>
+The date in “weekday month day”&nbsp;format.<br>
+\D{<i>format</i>}<br>
+The date as speciﬁed by&nbsp;the&nbsp;<i>str ftime</i>(3) format&nbsp;<i>for mat</i>.&nbsp;The braces are&nbsp;required.<br>
+\e<br>
+An ASCII Escape character (octal 033).<br>
+\h<br>
+The hostname, up to the ﬁrst period.<br>
+\H<br>
+The full hostname.<br>
+\j<br>
+The current number of jobs.<br>
+\l<br>
+The basename of the shell’s&nbsp;terminal device.<br>
+\n<br>
+A&nbsp;newline character.<br>
+\r<br>
+A&nbsp;carriage return character.<br>
+\s<br>
+The name of the shell (basename of&nbsp;$0).<br>
+\t<br>
+The current time in 24-hour HH:MM:SS format.<br>
+\T<br>
+The current time in 12-hour HH:MM:SS format.<br>
+\u<br>
+The current user’s&nbsp;username.<br>
+\v<br>
+The version of Bash.<br>
+\V<br>
+The release (version plus patchlevel) of Bash.<br>
+\w<br>
+The current director&nbsp;y,&nbsp;with $HOME abbreviated as&nbsp;˜.<br>
+\W<br>
+The basename of the current director&nbsp;y,&nbsp;with $HOME abbreviated as&nbsp;˜.<br>
+\!<br>
+The history&nbsp;number of this command.<br>
+\#<br>
+The command number of this command.<br>
+\$<br>
+If&nbsp;the effective&nbsp;UID is 0, a&nbsp;#;&nbsp;other wise,&nbsp;a&nbsp;$.<br>
+\@<br>
+The current time in 12-hour a.m./p.m. format.<br>
+\<i>nnn</i><br>
+The character represented by&nbsp;octal value&nbsp;<i>nnn</i>.<br>
+\\<br>
+A&nbsp;literal backslash.<br>
+\[<br>
+Star&nbsp;t&nbsp;a&nbsp;sequence of nonprinting characters, such as for highlighting or changing<br>colors on a terminal.<br>
+\]<br>
+End&nbsp;a&nbsp;sequence of nonprinting characters.<br>
+<i>18 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=21></a>The PS1, PS2, and PS4 variables undergo substitution for escape sequences, variable substi-<br>tution, command substitution, and arithmetic substitution. The escape sequences are&nbsp;pro-<br>cessed ﬁrst, and then, if the&nbsp;promptvars&nbsp;shell option is enabled via the&nbsp;shopt&nbsp;command (the<br>default), the substitutions are&nbsp;per&nbsp;formed.<br>
+<i><b>Arithmetic Expressions</b></i><br>
+The&nbsp;let&nbsp;command performs arithmetic. Bash is restricted to integer arithmetic. The shell<br>provides a way to substitute arithmetic values (for use as command arguments or in vari-<br>ables); base conversion is also possible:<br>
+$((&nbsp;<i>expr&nbsp;</i>))<br>
+Use&nbsp;the value of the enclosed arithmetic expression.<br>
+<i>B</i>#<i>n</i><br>
+Interpret integer&nbsp;<i>n&nbsp;</i>in numeric base&nbsp;<i>B</i>.&nbsp;For example,&nbsp;8#100&nbsp;speci-<br>ﬁes the octal equivalent of decimal 64.<br>
+<i><b>Operators</b></i><br>
+The shell uses arithmetic operators from the C programming language, in decreasing order of<br>precedence.<br>
+<i>Operator</i><br>
+<i>Description</i><br>
+++ --<br>
+Auto-increment and auto-decrement, both preﬁx and postﬁx.<br>
++&nbsp;-&nbsp;!&nbsp;˜<br>
+Unar&nbsp;y&nbsp;plus and minus, logical negation and binary&nbsp;inversion (one’s&nbsp;comple-<br>ment).<br>
+**<br>
+Exponentiation.a<br>
+*&nbsp;/&nbsp;%<br>
+Multiplication; division; modulus (remainder).<br>
++&nbsp;-<br>
+Addition; subtraction.<br>
+&lt;&lt; &gt;&gt;<br>
+Bitwise left shift; bitwise right shift.<br>
+&lt;&nbsp;&lt;=&nbsp;&gt;&nbsp;&gt;=<br>
+Less than; less than or equal to; greater than; greater than or equal to.<br>
+== !=<br>
+Equality; inequality (both evaluated left to right).<br>
+&amp;<br>
+Bitwise AND.<br>
+ˆ<br>
+Bitwise exclusive&nbsp;OR.<br>
+|<br>
+Bitwise OR.<br>
+&amp;&amp;<br>
+Logical AND (short&nbsp;circuit).<br>
+||<br>
+Logical OR (short&nbsp;circuit).<br>
+?:<br>
+Inline conditional evaluation.<br>
+=&nbsp;+=&nbsp;-=<br>
+*= /= %=<br>
+&lt;&lt;= &gt;&gt;=<br>
+Assignment.<br>
+&amp;= ˆ= |=<br>
+,<br>
+Sequential expression evaluation.<br>
+a&nbsp;The&nbsp;**&nbsp;operator is right-associative. Prior to Version 3.1, it was left-associative.<br>
+<i>Arithmetic Expressions&nbsp;&nbsp;19</i><br>
+<hr>
+<A name=22></a><i><b>Examples</b></i><br>
+let &quot;count=0&quot; &quot;i = i + 1&quot;<br>
+<i>Assign i and count</i><br>
+let &quot;num % 2&quot;<br>
+<i>Test for an even number</i><br>
+(( percent &gt;= 0 &amp;&amp; percent &lt;= 100 ))<br>
+<i>Test the range of a value</i><br>
+See&nbsp;the&nbsp;<b>let&nbsp;</b>entr&nbsp;y&nbsp;in the later section “<i>Built-in Commands</i>”&nbsp;for more&nbsp;information and exam-<br>ples.<br>
+<i><b>Command Histor&nbsp;y</b></i><br>
+The shell lets you display or modify previous commands. Commands in the history&nbsp;list can<br>be modiﬁed using:<br>
+•<br>
+Line-edit mode<br>
+•<br>
+The&nbsp;fc&nbsp;command<br>
+•<br>
+C-shell–style history<br>
+<i><b>Line-Edit Mode</b></i><br>
+Line-edit mode emulates many features of the&nbsp;vi&nbsp;and Emacs editors. The history&nbsp;list is<br>treated like a ﬁle. When the editor is invoked, you type editing keystrokes to move&nbsp;to&nbsp;the<br>command line you want to execute. You can also change the line before&nbsp;executing it. When<br>you’re&nbsp;ready to issue the command, press the Enter key.<br>
+Emacs editing mode is the default. To&nbsp;control command-line editing, you must use either<br>set -o vi&nbsp;or&nbsp;set -o emacs;&nbsp;Bash does not use variables to specify the editor.<br>
+Note that&nbsp;vi&nbsp;star&nbsp;ts&nbsp;in input mode; to type a&nbsp;vi&nbsp;command, press the Escape key ﬁrst.<br>
+<i><b>Common editing keystrokes</b></i><br>
+<i>vi</i><br>
+<i>Emacs</i><br>
+<i>Result</i><br>
+k<br>
+CTRL-p<br>
+Get&nbsp;previous command.<br>
+j<br>
+CTRL-n<br>
+Get&nbsp;next command.<br>
+/<i>string</i><br>
+CTRL-r&nbsp;<i>string</i><br>
+Get&nbsp;previous command containing&nbsp;<i>string</i>.<br>
+h<br>
+CTRL-b<br>
+Mo&nbsp;ve&nbsp;back one character.<br>
+l<br>
+CTRL-f<br>
+Mo&nbsp;ve&nbsp;for&nbsp;ward&nbsp;one&nbsp;&nbsp;character.<br>
+b<br>
+ESC-b<br>
+Mo&nbsp;ve&nbsp;back one word.<br>
+w<br>
+ESC-f<br>
+Mo&nbsp;ve&nbsp;for&nbsp;ward&nbsp;one&nbsp;&nbsp;word.<br>
+X<br>
+DEL<br>
+Delete previous character.<br>
+x<br>
+CTRL-d<br>
+Delete character under cursor.<br>
+dw<br>
+ESC-d<br>
+Delete word&nbsp;for&nbsp;ward.<br>
+db<br>
+ESC-h<br>
+Delete word&nbsp;backward.<br>
+xp<br>
+CTRL-t<br>
+Transpose two characters.<br>
+<i>20 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=23></a><i><b>The fc Command</b></i><br>
+fc&nbsp;stands for either “ﬁnd command”&nbsp;or&nbsp;“ﬁx command,” since it does both jobs. Use&nbsp;fc -l<br>to list history&nbsp;commands and&nbsp;fc -e&nbsp;to edit them. See the&nbsp;<b>fc&nbsp;</b>entr&nbsp;y&nbsp;in the later section “<i>Built-<br>in Commands</i>”&nbsp;for more&nbsp;information.<br>
+<i><b>Examples</b></i><br>
+$&nbsp;<b>history</b><br>
+<i>List the last 16 commands</i><br>
+$&nbsp;<b>fc -l 20 30</b><br>
+<i>List commands 20 through 30</i><br>
+$&nbsp;<b>fc -l -5</b><br>
+<i>List the last 5 commands</i><br>
+$&nbsp;<b>fc -l cat</b><br>
+<i>List all commands since the last command beginning with cat</i><br>
+$&nbsp;<b>fc -l 50</b><br>
+<i>List all commands since command 50</i><br>
+$&nbsp;<b>fc -ln 5 &gt; doit</b><br>
+<i>Save&nbsp;command 5 to file doit</i><br>
+$&nbsp;<b>fc -e vi 5 20</b><br>
+<i>Edit commands 5 through 20 using vi</i><br>
+$&nbsp;<b>fc -e emacs</b><br>
+<i>Edit previous command using emacs</i><br>
+Interactive&nbsp;line-editing is easier to use than&nbsp;fc,&nbsp;since you can move&nbsp;up&nbsp;and down in the saved<br>command history&nbsp;using your favorite editor commands (as long as your favorite editor is<br>either&nbsp;vi&nbsp;or Emacs!). You may also use the Up&nbsp;and Down&nbsp;arrow&nbsp;keys to traverse the com-<br>mand history.<br>
+<i><b>C-Shell–Style Histor&nbsp;y</b></i><br>
+Besides the interactive&nbsp;editing features and POSIX&nbsp;fc&nbsp;command, Bash supports a command-<br>line editing mode similar to that of the Berkeley C shell (csh). It&nbsp;can be disabled using&nbsp;set<br>+H.&nbsp;Many users prefer the interactive&nbsp;editing features, but for those whose “ﬁnger habits”&nbsp;are<br>still those of&nbsp;csh,&nbsp;this feature&nbsp;comes in handy.<br>
+<i><b>Ev&nbsp;ent&nbsp;&nbsp;designators</b></i><br>
+Ev&nbsp;ent designators mark&nbsp;a&nbsp;command-line word&nbsp;as&nbsp;a&nbsp;histor&nbsp;y&nbsp;substitution.<br>
+<i>Command</i><br>
+<i>Description</i><br>
+!<br>
+Begin a history&nbsp;substitution.<br>
+!!<br>
+Pr&nbsp;evious&nbsp;&nbsp;command.<br>
+!<i>N</i><br>
+Command number&nbsp;<i>N&nbsp;</i>in history&nbsp;list.<br>
+!-<i>N</i><br>
+<i>N&nbsp;</i>th command back from current command.<br>
+!<i>string</i><br>
+Most recent command that starts with&nbsp;<i>string</i>.<br>
+!?<i>string</i>[?]<br>
+Most recent command that contains&nbsp;<i>string</i>.<br>
+ˆ<i>old</i>ˆ<i>new</i>ˆ<br>
+Quick substitution; change string&nbsp;<i>old&nbsp;</i>to&nbsp;<i>new&nbsp;</i>in previous command,<br>and execute modiﬁed command.<br>
+<i><b>Word&nbsp;substitution</b></i><br>
+Word&nbsp;speciﬁers allow&nbsp;you to retrieve&nbsp;individual words from previous command lines. They<br>follow&nbsp;an&nbsp;initial event speciﬁer,&nbsp;separated by&nbsp;a&nbsp;colon. The colon is optional if followed&nbsp;by&nbsp;any<br>of&nbsp;ˆ,&nbsp;$,&nbsp;*,&nbsp;-,&nbsp;or&nbsp;%.<br>
+<i>Command Histor&nbsp;y</i><br>
+<i>21</i><br>
+<hr>
+<A name=24></a><i>Speciﬁer</i><br>
+<i>Description</i><br>
+:0<br>
+Command name<br>
+:<i>n</i><br>
+Argument number&nbsp;<i>n</i><br>
+ˆ<br>
+First argument<br>
+$<br>
+Last argument<br>
+%<br>
+Argument matched by&nbsp;a&nbsp;!?<i>string</i>?&nbsp;search<br>
+:<i>n</i>-<i>m</i><br>
+Arguments&nbsp;<i>n&nbsp;</i>through&nbsp;<i>m</i><br>
+-<i>m</i><br>
+Words&nbsp;0&nbsp;through&nbsp;<i>m</i>;&nbsp;same as&nbsp;:0-<i>m</i><br>
+:<i>n</i>-<br>
+Arguments&nbsp;<i>n&nbsp;</i>through next-to-last<br>
+:<i>n</i>*<br>
+Arguments&nbsp;<i>n&nbsp;</i>through last; same as&nbsp;<i>n</i>-$<br>
+*<br>
+All arguments; same as&nbsp;ˆ-$&nbsp;or&nbsp;1-$<br>
+#<br>
+Current command line up to this point (fairly useless)<br>
+<i><b>Histor y&nbsp;modifiers</b></i><br>
+There&nbsp;are&nbsp;several ways to modify command and word&nbsp;substitutions. The printing, substitu-<br>tion, and quoting modiﬁers are&nbsp;shown in the following table.<br>
+<i>Modiﬁer</i><br>
+<i>Description</i><br>
+:p<br>
+Display command, but don’t&nbsp;execute.<br>
+:s/<i>old</i>/<i>new</i><br>
+Substitute string&nbsp;<i>new&nbsp;</i>for&nbsp;<i>old</i>,&nbsp;ﬁrst instance only.<br>
+:gs/<i>old</i>/<i>new</i><br>
+Substitute string&nbsp;<i>new&nbsp;</i>for&nbsp;<i>old</i>,&nbsp;all instances.<br>
+:as/<i>old</i>/<i>new</i><br>
+Same as&nbsp;:gs.<br>
+:Gs/<i>old</i>/<i>new</i><br>
+Like&nbsp;:gs,&nbsp;but apply the substitution to all the words in the com-<br>mand line.<br>
+:&amp;<br>
+Repeat previous substitution (:s&nbsp;or&nbsp;ˆ&nbsp;command), ﬁrst instance only.<br>
+:g&amp;<br>
+Repeat previous substitution, all instances.<br>
+:q<br>
+Quote a word&nbsp;list.<br>
+:x<br>
+Quote separate words.<br>
+The truncation modiﬁers are&nbsp;shown in the following table.<br>
+<i>Modiﬁer</i><br>
+<i>Description</i><br>
+:r<br>
+Extract the ﬁrst available pathname root (the portion before&nbsp;the last period).<br>
+:e<br>
+Extract the ﬁrst available pathname extension (the portion after the last<br>period).<br>
+:h<br>
+Extract the ﬁrst available pathname header (the portion before&nbsp;the last<br>slash).<br>
+:t<br>
+Extract the ﬁrst available pathname tail (the portion after the last slash).<br>
+<i><b>Pr&nbsp;ogrammable&nbsp;&nbsp;Completion</b></i><br>
+Bash and the&nbsp;<i>readline&nbsp;</i>librar y&nbsp;provide&nbsp;<i>completion&nbsp;</i>facilities, whereby&nbsp;you can type part&nbsp;of&nbsp;a<br>command name, hit the Tab key,&nbsp;and have&nbsp;Bash ﬁll in part&nbsp;or&nbsp;all of the rest of the command<br>or ﬁlename.&nbsp;<i>Pr&nbsp;ogrammable&nbsp;&nbsp;completion&nbsp;</i>lets you, as a shell programmer,&nbsp;write code to<br>
+<i>22 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=25></a>customize&nbsp;the list of possible completions that Bash will present for a particular,&nbsp;par&nbsp;tially<br>entered word. This is accomplished through the combination of several facilities.<br>
+•<br>
+The&nbsp;complete&nbsp;command allows you provide a completion speciﬁcation, or&nbsp;<i>compspec</i>,<br>for individual commands. You specify,&nbsp;via various options, how&nbsp;to&nbsp;tailor the list of pos-<br>sible completions for the particular command. This is simple, but adequate for many<br>needs. (See the&nbsp;<b>complete&nbsp;</b>entr&nbsp;y&nbsp;in the section “<i>Built-in Commands</i>,” later in this refer-<br>ence.)<br>
+•<br>
+For more&nbsp;ﬂexibility,&nbsp;you may use&nbsp;complete -F&nbsp;<i>funcname command</i>.&nbsp;This tells Bash to<br>call&nbsp;<i>funcname&nbsp;</i>to provide the list of completions for&nbsp;<i>command</i>.&nbsp;You write the&nbsp;<i>funcname<br></i>function.<br>
+•<br>
+Within the code for a&nbsp;-F&nbsp;function, the COMP* shell variables provide information<br>about the current command line. COMPREPLY&nbsp;is&nbsp;an&nbsp;array into which the function<br>places the ﬁnal list of completion results.<br>
+•<br>
+Also within the code for a&nbsp;-F&nbsp;function, you may use the&nbsp;compgen&nbsp;command to gener-<br>ate a list of results, such as “usernames that begin with&nbsp;a”&nbsp;or&nbsp;“all set variables.” The<br>intent is that such results would be used with an array assignment:<br>
+...<br>
+COMPREPLY=( $( compgen&nbsp;<i>options arguments&nbsp;</i>)&nbsp;)<br>
+...<br>
+Compspecs may be associated with either a full pathname for a command or,&nbsp;more&nbsp;com-<br>monly,&nbsp;an&nbsp;unadorned command name (/usr/bin/man&nbsp;versus plain&nbsp;man). Completions are<br>attempted in the following order,&nbsp;based on the options provided to the&nbsp;complete&nbsp;com-<br>mand.<br>
+1.&nbsp;&nbsp;Bash ﬁrst identiﬁes the command. If&nbsp;a&nbsp;pathname is used, Bash looks to see if a comp-<br>
+spec exists for the full pathname. Other&nbsp;wise,&nbsp;it sets the command name to the last com-<br>ponent of the pathname, and searches for a compspec for the command name.<br>
+2.&nbsp;<br>
+If&nbsp;a&nbsp;compspec exists, Bash uses it. If&nbsp;not, Bash falls back to the default built-in comple-<br>tions.<br>
+3.&nbsp;&nbsp;Bash performs the action indicated by&nbsp;the compspec to generate a list of possible<br>
+matches. Of&nbsp;this list, only those that have&nbsp;the word&nbsp;being completed as a preﬁx are&nbsp;used<br>for the list of possible completions. For the&nbsp;-d&nbsp;and&nbsp;-f&nbsp;options, the variable FIGNORE<br>is used to ﬁlter out undesirable matches.<br>
+4.&nbsp;&nbsp;Bash generates ﬁlenames as speciﬁed by&nbsp;the&nbsp;-G&nbsp;option. GLOBIGNORE is not used to<br>
+ﬁlter the results, but FIGNORE is.<br>
+5.&nbsp;<br>
+Bash processes the argument string provided to&nbsp;-W.&nbsp;The string is split using the charac-<br>ters in $IFS. The resulting list provides the candidates for completion. This is often<br>used to provide a list of options that a command accepts.<br>
+6.&nbsp;&nbsp;Bash runs functions and commands as speciﬁed by&nbsp;the&nbsp;-F&nbsp;and&nbsp;-C&nbsp;options. For both,<br>
+Bash sets COMP_LINE and COMP_POINT as described previously.&nbsp;For a shell func-<br>tion, COMP_WORDS and COMP_CWORD are&nbsp;also set.<br>
+Also for both functions and commands,&nbsp;$1&nbsp;is the name of the command whose argu-<br>ments are&nbsp;being completed,&nbsp;$2&nbsp;is the word&nbsp;being completed, and&nbsp;$3&nbsp;is the word&nbsp;in&nbsp;front<br>
+<i>Command Histor&nbsp;y</i><br>
+<i>23</i><br>
+<hr>
+<A name=26></a>of the word&nbsp;being completed. Bash does&nbsp;<i>not&nbsp;</i>ﬁlter the results of the command or func-<br>tion.<br>
+a.&nbsp;<br>
+Functions named with&nbsp;-F&nbsp;are&nbsp;run ﬁrst. The function should set the COMPRE-<br>PLY&nbsp;array to the list of possible completions. Bash retrieves the list from there.<br>
+b.&nbsp;<br>
+Commands provided with&nbsp;-C&nbsp;are&nbsp;run next, in an environment equivalent to com-<br>mand substitution. The command should print the list of possible completions,<br>one per line. An embedded newline should be escaped with a backslash.<br>
+7.&nbsp;<br>
+Once the list is generated, Bash ﬁlters the results according to the&nbsp;-X&nbsp;option. The argu-<br>ment to&nbsp;-X&nbsp;is a pattern specifying ﬁles to exclude. By&nbsp;preﬁxing the pattern with a&nbsp;!,&nbsp;the<br>sense is reversed, and the pattern instead speciﬁes that only matching ﬁles should be<br>retained in the list.<br>
+An&nbsp;&amp;&nbsp;in the pattern is replaced with the text of the word&nbsp;being completed. Use&nbsp;\&amp;&nbsp;to<br>produce a literal&nbsp;&amp;.<br>
+8.&nbsp;&nbsp;Finally,&nbsp;Bash prepends or appends any preﬁxes or sufﬁxes supplied with the&nbsp;-P&nbsp;or&nbsp;-S<br>
+options.<br>
+9.&nbsp;&nbsp;In&nbsp;the case that no matches were&nbsp;generated, if&nbsp;-o dirnames&nbsp;was used, Bash attempts<br>
+director y&nbsp;name&nbsp;&nbsp;completion.<br>
+10.&nbsp;&nbsp;On&nbsp;the other hand, if&nbsp;-o plusdirs&nbsp;was provided, Bash&nbsp;<i>adds&nbsp;</i>the result of director&nbsp;y<br>
+completion to the previously generated list.<br>
+11.&nbsp;&nbsp;Normally,&nbsp;when a compspec is provided, Bash’s&nbsp;default completions are&nbsp;not attempted,<br>
+nor are&nbsp;the&nbsp;<i>readline&nbsp;</i>librar&nbsp;y’s&nbsp;default ﬁlename completions.<br>
+a.&nbsp;<br>
+If&nbsp;the compspec produces no results and&nbsp;-o bashdefault&nbsp;was provided, then Bash<br>attempts its default completions.<br>
+b.&nbsp;&nbsp;If&nbsp;neither the compspec nor the Bash default completions with&nbsp;-o bashdefault<br>
+produced any results, and&nbsp;-o default&nbsp;was provided, then Bash has the&nbsp;<i>readline<br></i>librar&nbsp;y&nbsp;attempt its ﬁlename completions.<br>
+Ian&nbsp;Macdonald has collected a large set of useful compspecs, often distributed as the ﬁle<br>/etc/bash_completion.&nbsp;If&nbsp;your system does not have&nbsp;it, one location for downloading it<br>is&nbsp;<i>http://www.dreamind.de/ﬁles/bash-stuff/bash_completion</i>.&nbsp;It&nbsp;is&nbsp;wor&nbsp;th&nbsp;retrieving and revie&nbsp;wing.<br>
+<i><b>Examples</b></i><br>
+Restrict ﬁles for the C compiler to C, C++ and assembler source ﬁles, and relocatable object<br>ﬁles:<br>
+complete -f -X ’!*.[Ccos]’ gcc cc<br>
+For&nbsp;the&nbsp;man&nbsp;command, restrict expansions to things that have&nbsp;manpages:<br>
+#&nbsp;Simple example of programmable completion for manual pages.<br>
+#&nbsp;A&nbsp;more elaborate example appears in the bash_completion file.<br>
+#&nbsp;Assumes&nbsp;<br>
+man&nbsp;[num] command<br>
+command syntax.<br>
+shopt -s extglob<br>
+<i>Enable extended pattern&nbsp;matching</i><br>
+<i>24 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=27></a>_man ()&nbsp;{<br>
+local dir mandir=/usr/share/man<br>
+<i>Local variables</i><br>
+COMPREPLY=( )<br>
+<i>Clear reply list</i><br>
+if [[ ${COMP_WORDS[1]} = +([0-9]) ]]<br>
+<i>Section number provided</i><br>
+then<br>
+#&nbsp;section provided: man 3 foo<br>
+dir=$mandir/man${COMP_WORDS[COMP_CWORD-1]}<br>
+<i>Look in that director&nbsp;y</i><br>
+else<br>
+#&nbsp;no&nbsp;section, default to commands<br>
+dir=$mandir/’man[18]’<br>
+<i>Look in command directories</i><br>
+fi<br>
+COMPREPLY=( $( find $dir -type f |<br>
+<i>Generate raw file list</i><br>
+sed ’s;..*/;;’ |<br>
+<i>Remove&nbsp;leading&nbsp;directories</i><br>
+sed ’s/\.[0-9].*$//’ |<br>
+<i>Remove&nbsp;trailing&nbsp;suffixes</i><br>
+grep &quot;ˆ${COMP_WORDS[$COMP_CWORD]}&quot; |<br>
+<i>Keep those that match given prefix</i><br>
+sort<br>
+<i>Sor t&nbsp;final&nbsp;&nbsp;list</i><br>
+)&nbsp;)<br>
+}<br>
+complete -F _man man<br>
+<i>Associate function with command</i><br>
+<i><b>Job&nbsp;Control</b></i><br>
+Job&nbsp;control lets you place foreground jobs in the background, bring background jobs to the<br>foreground, or suspend (temporarily stop) running jobs. All modern Unix systems, including<br>Linux and BSD systems, support&nbsp;job control; thus, the job control features are&nbsp;automatically<br>enabled. Many job control commands take a&nbsp;<i>jobID&nbsp;</i>as an argument. This argument can be<br>speciﬁed as follows:<br>
+%<i>n</i><br>
+Job&nbsp;number&nbsp;<i>n</i>.<br>
+%<i>s</i><br>
+Job&nbsp;whose command line starts with string&nbsp;<i>s</i>.<br>
+%?<i>s&nbsp;</i>Job&nbsp;whose command line contains string&nbsp;<i>s</i>.<br>
+%%<br>
+Current job.<br>
+%+<br>
+Current job (same as above).<br>
+%<br>
+Current job (same as above).<br>
+%-<br>
+Pr&nbsp;evious&nbsp;&nbsp;job.<br>
+The shell provides the following job control commands. For more&nbsp;information on these<br>commands, see the section “<i>Built-in Commands</i>,” later in this reference.<br>
+bg<br>
+Put&nbsp;a&nbsp;job in the background.<br>
+fg<br>
+Put&nbsp;a&nbsp;job in the foreground.<br>
+jobs<br>
+List active&nbsp;jobs.<br>
+kill<br>
+Terminate a job.<br>
+<i>Job&nbsp;Control 25</i><br>
+<hr>
+<A name=28></a>stty tostop<br>
+Stop background jobs if they try&nbsp;to&nbsp;send output to the terminal. (Note that&nbsp;stty&nbsp;is not<br>a&nbsp;built-in command.)<br>
+suspend<br>
+Suspend a job-control shell (such as one created by&nbsp;su).<br>
+wait<br>
+Wait for background jobs to ﬁnish.<br>
+CTRL-Z<br>
+Suspend a foreground job.&nbsp;Then use&nbsp;bg&nbsp;or&nbsp;fg.&nbsp;(Your terminal may use something other<br>than&nbsp;CTRL-Z&nbsp;as the suspend character.)<br>
+<i><b>Shell Options</b></i><br>
+Bash provides a number of shell options, settings that you can change to modify the shell’s<br>behavior.&nbsp;You control these options with the&nbsp;shopt&nbsp;command (see the&nbsp;<b>shopt&nbsp;</b>entr y&nbsp;in&nbsp;&nbsp;the<br>later section “<i>Built-in Commands</i>”). The following descriptions describe the behavior when<br>set. Options marked with a dagger (†) are&nbsp;enabled by&nbsp;default.<br>
+cdable_vars<br>
+Tr&nbsp;eat a nondirector&nbsp;y&nbsp;argument to&nbsp;cd&nbsp;as a variable whose value is the director&nbsp;y&nbsp;to go to.<br>
+cdspell<br>
+Attempt spelling correction on each director&nbsp;<br>
+y&nbsp;component of an argument to&nbsp;cd.<br>
+Allowed&nbsp;in&nbsp;interactive&nbsp;shells only.<br>
+checkhash<br>
+Check that commands found in the hash table still exist before&nbsp;attempting to use them.<br>If&nbsp;not, perform a normal PATH&nbsp;search.<br>
+checkwinsize<br>
+Check the window&nbsp;size&nbsp;after each command, and update LINES and COLUMNS if the<br>size&nbsp;has changed.<br>
+cmdhist&nbsp;†<br>
+Save&nbsp;all lines of a multiline command in one history&nbsp;entr&nbsp;y.&nbsp;This permits easy re-editing<br>of multiline commands.<br>
+dotglob<br>
+Include ﬁlenames starting with a period in the results of ﬁlename expansion.<br>
+execfail<br>
+Do&nbsp;not exit a noninteractive&nbsp;shell if the command given to&nbsp;exec&nbsp;cannot be executed.<br>Interactive&nbsp;shells do not exit in such a case, no matter the setting of this option.<br>
+expand_aliases&nbsp;†<br>
+Expand aliases created with&nbsp;alias.&nbsp;Disabled in noninteractive&nbsp;shells.<br>
+extdebug<br>
+Enable behavior needed for debuggers:<br>
+<i>26 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=29></a>•<br>
+declare -F&nbsp;displays the source ﬁlename and line number for each function name<br>argument.<br>
+•<br>
+When a command run by&nbsp;the&nbsp;DEBUG&nbsp;trap fails, the next command is skipped.<br>
+•<br>
+When a command run by&nbsp;the&nbsp;DEBUG&nbsp;trap inside a shell function or script sourced<br>with&nbsp;.&nbsp;(dot) or&nbsp;source&nbsp;returns with an exit status of 2, the shell simulates a call to<br>return.<br>
+•<br>
+BASH_ARGC and BASH_ARGV are&nbsp;set as described earlier.<br>
+•<br>
+Function tracing is enabled. Command substitutions, shell functions, and sub-<br>shells invoked via&nbsp;(...)&nbsp;inherit the&nbsp;DEBUG&nbsp;and&nbsp;RETURN&nbsp;traps.<br>
+•<br>
+Error tracing is enabled. Command substitutions, shell functions, and subshells<br>invoked via&nbsp;(...)&nbsp;inherit the&nbsp;ERR&nbsp;trap.<br>
+extglob<br>
+Enable extended pattern-matching facilities such as&nbsp;+(...).&nbsp;(These were&nbsp;not in the<br>Bourne shell and are&nbsp;not in POSIX; thus Bash requires you to enable them if you want<br>them.)<br>
+extquote&nbsp;†<br>
+Allow&nbsp;$’...’&nbsp;and&nbsp;$&quot;...&quot;&nbsp;within&nbsp;${<i>variable</i>}&nbsp;expansions inside double quotes.<br>
+failglob<br>
+Cause patterns that do not match ﬁlenames to produce an error.<br>
+force_fignore&nbsp;†<br>
+When doing completion, ignore&nbsp;words matching the list of sufﬁxes in FIGNORE, even<br>if such words are&nbsp;the only possible completions.<br>
+gnu_errfmt<br>
+Print error messages in the standard&nbsp;GNU format.&nbsp;Enabled automatically when Bash<br>runs in an Emacs terminal window.<br>
+histappend<br>
+Append the history&nbsp;list to the ﬁle named by&nbsp;HISTFILE upon exit, instead of overwrit-<br>ing the ﬁle.<br>
+histreedit<br>
+Allow&nbsp;a&nbsp;user to re-edit a failed&nbsp;csh-style history&nbsp;substitution with the&nbsp;<i>readline&nbsp;</i>librar y.<br>
+histverify<br>
+Place the results of&nbsp;csh-style history&nbsp;substitution into the&nbsp;<i>readline&nbsp;</i>librar y’s&nbsp;&nbsp;editing<br>buffer instead of executing it directly,&nbsp;in&nbsp;case the user wishes to modify it further.<br>
+hostcomplete&nbsp;†<br>
+If&nbsp;using&nbsp;<i>readline</i>,&nbsp;attempt hostname completion when a word&nbsp;containing an&nbsp;@&nbsp;is being<br>completed.<br>
+huponexit<br>
+Send a&nbsp;SIGHUP&nbsp;to all running jobs upon exiting an interactive&nbsp;login shell.<br>
+<i>Shell Options&nbsp;&nbsp;27</i><br>
+<hr>
+<A name=30></a>interactive_comments&nbsp;†<br>
+Allow&nbsp;words beginning with&nbsp;#&nbsp;to start&nbsp;a&nbsp;comment in an interactive&nbsp;shell.<br>
+lithist<br>
+If&nbsp;cmdhist&nbsp;is also set, save&nbsp;multiline commands to the history&nbsp;ﬁle with newlines instead<br>of semicolons.<br>
+login_shell<br>
+Set&nbsp;by&nbsp;the shell when it is a login shell.&nbsp;This is a read-only option.<br>
+mailwarn<br>
+Print the message&nbsp;The mail in&nbsp;<i>mailfile&nbsp;</i>has been read&nbsp;when a ﬁle being checked for<br>mail has been accessed since the last time Bash checked it.<br>
+no_empty_cmd_completion<br>
+If&nbsp;using&nbsp;<i>readline</i>,&nbsp;do&nbsp;<i>not&nbsp;</i>search $PATH&nbsp;when a completion is attempted on an empty<br>line.<br>
+nocaseglob<br>
+Ignore&nbsp;letter case when doing ﬁlename matching.<br>
+nocasematch<br>
+Ignore&nbsp;letter case when doing pattern matching for&nbsp;case&nbsp;and&nbsp;[[ ]].<br>
+nullglob<br>
+Expand patterns that do not match any ﬁles to the null string, instead of using the lit-<br>eral pattern as an argument.<br>
+progcomp&nbsp;†<br>
+Enable programmable completion.<br>
+promptvars&nbsp;†<br>
+Perform variable, command, and arithmetic substitution on the values of PS1, PS2, and<br>PS4.<br>
+restricted_shell<br>
+Set&nbsp;by&nbsp;the shell when it is a restricted shell.&nbsp;This is a read-only option.<br>
+shift_verbose<br>
+Causes&nbsp;shift&nbsp;to print an error message when the shift count is greater than the num-<br>ber of positional parameters.<br>
+sourcepath&nbsp;†<br>
+Causes the&nbsp;.&nbsp;(dot) and&nbsp;source&nbsp;commands to search $PATH&nbsp;in&nbsp;order to ﬁnd the ﬁle to<br>read and execute.<br>
+xpg_echo<br>
+Causes&nbsp;echo&nbsp;to expand escape sequences, even without the&nbsp;-e&nbsp;or&nbsp;-E&nbsp;options.<br>
+<i><b>Command Execution</b></i><br>
+When you type a command, Bash looks in the following places until it ﬁnds a match:<br>
+<i>28 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=31></a>1.&nbsp;<br>
+Keywords such as&nbsp;if&nbsp;and&nbsp;for.<br>
+2.&nbsp;&nbsp;Aliases.&nbsp;You&nbsp;can’t&nbsp;deﬁne an alias whose name is a shell keyword, but you can deﬁne an<br>
+alias that expands to a keyword, e.g.,&nbsp;alias aslongas=while.&nbsp;When not in POSIX<br>mode, Bash does allow&nbsp;you to deﬁne an alias for a shell keyword.<br>
+3.&nbsp;&nbsp;Special built-ins like&nbsp;break&nbsp;and&nbsp;continue.&nbsp;The list of POSIX special built-ins is&nbsp;.<br>
+(dot),&nbsp;:,&nbsp;break,&nbsp;continue,&nbsp;eval,&nbsp;exec,&nbsp;exit,&nbsp;export,&nbsp;readonly,&nbsp;return,&nbsp;set,<br>shift,&nbsp;times,&nbsp;trap,&nbsp;and&nbsp;unset.&nbsp;Bash adds&nbsp;source.<br>
+4.&nbsp;<br>
+Functions. When not in POSIX mode, Bash ﬁnds functions before&nbsp;built-in commands.<br>
+5.&nbsp;<br>
+Nonspecial built-ins such as&nbsp;cd&nbsp;and&nbsp;test.<br>
+6.&nbsp;&nbsp;Scripts&nbsp;and executable programs, for which the shell searches in the directories listed in<br>
+the PATH&nbsp;environment variable.<br>
+The distinction between “special”&nbsp;built-in commands and nonspecial ones comes from<br>POSIX. This distinction, combined with the&nbsp;command&nbsp;command, makes it possible to write<br>functions that override shell built-ins, such as&nbsp;cd.&nbsp;For example:<br>
+cd () {<br>
+<i>Shell function; found before&nbsp;built-in cd</i><br>
+command cd &quot;$@&quot;<br>
+<i>Use&nbsp;real cd to change director&nbsp;y</i><br>
+echo now in $PWD<br>
+<i>Other stuff we&nbsp;want to do</i><br>
+}<br>
+<i><b>Restricted Shells</b></i><br>
+A&nbsp;<i>restricted shell&nbsp;</i>is one that disallows certain actions, such as changing director&nbsp;y,&nbsp;setting<br>PATH, or running commands whose names contain a&nbsp;/&nbsp;character.<br>
+The original V7 Bourne shell had an undocumented restricted mode. Later versions of the<br>Bourne shell clariﬁed the code and documented the facility.&nbsp;Bash also supplies a restricted<br>mode. (See the manual page for the details.)<br>
+Shell scripts can still be run, since in that case the restricted shell calls the unrestricted version<br>of the shell to run the script. This includes the&nbsp;/etc/profile,&nbsp;$HOME/.profile,&nbsp;and<br>other startup ﬁles.<br>
+Restricted shells are&nbsp;not used much in practice, as they are&nbsp;difﬁcult to set up correctly.<br>
+<i><b>Built-in Commands</b></i><br>
+Examples to be entered as a command line are&nbsp;shown with the&nbsp;$&nbsp;prompt. Other&nbsp;wise,&nbsp;exam-<br>ples should be treated as code fragments that might be included in a shell script. For conve-<br>nience, some of the reser&nbsp;ved words used by&nbsp;multiline commands are&nbsp;also included.<br>
+!&nbsp;<i>pipeline</i><br>
+<b>!</b><br>
+Negate the sense of a pipeline. Returns an exit status of 0 if the pipeline<br>exited nonzero, and an exit status of 1 if the pipeline exited zero.&nbsp;Typically<br>used in&nbsp;if&nbsp;and&nbsp;while&nbsp;statements.<br>
+→<br>
+<i>Built-in Commands</i><br>
+<i>29</i><br>
+<hr>
+<A name=32></a><b>!</b><br>
+<i><b>Example</b></i><br>
+←<br>
+This code prints a message if user&nbsp;jane&nbsp;is not logged on:<br>
+if ! who | grep jane &gt; /dev/null<br>
+then<br>
+echo jane is not currently logged on<br>
+fi<br>
+<b>#</b><br>
+#<br>
+Ignore&nbsp;all text that follows on the same line.&nbsp;#&nbsp;is used in shell scripts as the<br>comment character and is not really a command.<br>
+<b>#!</b><i>shell</i><br>
+#!<i>shell&nbsp;</i><b>[</b><i>option</i><b>]</b><br>
+Used as the ﬁrst line of a script to invoke the named&nbsp;<i>shell</i>.&nbsp;Anything given on<br>the rest of the line is passed&nbsp;<i>as a single argument&nbsp;</i>to the named&nbsp;<i>shell</i>.&nbsp;This fea-<br>ture&nbsp;is&nbsp;typically implemented by&nbsp;the kernel, but may not be supported on<br>some older systems. Some systems have&nbsp;a&nbsp;limit of around 32 characters on the<br>maximum length of&nbsp;<i>shell</i>.&nbsp;For example:<br>
+#!/bin/sh<br>
+<b>:</b><br>
+:<br>
+Null command. Returns an exit status of 0. See this Example and the ones<br>under&nbsp;<b>case</b>.&nbsp;The line is still processed for side effects, such as variable and<br>command substitutions, or I/O redirection.<br>
+<i><b>Example</b></i><br>
+Check whether someone is logged in:<br>
+if who | grep $1 &gt; /dev/null<br>
+then :<br>
+#&nbsp;Do&nbsp;nothing if user is found<br>
+else echo &quot;User $1 is not logged in&quot;<br>
+fi<br>
+<b>.</b><br>
+.&nbsp;<i>file&nbsp;</i><b>[</b><i>arguments</i><b>]</b><br>
+Read and execute lines in&nbsp;<i>ﬁle</i>.&nbsp;<i>ﬁle&nbsp;</i>does not have&nbsp;to&nbsp;be&nbsp;executable but must<br>reside in a director&nbsp;y&nbsp;searched by&nbsp;PATH. The&nbsp;<i>arguments&nbsp;</i>are&nbsp;stored in the posi-<br>tional parameters. If&nbsp;Bash is not in POSIX mode and&nbsp;<i>ﬁle&nbsp;</i>is not found in<br>PATH, Bash looks in the current director&nbsp;y&nbsp;for&nbsp;<i>ﬁle</i>.<br>
+<i>30 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=33></a>[[&nbsp;<i>expression&nbsp;</i>]]<br>
+<b>[[ ]]</b><br>
+Same as&nbsp;test&nbsp;<i>expression&nbsp;</i>or&nbsp;[&nbsp;<i>expression&nbsp;</i>],&nbsp;except that&nbsp;[[ ]]&nbsp;allows additional<br>operators. Word&nbsp;splitting and ﬁlename expansion are&nbsp;disabled. Note that the<br>brackets ([&nbsp;])&nbsp;are&nbsp;typed literally,&nbsp;and that they must be surrounded by&nbsp;white-<br>space. See&nbsp;<b>test</b>.<br>
+<i><b>Additional Operators</b></i><br>
+&amp;&amp;<br>
+Logical AND of test expressions (short&nbsp;circuit).<br>
+||<br>
+Logical OR of test expressions (short&nbsp;circuit).<br>
+&lt;<br>
+First string is lexically “less than”&nbsp;the second.<br>
+&gt;<br>
+First string is lexically “greater than”&nbsp;the second.<br>
+<i>name&nbsp;</i>() {&nbsp;<i>commands</i>;&nbsp;}<br>
+<i>name&nbsp;</i>(&nbsp;)<br>
+Deﬁne&nbsp;<i>name&nbsp;</i>as a function. POSIX syntax. The function deﬁnition can be<br>written on one line or across many.&nbsp;You may also provide the&nbsp;function&nbsp;key-<br>word, an alternate form that works similarly.&nbsp;See the earlier section “<i>Func-<br>tions</i>.”<br>
+<i><b>Example</b></i><br>
+$&nbsp;<b>count (</b><br>
+<b>)&nbsp;{</b><br>
+&gt;<br>
+<b>ls | wc -l</b><br>
+&gt;&nbsp;<b>}</b><br>
+When issued at the command line,&nbsp;count&nbsp;now&nbsp;displays the number of ﬁles in<br>the current director&nbsp;y.<br>
+alias&nbsp;<b>[</b><i>options</i><b>]&nbsp;[</b><i>name</i><b>[</b>=’<i>cmd</i>’<b>]]</b><br>
+<b>alias</b><br>
+Assign a shorthand&nbsp;<i>name&nbsp;</i>as a synonym for&nbsp;<i>cmd</i>.&nbsp;If&nbsp;=’<i>cmd</i>’&nbsp;is omitted, print<br>the alias for&nbsp;<i>name</i>;&nbsp;if&nbsp;<i>name&nbsp;</i>is also omitted, print all aliases. If&nbsp;the alias value<br>contains a trailing space, the next word&nbsp;on&nbsp;the command line also becomes a<br>candidate for alias expansion. See also&nbsp;<b>unalias</b>.<br>
+<i><b>Option</b></i><br>
+-p<br>
+Print the word&nbsp;alias&nbsp;before&nbsp;each alias.<br>
+<i><b>Example</b></i><br>
+alias dir=’echo ${PWD##*/}’<br>
+<i>Built-in Commands</i><br>
+<i>31</i><br>
+<hr>
+<A name=34></a><b>bind</b><br>
+bind&nbsp;<b>[</b>-m&nbsp;<i>map</i><b>]&nbsp;[</b><i>options</i><b>]<br></b>bind&nbsp;<b>[</b>-m&nbsp;<i>map</i><b>]&nbsp;[</b>-q&nbsp;<i>function</i><b>]&nbsp;[</b>-r&nbsp;<i>sequence</i><b>]&nbsp;[</b>-u&nbsp;<i>function</i><b>]<br></b>bind&nbsp;<b>[</b>-m&nbsp;<i>map</i><b>]&nbsp;</b>-f&nbsp;<i>file<br></i>bind&nbsp;<b>[</b>-m&nbsp;<i>map</i><b>]&nbsp;</b>-x&nbsp;<i>sequence</i>:<i>command<br></i>bind&nbsp;<b>[</b>-m&nbsp;<i>map</i><b>]&nbsp;</b><i>sequence</i>:<i>function<br></i>bind&nbsp;<i>readline-command</i><br>
+Manage the&nbsp;<i>readline&nbsp;</i>librar&nbsp;y.&nbsp;Nonoption arguments have&nbsp;the same form as in a<br>.inputrc&nbsp;ﬁle.<br>
+<i><b>Options</b></i><br>
+-f&nbsp;<i>file</i><br>
+Read key bindings from&nbsp;<i>ﬁle</i>.<br>
+-l<br>
+List the names of all the&nbsp;<i>readline&nbsp;</i>functions.<br>
+-m&nbsp;<i>map</i><br>
+Use&nbsp;<i>map&nbsp;</i>as the keymap.&nbsp;Available keymaps are:&nbsp;emacs,&nbsp;emacs-<br>standard,&nbsp;emacs-meta,&nbsp;emacs-ctlx,&nbsp;vi,&nbsp;vi-move,&nbsp;vi-command,&nbsp;and<br>
+vi-insert.&nbsp;vi&nbsp;is the same as&nbsp;vi-command,&nbsp;and&nbsp;emacs&nbsp;is the same as<br>
+emacs-standard.<br>
+-p<br>
+Print the current&nbsp;<i>readline&nbsp;</i>bindings such that they can be reread from a<br>.inputrc&nbsp;ﬁle.<br>
+-P<br>
+Print the current&nbsp;<i>readline&nbsp;</i>bindings.<br>
+-q&nbsp;<i>function</i><br>
+Quer&nbsp;y&nbsp;which keys invoke the&nbsp;<i>readline&nbsp;</i>function&nbsp;<i>function</i>.<br>
+-r&nbsp;<i>sequence</i><br>
+Remove&nbsp;the binding for key sequence&nbsp;<i>sequence</i>.<br>
+-s<br>
+Print the current&nbsp;<i>readline&nbsp;</i>key sequence and macro&nbsp;bindings such that<br>they can be reread from a&nbsp;.inputrc&nbsp;ﬁle.<br>
+-S<br>
+Print the current&nbsp;<i>readline&nbsp;</i>key sequence and macro&nbsp;bindings.<br>
+-u&nbsp;<i>function</i><br>
+Unbind all keys that invoke the&nbsp;<i>readline&nbsp;</i>function&nbsp;<i>function</i>.<br>
+-v<br>
+Print the current&nbsp;<i>readline&nbsp;</i>variables such that they can be reread from a<br>.inputrc&nbsp;ﬁle.<br>
+-V<br>
+Print the current&nbsp;<i>readline&nbsp;</i>variables.<br>
+-x&nbsp;<i>sequence</i>:<i>command</i><br>
+Execute the shell command&nbsp;<i>command&nbsp;</i>whenever&nbsp;<i>sequence&nbsp;</i>is entered.<br>
+<i>32 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=35></a>bg&nbsp;<b>[</b><i>jobIDs</i><b>]</b><br>
+<b>bg</b><br>
+Put&nbsp;current job or&nbsp;<i>jobIDs&nbsp;</i>in the background. See the earlier section “<i>Job<br>Control</i>.”<br>
+break&nbsp;<b>[</b><i>n</i><b>]</b><br>
+<b>break</b><br>
+Exit from a&nbsp;for,&nbsp;while,&nbsp;select,&nbsp;or&nbsp;until&nbsp;loop (or break out of&nbsp;<i>n&nbsp;</i>loops).<br>
+builtin&nbsp;<i>command&nbsp;</i><b>[</b><i>arguments&nbsp;</i><b>...]</b><br>
+<b>builtin</b><br>
+Run&nbsp;the shell built-in command&nbsp;<i>command&nbsp;</i>with the given arguments. This<br>allows you to bypass any functions that redeﬁne a built-in command’s&nbsp;name.<br>The&nbsp;command&nbsp;command is more&nbsp;por&nbsp;table.<br>
+<i><b>Example</b></i><br>
+This function lets you do your own tasks when you change director&nbsp;y:<br>
+cd () {<br>
+builtin cd &quot;$@&quot;<br>
+<i>Actually change director&nbsp;y</i><br>
+pwd<br>
+<i>Repor t&nbsp;location</i><br>
+}<br>
+caller&nbsp;<b>[</b><i>expression</i><b>]</b><br>
+<b>caller</b><br>
+Print the line number and source ﬁlename of the current function call or dot<br>ﬁle. With nonzero&nbsp;<i>expression</i>,&nbsp;prints that element from the call stack. The<br>most recent is zero.&nbsp;This command is for use by&nbsp;the Bash debugger.<br>
+case&nbsp;<i>value&nbsp;</i>in<br>
+<b>case</b><br>
+<i>pattern1</i>)&nbsp;<i>cmds1</i>;;<br>
+<i>pattern2</i>)&nbsp;<i>cmds2</i>;;<br>
+<b>.<br>.<br>.</b><br>
+esac<br>
+Execute the ﬁrst set of commands (<i>cmds1</i>)&nbsp;if&nbsp;<i>value&nbsp;</i>matches&nbsp;<i>patter n1</i>,&nbsp;execute<br>the second set of commands (<i>cmds2</i>)&nbsp;if&nbsp;<i>value&nbsp;</i>matches&nbsp;<i>patter n2</i>,&nbsp;etc. Be&nbsp;sure<br>the last command in each set ends with&nbsp;;;.&nbsp;<i>value&nbsp;</i>is typically a positional<br>parameter or other shell variable.&nbsp;<i>cmds&nbsp;</i>are&nbsp;typically Unix commands, shell<br>programming commands, or variable assignments. Patterns can use ﬁle-gener-<br>ation metacharacters. Multiple patterns (separated by&nbsp;|)&nbsp;can be speciﬁed on<br>the same line; in this case, the associated&nbsp;<i>cmds&nbsp;</i>are&nbsp;executed whenever&nbsp;<i>value<br></i>matches any of these patterns. See the Examples here&nbsp;and under&nbsp;<b>eval</b>.<br>
+→<br>
+<i>Built-in Commands</i><br>
+<i>33</i><br>
+<hr>
+<A name=36></a><b>case</b><br>
+The shell allows&nbsp;<i>patter n&nbsp;</i>to be preceded by&nbsp;an&nbsp;optional open parenthesis, as in<br>
+←<br>
+(<i>pattern</i>).&nbsp;In&nbsp;Bash, it’s&nbsp;&nbsp;necessar&nbsp;y&nbsp;for balancing parentheses inside a&nbsp;$( )<br>constr uct.&nbsp;See&nbsp;also&nbsp;&nbsp;the&nbsp;nocasematch&nbsp;option in “<i>Shell Options</i>.”<br>
+<i><b>Examples</b></i><br>
+Check ﬁrst command-line argument and take appropriate action:<br>
+case $1 in<br>
+#&nbsp;Match the first arg<br>
+no|yes) response=1;;<br>
+-[tT]) table=TRUE;;<br>
+*)&nbsp;<br>
+echo&nbsp;&quot;unknown option&quot;; exit 1;;<br>
+esac<br>
+Read user-supplied lines until user exits:<br>
+while :<br>
+#&nbsp;Null command; always true<br>
+do&nbsp;<br>
+printf&nbsp;&quot;Type . to finish ==&gt; &quot;<br>
+read line<br>
+case &quot;$line&quot; in<br>
+.) echo&nbsp;&quot;Message&nbsp;<br>
+done&quot;<br>
+break ;;<br>
+*)&nbsp;&nbsp;echo&nbsp;&quot;$line&quot; &gt;&gt; $message ;;<br>
+esac<br>
+done<br>
+<b>cd</b><br>
+cd&nbsp;<b>[</b>-LP<b>]&nbsp;[</b><i>dir</i><b>]<br></b>cd&nbsp;<b>[</b>-LP<b>]&nbsp;[</b>-<b>]</b><br>
+With no arguments, change to home director&nbsp;y&nbsp;of user.&nbsp;Other&nbsp;wise,&nbsp;change<br>working director&nbsp;y&nbsp;to&nbsp;<i>dir</i>.&nbsp;Bash searches the CDPATH&nbsp;variable ﬁrst, and then<br>looks in the current director&nbsp;y&nbsp;for&nbsp;<i>dir</i>.&nbsp;A&nbsp;director y&nbsp;of&nbsp;-&nbsp;stands for the previous<br>director y.<br>
+<i><b>Options</b></i><br>
+-L<br>
+Use&nbsp;the logical path (what the user typed, including any symbolic links)<br>for&nbsp;cd ..&nbsp;and the value of PWD. This is the default.<br>
+-P<br>
+Use&nbsp;the actual ﬁlesystem physical path for&nbsp;cd ..&nbsp;and the value of<br>PWD.<br>
+<i><b>Example</b></i><br>
+$&nbsp;<b>ls -ld /usr/tmp</b><br>
+<i>/usr/tmp is a symbolic link</i><br>
+lrwxrwxrwx&nbsp;&nbsp;1&nbsp;root root 10 Dec 30<br>
+2004 /usr/tmp -&gt; ../var/tmp<br>
+$&nbsp;<b>cd -L /usr/tmp</b><br>
+<i>Logical change director&nbsp;y</i><br>
+$&nbsp;<b>pwd</b><br>
+<i>Show&nbsp;location</i><br>
+/usr/tmp<br>
+<i>Result is logical location</i><br>
+$&nbsp;<b>cd -P /usr/tmp</b><br>
+<i>Physical change director&nbsp;y</i><br>
+$&nbsp;<b>pwd</b><br>
+<i>Show&nbsp;location</i><br>
+/var/tmp<br>
+<i>Result is physical location</i><br>
+<i>34 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=37></a>command&nbsp;<b>[</b>-pvV<b>]&nbsp;</b><i>name&nbsp;</i><b>[</b><i>arg&nbsp;</i><b>...]</b><br>
+<b>command</b><br>
+Without&nbsp;-v&nbsp;or&nbsp;-V,&nbsp;execute&nbsp;<i>name&nbsp;</i>with given arguments. This command<br>bypasses any aliases or functions that may be deﬁned for&nbsp;<i>name</i>.&nbsp;When used<br>with a special built-in, prevents the built-in from exiting the script if it fails.<br>
+<i><b>Options</b></i><br>
+-p<br>
+Use&nbsp;a&nbsp;predeﬁned default search path, not the current value of PATH.<br>
+-v<br>
+Print a description of how&nbsp;the shell interprets&nbsp;<i>name</i>.<br>
+-V<br>
+Print a more&nbsp;verbose description of how&nbsp;the shell interprets&nbsp;<i>name</i>.<br>
+<i><b>Example</b></i><br>
+Create an alias for&nbsp;rm&nbsp;that will get the system’s&nbsp;version, and run it with the<br>-i&nbsp;option:<br>
+$&nbsp;<b>alias ’rm=command -p rm -i’</b><br>
+compgen&nbsp;<b>[</b><i>options</i><b>]&nbsp;[</b><i>string</i><b>]</b><br>
+<b>compgen</b><br>
+Generate possible completions for&nbsp;<i>string&nbsp;</i>according to the options. Options<br>are&nbsp;those accepted by&nbsp;complete,&nbsp;except for&nbsp;-p&nbsp;and&nbsp;-r.&nbsp;For more&nbsp;informa-<br>tion, see the entry&nbsp;for&nbsp;<b>complete</b>.<br>
+complete&nbsp;<b>[</b><i>options</i><b>]&nbsp;</b><i>command ...</i><br>
+<b>complete</b><br>
+Speciﬁes the way to complete arguments for each&nbsp;<i>command</i>.&nbsp;This is discussed<br>in the section “<i>Pr&nbsp;ogrammable&nbsp;&nbsp;Completion</i>,” earlier in the reference.<br>
+<i><b>Options</b></i><br>
+-a<br>
+Same as&nbsp;-A alias.<br>
+-A&nbsp;<i>type</i><br>
+Use&nbsp;<i>type&nbsp;</i>to specify a list of possible completions. The&nbsp;<i>type&nbsp;</i>may be one of<br>the following:<br>
+alias<br>
+Alias names.<br>
+arrayvar<br>
+Array variable names.<br>
+binding<br>
+Bindings from the&nbsp;<i>readline&nbsp;</i>librar y.<br>
+builtin<br>
+Shell built-in command names.<br>
+command<br>
+Command names.<br>
+directory<br>
+Director y&nbsp;names.<br>
+disabled<br>
+Names of disabled shell built-in commands.<br>
+enabled<br>
+Names of enabled shell built-in commands.<br>
+export<br>
+Expor ted&nbsp;variables.<br>
+→<br>
+<i>Built-in Commands</i><br>
+<i>35</i><br>
+<hr>
+<A name=38></a><b>complete</b><br>
+file<br>
+Filenames.<br>
+←<br>
+function<br>
+Names of shell functions.<br>
+group<br>
+Gr&nbsp;oup&nbsp;&nbsp;names.<br>
+helptopic<br>
+Help topics as allowed&nbsp;by&nbsp;the&nbsp;help&nbsp;built-in command.<br>
+hostname<br>
+Hostnames, as found in the ﬁle named by&nbsp;$HOSTFILE.<br>
+job<br>
+Job&nbsp;names.<br>
+keyword<br>
+Shell reser&nbsp;ved keywords.<br>
+running<br>
+Names of running jobs.<br>
+service<br>
+Service names (from&nbsp;/etc/services).<br>
+setopt<br>
+Valid arguments for&nbsp;set -o.<br>
+shopt<br>
+Valid option names for the&nbsp;shopt&nbsp;built-in command.<br>
+signal<br>
+Signal names.<br>
+stopped<br>
+Names of stopped jobs.<br>
+user<br>
+Usernames.<br>
+variable<br>
+Shell variable names.<br>
+-b<br>
+Same as&nbsp;-A builtin.<br>
+-c<br>
+Same as&nbsp;-A command.<br>
+-C&nbsp;<i>command</i><br>
+Run&nbsp;<i>command&nbsp;</i>in a subshell and use its output as the list of completions.<br>
+-d<br>
+Same as&nbsp;-A directory.<br>
+-e<br>
+Same as&nbsp;-A export.<br>
+-f<br>
+Same as&nbsp;-A file.<br>
+-F&nbsp;<i>function</i><br>
+Run&nbsp;shell function&nbsp;<i>function&nbsp;</i>in the current shell. Upon its return, retrieve<br>the list of completions from the COMPREPLY&nbsp;array.<br>
+-g<br>
+Same as&nbsp;-A group.<br>
+-G&nbsp;<i>pattern</i><br>
+Expand&nbsp;<i>patter n&nbsp;</i>to generate completions.<br>
+-j<br>
+Same as&nbsp;-A job.<br>
+-k<br>
+Same as&nbsp;-A keyword.<br>
+-o&nbsp;<i>option</i><br>
+Control the behavior of the completion speciﬁcation. The value for<br><i>option&nbsp;</i>is one of the following:<br>
+bashdefault<br>
+Fall back to the normal Bash completions if no matches<br>are&nbsp;produced.<br>
+default<br>
+Use&nbsp;the default&nbsp;<i>readline&nbsp;</i>completions if no matches are<br>produced.<br>
+<i>36 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=39></a>dirnames<br>
+Do&nbsp;director&nbsp;y&nbsp;name completion if no matches are<br>
+<b>complete</b><br>
+produced.<br>
+filenames<br>
+Inform the&nbsp;<i>readline&nbsp;</i>librar&nbsp;y&nbsp;that the intended output is<br>ﬁlenames, so the library&nbsp;can do any ﬁlename-speciﬁc<br>processing, such as adding a trailing slash for directories<br>or removing trailing spaces.<br>
+nospace<br>
+Inform the&nbsp;<i>readline&nbsp;</i>librar&nbsp;y&nbsp;that it should not append a<br>space to words completed at the end of a line.<br>
+plusdirs<br>
+Attempt director&nbsp;y&nbsp;completion and add any results to the<br>list of completions already generated.<br>
+-p<br>
+With no commands, print all completion settings in a way that can be<br>reread.<br>
+-P&nbsp;<i>prefix</i><br>
+The&nbsp;<i>preﬁx&nbsp;</i>is added to each resulting string as a preﬁx after all the other<br>options have&nbsp;been applied.<br>
+-r<br>
+Remove&nbsp;the completion settings for the given commands, or all settings<br>if no commands.<br>
+-s<br>
+Save as&nbsp;-A service.<br>
+-S&nbsp;<i>suffix</i><br>
+The&nbsp;<i>sufﬁx&nbsp;</i>is added to each resulting string as a sufﬁx after all the other<br>options have&nbsp;been applied.<br>
+-u<br>
+Same as&nbsp;-A user.<br>
+-v<br>
+Same as&nbsp;-A variable.<br>
+-W&nbsp;<i>wordlist</i><br>
+Split&nbsp;<i>wordlist&nbsp;</i>(a single shell word) using $IFS. The generated list con-<br>tains the members of the split list that matched the word&nbsp;being com-<br>pleted. Each member is expanded using brace expansion, tilde expan-<br>sion, parameter and variable expansion, command substitution, and<br>arithmetic expansion. Shell quoting is respected.<br>
+-X&nbsp;<i>pattern</i><br>
+Exclude ﬁlenames matching&nbsp;<i>patter n&nbsp;</i>from the ﬁlename completion list.<br>With a leading&nbsp;!,&nbsp;the sense is reversed, and only ﬁlenames matching&nbsp;<i>pat-<br>ter n&nbsp;</i>are&nbsp;retained.<br>
+continue&nbsp;<b>[</b><i>n</i><b>]</b><br>
+<b>continue</b><br>
+Skip remaining commands in a&nbsp;for,&nbsp;while,&nbsp;select,&nbsp;or&nbsp;until&nbsp;loop,&nbsp;resuming<br>with the next iteration of the loop (or skipping&nbsp;<i>n&nbsp;</i>loops).<br>
+<i>Built-in Commands</i><br>
+<i>37</i><br>
+<hr>
+<A name=40></a><b>declare</b><br>
+declare&nbsp;<b>[</b><i>options</i><b>]&nbsp;[</b><i>name</i><b>[</b>=<i>value</i><b>]]</b><br>
+Declare&nbsp;variables and manage their attributes. In&nbsp;function bodies, variables<br>are&nbsp;local, as if declared with the&nbsp;local&nbsp;command.<br>
+<i><b>Options</b></i><br>
+-a<br>
+Each&nbsp;<i>name&nbsp;</i>is an array.<br>
+-f<br>
+Each&nbsp;<i>name&nbsp;</i>is a function.<br>
+-F<br>
+For&nbsp;functions, print just the function’s&nbsp;name and attributes, not the<br>function deﬁnition (body).<br>
+-i<br>
+Each variable is an integer; in an assignment, the value is evaluated as an<br>arithmetic expression.<br>
+-p<br>
+With no&nbsp;<i>names</i>,&nbsp;print all variables and their values. With&nbsp;<i>names</i>,&nbsp;print<br>the names, attributes, and values of the given variables.<br>
+-r<br>
+Mark&nbsp;<i>names&nbsp;</i>as read-only.&nbsp;Subsequent assignments will fail, and read-<br>only variables cannot be unset.<br>
+-t<br>
+Apply the&nbsp;<i>trace&nbsp;</i>attribute to each name. Traced functions inherit the<br>DEBUG&nbsp;trap.&nbsp;This attribute has no meaning for variables.<br>
+-x<br>
+Mark&nbsp;<i>names&nbsp;</i>for export&nbsp;into the environment of child processes.<br>
+With a&nbsp;+&nbsp;instead of a&nbsp;-,&nbsp;the given attribute is disabled. With no variable<br>names, all variables having the given attribute(s) are&nbsp;printed in a form that<br>can be reread as input to the shell.<br>
+<i><b>Examples</b></i><br>
+$&nbsp;<b>declare -i val</b><br>
+<i>Make val an integer</i><br>
+$&nbsp;<b>val=4+7</b><br>
+<i>Ev&nbsp;aluate&nbsp;&nbsp;value</i><br>
+$&nbsp;<b>echo $val</b><br>
+<i>Show&nbsp;result</i><br>
+11<br>
+$&nbsp;<b>declare -r z=42</b><br>
+<i>Make z read-only</i><br>
+$&nbsp;<b>z=31</b><br>
+<i>Tr&nbsp;y&nbsp;to assign to it</i><br>
+bash: z: readonly variable<br>
+<i>Assignment fails</i><br>
+$&nbsp;<b>echo $z</b><br>
+42<br>
+$&nbsp;<b>declare -p val z</b><br>
+<i>Show&nbsp;attributes and values</i><br>
+declare -i val=&quot;11&quot;<br>
+declare -r z=&quot;42&quot;<br>
+<b>dirs</b><br>
+dirs&nbsp;<b>[</b>-clpv<b>]&nbsp;[</b>+<i>n</i><b>]&nbsp;[</b>-<i>n</i><b>]</b><br>
+Print the director&nbsp;y&nbsp;stack, which is managed with&nbsp;pushd&nbsp;and&nbsp;popd.<br>
+<i>38 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=41></a><i><b>Options</b></i><br>
+<b>dirs</b><br>
++<i>n</i><br>
+Print the&nbsp;<i>n</i>th entry&nbsp;from&nbsp;the left; ﬁrst entry&nbsp;is&nbsp;zero.<br>
+-<i>n</i><br>
+Print the&nbsp;<i>n</i>th entry&nbsp;from&nbsp;the right; ﬁrst entry&nbsp;is&nbsp;zero.<br>
+-c<br>
+Remove&nbsp;all entries from (clear) the director&nbsp;y&nbsp;stack.<br>
+-l<br>
+Pr&nbsp;oduce a longer listing, one that does not replace $HOME with&nbsp;˜.<br>
+-p<br>
+Print the director&nbsp;y&nbsp;stack, one entry&nbsp;per line.<br>
+-v<br>
+Print the director&nbsp;y&nbsp;stack, one entry&nbsp;per line, with each entry&nbsp;preceded by<br>its index in the stack.<br>
+disown&nbsp;<b>[</b>-ahr<b>]&nbsp;[</b><i>job&nbsp;</i><b>...]</b><br>
+<b>disown</b><br>
+Removes&nbsp;<i>jobs&nbsp;</i>from the list of jobs managed by&nbsp;Bash.<br>
+<i><b>Options</b></i><br>
+-a<br>
+Remove&nbsp;all jobs. With&nbsp;-h,&nbsp;mark&nbsp;all jobs.<br>
+-h<br>
+Instead of removing jobs from the list of known jobs, mark&nbsp;them to&nbsp;<i>not<br></i>receive&nbsp;SIGHUP&nbsp;when Bash exits.<br>
+-r<br>
+With no jobs, remove&nbsp;(or mark) only running jobs.<br>
+do<br>
+<b>do</b><br>
+Reser&nbsp;ved word&nbsp;that precedes the command sequence in a&nbsp;for,&nbsp;while,&nbsp;until,<br>or&nbsp;select&nbsp;statement.<br>
+done<br>
+<b>done</b><br>
+Reser&nbsp;ved word&nbsp;that ends a&nbsp;for,&nbsp;while,&nbsp;until,&nbsp;or&nbsp;select&nbsp;statement.<br>
+echo&nbsp;<b>[</b>-eEn<b>]&nbsp;[</b><i>string</i><b>]</b><br>
+<b>echo</b><br>
+Built-in version. Write&nbsp;<i>string&nbsp;</i>to standard&nbsp;output.<br>
+<i><b>Options</b></i><br>
+If the&nbsp;xpg_echo&nbsp;shell option is set, along with POSIX mode (set -o posix),<br>echo&nbsp;does not interpret any options.<br>
+→<br>
+<i>Built-in Commands</i><br>
+<i>39</i><br>
+<hr>
+<A name=42></a><b>echo</b><br>
+-e<br>
+Enable interpretation of the following escape sequences, which must be<br>
+←<br>
+quoted (or escaped with a \) to prevent interpretation by&nbsp;the shell:<br>
+\a<br>
+Aler t&nbsp;(ASCII&nbsp;&nbsp;BEL).<br>
+\b<br>
+Backspace.<br>
+\c<br>
+Suppress the terminating newline (same as&nbsp;-n).<br>
+\e<br>
+ASCII Escape character.<br>
+\f<br>
+Formfeed.<br>
+\n<br>
+Ne&nbsp;wline.<br>
+\r<br>
+Carriage return.<br>
+\t<br>
+Tab&nbsp;character.<br>
+\v<br>
+Vertical-tab character.<br>
+\\<br>
+Backslash.<br>
+\0<i>nnn</i><br>
+ASCII character represented by&nbsp;octal number&nbsp;<i>nnn</i>,&nbsp;where&nbsp;<i>nnn&nbsp;</i>is<br>zero,&nbsp;one, two, or three digits and is preceded by&nbsp;a&nbsp;0.<br>
+\<i>nnn</i><br>
+ASCII character represented by&nbsp;octal number&nbsp;<i>nnn</i>,&nbsp;where&nbsp;<i>nnn&nbsp;</i>is<br>one, two, or three digits.<br>
+\x<i>HH</i><br>
+ASCII character represented by&nbsp;hexadecimal number&nbsp;<i>HH</i>,&nbsp;where<br><i>HH&nbsp;</i>is one or two hexadecimal digits.<br>
+-E<br>
+Do&nbsp;not interpret escape sequences, even on systems where&nbsp;the default<br>behavior of the built-in&nbsp;echo&nbsp;is to interpret them.<br>
+-n<br>
+Do&nbsp;not print the terminating newline.<br>
+<i><b>Examples</b></i><br>
+$&nbsp;<b>echo &quot;testing printer&quot; | lp</b><br>
+$&nbsp;<b>echo &quot;Warning: ringing bell \a&quot;</b><br>
+<b>enable</b><br>
+enable&nbsp;<b>[</b>-adnps<b>]&nbsp;[</b>-f&nbsp;<i>file</i><b>]&nbsp;[</b><i>command&nbsp;</i><b>...]</b><br>
+Enable or disable shell built-in commands. Disabling a built-in lets you use<br>an external version of a command that would otherwise use a built-in version,<br>such as&nbsp;echo&nbsp;or&nbsp;test.<br>
+<i>40 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=43></a><i><b>Options</b></i><br>
+<b>enable</b><br>
+-a<br>
+For&nbsp;use with&nbsp;-p;&nbsp;print information about all built-in commands, dis-<br>abled and enabled.<br>
+-d<br>
+Remove&nbsp;(delete) a built-in previously loaded with&nbsp;-f.<br>
+-f&nbsp;<i>file</i><br>
+Load a new&nbsp;built-in command&nbsp;<i>command&nbsp;</i>from the shared library&nbsp;ﬁle&nbsp;<i>ﬁle</i>.<br>
+-n<br>
+Disable the named built-in commands.<br>
+-p<br>
+Print a list of enabled built-in commands.<br>
+-s<br>
+Print only the POSIX special built-in commands. When combined with<br>-f,&nbsp;the new&nbsp;built-in command becomes a POSIX special built-in.<br>
+esac<br>
+<b>esac</b><br>
+Reser&nbsp;ved word&nbsp;that ends a&nbsp;case&nbsp;statement.<br>
+eval&nbsp;<i>args</i><br>
+<b>eval</b><br>
+Typically,&nbsp;eval&nbsp;is used in shell scripts, and&nbsp;<i>args&nbsp;</i>is a line of code that contains<br>shell variables.&nbsp;eval&nbsp;forces variable expansion to happen ﬁrst and then runs<br>the resulting command. This “double-scanning”&nbsp;is&nbsp;useful any time shell vari-<br>ables contain input/output redirection symbols, aliases, or other shell vari-<br>ables. (For example, redirection normally happens before&nbsp;variable expansion,<br>so a variable containing redirection symbols must be expanded ﬁrst using<br>eval;&nbsp;other&nbsp;wise,&nbsp;the redirection symbols remain uninterpreted.)<br>
+<i><b>Example</b></i><br>
+This fragment of a shell script shows how&nbsp;eval&nbsp;constr&nbsp;ucts&nbsp;a&nbsp;command that is<br>interpreted in the right order:<br>
+for option<br>
+do<br>
+case &quot;$option&quot; in<i>Define where&nbsp;output goes</i><br>
+save) out=’ &gt; $newfile’ ;;<br>
+show) out=’ | more’ ;;<br>
+esac<br>
+done<br>
+eval sort $file $out<br>
+<i>Built-in Commands</i><br>
+<i>41</i><br>
+<hr>
+<A name=44></a><b>exec</b><br>
+exec&nbsp;<b>[</b><i>command&nbsp;args&nbsp;</i><b>...]<br></b>exec&nbsp;<b>[</b>-a&nbsp;<i>name</i><b>]&nbsp;[</b>-cl<b>]&nbsp;[</b><i>command&nbsp;args&nbsp;</i><b>... ]</b><br>
+Execute&nbsp;<i>command&nbsp;</i>in place of the current process (instead of creating a new<br>process).&nbsp;exec&nbsp;is also useful for opening, closing, or copying ﬁle descriptors.<br>
+<i><b>Options</b></i><br>
+-a<br>
+Use&nbsp;<i>name&nbsp;</i>for the value of&nbsp;argv[0].<br>
+-c<br>
+Clear the environment before&nbsp;executing the program.<br>
+-l<br>
+Place a minus sign at the front of&nbsp;argv[0],&nbsp;just as&nbsp;<i>login</i>(1) does.<br>
+<i><b>Examples</b></i><br>
+trap ’exec 2&gt;&amp;-’ 0<br>
+<i>Close standard&nbsp;error when shell script exits (signal 0)</i><br>
+$&nbsp;<b>exec /bin/csh</b><br>
+<i>Replace shell with C shell</i><br>
+$&nbsp;<b>exec &lt; infile</b><br>
+<i>Reassign standard&nbsp;input to infile</i><br>
+<b>exit</b><br>
+exit&nbsp;<b>[</b><i>n</i><b>]</b><br>
+Exit a shell script with status&nbsp;<i>n&nbsp;</i>(e.g.,&nbsp;exit 1).&nbsp;<i>n&nbsp;</i>can be 0 (success) or nonzero<br>(failure). If&nbsp;<i>n&nbsp;</i>is not given, the shell’s&nbsp;exit status is that of the most recent com-<br>mand.&nbsp;exit&nbsp;can be issued at the command line to close a window&nbsp;(log out).<br>Exit statuses can range in value from 0 to 255.<br>
+<i><b>Example</b></i><br>
+if [ $# -eq 0 ]<br>
+then<br>
+echo &quot;Usage: $0 [-c] [-d] file(s)&quot; 1&gt;&amp;2<br>
+exit 1<br>
+#&nbsp;Error status<br>
+fi<br>
+<b>expor&nbsp;t</b><br>
+export&nbsp;<b>[</b><i>variables</i><b>]<br></b>export&nbsp;<b>[</b><i>name</i>=<b>[</b><i>value</i><b>]&nbsp;...]<br></b>export -p<br>
+export&nbsp;<b>[</b>-fn<b>]&nbsp;[</b><i>name</i>=<b>[</b><i>value</i><b>]&nbsp;...]</b><br>
+Pass (export) the value of one or more&nbsp;shell&nbsp;<i>variables</i>,&nbsp;giving global meaning<br>to the variables (which are&nbsp;local by&nbsp;default). For example, a variable deﬁned<br>in one shell script must be exported if its value is used in other programs<br>called by&nbsp;the script. If&nbsp;no&nbsp;<i>variables&nbsp;</i>are&nbsp;given,&nbsp;export&nbsp;lists the variables<br>expor&nbsp;ted&nbsp;by&nbsp;the current shell. The second form is the POSIX version, which<br>is similar to the ﬁrst form, except that you can set a variable&nbsp;<i>name&nbsp;</i>to a&nbsp;<i>value<br></i>before&nbsp;expor ting&nbsp;it.<br>
+<i>42 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=45></a><i><b>Options</b></i><br>
+<b>expor&nbsp;t</b><br>
+-f<br>
+Names refer to functions; the functions are&nbsp;expor&nbsp;ted&nbsp;in the environ-<br>ment.<br>
+-n<br>
+Remove&nbsp;the named variables or functions from the environment.<br>
+-p<br>
+Print&nbsp;export&nbsp;before&nbsp;printing the names and values of exported variables.<br>This allows saving a list of exported variables for rereading later.<br>
+<i><b>Examples</b></i><br>
+In&nbsp;the original Bourne shell, you would type:<br>
+TERM=vt100<br>
+export TERM<br>
+In&nbsp;Bash, you could type this instead:<br>
+export TERM=vt100<br>
+false<br>
+<b>false</b><br>
+Built-in command in that exits with a false return value.<br>
+fc&nbsp;<b>[</b><i>options</i><b>]&nbsp;[</b><i>first&nbsp;</i><b>[</b><i>last</i><b>]]</b><br>
+<b>fc</b><br>
+fc -e -&nbsp;<b>[</b><i>old</i>=<i>new</i><b>]&nbsp;[</b><i>command</i><b>]<br></b>fc -s&nbsp;<b>[</b><i>old</i>=<i>new</i><b>]&nbsp;[</b><i>command</i><b>]</b><br>
+Display or edit commands in the history&nbsp;list. (Use only one of&nbsp;-e,&nbsp;-l&nbsp;or<br>-s.)&nbsp;<i>ﬁrst&nbsp;</i>and&nbsp;<i>last&nbsp;</i>are&nbsp;numbers or strings specifying the range of commands to<br>display or edit. If&nbsp;<i>last&nbsp;</i>is omitted,&nbsp;fc&nbsp;applies to a single command (speciﬁed<br>by&nbsp;<i>ﬁrst</i>). If&nbsp;both&nbsp;<i>ﬁrst&nbsp;</i>and&nbsp;<i>last&nbsp;</i>are&nbsp;omitted,&nbsp;fc&nbsp;edits the previous command or<br>lists the last 16. The second form of&nbsp;fc&nbsp;takes a history&nbsp;<i>command</i>,&nbsp;replaces&nbsp;<i>old<br></i>with&nbsp;<i>new</i>,&nbsp;and executes the modiﬁed command. If&nbsp;no&nbsp;strings are&nbsp;speciﬁed,<br><i>command&nbsp;</i>is just reexecuted. If&nbsp;no&nbsp;<i>command&nbsp;</i>is given either,&nbsp;the previous com-<br>mand is reexecuted.&nbsp;<i>command&nbsp;</i>is a number or string like&nbsp;<i>ﬁrst</i>.&nbsp;See the exam-<br>ples in the earlier section “<i>Command Histor&nbsp;y</i>.” The third&nbsp;form is equivalent to<br>the second form.<br>
+<i><b>Options</b></i><br>
+-e&nbsp;[<i>editor</i>]<br>
+Invoke&nbsp;<i>editor&nbsp;</i>to edit the speciﬁed history&nbsp;commands. The default&nbsp;<i>editor<br></i>is set by&nbsp;the shell variable FCEDIT.&nbsp;If&nbsp;that variable is not set, the default<br>is&nbsp;/bin/ed.&nbsp;(Bash defaults to&nbsp;vi;&nbsp;versions 3.1 and newer&nbsp;default to<br>/bin/ed&nbsp;when in POSIX mode.) Bash tries FCEDIT,&nbsp;then EDITOR,<br>and then&nbsp;/bin/ed.<br>
+→<br>
+<i>Built-in Commands</i><br>
+<i>43</i><br>
+<hr>
+<A name=46></a><b>fc</b><br>
+-e&nbsp;-<br>
+←<br>
+Execute (or redo) a history&nbsp;command; refer to second syntax line above.<br>
+-l<br>
+List the speciﬁed command or range of commands, or list the last 16.<br>
+-n<br>
+Suppress command numbering from the&nbsp;-l&nbsp;listing.<br>
+-r<br>
+Reverse the order of the&nbsp;-l&nbsp;listing.<br>
+-s<br>
+Equivalent to&nbsp;-e -.<br>
+<b>fg</b><br>
+fg&nbsp;<b>[</b><i>jobIDs</i><b>]</b><br>
+Bring current job or&nbsp;<i>jobIDs&nbsp;</i>to the foreground. See the earlier section “<i>Job<br>Control</i>.”<br>
+<b>ﬁ</b><br>
+fi<br>
+Reser&nbsp;ved word&nbsp;that ends an&nbsp;if&nbsp;statement. (Don’t&nbsp;forget to use it!)<br>
+<b>for</b><br>
+for x&nbsp;<b>[</b>in&nbsp;<i>list</i><b>]<br></b>do<br>
+<i>commands</i><br>
+done<br>
+For&nbsp;variable&nbsp;<i>x&nbsp;</i>(in optional&nbsp;<i>list&nbsp;</i>of values), do&nbsp;<i>commands</i>.&nbsp;If&nbsp;in&nbsp;<i>list&nbsp;</i>is omitted,<br>&quot;$@&quot;&nbsp;(the positional parameters) is assumed.<br>
+<i><b>Examples</b></i><br>
+Paginate ﬁles speciﬁed on the command line, and save&nbsp;each result:<br>
+for file; do<br>
+pr $file &gt; $file.tmp<br>
+done<br>
+Same, but put entire&nbsp;loop into the background:<br>
+for file; do<br>
+pr $file &gt; $file.tmp<br>
+done &amp;<br>
+Search chapters for a list of words (like&nbsp;fgrep -f):<br>
+for item in ‘cat program_list‘<br>
+do<br>
+echo &quot;Checking chapters for&quot;<br>
+echo &quot;references to program $item...&quot;<br>
+grep -c &quot;$item.[co]&quot; chap*<br>
+done<br>
+<i>44 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=47></a>Extract a one-word&nbsp;title from each ﬁle and use as new&nbsp;ﬁlename:<br>
+<b>for</b><br>
+for file<br>
+do<br>
+name=‘sed -n ’s/NAME: //p’ $file‘<br>
+mv $file $name<br>
+done<br>
+for ((<i>init</i>;&nbsp;<i>cond</i>;&nbsp;<i>incr</i>))<br>
+<b>for</b><br>
+do<br>
+<i>commands</i><br>
+done<br>
+Arithmetic&nbsp;for&nbsp;loop,&nbsp;similar to C’s. Evaluate&nbsp;<i>init</i>.&nbsp;While&nbsp;<i>cond&nbsp;</i>is true, execute<br>the body of the loop.&nbsp;Evaluate&nbsp;<i>incr&nbsp;</i>before&nbsp;retesting&nbsp;<i>cond</i>.&nbsp;Any one of the<br>expressions may be omitted; a missing&nbsp;<i>cond&nbsp;</i>is treated as being true.<br>
+<i><b>Example</b></i><br>
+Search for a phrase in each odd chapter:<br>
+for ((x=1; x &lt;= 20; x += 2))<br>
+do<br>
+grep $1 chap$x<br>
+done<br>
+function&nbsp;<i>name&nbsp;</i>{&nbsp;<i>commands</i>;&nbsp;}<br>
+<b>function</b><br>
+function&nbsp;<i>name&nbsp;</i>() {&nbsp;<i>commands</i>;&nbsp;}<br>
+Deﬁne&nbsp;<i>name&nbsp;</i>as a shell function. See the description of function semantics in<br>the earlier section “<i>Functions</i>.”<br>
+<i><b>Example</b></i><br>
+Deﬁne a function to count ﬁles.<br>
+$&nbsp;<b>function fcount {</b><br>
+&gt;<br>
+<b>ls | wc -l</b><br>
+&gt;&nbsp;<b>}</b><br>
+getopts&nbsp;<i>string&nbsp;name&nbsp;</i><b>[</b><i>args</i><b>]</b><br>
+<b>getopts</b><br>
+Pr&nbsp;ocess command-line arguments (or&nbsp;<i>args</i>,&nbsp;if&nbsp;speciﬁed) and check for legal<br>options.&nbsp;getopts&nbsp;is used in shell script loops and is intended to ensure&nbsp;stan-<br>dard&nbsp;syntax for command-line options. Standard&nbsp;syntax dictates that<br>command-line options begin with a&nbsp;-.&nbsp;Options can be stacked; i.e., consecu-<br>tive&nbsp;letters can follow&nbsp;a&nbsp;single&nbsp;-.&nbsp;End processing of options by&nbsp;specifying&nbsp;--<br>on the command line.&nbsp;<i>string&nbsp;</i>contains the option letters to be recognized by<br>getopts&nbsp;when running the shell script. Valid options are&nbsp;processed in turn<br>and stored in the shell variable&nbsp;<i>name</i>.&nbsp;If&nbsp;an&nbsp;option character in the options<br>
+→<br>
+<i>Built-in Commands</i><br>
+<i>45</i><br>
+<hr>
+<A name=48></a><b>getopts</b><br>
+string is followed&nbsp;by&nbsp;a&nbsp;colon, the actual option must be followed&nbsp;by&nbsp;one or<br>
+←<br>
+more&nbsp;arguments. (Multiple arguments must be given to the command as one<br>shell&nbsp;<i>word</i>.&nbsp;This is done by&nbsp;quoting the arguments or separating them with<br>commas. The application must be written to expect multiple arguments in<br>this format.)&nbsp;getopts&nbsp;uses the shell variables OPTARG, OPTIND, and<br>OPTERR.<br>
+<b>hash</b><br>
+hash&nbsp;<b>[</b>-dlrt<b>]&nbsp;[</b>-p&nbsp;<i>file</i><b>]&nbsp;[</b><i>commands</i><b>]</b><br>
+As the shell ﬁnds commands along the search path ($PATH), it remembers<br>the found location in an internal hash table. The next time you enter a com-<br>mand, the shell uses the value stored in its hash table.<br>
+With no arguments,&nbsp;hash&nbsp;lists the current hashed commands. The display<br>shows&nbsp;<i>hits&nbsp;</i>(the number of times the command has been called by&nbsp;the shell)<br>and the command name.<br>
+With&nbsp;<i>commands</i>,&nbsp;the shell adds those commands to the hash table.<br>
+<i><b>Options</b></i><br>
+-d<br>
+Remove&nbsp;(delete) just the speciﬁed commands from the hash table.<br>
+-l<br>
+Pr&nbsp;oduce output in a format that can be reread to rebuild the hash table.<br>
+-p&nbsp;<i>file</i><br>
+Associate&nbsp;<i>ﬁle&nbsp;</i>with&nbsp;<i>command&nbsp;</i>in the hash table.<br>
+-r<br>
+Remove&nbsp;all commands from the hash table.<br>
+-t<br>
+With one name, print the full pathname of the command. With more<br>than one name, print the name and the full path, in two columns.<br>
+Besides the&nbsp;-r&nbsp;option, the hash table is also cleared when PATH&nbsp;is&nbsp;assigned.<br>Use&nbsp;PATH=$PATH&nbsp;to clear the hash table without affecting your search path.<br>This is most useful if you have&nbsp;installed a new&nbsp;version of a command in a<br>director&nbsp;y&nbsp;that is earlier in $PATH&nbsp;than the current version of the command.<br>
+<b>help</b><br>
+help&nbsp;<b>[</b>-s<b>]&nbsp;[</b><i>pattern</i><b>]</b><br>
+Print usage information on standard&nbsp;output for each command that matches<br><i>patter n</i>.&nbsp;The information includes descriptions of each command’s&nbsp;options.<br>With the&nbsp;-s&nbsp;option, print only brief usage information.<br>
+<i><b>Examples</b></i><br>
+$&nbsp;<b>help -s cd</b><br>
+<i>Shor t&nbsp;help</i><br>
+cd: cd [-L|-P] [dir]<br>
+$&nbsp;<b>help true</b><br>
+<i>Full help</i><br>
+true: true<br>
+Return a successful result.<br>
+<i>46 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=49></a>history&nbsp;<b>[</b><i>count</i><b>]</b><br>
+<b>histor y</b><br>
+history&nbsp;<b>[</b><i>options</i><b>]</b><br>
+Print commands in the history&nbsp;list or manage the history&nbsp;ﬁle. With no<br>options or arguments, display the history&nbsp;list with command numbers. With<br>a&nbsp;<i>count&nbsp;</i>argument, print only that many of the most recent commands.<br>
+<i><b>Options</b></i><br>
+-a<br>
+Append new&nbsp;histor&nbsp;y&nbsp;lines (those executed since the beginning of the ses-<br>sion) to the history&nbsp;ﬁle.<br>
+-c<br>
+Clear the history&nbsp;list (remove&nbsp;all entries).<br>
+-d&nbsp;<i>position</i><br>
+Delete the history&nbsp;item at position&nbsp;<i>position</i>.<br>
+-n<br>
+Read unread history&nbsp;lines from the history&nbsp;ﬁle into the history&nbsp;list.<br>
+-p&nbsp;<i>argument ...</i><br>
+Perform&nbsp;csh-style history&nbsp;expansion on each&nbsp;<i>argument</i>,&nbsp;printing the<br>results to standard&nbsp;output. The results are&nbsp;not saved in the history&nbsp;list.<br>
+-r<br>
+Read the history&nbsp;ﬁle and replace the history&nbsp;list with its contents.<br>
+-s&nbsp;<i>argument ...</i><br>
+Store&nbsp;the&nbsp;<i>arguments&nbsp;</i>in the history&nbsp;list, as a single entry.<br>
+-w<br>
+Write the current history&nbsp;list to the history&nbsp;ﬁle, overwriting it entirely.<br>
+if&nbsp;<i>condition1</i><br>
+<b>if</b><br>
+then&nbsp;<i>commands1<br></i><b>[&nbsp;</b>elif&nbsp;<i>condition2</i><br>
+then&nbsp;<i>commands2&nbsp;</i><b>]<br>.<br>.<br>.</b><br>
+<b>[&nbsp;</b>else&nbsp;<i>commands3&nbsp;</i><b>]<br></b>fi<br>
+If&nbsp;<i>condition1&nbsp;</i>is met, do&nbsp;<i>commands1</i>;&nbsp;other wise,&nbsp;if&nbsp;<i>condition2&nbsp;</i>is met, do&nbsp;<i>com-<br>mands2</i>;&nbsp;if&nbsp;neither is met, do&nbsp;<i>commands3</i>.&nbsp;Conditions are&nbsp;often speciﬁed with<br>the&nbsp;test&nbsp;and&nbsp;[[ ]]&nbsp;commands. See&nbsp;<b>test&nbsp;</b>and&nbsp;<b>[[ ]]&nbsp;</b>for a full list of conditions,<br>and see additional Examples under&nbsp;<b>:&nbsp;</b>and&nbsp;<b>exit</b>.<br>
+<i><b>Examples</b></i><br>
+Inser&nbsp;t&nbsp;a&nbsp;0&nbsp;before&nbsp;numbers less than 10:<br>
+if [ $counter -lt 10 ]<br>
+then number=0$counter<br>
+else number=$counter<br>
+fi<br>
+→<br>
+<i>Built-in Commands</i><br>
+<i>47</i><br>
+<hr>
+<A name=50></a><b>if</b><br>
+Make a director&nbsp;y&nbsp;if it doesn’t&nbsp;exist:<br>
+←<br>
+if [ ! -d $dir ]; then<br>
+mkdir $dir<br>
+chmod 775 $dir<br>
+fi<br>
+<b>jobs</b><br>
+jobs&nbsp;<b>[</b><i>options</i><b>]&nbsp;[</b><i>jobIDs</i><b>]</b><br>
+List all running or stopped jobs, or list those speciﬁed by&nbsp;<i>jobIDs</i>.&nbsp;For exam-<br>ple, you can check whether a long compilation or text format is still running.<br>Also useful before&nbsp;logging out. See the earlier section “<i>Job&nbsp;Control</i>.”<br>
+<i><b>Options</b></i><br>
+-l<br>
+List job IDs and process group IDs.<br>
+-n<br>
+List only jobs whose status changed since last notiﬁcation.<br>
+-p<br>
+List process group IDs only.<br>
+-r<br>
+List running jobs only.<br>
+-x&nbsp;<i>cmd</i><br>
+Replace each job ID found in&nbsp;<i>cmd&nbsp;</i>with the associated process ID and<br>then execute&nbsp;<i>cmd</i>.<br>
+<b>kill</b><br>
+kill&nbsp;<b>[</b><i>options</i><b>]&nbsp;</b><i>IDs</i><br>
+Terminate each speciﬁed process&nbsp;<i>ID&nbsp;</i>or job&nbsp;<i>ID</i>.&nbsp;You must own the process or<br>be a privileged user.&nbsp;This built-in is similar to the external&nbsp;kill&nbsp;command,<br>but also allows symbolic job names. Stubborn processes can be killed using<br>signal 9. See the earlier section “<i>Job&nbsp;Control</i>.”<br>
+The command&nbsp;kill -l&nbsp;prints a list of the available signal names. The list<br>varies by&nbsp;system architecture; for a PC-based system, it looks like this:<br>
+$&nbsp;<b>kill -l</b><br>
+<i>Fr&nbsp;om&nbsp;Bash on GNU/Linux</i><br>
+1) SIGHUP<br>
+2) SIGINT<br>
+3) SIGQUIT<br>
+4) SIGILL<br>
+5) SIGTRAP<br>
+6) SIGABRT<br>
+7) SIGBUS<br>
+8) SIGFPE<br>
+9) SIGKILL<br>
+10) SIGUSR1<br>
+11) SIGSEGV<br>
+12) SIGUSR2<br>
+13) SIGPIPE<br>
+14) SIGALRM<br>
+15) SIGTERM<br>
+17) SIGCHLD<br>
+18) SIGCONT<br>
+19) SIGSTOP<br>
+20) SIGTSTP<br>
+21) SIGTTIN<br>
+22) SIGTTOU<br>
+23) SIGURG<br>
+24) SIGXCPU<br>
+25) SIGXFSZ<br>
+26) SIGVTALRM<br>
+27) SIGPROF<br>
+28) SIGWINCH<br>
+29) SIGIO<br>
+30) SIGPWR<br>
+31) SIGSYS<br>
+33) SIGRTMIN<br>
+34) SIGRTMIN+1<br>
+35) SIGRTMIN+2<br>
+36) SIGRTMIN+3<br>
+37) SIGRTMIN+4<br>
+38) SIGRTMIN+5<br>
+39) SIGRTMIN+6<br>
+40) SIGRTMIN+7<br>
+41) SIGRTMIN+8<br>
+42) SIGRTMIN+9<br>
+43) SIGRTMIN+10 44) SIGRTMIN+11 45) SIGRTMIN+12 46) SIGRTMIN+13<br>
+47) SIGRTMIN+14 48) SIGRTMIN+15 49) SIGRTMAX-15 50) SIGRTMAX-14<br>
+51) SIGRTMAX-13 52) SIGRTMAX-12 53) SIGRTMAX-11 54) SIGRTMAX-10<br>
+55) SIGRTMAX-9<br>
+56) SIGRTMAX-8<br>
+57) SIGRTMAX-7<br>
+58) SIGRTMAX-6<br>
+59) SIGRTMAX-5<br>
+60) SIGRTMAX-4<br>
+61) SIGRTMAX-3<br>
+62) SIGRTMAX-2<br>
+63) SIGRTMAX-1<br>
+64) SIGRTMAX<br>
+<i>48 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=51></a>The signals and their numbers are&nbsp;deﬁned in the C&nbsp;&lt;signal.h&gt;&nbsp;header ﬁle.<br>
+<b>kill</b><br>
+This ﬁle may include others, thus the actual location varies across systems.<br>
+<i><b>Options</b></i><br>
+-l<br>
+List the signal names. (Used by&nbsp;itself.)<br>
+-n&nbsp;<i>num</i><br>
+Send the given signal number.<br>
+-s&nbsp;<i>name</i><br>
+Send the given signal name.<br>
+-<i>signal</i><br>
+The signal number (from&nbsp;&lt;signal.h&gt;)&nbsp;or&nbsp;name (from&nbsp;kill -l). With a<br>signal number of 9, the kill is absolute.<br>
+let&nbsp;<i>expressions</i><br>
+<b>let</b><br>
+((&nbsp;<i>expressions&nbsp;</i>))<br>
+Perform arithmetic as speciﬁed by&nbsp;one or more&nbsp;<i>expressions</i>.&nbsp;<i>expressions&nbsp;</i>consist<br>of numbers, operators, and shell variables (which don’t&nbsp;need a preceding&nbsp;$).<br>Expressions must be quoted if they contain spaces or other special characters.<br>The&nbsp;(( ))&nbsp;form does the quoting for you. For more&nbsp;information and exam-<br>ples, see the section “<i>Arithmetic Expressions</i>,” earlier in this reference. See also<br><i>expr</i>(1).<br>
+<i><b>Examples</b></i><br>
+Each of these examples adds 1 to variable&nbsp;i:<br>
+i=‘expr $i + 1‘<br>
+<i>All&nbsp;Bour ne&nbsp;shells</i><br>
+let i=i+1<br>
+<i>Bash</i><br>
+let &quot;i = i + 1&quot;<br>
+(( i = i + 1 ))<br>
+(( i += 1 ))<br>
+(( i++ ))<br>
+local&nbsp;<b>[</b><i>options</i><b>]&nbsp;[</b><i>name</i><b>[</b>=<i>value</i><b>]]</b><br>
+<b>local</b><br>
+Declares local variables for use inside functions. The&nbsp;<i>options&nbsp;</i>are&nbsp;the same as<br>those accepted by&nbsp;declare;&nbsp;see&nbsp;<b>declare&nbsp;</b>for the full list. It&nbsp;is&nbsp;an&nbsp;error to use<br>local&nbsp;outside a function body.<br>
+logout<br>
+<b>logout</b><br>
+Exit a login shell. The command fails if the current shell is not a login shell.<br>
+<i>Built-in Commands</i><br>
+<i>49</i><br>
+<hr>
+<A name=52></a><b>popd</b><br>
+popd&nbsp;<b>[</b>-n<b>]&nbsp;[</b>+<i>count</i><b>]&nbsp;[</b><i>-count</i><b>]</b><br>
+Pop&nbsp;the top director&nbsp;y&nbsp;off the director&nbsp;y&nbsp;stack (as shown by&nbsp;the&nbsp;dirs&nbsp;com-<br>mand), and change to the new&nbsp;top director&nbsp;y,&nbsp;or&nbsp;manage the director&nbsp;y&nbsp;stack.<br>
+<i><b>Options</b></i><br>
+-n<br>
+Don’t&nbsp;change to the new&nbsp;top director&nbsp;y;&nbsp;just manipulate the stack.<br>
++<i>count</i><br>
+Remove&nbsp;the&nbsp;item&nbsp;<i>count&nbsp;</i>entries from the left, as shown by&nbsp;dirs.&nbsp;Count-<br>ing starts at zero.&nbsp;No&nbsp;director&nbsp;y&nbsp;change occurs.<br>
+<i>-count</i><br>
+Remove&nbsp;the&nbsp;item&nbsp;<i>count&nbsp;</i>entries from the right, as shown by&nbsp;dirs.<br>Counting starts at zero.&nbsp;No&nbsp;director&nbsp;y&nbsp;change occurs.<br>
+<b>printf</b><br>
+printf&nbsp;<b>[</b>-v&nbsp;<i>var</i><b>]&nbsp;</b><i>format&nbsp;</i><b>[</b><i>val&nbsp;</i><b>...]</b><br>
+Formatted printing, like the ANSI C&nbsp;printf&nbsp;function.<br>
+<i><b>Option</b></i><br>
+-v&nbsp;<i>var</i><br>
+Save&nbsp;the result in&nbsp;<i>var&nbsp;</i>instead of printing it to standard&nbsp;output.<br>
+<i><b>Additional For&nbsp;mat&nbsp;Letters</b></i><br>
+Bash accepts these additional format letters:<br>
+%b<br>
+Expand escape sequences in strings (e.g.,&nbsp;\t&nbsp;to tab,&nbsp;and so on).<br>
+%q<br>
+Print a quoted string that can be reread later on.<br>
+<b>pw&nbsp;d</b><br>
+pwd&nbsp;<b>[</b>-LP<b>]</b><br>
+Print your present working director&nbsp;y&nbsp;on standard&nbsp;output.<br>
+<i><b>Options</b></i><br>
+Options give&nbsp;control over&nbsp;the use of logical versus physical treatment of the<br>printed path. See also the entry&nbsp;for&nbsp;<b>cd</b>,&nbsp;earlier in this section.<br>
+-L<br>
+Use&nbsp;logical path (what the user typed, including any symbolic links) and<br>the value of PWD for the current director&nbsp;y.&nbsp;This is the default.<br>
+-P<br>
+Use&nbsp;the actual ﬁlesystem physical path for the current director&nbsp;y.<br>
+<i>50 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=53></a>pushd&nbsp;<b>[</b>-n<b>]&nbsp;[</b><i>directory</i><b>]</b><br>
+<b>pushd</b><br>
+pushd&nbsp;<b>[</b>-n<b>]&nbsp;[</b>+<i>count</i><b>]&nbsp;[</b><i>-count</i><b>]</b><br>
+Add&nbsp;<i>director y&nbsp;</i>to the director&nbsp;y&nbsp;stack, or rotate the director&nbsp;y&nbsp;stack. With no<br>arguments, swap the top two entries on the stack, and change to the new&nbsp;top<br>entr y.<br>
+<i><b>Options</b></i><br>
+-n<br>
+Don’t&nbsp;change to the new&nbsp;top director&nbsp;y;&nbsp;just manipulate the stack.<br>
++<i>count</i><br>
+Rotate the stack so that the&nbsp;<i>count</i>’th&nbsp;item from the left, as shown by<br>dirs,&nbsp;is&nbsp;the new&nbsp;top of the stack. Counting starts at zero.&nbsp;The new&nbsp;top<br>becomes the current director&nbsp;y.<br>
+<i>-count</i><br>
+Rotate the stack so that the&nbsp;<i>count</i>’th&nbsp;item from the right, as shown by<br>dirs,&nbsp;is&nbsp;the new&nbsp;top of the stack. Counting starts at zero.&nbsp;The new&nbsp;top<br>becomes the current director&nbsp;y.<br>
+read&nbsp;<b>[</b><i>options</i><b>]&nbsp;[</b><i>variable1&nbsp;</i><b>[</b><i>variable2&nbsp;</i><b>...]]</b><br>
+<b>read</b><br>
+Read one line of standard&nbsp;input and assign each word&nbsp;to&nbsp;the corresponding<br><i>variable</i>,&nbsp;with all leftover&nbsp;words assigned to the last variable. If&nbsp;only one vari-<br>able is speciﬁed, the entire&nbsp;line is assigned to that variable. See the Examples<br>here&nbsp;and under&nbsp;<b>case</b>.&nbsp;The return status is 0 unless&nbsp;<i>EOF&nbsp;</i>is reached. If&nbsp;no&nbsp;vari-<br>ables are&nbsp;given, input is stored in the REPLY&nbsp;variable.<br>
+<i><b>Options</b></i><br>
+-a&nbsp;<i>array</i><br>
+Read into indexed array&nbsp;<i>array</i>.<br>
+-d&nbsp;<i>delim</i><br>
+Read up to ﬁrst occurrence of&nbsp;<i>delim</i>,&nbsp;instead of newline.<br>
+-e<br>
+Use&nbsp;the&nbsp;<i>readline&nbsp;</i>librar&nbsp;y&nbsp;if reading from a terminal.<br>
+-n&nbsp;<i>count</i><br>
+Read at most&nbsp;<i>count&nbsp;</i>bytes.<br>
+-p&nbsp;<i>prompt</i><br>
+Print&nbsp;<i>prompt&nbsp;</i>before&nbsp;reading input.<br>
+-r<br>
+Raw mode; ignore&nbsp;\&nbsp;as&nbsp;a&nbsp;line-continuation character.<br>
+-s<br>
+Read silently; characters are&nbsp;not echoed.<br>
+-t&nbsp;<i>timeout</i><br>
+When reading from a terminal or pipe, if no data is entered after&nbsp;<i>timeout<br></i>seconds, return 1. This prevents an application from hanging forever,<br>waiting for user input.<br>
+→<br>
+<i>Built-in Commands</i><br>
+<i>51</i><br>
+<hr>
+<A name=54></a><b>read</b><br>
+-u[<i>n</i>]<br>
+←<br>
+Read input from ﬁle descriptor&nbsp;<i>n&nbsp;</i>(default is 0).<br>
+<i><b>Examples</b></i><br>
+Read three variables:<br>
+$&nbsp;<b>read first last address</b><br>
+<b>Sarah Caldwell 123 Main Street</b><br>
+$&nbsp;<b>echo &quot;$last, $first\n$address&quot;</b><br>
+Caldwell, Sarah<br>
+123 Main Street<br>
+Pr&nbsp;ompt yourself to enter two temperatures:<br>
+$&nbsp;<b>read -p &quot;High low: &quot; n1 n2</b><br>
+High low:&nbsp;<b>65 33</b><br>
+<b>readonly</b><br>
+readonly&nbsp;<b>[</b>-afp<b>]&nbsp;[</b><i>variable</i><b>[</b>=<i>value</i><b>]&nbsp;...]</b><br>
+Pr&nbsp;event the speciﬁed shell variables from being assigned new&nbsp;values. An initial<br>value may be supplied using the assignment syntax, but that value may not be<br>changed subsequently.&nbsp;Read-only variables may not be unset.<br>
+<i><b>Options</b></i><br>
+-a<br>
+Each&nbsp;<i>variable&nbsp;</i>must refer to an array.<br>
+-f<br>
+Each&nbsp;<i>variable&nbsp;</i>must refer to a function.<br>
+-p<br>
+Print&nbsp;readonly&nbsp;before&nbsp;printing the names and values of read-only vari-<br>ables. This allows saving a list of read-only variables for rereading later.<br>
+<b>return</b><br>
+return&nbsp;<b>[</b><i>n</i><b>]</b><br>
+Use&nbsp;inside a function deﬁnition. Exit the function with status&nbsp;<i>n&nbsp;</i>or with the<br>exit status of the previously executed command.<br>
+<b>select</b><br>
+select&nbsp;<i>x&nbsp;</i><b>[</b>in&nbsp;<i>list</i><b>]<br></b>do<br>
+<i>commands</i><br>
+done<br>
+Display a list of menu items on standard&nbsp;error,&nbsp;numbered in the order they<br>are&nbsp;speciﬁed in&nbsp;<i>list</i>.&nbsp;If&nbsp;no&nbsp;in&nbsp;<i>list&nbsp;</i>is given, items are&nbsp;taken from the command<br>line (via&nbsp;&quot;$@&quot;). Following the menu is a prompt string (set by&nbsp;PS3). At&nbsp;the<br>PS3 prompt, users select a menu item by&nbsp;typing its number,&nbsp;or&nbsp;they redisplay<br>the menu by&nbsp;pressing the Enter key.&nbsp;User input is stored in the shell variable<br>REPLY.&nbsp;If&nbsp;a&nbsp;valid item number is typed,&nbsp;<i>commands&nbsp;</i>are&nbsp;executed. Typing&nbsp;<i>EOF</i><br>
+<i>52 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=55></a>terminates the loop.<br>
+<b>select</b><br>
+<i><b>Example</b></i><br>
+PS3=&quot;Select the item number: &quot;<br>
+select event in Format Page View Exit<br>
+do<br>
+case &quot;$event&quot; in<br>
+Format) nroff $file | lp;;<br>
+Page)&nbsp;<br>
+pr&nbsp;$file | lp;;<br>
+View) more&nbsp;$file;;<br>
+Exit) exit&nbsp;0;;<br>
+*<br>
+)<br>
+echo &quot;Invalid selection&quot;;;<br>
+esac<br>
+done<br>
+The output of this script looks like this:<br>
+1. Format<br>
+2. Page<br>
+3. View<br>
+4. Exit<br>
+Select the item number:<br>
+set&nbsp;<b>[</b><i>options arg1 arg2 ...</i><b>]</b><br>
+<b>set</b><br>
+With no arguments,&nbsp;set&nbsp;prints the values of all variables known to the cur-<br>rent shell. Options can be enabled (-<i>option</i>)&nbsp;or&nbsp;disabled (+<i>option</i>). Options<br>can also be set when the shell is invoked. (See the earlier section “<i>Invoking the<br>Shell</i>.”) Arguments are&nbsp;assigned in order to&nbsp;$1,&nbsp;$2,&nbsp;etc.<br>
+<i><b>Options</b></i><br>
+-a<br>
+Fr&nbsp;om&nbsp;now&nbsp;on, automatically mark&nbsp;variables for export&nbsp;after deﬁning or<br>changing them.<br>
+-b<br>
+Print job completion messages as soon as jobs terminate; don’t&nbsp;wait until<br>the next prompt.<br>
+-B<br>
+Enable brace expansion. On&nbsp;by&nbsp;default.<br>
+-C<br>
+Pr&nbsp;event overwriting via&nbsp;&gt;&nbsp;redirection; use&nbsp;&gt;|&nbsp;to overwrite ﬁles.<br>
+-e<br>
+Exit if a command yields a nonzero&nbsp;exit status. The&nbsp;ERR&nbsp;trap executes<br>before&nbsp;the shell exits.<br>
+-E<br>
+Cause shell functions, command substitutions, and subshells to inherit<br>the&nbsp;ERR&nbsp;trap.<br>
+-f<br>
+Ignore&nbsp;ﬁlename metacharacters (e.g.,&nbsp;*&nbsp;?&nbsp;[&nbsp;]).<br>
+-h<br>
+Locate commands as they are&nbsp;deﬁned.&nbsp;&nbsp;On&nbsp;by&nbsp;default. See&nbsp;<b>hash</b>.<br>
+→<br>
+<i>Built-in Commands</i><br>
+<i>53</i><br>
+<hr>
+<A name=56></a><b>set</b><br>
+-H<br>
+Enable&nbsp;csh-style history&nbsp;substitution. On&nbsp;by&nbsp;default.<br>
+←<br>
+-k<br>
+Assignment of environment variables (<i>var</i>=<i>value</i>)&nbsp;takes effect regardless<br>of where&nbsp;they appear on the command line. Normally,&nbsp;assignments must<br>precede the command name.<br>
+-m<br>
+Enable job control; background jobs execute in a separate process group.<br>-m&nbsp;is usually set automatically.<br>
+-n<br>
+Read commands but don’t&nbsp;execute; useful for checking syntax. The shell<br>ignores this option if interactive.<br>
++o&nbsp;[<i>mode</i>]<br>
+With&nbsp;<i>mode</i>,&nbsp;disable the given shell option. Plain&nbsp;set +o&nbsp;prints the set-<br>tings of all the current options. This is in a form that can be reread by<br>the shell later.<br>
+-o&nbsp;[<i>mode</i>]<br>
+List shell modes, or turn on mode&nbsp;<i>mode</i>.&nbsp;Many modes can be set by<br>other options. Modes are:<br>
+allexport<br>
+Same as&nbsp;-a.<br>
+braceexpand<br>
+Same as&nbsp;-B.<br>
+emacs<br>
+Set&nbsp;command-line editor to&nbsp;emacs.<br>
+errexit<br>
+Same as&nbsp;-e.<br>
+errtrace<br>
+Same as&nbsp;-E.<br>
+functrace<br>
+Same as&nbsp;-T.<br>
+hashall<br>
+Same as&nbsp;-h.<br>
+histexpand<br>
+Same as&nbsp;-H.<br>
+history<br>
+Enable command history.&nbsp;On&nbsp;by&nbsp;default.<br>
+ignoreeof<br>
+Don’t&nbsp;process&nbsp;<i>EOF&nbsp;</i>signals. To&nbsp;exit the shell, type&nbsp;exit.<br>
+keyword<br>
+Same as&nbsp;-k.<br>
+monitor<br>
+Same as&nbsp;-m.<br>
+noclobber<br>
+Same as&nbsp;-C.<br>
+noexec<br>
+Same as&nbsp;-n.<br>
+noglob<br>
+Same as&nbsp;-f.<br>
+nolog<br>
+Omit function deﬁnitions from history&nbsp;ﬁle.&nbsp;&nbsp;Accepted<br>but ignored by&nbsp;Bash.<br>
+notify<br>
+Same as&nbsp;-b.<br>
+nounset<br>
+Same as&nbsp;-u.<br>
+onecmd<br>
+Same as&nbsp;-t.<br>
+physical<br>
+Same as&nbsp;-P.<br>
+pipefail<br>
+Change pipeline exit status to be that of the rightmost<br>command that failed, or zero&nbsp;if&nbsp;all exited successfully.<br>
+posix<br>
+Change to POSIX mode.<br>
+privileged<br>
+Same as&nbsp;-p.<br>
+verbose<br>
+Same as&nbsp;-v.<br>
+<i>54 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=57></a>vi<br>
+Set&nbsp;command-line editor to&nbsp;vi.<br>
+<b>set</b><br>
+xtrace<br>
+Same as&nbsp;-x.<br>
++p<br>
+Reset effective&nbsp;UID to real UID.<br>
+-p<br>
+Star&nbsp;t&nbsp;up as a privileged user.&nbsp;Don’t&nbsp;read $ENV or $BASH_ENV,&nbsp;don’t<br>impor&nbsp;<br>
+t&nbsp;functions from the environment, and ignore&nbsp;the value of<br>
+$SHELLOPTS.<br>
+-P<br>
+Always use physical paths for&nbsp;cd&nbsp;and&nbsp;pwd.<br>
+-t<br>
+Exit after one command is executed.<br>
+-T<br>
+Cause shell functions, command substitutions, and subshells to inherit<br>the&nbsp;DEBUG&nbsp;trap.<br>
+-u<br>
+In&nbsp;substitutions, treat unset variables as errors.<br>
+-v<br>
+Show&nbsp;each shell command line when read.<br>
+-x<br>
+Show&nbsp;commands and arguments when executed, preceded by&nbsp;the value<br>of PS4. This provides step-by-step tracing of shell scripts.<br>
+-<br>
+Turn off&nbsp;-v&nbsp;and&nbsp;-x,&nbsp;and turn off option processing. Included for com-<br>patibility with older versions of the Bourne shell.<br>
+-&nbsp;-&nbsp;Used as the last option;&nbsp;--&nbsp;turns off option processing so that argu-<br>
+ments beginning with&nbsp;-&nbsp;are&nbsp;not misinterpreted as options. (For example,<br>you&nbsp;can set&nbsp;$1&nbsp;to -1.) If&nbsp;no&nbsp;arguments are&nbsp;given after&nbsp;--,&nbsp;unset the posi-<br>tional parameters.<br>
+<i><b>Option Summar&nbsp;y</b></i><br>
+<i>Option</i><br>
+<i>Same as</i><br>
+-a<br>
+-o allexport<br>
+-b<br>
+-o notify<br>
+-B<br>
+-o braceexpand<br>
+-C<br>
+-o noclobber<br>
+-e<br>
+-o errexit<br>
+-E<br>
+-o errtrace<br>
+-f<br>
+-o noglob<br>
+-h<br>
+-o hashall<br>
+-H<br>
+-o histexpand<br>
+-k<br>
+-o keyword<br>
+-m<br>
+-o monitor<br>
+-n<br>
+-o noexec<br>
+-o allexport<br>
+-a<br>
+-o braceexpand<br>
+-B<br>
+-o emacs<br>
+-o errexit<br>
+-e<br>
+→<br>
+<i>Built-in Commands</i><br>
+<i>55</i><br>
+<hr>
+<A name=58></a><b>set</b><br>
+<i>Option</i><br>
+<i>Same as</i><br>
+←<br>
+-o errtrace<br>
+-E<br>
+-o functrace<br>
+-T<br>
+-o hashall<br>
+-h<br>
+-o history<br>
+-o histexpand<br>
+-H<br>
+-o ignoreeof<br>
+-o keyword<br>
+-k<br>
+-o monitor<br>
+-m<br>
+-o noclobber<br>
+-C<br>
+-o noexec<br>
+-n<br>
+-o noglob<br>
+-f<br>
+-o nolog<br>
+-o notify<br>
+-b<br>
+-o nounset<br>
+-u<br>
+-o onecmd<br>
+-t<br>
+-o physical<br>
+-P<br>
+-o pipefail<br>
+-o posix<br>
+-o privileged<br>
+-p<br>
+-o verbose<br>
+-v<br>
+-o vi<br>
+-o xtrace<br>
+-x<br>
+-p<br>
+-o privileged<br>
+-P<br>
+-o physical<br>
+-t<br>
+-o onecmd<br>
+-T<br>
+-o functrace<br>
+-u<br>
+-o nonunset<br>
+-v<br>
+-o verbose<br>
+-x<br>
+-o xtrace<br>
+<i><b>Examples</b></i><br>
+set -- &quot;$num&quot; -20 -30<br>
+<i>Set&nbsp;$1&nbsp;to&nbsp;$num, $2 to -20, $3 to -30</i><br>
+set -vx<br>
+<i>Read each command line; show&nbsp;it;<br>execute it; show&nbsp;it&nbsp;again (with arguments)</i><br>
+set +x<br>
+<i>Stop command tracing</i><br>
+set -o noclobber<br>
+<i>Pr&nbsp;event file overwriting</i><br>
+set +o noclobber<br>
+<i>Allow&nbsp;file overwriting again</i><br>
+<b>shopt</b><br>
+shopt&nbsp;<b>[</b>-opqsu<b>]&nbsp;[</b><i>option</i><b>]</b><br>
+Set&nbsp;or&nbsp;unset shell options. With no options or just&nbsp;-p,&nbsp;prints the names and<br>settings of the options.<br>
+<i>56 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=59></a><i><b>Options</b></i><br>
+<b>shopt</b><br>
+-o<br>
+Each&nbsp;<i>option&nbsp;</i>must be one of the shell option names for&nbsp;set -o,&nbsp;instead<br>of the options listed earlier in “<i>Shell Options</i>.”<br>
+-p<br>
+Print the option settings as&nbsp;shopt&nbsp;commands that can be reread later.<br>
+-q<br>
+Quiet mode. The exit status is zero&nbsp;if&nbsp;the given option is set, nonzero<br>other&nbsp;wise.&nbsp;With multiple options, all of them must be set for a zero&nbsp;exit<br>status.<br>
+-s<br>
+Set&nbsp;the given&nbsp;<i>options</i>.&nbsp;With no&nbsp;<i>options</i>,&nbsp;prints only those that are&nbsp;set.<br>
+-u<br>
+Unset the given&nbsp;<i>options</i>.&nbsp;With no&nbsp;<i>options</i>,&nbsp;prints only those that are<br>unset.<br>
+shift&nbsp;<b>[</b><i>n</i><b>]</b><br>
+<b>shift</b><br>
+Shift positional arguments (e.g.,&nbsp;$2&nbsp;becomes&nbsp;$1). If&nbsp;<i>n&nbsp;</i>is given, shift to the left<br><i>n&nbsp;</i>places. Used in&nbsp;while&nbsp;loops to iterate through command-line arguments.<br>
+<i><b>Examples</b></i><br>
+shift $(($1 + $6))<br>
+<i>Use&nbsp;expression result as shift count</i><br>
+source&nbsp;<i>file&nbsp;</i><b>[</b><i>arguments</i><b>]</b><br>
+<b>source</b><br>
+Identical to the&nbsp;.&nbsp;(dot) command; see that entry.<br>
+suspend&nbsp;<b>[</b>-f<b>]</b><br>
+<b>suspend</b><br>
+Suspend the current shell. Often used to stop an&nbsp;su&nbsp;command.<br>
+<i><b>Option</b></i><br>
+-f<br>
+Force&nbsp;the suspension, even if the shell is a login shell.<br>
+test&nbsp;<i>condition</i><br>
+<b>test</b><br>
+[&nbsp;<i>condition&nbsp;</i>]<br>
+[[&nbsp;<i>condition&nbsp;</i>]]<br>
+Ev&nbsp;aluate&nbsp;&nbsp;a&nbsp;<i>condition&nbsp;</i>and, if its value is true, return a zero&nbsp;exit status; other-<br>wise, return a nonzero&nbsp;exit status. An alternate form of the command uses<br>[&nbsp;]&nbsp;rather than the word&nbsp;test.&nbsp;An&nbsp;additional alternate form uses&nbsp;[[ ]],&nbsp;in<br>which case word&nbsp;splitting and pathname expansion are&nbsp;not done. (See the<br><b>[[ ]]&nbsp;</b>entr y.)&nbsp;<i>condition&nbsp;</i>is constructed using the following expressions. Condi-<br>tions are&nbsp;true&nbsp;if&nbsp;the description holds true.<br>
+→<br>
+<i>Built-in Commands</i><br>
+<i>57</i><br>
+<hr>
+<A name=60></a><b>test</b><br>
+<i><b>File Conditions</b></i><br>
+←<br>
+-a&nbsp;<i>file</i><br>
+<i>ﬁle&nbsp;</i>exists.<br>
+-b&nbsp;<i>file</i><br>
+<i>ﬁle&nbsp;</i>exists and is a block special ﬁle.<br>
+-c&nbsp;<i>file</i><br>
+<i>ﬁle&nbsp;</i>exists and is a character special ﬁle.<br>
+-d&nbsp;<i>file</i><br>
+<i>ﬁle&nbsp;</i>exists and is a director&nbsp;y.<br>
+-e&nbsp;<i>file</i><br>
+<i>ﬁle&nbsp;</i>exists. (Same as&nbsp;-a,&nbsp;for POSIX compatibility.)<br>
+-f&nbsp;<i>file</i><br>
+<i>ﬁle&nbsp;</i>exists and is a regular ﬁle.<br>
+-g&nbsp;<i>file</i><br>
+<i>ﬁle&nbsp;</i>exists, and its set-group-id bit is set.<br>
+-G&nbsp;<i>file</i><br>
+<i>ﬁle&nbsp;</i>exists, and its group is the effective&nbsp;group ID.<br>
+-h&nbsp;<i>file</i><br>
+<i>ﬁle&nbsp;</i>exists and is a symbolic link.<br>
+-k&nbsp;<i>file</i><br>
+<i>ﬁle&nbsp;</i>exists, and its sticky bit is set.<br>
+-L&nbsp;<i>file</i><br>
+<i>ﬁle&nbsp;</i>exists and is a symbolic link.<br>
+-N&nbsp;<i>file</i><br>
+<i>ﬁle&nbsp;</i>exists and was modiﬁed after it was last read.<br>
+-O&nbsp;<i>file</i><br>
+<i>ﬁle&nbsp;</i>exists, and its owner is the effective&nbsp;user ID.<br>
+-p&nbsp;<i>file</i><br>
+<i>ﬁle&nbsp;</i>exists and is a named pipe (FIFO).<br>
+-r&nbsp;<i>file</i><br>
+<i>ﬁle&nbsp;</i>exists and is readable.<br>
+-s&nbsp;<i>file</i><br>
+<i>ﬁle&nbsp;</i>exists and has a size&nbsp;greater than zero.<br>
+-S&nbsp;<i>file</i><br>
+<i>ﬁle&nbsp;</i>exists and is a socket.<br>
+-t&nbsp;[<i>n</i>]<br>
+The open ﬁle descriptor&nbsp;<i>n&nbsp;</i>is associated with a terminal device;<br>default&nbsp;<i>n&nbsp;</i>is 1.<br>
+-u&nbsp;<i>file</i><br>
+<i>ﬁle&nbsp;</i>exists, and its set-user-id bit is set.<br>
+-w&nbsp;<i>file</i><br>
+<i>ﬁle&nbsp;</i>exists and is writable.<br>
+-x&nbsp;<i>file</i><br>
+<i>ﬁle&nbsp;</i>exists and is executable.<br>
+<i>f1&nbsp;</i>-ef&nbsp;<i>f2</i><br>
+Files&nbsp;<i>f1&nbsp;</i>and&nbsp;<i>f2&nbsp;</i>are&nbsp;linked (refer to same ﬁle).<br>
+<i>f1&nbsp;</i>-nt&nbsp;<i>f2</i><br>
+File&nbsp;<i>f1&nbsp;</i>is newer&nbsp;than&nbsp;<i>f2</i>.<br>
+<i>f1&nbsp;</i>-ot&nbsp;<i>f2</i><br>
+File&nbsp;<i>f1&nbsp;</i>is older than&nbsp;<i>f2</i>.<br>
+<i><b>String Conditions</b></i><br>
+<i>string</i><br>
+<i>string&nbsp;</i>is not null.<br>
+-n&nbsp;<i>s1</i><br>
+String&nbsp;<i>s1&nbsp;</i>has nonzero&nbsp;length.<br>
+-z&nbsp;<i>s1</i><br>
+String&nbsp;<i>s1&nbsp;</i>has zero&nbsp;length.<br>
+<i>s1&nbsp;</i>==&nbsp;<i>s2</i><br>
+Strings&nbsp;<i>s1&nbsp;</i>and&nbsp;<i>s2&nbsp;</i>are&nbsp;identical. Inside&nbsp;[[...]],&nbsp;<i>s2&nbsp;</i>can be a wild-<br>card&nbsp;pattern. Quote&nbsp;<i>s2&nbsp;</i>to treat it literally.&nbsp;(See&nbsp;the section “<i>File-<br>name Metacharacters</i>,” earlier in this reference.) See also the<br>nocasematch&nbsp;option in “<i>Shell Options</i>.”<br>
+<i>s1&nbsp;</i>!=&nbsp;<i>s2</i><br>
+Strings&nbsp;<i>s1&nbsp;</i>and&nbsp;<i>s2&nbsp;</i>are&nbsp;<i>not&nbsp;</i>identical. Inside&nbsp;[[...]],&nbsp;<i>s2&nbsp;</i>can be a<br>wildcard&nbsp;pattern. Quote&nbsp;<i>s2&nbsp;</i>to treat it literally.<br>
+<i>s1&nbsp;</i>=˜&nbsp;<i>s2</i><br>
+String&nbsp;<i>s1&nbsp;</i>matches extended regular expression&nbsp;<i>s2</i>.&nbsp;Only available<br>inside&nbsp;[[...]].&nbsp;Quote&nbsp;<i>s2&nbsp;</i>to keep the shell from expanding<br>embedded shell metacharacters. Strings matched by&nbsp;parenthe-<br>sized subexpressions are&nbsp;placed into elements of the<br>BASH_REMATCH&nbsp;array.&nbsp;See the description of<br>BASH_REMATCH&nbsp;in&nbsp;the “<i>Built-in Shell Variables</i>”&nbsp;section,<br>earlier in this reference.<br>
+<i>58 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=61></a><i>s1&nbsp;</i>&lt;&nbsp;<i>s2</i><br>
+ASCII value of&nbsp;<i>s1&nbsp;</i>precedes that of&nbsp;<i>s2</i>.&nbsp;(Use&nbsp;only within&nbsp;[[ ]].)<br>
+<b>test</b><br>
+<i>s1&nbsp;</i>&gt;&nbsp;<i>s2</i><br>
+ASCII value of&nbsp;<i>s1&nbsp;</i>follows that of&nbsp;<i>s2</i>.&nbsp;(Use&nbsp;only within&nbsp;[[ ]].)<br>
+<i><b>Inter&nbsp;nal&nbsp;Shell Conditions</b></i><br>
+-o&nbsp;<i>opt</i><br>
+Option&nbsp;<i>opt&nbsp;</i>for&nbsp;set -o&nbsp;is on.<br>
+<i><b>Integer Comparisons</b></i><br>
+<i>n1&nbsp;</i>-eq&nbsp;<i>n2</i><br>
+<i>n1&nbsp;</i>equals&nbsp;<i>n2</i>.<br>
+<i>n1&nbsp;</i>-ge&nbsp;<i>n2</i><br>
+<i>n1&nbsp;</i>is greater than or equal to&nbsp;<i>n2</i>.<br>
+<i>n1&nbsp;</i>-gt&nbsp;<i>n2</i><br>
+<i>n1&nbsp;</i>is greater than&nbsp;<i>n2</i>.<br>
+<i>n1&nbsp;</i>-le&nbsp;<i>n2</i><br>
+<i>n1&nbsp;</i>is less than or equal to&nbsp;<i>n2</i>.<br>
+<i>n1&nbsp;</i>-lt&nbsp;<i>n2</i><br>
+<i>n1&nbsp;</i>is less than&nbsp;<i>n2</i>.<br>
+<i>n1&nbsp;</i>-ne&nbsp;<i>n2</i><br>
+<i>n1&nbsp;</i>does not equal&nbsp;<i>n2</i>.<br>
+<i><b>Combined For&nbsp;ms</b></i><br>
+(<i>condition</i>)<br>
+Tr&nbsp;ue&nbsp;if&nbsp;<i>condition&nbsp;</i>is true (used for grouping). For&nbsp;test&nbsp;and&nbsp;[&nbsp;],&nbsp;the&nbsp;(&nbsp;)s<br>should be quoted by&nbsp;a&nbsp;\.&nbsp;The form using&nbsp;[[ ]]&nbsp;doesn’t&nbsp;require&nbsp;quoting<br>the parentheses.<br>
+!&nbsp;<i>condition</i><br>
+Tr&nbsp;ue&nbsp;if&nbsp;<i>condition&nbsp;</i>is false.<br>
+<i>condition1&nbsp;</i>-a&nbsp;<i>condition2</i><br>
+Tr&nbsp;ue&nbsp;if&nbsp;both conditions are&nbsp;true.<br>
+<i>condition1&nbsp;</i>&amp;&amp;&nbsp;<i>condition2</i><br>
+Tr&nbsp;ue&nbsp;if&nbsp;both conditions are&nbsp;true.&nbsp;&nbsp;(Use only within&nbsp;[[ ]].)<br>
+<i>condition1&nbsp;</i>-o&nbsp;<i>condition2</i><br>
+Tr&nbsp;ue&nbsp;if&nbsp;either condition is true.<br>
+<i>condition1&nbsp;</i>||&nbsp;<i>condition2</i><br>
+Tr&nbsp;ue&nbsp;if&nbsp;either condition is true. (Use only within&nbsp;[[ ]].)<br>
+<i><b>Examples</b></i><br>
+The following examples show&nbsp;the ﬁrst line of various statements that might<br>use a test condition:<br>
+while test $# -gt 0<br>
+<i>While there&nbsp;are&nbsp;arguments...</i><br>
+while [ -n &quot;$1&quot; ]<br>
+<i>While there&nbsp;are&nbsp;nonempty arguments...</i><br>
+if [ $count -lt 10 ]<br>
+<i>If&nbsp;$count is less than 10...</i><br>
+if [ -d RCS ]<br>
+<i>If&nbsp;the RCS director&nbsp;y&nbsp;exists...</i><br>
+if [ &quot;$answer&quot; != &quot;y&quot; ]<br>
+<i>If&nbsp;the answer is not y...</i><br>
+if [ ! -r &quot;$1&quot; -o ! -f &quot;$1&quot; ]<br>
+<i>If&nbsp;the first argument is not a<br>readable file or a regular file...</i><br>
+<i>Built-in Commands</i><br>
+<i>59</i><br>
+<hr>
+<A name=62></a><b>time</b><br>
+time&nbsp;<i>command</i><br>
+Execute&nbsp;<i>command&nbsp;</i>and print the total elapsed time, user time, and system<br>time (in seconds). Same as the external command&nbsp;time,&nbsp;except that the<br>built-in version can also time other built-in commands as well as all com-<br>mands in a pipeline.<br>
+<b>times</b><br>
+times<br>
+Print accumulated process times for user and system.<br>
+<b>trap</b><br>
+trap&nbsp;<b>[&nbsp;[</b><i>commands</i><b>]&nbsp;</b><i>signals</i><b>]<br></b>trap -p<br>
+trap -l<br>
+Execute&nbsp;<i>commands&nbsp;</i>if any&nbsp;<i>signals&nbsp;</i>are&nbsp;received. The second form&nbsp;prints the<br>current trap settings in a form suitable for rereading later.&nbsp;The third&nbsp;form lists<br>all signals and their numbers, like&nbsp;kill -l.<br>
+Common signals include&nbsp;EXIT&nbsp;(0),&nbsp;HUP&nbsp;(1),&nbsp;INT&nbsp;(2), and&nbsp;TERM&nbsp;(15). Multiple<br>commands must be quoted as a group and separated by&nbsp;semicolons internally.<br>If&nbsp;<i>commands&nbsp;</i>is the null string (i.e.,&nbsp;trap &quot;&quot;&nbsp;<i>signals</i>),&nbsp;<i>signals&nbsp;</i>are&nbsp;ignored by<br>the shell. If&nbsp;<i>commands&nbsp;</i>are&nbsp;omitted entirely,&nbsp;reset processing of speciﬁed sig-<br>nals to the default action. If&nbsp;<i>commands&nbsp;</i>is “-”, reset&nbsp;<i>signals&nbsp;</i>to their initial<br>defaults.<br>
+If&nbsp;both&nbsp;<i>commands&nbsp;</i>and&nbsp;<i>signals&nbsp;</i>are&nbsp;omitted, list current trap assignments. See<br>the Examples here&nbsp;and in&nbsp;<b>exec</b>.<br>
+<i><b>Signals</b></i><br>
+A&nbsp;list of signal names, numbers, and meanings were&nbsp;given earlier in the&nbsp;<b>kill<br></b>entr&nbsp;y.&nbsp;The shell allows you to use either the signal number or the signal name<br>(without the&nbsp;SIG&nbsp;preﬁx). In&nbsp;addition, the shell supports “pseudo-signals,” sig-<br>nal names or numbers that aren’t&nbsp;real operating system signals but which<br>direct the shell to perform a speciﬁc action. These signals are:<br>
+DEBUG<br>
+Execution of any command.<br>
+ERR<br>
+Nonzero&nbsp;exit status.<br>
+EXIT<br>
+Exit from shell (usually when shell script ﬁnishes).<br>
+0<br>
+Same as&nbsp;EXIT,&nbsp;for historical compatibility with the Bourne shell.<br>
+RETURN<br>
+A&nbsp;return&nbsp;is executed, or a script run with&nbsp;.&nbsp;(dot) or&nbsp;source<br>ﬁnishes.<br>
+<i><b>Examples</b></i><br>
+trap &quot;&quot; INT<br>
+<i>Ignore&nbsp;interr upts&nbsp;(signal&nbsp;&nbsp;2)</i><br>
+trap INT<br>
+<i>Obey interrupts again</i><br>
+<i>60 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=63></a>Remove&nbsp;a&nbsp;$tmp&nbsp;ﬁle when the shell program exits, or if the user logs out,<br>
+<b>trap</b><br>
+presses&nbsp;CTRL-C,&nbsp;or&nbsp;does a&nbsp;kill:<br>
+trap &quot;rm -f $tmp; exit&quot; EXIT HUP INT TERM<br>
+<i>POSIX style</i><br>
+trap &quot;rm -f $tmp; exit&quot; 0 1 2 15<br>
+<i>Pr&nbsp;e-POSIX Bourne shell style</i><br>
+Print a “clean up”&nbsp;message when the shell program receives signals&nbsp;SIGHUP,<br>SIGINT,&nbsp;or&nbsp;SIGTERM:<br>
+trap ’echo Interrupt!<br>
+Cleaning up...’ HUP INT TERM<br>
+true<br>
+<b>tr&nbsp;ue</b><br>
+Built-in command that exits with a true return value.<br>
+type&nbsp;<b>[</b>-afpPt<b>]&nbsp;</b><i>commands</i><br>
+<b>type</b><br>
+Show&nbsp;whether each command name is an external command, a built-in com-<br>mand, an alias, a shell keyword, or a deﬁned shell function.<br>
+<i><b>Options</b></i><br>
+-a<br>
+Print all locations in $PATH&nbsp;that include&nbsp;<i>command</i>,&nbsp;including aliases<br>and functions. Use&nbsp;-p&nbsp;together with&nbsp;-a&nbsp;to suppress aliases and func-<br>tions.<br>
+-f<br>
+Suppress function lookup,&nbsp;as&nbsp;with&nbsp;command.<br>
+-p<br>
+If&nbsp;type -t&nbsp;would print&nbsp;file&nbsp;for a given&nbsp;<i>command</i>,&nbsp;this option prints the<br>full pathname for the executable ﬁles. Other&nbsp;wise,&nbsp;it prints nothing.<br>
+-P<br>
+Like&nbsp;-p,&nbsp;but force a PATH&nbsp;search, even if&nbsp;type -t&nbsp;would not print<br>file.<br>
+-t<br>
+Print a word&nbsp;describing each&nbsp;<i>command</i>.&nbsp;The word&nbsp;is&nbsp;one of&nbsp;alias,<br>builtin,&nbsp;file,&nbsp;function,&nbsp;or&nbsp;keyword,&nbsp;depending upon the type of each<br><i>command</i>.<br>
+<i><b>Example</b></i><br>
+$&nbsp;<b>type mv read if</b><br>
+mv is /bin/mv<br>
+read is a shell builtin<br>
+if is a shell keyword<br>
+typeset&nbsp;<b>[</b><i>options</i><b>]&nbsp;[</b><i>variable</i><b>[</b>=<i>value&nbsp;</i><b>...]]</b><br>
+<b>typeset</b><br>
+Identical to&nbsp;declare.&nbsp;See&nbsp;<b>declare</b>.<br>
+<i>Built-in Commands</i><br>
+<i>61</i><br>
+<hr>
+<A name=64></a><b>ulimit</b><br>
+ulimit&nbsp;<b>[</b><i>options</i><b>]&nbsp;[</b><i>n</i><b>]</b><br>
+Print the value of one or more&nbsp;resource limits, or,&nbsp;if&nbsp;<i>n&nbsp;</i>is speciﬁed, set a<br>resource limit to&nbsp;<i>n</i>.&nbsp;Resource limits can be either hard&nbsp;(-H)&nbsp;or&nbsp;soft (-S). By<br>default,&nbsp;ulimit&nbsp;sets both limits or prints the soft limit. The options deter-<br>mine which resource is acted on.<br>
+<i><b>Options</b></i><br>
+-H<br>
+Hard&nbsp;limit. Anyone can lower&nbsp;a&nbsp;hard&nbsp;limit; only privileged users can<br>raise it.<br>
+-S<br>
+Soft limit. Must be less than or equal to the hard&nbsp;limit.<br>
+-a<br>
+Print all limits.<br>
+-c<br>
+Maximum size&nbsp;of&nbsp;core&nbsp;ﬁles.<br>
+-d<br>
+Maximum kilobytes of data segment or heap.<br>
+-f<br>
+Maximum size&nbsp;of&nbsp;ﬁles (the default option).<br>
+-i<br>
+Maximum number of pending signals.<br>
+-l<br>
+Maximum size&nbsp;of&nbsp;address space that can be locked in memory.<br>
+-m<br>
+Maximum kilobytes of physical memory.&nbsp;&nbsp;(Not&nbsp;effective&nbsp;on&nbsp;all Unix<br>systems.)<br>
+-n<br>
+Maximum number of ﬁle descriptors.<br>
+-p<br>
+Size&nbsp;of&nbsp;pipe buffers. (Not effective&nbsp;on&nbsp;all Unix systems.)<br>
+-q<br>
+Maximum number of bytes in POSIX message queues.<br>
+-s<br>
+Maximum kilobytes of stack segment.<br>
+-t<br>
+Maximum CPU seconds.<br>
+-u<br>
+Maximum number of processes a single user can have.<br>
+-v<br>
+Maximum kilobytes of virtual memory.<br>
+-x<br>
+Maximum number of ﬁle locks.<br>
+<b>umask</b><br>
+umask&nbsp;<b>[</b><i>nnn</i><b>]<br></b>umask&nbsp;<b>[</b>-pS<b>]&nbsp;[</b><i>mask</i><b>]</b><br>
+Display ﬁle creation mask or set ﬁle creation mask to octal value&nbsp;<i>nnn</i>.&nbsp;The ﬁle<br>creation mask determines which permission bits are&nbsp;turned off (e.g.,&nbsp;umask<br>002&nbsp;produces&nbsp;rw-rw-r-&nbsp;<br>
+-). For the second form, a symbolic mask represents<br>
+permissions to keep.<br>
+<i>62 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name=65></a><i><b>Options</b></i><br>
+<b>umask</b><br>
+-p<br>
+Output is in a form that can be reread later by&nbsp;the shell.<br>
+-S<br>
+Print the current mask using symbolic notation.<br>
+unalias&nbsp;<i>names</i><br>
+<b>unalias</b><br>
+unalias -a<br>
+Remove&nbsp;<i>names&nbsp;</i>from the alias list. See also&nbsp;<b>alias</b>.<br>
+<i><b>Option</b></i><br>
+-a<br>
+Remove&nbsp;all&nbsp;aliases.<br>
+unset&nbsp;<b>[</b><i>options</i><b>]&nbsp;</b><i>names</i><br>
+<b>unset</b><br>
+Erase deﬁnitions of functions or variables listed in&nbsp;<i>names</i>.<br>
+<i><b>Options</b></i><br>
+-f<br>
+Unset functions&nbsp;<i>names</i>.<br>
+-v<br>
+Unset variables&nbsp;<i>names&nbsp;</i>(default).<br>
+until&nbsp;<i>condition</i><br>
+<b>until</b><br>
+do<br>
+<i>commands</i><br>
+done<br>
+Until&nbsp;<i>condition&nbsp;</i>is met, do&nbsp;<i>commands</i>.&nbsp;<i>condition&nbsp;</i>is often speciﬁed with the<br>test&nbsp;command. See the Examples under&nbsp;<b>case&nbsp;</b>and&nbsp;<b>test</b>.<br>
+wait&nbsp;<b>[</b><i>ID</i><b>]</b><br>
+<b>wait</b><br>
+Pause in execution until all background jobs complete (exit status 0 is<br>returned), or pause until the speciﬁed background process&nbsp;<i>ID&nbsp;</i>or job&nbsp;<i>ID&nbsp;</i>com-<br>pletes (exit status of&nbsp;<i>ID&nbsp;</i>is returned). Note that the shell variable&nbsp;$!&nbsp;contains<br>the process ID of the most recent background process.<br>
+<i><b>Example</b></i><br>
+wait $!<br>
+<i>Wait for most recent background process to finish</i><br>
+<i>Built-in Commands</i><br>
+<i>63</i><br>
+<hr>
+<A name=66></a><b>while</b><br>
+while&nbsp;<i>condition</i><br>
+do<br>
+<i>commands</i><br>
+done<br>
+While&nbsp;<i>condition&nbsp;</i>is met, do&nbsp;<i>commands</i>.&nbsp;<i>condition&nbsp;</i>is often speciﬁed with the<br>test&nbsp;commands. See the Examples under&nbsp;<b>case&nbsp;</b>and&nbsp;<b>test</b>.<br>
+<i>ﬁlename</i><br>
+<i>filename&nbsp;</i><b>[</b><i>arguments</i><b>]</b><br>
+Read and execute commands from executable ﬁle&nbsp;<i>ﬁlename</i>,&nbsp;or&nbsp;execute a<br>binar y&nbsp;object&nbsp;&nbsp;ﬁle.<br>
+<i><b>Resources</b></i><br>
+This section brieﬂy describes other sources of information about Bash.<br>
+<i><b>Online Resources</b></i><br>
+<i>ftp://ftp.gnu.org/gnu/bash</i><br>
+The top-level director&nbsp;y&nbsp;for Bash source code releases. Source code is usually made avail-<br>able as&nbsp;.tar.gz&nbsp;ﬁles, such as&nbsp;bash-3.1.tar.gz.<br>
+<i>ftp://ftp.gnu.org/pub/gnu/bash/bash-3.1-patches</i><br>
+Patches for Bash 3.1 are&nbsp;in&nbsp;this director&nbsp;y.<br>
+<i>http://www.gnu.org/software/bash/bash.html<br>http://cnswww.cns.cwr u.edu/˜chet/bash/bashtop.html</i><br>
+The two “home pages”&nbsp;for the Bash shell.<br>
+<i>http://bashdb.sourceforge.net</i><br>
+The Bash debugger.<br>
+<i><b>Books</b></i><br>
+1.<br>
+<i>Classic Shell Scripting</i>,&nbsp;by&nbsp;Arnold Robbins and Nelson H.F.&nbsp;Beebe.&nbsp;&nbsp;O’Reilly Media,<br>Sebastopol, CA, USA, 2005.&nbsp;ISBN 0-596-00595-4.<br>
+2.<br>
+<i>Lear&nbsp;</i><br>
+<i>ning&nbsp;the bash Shell</i>,&nbsp;Third&nbsp;Edition, by&nbsp;Cameron Newham.&nbsp;&nbsp;O’Reilly Media,<br>
+Sebastopol, CA, USA, 2005.&nbsp;ISBN 0-596-00965-8.<br>
+<i><b>Acknowledgments</b></i><br>
+Thanks to Chet Ramey,&nbsp;the Bash maintainer,&nbsp;for his comments on this reference. They<br>helped materially.&nbsp;Thanks also to Mike Loukides at O’Reilly Media for his support&nbsp;of&nbsp;this<br>project.<br>
+—Arnold Robbins<br>
+<i>64 Chapter&nbsp;1&nbsp;–&nbsp;The Bash Shell</i><br>
+<hr>
+<A name="outline"></a><h1>Document Outline</h1>
+<ul><li>bash Quick Reference 
+<ul><li>Contents
+<li>History
+<li>Overview of Features
+<li>Invoking the Shell
+<li>Syntax
+<li>Functions
+<li>Variables
+<li>Arithmetic Expressions
+<li>Command History
+<li>Job Control
+<li>Shell Options
+<li>Command Execution
+<li>Restricted Shells
+<li>Built-in Commands
+<li>Resources
+</ul></ul><hr>
+</BODY>
+</HTML>

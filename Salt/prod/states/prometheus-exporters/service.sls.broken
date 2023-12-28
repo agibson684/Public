@@ -1,0 +1,25 @@
+file-{{ pillar['service']['servicename'] }}-prom:
+  file.managed:
+    - name: /etc/systemd/system/{{ pillar ["service"]["servicename"] }}.service
+    - users: root
+    - group: root
+    - mode: "0740"
+    - template: jinja
+    - source: salt://systemd/services/service.service
+
+# Reload Service on change
+prom-{{ pillar ['service']['servicename'] }}-systemd-reload:
+  cmd.wait:
+    - name: systemctl daemon-reload
+    - user: root
+    - watch:
+      - file: file-{{ pillar['service']['servicename'] }}
+
+# Enable Service
+prom-{{ pillar ['service']['servicename'] }}:
+  service.enabled:
+    - name: {{ pillar ['service']['servicename'] }}.service
+    - require:
+      - file: file-{{pillar ['service']['servicename'] }}
+      - cmd: {{ pillar ['service']['servicename'] }}-systemd-reload
+

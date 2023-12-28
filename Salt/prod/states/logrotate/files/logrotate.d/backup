@@ -1,0 +1,17 @@
+/var/log/backup.log {
+	weekly
+	size 10M
+	missingok
+	rotate 4
+	compress
+	notifempty
+}
+/var/log/backup-error.log{
+        weekly
+        size 10M
+        missingok
+        rotate 4
+        compress
+        notifempty
+}
+

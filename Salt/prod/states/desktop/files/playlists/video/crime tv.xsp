@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="tvshows">
+    <name>crime tv</name>
+    <match>all</match>
+    <rule field="genre" operator="contains">
+        <value>crime</value>
+    </rule>
+    <rule field="title" operator="doesnotcontain">
+        <value>cosby</value>
+    </rule>
+</smartplaylist>

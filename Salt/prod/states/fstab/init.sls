@@ -1,0 +1,67 @@
+/media/bittorrent:
+  file.directory
+/media/BITTORENT:
+  file.directory
+/media/downloads:
+  file.directory
+/media/files_apps:
+  file.directory
+/media/files_movies:
+  file.directory
+/media/files_misc:
+  file.directory
+/media/files_music:
+  file.directory
+/media/complete:
+  file.directory
+/media/backup:
+  file.directory
+/media/sync_apps:
+  file.directory
+/media/sync_movies:
+  file.directory
+/media/sync_misc:
+  file.directory
+/media/sync_music:
+  file.directory
+/media/tv:
+  file.directory
+/media/sync_tv:
+  file.directory
+/media/private:
+  file.directory
+/media/sync_private:
+  file.directory
+/media/sync_downloads:
+  file.directory
+/mnt/downloads:
+  file.directory
+/mnt/files_apps:
+  file.directory
+/mnt/files_movies:
+  file.directory
+/mnt/files_misc:
+  file.directory
+/mnt/files_music:
+  file.directory
+/mnt/complete:
+  file.directory
+/mnt/Backup:
+  file.directory
+/mnt/sync_apps:
+  file.directory
+/mnt/sync_movies:
+  file.directory
+/mnt/sync_misc:
+  file.directory
+/mnt/sync_music:
+  file.directory
+/mnt/tv:
+  file.directory
+/mnt/sync_tv:
+  file.directory
+/mnt/private:
+  file.directory
+/mnt/sync_private:
+  file.directory
+

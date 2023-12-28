@@ -1,0 +1,19 @@
+{
+  "service": {
+    "name": "apache-exporter",
+    "tags": [
+      "metrics"
+    ],
+    "port": 9117,
+     "checks": [
+      {
+          "interval" :"10s",
+          "timeout" : "2s",
+          "id": "apache",
+          "name": "apache Exporter HTTP 9117",
+          "http": "http://127.0.0.1:9117/metrics"
+      }
+    ]
+}
+}
+

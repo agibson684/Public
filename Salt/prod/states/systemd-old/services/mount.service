@@ -1,0 +1,17 @@
+
+[Unit]
+Description={{ config.descp }}
+Requires={{ config.requires }}
+After={{ config.after }}
+Wants={{ config.wants }}
+
+[Mount]
+What={{ config.what }}
+Where={{ config.where }}
+Options={{ config.options }}
+Type={{ config.type }}
+TimeoutSec= {{ config.timeout }}
+
+
+[Install]
+WantedBy={{ config.wantedby }}

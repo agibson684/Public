@@ -1,0 +1,31 @@
+kern.*                                                                                  action(type="omfile" File="/var/log/kernel.log")
+
+# Log anything (except mail) of level info or higher.
+# Don't log private authentication messages!
+*.info;authpriv.none;mail.none;cron.none;local1.none;local2.none            action(type="omfile" File="/var/log/messages")
+
+# The authpriv file has restricted access.
+authpriv.*                                                                              action(type="omfile" File="/var/log/secure")
+authpriv.*                                                                              action(type="omfwd" Target="{{ pillar['rsyslog']['serverip'] }}" Port="{{ pillar['rsyslog']['serverport'] }}" Protocol="{{ pillar['rsyslog']['protocol'] }}")
+# Log all the mail messages in one place.
+mail.*                                                                                  action(type="omfile" File="/var/log/maillog")
+
+# Log cron stuff
+cron.*                                                                                  action(type="omfile" File="/var/log/cron")
+
+# Everybody gets emergency messages
+# Legacy rsyslog script
+*.emerg                                                                                 :omusrmsg:*
+# New Rainerscript version
+# Not sure if it works with wildcards, if they need to be quoted, etc.
+#*.emerg                                                                                 action(type="omusrmsg" Users="*")
+
+# Save news errors of level crit and higher in a special file.
+uucp,news.crit                                                                          action(type="omfile" File="/var/log/spooler")
+
+# Save boot messages also to boot.log
+local7.*                                                                                action(type="omfile" File="/var/log/boot.log")
+
+# Log bookit backups to backup.log
+local4.*										action(type="omfile" File="/var/log/bookit-backup/backup.log")
+local4.*										action(type="omfwd" Target="{{ pillar['rsyslog']['serverip'] }}" Port="{{ pillar['rsyslog']['serverport'] }}" Protocol="{{ pillar['rsyslog']['protocol'] }}")

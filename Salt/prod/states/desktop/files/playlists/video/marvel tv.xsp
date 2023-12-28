@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="tvshows">
+    <name>marvel tv</name>
+    <match>one</match>
+    <rule field="studio" operator="contains">
+        <value>marvel </value>
+    </rule>
+    <rule field="playlist" operator="is">
+        <value>loki</value>
+    </rule>
+    <rule field="playlist" operator="is">
+        <value>she-hulk</value>
+    </rule>
+</smartplaylist>

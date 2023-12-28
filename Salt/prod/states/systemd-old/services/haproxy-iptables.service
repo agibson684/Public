@@ -1,0 +1,13 @@
+[Unit]
+Description=Haproxy ip tables
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/iptables -t mangle -N DIVERT
+ExecStart=/sbin/iptables -t mangle -A PREROUTING -p tcp -m socket -j DIVERT
+ExecStart=/sbin/iptables -t mangle -A DIVERT -j MARK --set-mark 1
+ExecStart=/sbin/iptables -t mangle -A DIVERT -j ACCEPT
+
+[Install]
+WantedBy=multi-user.target

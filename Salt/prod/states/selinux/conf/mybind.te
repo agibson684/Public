@@ -1,0 +1,18 @@
+
+module mybind 1.0;
+
+require {
+	type var_t;
+	type named_t;
+	class file { create getattr open read rename unlink write };
+	class dir { add_name remove_name write };
+}
+
+#============= named_t ==============
+allow named_t var_t:dir write;
+
+#!!!! This avc is allowed in the current policy
+allow named_t var_t:dir { add_name remove_name };
+
+#!!!! This avc is allowed in the current policy
+allow named_t var_t:file { create getattr open read rename unlink write };

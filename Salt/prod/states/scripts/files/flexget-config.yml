@@ -1,0 +1,467 @@
+tasks:
+  task-a:
+          #rss: https://eztv.unblockit.ch/ezrss.xml
+    #rss:  https://showrss.info/user/22441.rss?magnets=true&namespaces=true&name=null&quality=null&re=null
+    rss: https://thepiratebay10.org/rss/new/205
+    regexp:
+      reject:
+        - 'Evil Lives Here'
+        - 'x265'
+        - 'h265'
+        - 'untuck'
+        - 'RUBiK'
+        - 'wardens'
+    series:
+      - Wheel of Fortune
+      - Jeopardy
+      - SuperGirl
+      - The Simpsons
+      - NCIS New Orleans
+      - American Horror Story
+      - Lucifer
+      - Nova
+      - WestWorld
+      - Saturday Night Live
+      - The Flash
+      - 60 Minutes
+      - Outlander
+      - Stranger Things
+      - Orville
+      - The Good Doctor
+      - The Alienist
+      - Designated Survivor
+      - Pose
+      - Grace And Frankie
+      - Castlevania
+      - Titans
+      - Chilling Adventures of Sabrina
+      - Lore
+      - True Detective
+      - Roswell
+      - Hanna
+      - Manifest
+      - American Gods
+      - The Good Fight
+      - Prodigal Son
+      - Star Trek Picard
+      - 'Star Trek: Picard'
+      - This Old House
+      - The Witcher
+      - Graham Norton
+      - Cosmos
+      - 'Motherland: Fort Salem'
+      - 'NOS4A2'
+      - 'Killing Eve'
+      - 'The Capture'
+      - 'Lovecraft Country'
+      - 'Trickster'
+      - 'The Undoing'
+      - 'ncis: los angeles'
+      - 'Shadowplay'
+      - 'NCIS Los Angeles'
+      - 'TopGear'
+      - 'Forged in Fire'
+      - 'BattleBots'
+      - 'Warrior Nun'
+      - 'Penny Dreadful'
+      - 'His Dark Materials'
+      - 'Legacies' 
+      - 'Young Sheldon'
+      - 'Clarice'
+      - 'Drag Race'
+      - 'RuPaul'
+      - 'kung fu'
+      - 'mrs scarlet and the duke' 
+      - 'dragula'
+      - 'loki'
+      - 'the falcon and the winter soldier'
+      - 'the marvelous mrs maisel'
+      - 'the watch'
+      - 'battlebots'
+      - 'forged in fire'
+      - 'evil' 
+      - 'american horror stories'
+      - 'superman and lois'
+      - 'Fear Street'
+      - 'foundation'
+      - 'witcher'
+      - 'csi vegas'
+      - 'Dexter' 
+      - 'What we do in the shadows'
+      - 'Dan Browns The Lost Symbol'
+      - 'NOVA'
+      - 'y the last man'
+      - 'ozark'
+      - '4400'
+      - 'ncis'
+      - 'doctor who'
+      - 'graham norton'
+      - 'wheel of time'
+      - 'hawkeye'
+      - 'the graham norton show'
+      - 'yellowstone'
+      - 'queen of the universe'
+      - '1883'
+      - 'Reacher'
+      - "RuPaul's Drag Race"
+      - 'canada drag race'
+      - 'drag race espana'  
+      - 'Star Trek: Strange New Worlds' 
+      - 'Americas Got Talent'
+      - 'only murders in the building'
+      - 'RuPauls Drag Race All Stars'
+      - 'RuPauls Drag Race All Stars Untucked'
+      - 'She-Hulk:'
+      - 'House of the Dragon'
+      - 'The Good Fight'
+      - 'Hudson & Rex'
+      - 'Quantum Leap'
+      - 'Interview with the Vampire'
+      - 'Mayfaire Witches'
+      - 'Americna Crime Story'
+      - 'Chucky'
+      - 'The Serpent Queen'
+      - 'Ghosts'
+      - 'Wednesday'
+      - 'Blockbuster'
+      - 'Enola Holmes'
+      - 'Manifest'
+      - 'Leverage'
+      - 'Slumberland'
+      - 'Pitch Perfect: Bumper in Berlin'
+      - 'Criminal Minds: Evolution'
+      - "We're Here"
+      - 'National Treasure: Edge of History'
+      - '1923'
+      - 'warrior nun'
+      - 'finding your roots'
+      - 'grantchester'
+      - 'Miracle Workers'
+      - 'Secret Invastion'
+      - 'The Winter King'
+      - 'star trek: lower decks'
+      - 'Star Trek Prodigy'
+      - 'invasion 2021'
+      - 'The Continental'
+      - 'The Santa Clauses'
+    transmission:
+      host: docker.thrace.lan
+      username: erin
+      password: 'password'
+      port: 9091  
+      path: /data/completed
+      add_paused: no
+  task-b:
+    rss: https://www.limetorrents.pro/rss/20/ 
+    #rss: https://eztv.re/ezrss.xml
+    #rss:  http://showrss.info/user/22441.rss?magnets=true&namespaces=true&name=null&quality=null&re=null
+    regexp:
+      reject:
+        - 'Evil Lives Here'
+        - 'x265'
+        - 'h265'
+        - 'untuck'  
+        - 'RUBiK'
+        - 'wardens'
+ 
+    series:
+      - Wheel of Fortune
+      - Jeopardy
+      - SuperGirl
+      - The Simpsons
+      - NCIS New Orleans
+      - American Horror Story
+      - Lucifer
+      - Nova
+      - WestWorld
+      - Saturday Night Live
+      - The Flash
+      - 60 Minutes
+      - Outlander
+      - Stranger Things
+      - Orville
+      - The Good Doctor
+      - The Alienist
+      - Designated Survivor
+      - Pose
+      - Grace And Frankie
+      - Castlevania
+      - Titans
+      - Chilling Adventures of Sabrina
+      - Lore
+      - True Detective
+      - Roswell
+      - Hanna
+      - Manifest
+      - American Gods
+      - The Good Fight
+      - Prodigal Son
+      - Star Trek Picard
+      - 'Star Trek: Picard'
+      - This Old House
+      - The Witcher
+      - Graham Norton
+      - Cosmos
+      - 'Motherland: Fort Salem'
+      - 'NOS4A2'
+      - 'Killing Eve'
+      - 'The Capture'
+      - 'Lovecraft Country'
+      - 'Trickster'
+      - 'The Undoing'
+      - 'ncis: los angeles'
+      - 'Shadowplay'
+      - 'NCIS Los Angeles'
+      - 'TopGear'
+      - 'Forged in Fire'
+      - 'BattleBots'
+      - 'Warrior Nun'
+      - 'Penny Dreadful'
+      - 'His Dark Materials'
+      - 'Legacies' 
+      - 'Young Sheldon'
+      - 'Clarice'
+      - 'Drag Race'
+      - 'RuPaul'
+      - 'kung fu'
+      - 'mrs scarlet and the duke' 
+      - 'dragula'
+      - 'loki'
+      - 'the falcon and the winter soldier'
+      - 'the marvelous mrs maisel'
+      - 'the watch'
+      - 'battlebots'
+      - 'forged in fire'
+      - 'evil' 
+      - 'american horror stories'
+      - 'superman and lois'
+      - 'Fear Street'
+      - 'foundation'
+      - 'witcher'
+      - 'csi vegas'
+      - 'Dexter' 
+      - 'What we do in the shadows' 
+      - 'Dan Browns The Lost Symbol'
+      - 'nova'
+      - 'y the last man'
+      - 'ozark'
+      - '4400'
+      - 'ncis'
+      - 'doctor who'
+      - 'graham norton'
+      - 'wheel of time'
+      - 'hawkeye'
+      - 'the graham norton show'
+      - 'yellowstone'
+      - 'queen of the universe'
+      - '1883'
+      - 'Reacher'
+      - "RuPaul's Drag Race"
+      - 'strange new worlds'
+      - 'canada drag race'
+      - 'drag race espana'  
+      - 'Star Trek: Strange New Worlds' 
+      - 'Americas Got Talent'
+      - 'only murders in the building'
+      - 'RuPauls Drag Race All Stars'
+      - 'RuPauls Drag Race All Stars Untucked'
+      - 'She-Hulk:'
+      - 'House of the Dragon'
+      - 'The Good Fight'
+      - 'Hudson & Rex'
+      - 'Quantum Leap'
+      - 'Interview With the Vampire'
+      - 'Mayfair Witches'
+      - 'American crime story'
+      - 'Chucky'
+      - 'The Serpent Queen'
+      - 'Ghosts'
+      - 'Wednesday'
+      - 'Blockbuster'  
+      - 'Enola Holmes'
+      - 'Manifest'
+      - 'Leverage'
+      - 'Slumberland'
+      - 'Pitch Perfect: Bumper in Berlin'
+      - 'Criminal Minds: Evolution'
+      - "We're Here"
+      - 'National Treasure: Edge of History'
+      - '1923'
+      - 'Finding Your Roots'
+      - 'warrior nun'
+      - 'grantchester'
+      - 'Miracle Workers'
+      - 'Secret Invastion'
+      - 'The Winter King'
+      - 'star trek: lower decks'
+      - 'Star Trek Prodigy'
+      - 'invasion 2021'
+      - 'The Continental'
+      - 'The Santa Clauses'
+    transmission:
+      host: docker.thrace.lan
+      username: erin
+      password: 'password'
+      port: 9091  
+      path: /data/completed
+      add_paused: no
+ 
+
+  task-c:
+          #rss: https://eztv.unblockit.ch/ezrss.xml
+    rss:  https://showrss.info/user/22441.rss?magnets=true&namespaces=true&name=null&quality=null&re=null
+    #rss: https://thepiratebay10.org/rss/new/205
+    regexp:
+      reject:
+        - 'Evil Lives Here'
+        - 'x265'
+        - 'h265'
+        - 'untuck'
+        - 'RUBiK'
+        - 'wardens'  
+    series:
+      - Wheel of Fortune
+      - Jeopardy
+      - SuperGirl
+      - The Simpsons
+      - NCIS New Orleans
+      - American Horror Story
+      - Lucifer
+      - Nova
+      - WestWorld
+      - Saturday Night Live
+      - The Flash
+      - 60 Minutes
+      - Outlander
+      - Stranger Things
+      - Orville
+      - The Good Doctor
+      - The Alienist
+      - Designated Survivor
+      - Pose
+      - Grace And Frankie
+      - Castlevania
+      - Titans
+      - Chilling Adventures of Sabrina
+      - Lore
+      - True Detective
+      - Roswell
+      - Hanna
+      - Manifest
+      - American Gods
+      - The Good Fight
+      - Prodigal Son
+      - Star Trek Picard
+      - 'Star Trek: Picard'
+      - This Old House
+      - The Witcher
+      - Graham Norton
+      - Cosmos
+      - 'Motherland: Fort Salem'
+      - 'NOS4A2'
+      - 'Killing Eve'
+      - 'The Capture'
+      - 'Lovecraft Country'
+      - 'Trickster'
+      - 'The Undoing'
+      - 'ncis: los angeles'
+      - 'Shadowplay'
+      - 'NCIS Los Angeles'
+      - 'TopGear'
+      - 'Forged in Fire'
+      - 'BattleBots'
+      - 'Warrior Nun'
+      - 'Penny Dreadful'
+      - 'His Dark Materials'
+      - 'Legacies' 
+      - 'Young Sheldon'
+      - 'Clarice'
+      - 'Drag Race'
+      - 'RuPaul'
+      - 'kung fu'
+      - 'mrs scarlet and the duke' 
+      - 'dragula'
+      - 'loki'
+      - 'the falcon and the winter soldier'
+      - 'the marvelous mrs maisel'
+      - 'the watch'
+      - 'battlebots'
+      - 'forged in fire'
+      - 'evil' 
+      - 'american horror stories'
+      - 'superman and lois'
+      - 'Fear Street'
+      - 'foundation'
+      - 'witcher'
+      - 'csi vegas'
+      - 'Dexter' 
+      - 'What we do in the shadows'
+      - 'Dan Browns The Lost Symbol'
+      - 'NOVA'
+      - 'y the last man'
+      - 'ozark'
+      - '4400'
+      - 'ncis'
+      - 'doctor who'
+      - 'graham norton'
+      - 'wheel of time'
+      - 'hawkeye'
+      - 'the graham norton show'
+      - 'yellowstone'
+      - 'queen of the universe'
+      - '1883'
+      - 'Reacher'
+      - "RuPaul's Drag Race"
+      - 'canada drag race'
+      - 'drag race espana'  
+      - 'Star Trek: Strange New Worlds' 
+      - 'Americas Got Talent'
+      - 'only murders in the building'
+      - 'RuPauls Drag Race All Stars'
+      - 'RuPauls Drag Race All Stars Untucked'
+      - 'She-Hulk:'
+      - 'House of the Dragon'
+      - 'The Good Fight'
+      - 'Hudson & Rex'
+      - 'Quantum Leap'
+      - 'Interview with the Vampire'
+      - 'Mayfaire Witches'
+      - 'Americna Crime Story'
+      - 'Chucky'
+      - 'The Serpent Queen'
+      - 'Ghosts'
+      - 'Wednesday'
+      - 'Blockbuster'
+      - 'Enola Holmes'
+      - 'Manifest'
+      - 'Leverage'
+      - 'Slumberland'
+      - 'Pitch Perfect: Bumper in Berlin'
+      - 'Criminal Minds: Evolution'
+      - "We're Here"
+      - 'National Treasure: Edge of History'
+      - '1923'
+      - 'warrior nun'
+      - 'finding your roots'
+      - 'grantchester'
+      - 'Miracle Workers'
+      - 'Secret Invastion'
+      - 'The Winter King'
+      - 'star trek: lower decks'
+      - 'Star Trek Prodigy'
+      - 'invasion 2021'
+      - 'The Continental'
+      - 'The Santa Clauses'
+ 
+  
+
+
+    transmission:
+      host: docker.thrace.lan
+      username: erin
+      password: 'password'
+      port: 9091  
+      path: /data/completed
+      add_paused: no
+
+

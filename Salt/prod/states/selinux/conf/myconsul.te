@@ -1,0 +1,4 @@
+policy_module(myconsul, 1.0.0)
+type myconsul_t;
+type myconsul_exec_t;
+init_daemon_domain(myconsul_t, myconsul_exec_t)

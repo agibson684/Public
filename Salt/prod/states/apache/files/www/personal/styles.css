@@ -1,0 +1,268 @@
+body{text-align:center;
+background-image:url('/personal/images/2333842.png');
+}
+
+/* this was breaking the menu so i took it out. 
+.included {
+  position:relative;
+  top: 6%;
+	bottom:6%;
+  left: 0%;
+	right:0%;
+  width: 100%;}
+*/
+.menu {
+width:100%;
+}
+
+div.gallery {
+    /*border: 1px solid #ccc;
+    */
+}
+
+div.gallery:hover {
+    /*border: 1px solid #777;
+    */
+}
+div.newgallery {
+    /*border: 1px solid #ccc;
+    */
+}
+
+div.newgallery:hover {
+    /*border: 1px solid #777;
+    */
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+    margin:1px;
+	padding:1px;
+}
+div.newgallery img {
+    width: 100%;
+    height: auto;
+    margin:1px;
+	padding:1px;
+}
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.responsive {
+    padding: 0 6px;
+    float:left;
+    width: 44.99999%;
+}
+
+.newresponsive {
+    padding: 0 6px;
+    float:left;
+    width: 22.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 100%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .newresponsive {
+        width: 100%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .newresponsive {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .smallwpic {
+        width: 19.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .smallwpic {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .smallwpic {
+        width: 50%;
+    }
+}
+.smallwpic {
+    padding: 0 6px;
+    float:left;
+    width: 19.99999%;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.hd {
+   margin:10px;
+	 padding:10px;
+	 width:100%;
+   }
+
+/* Basic Element Formatting */
+
+#header{
+	height: auto;
+        background-color:#707070;
+	margin:1px;
+	padding:1px;
+	width:100%;
+       display:flex-end;
+	}
+
+#includedContent{
+	display:flex;
+    }
+#menu {
+
+       background-color:#707070;
+        margin:1px;
+        padding:1px;
+        display:flex;
+       }
+
+       
+#header h1{
+	font-size:2em;
+	margin:1px;
+	padding:1px;
+	height: auto;  
+	}
+
+#header h1 a{
+	height: auto;
+	color:#000000;
+	background-color:#F3F2ED;    
+	}
+#hd {
+      display:flex;
+}
+
+.content{
+
+	background:#CCC8B3;
+	border-top:#FFFFFF 2px solid;
+	margin:0;
+	padding:0;
+       /* max-height:100%;
+        max-width: 100%; */
+	}
+
+#secondary{
+	height:800px;
+	background:#707070;
+	border-top:#FFFFFF 2px solid;
+	margin:0;
+	padding:0;
+	}
+
+#secondaryFull{
+	height:50px;
+	background-color:#CFB59F;
+	border-top:#FFFFFF 2px solid;
+	margin:0;
+	padding:0;
+	}
+
+#footer{
+	height:50px;
+	background:#707070;
+	border-top:#FFFFFF 2px solid;
+	margin:0;
+	padding:0;
+        display:flex;
+	}
+
+/* pesky images that wont fit right */
+.peskyimg {
+    background-color: #aaa;
+    width: 50px;
+    padding: 100px;
+}
+main*{
+height:100%;
+width:100%;
+max-height:100%;
+max-width: 100%;
+}
+
+center ul.menu{
+      display:inline-block;
+      top: 50%;
+      left: 50%;
+     /* width:100%;*/
+}
+center ul.menu .menulink{
+      display:inline-block;
+      top: 50%;
+      left: 50%;
+      flex: 1;
+
+}
+#wrapper {
+  columns: 5;
+ 
+}
+
+img{
+   float:none;
+   width:100%;
+   height:100%;
+   margin:1px;
+	padding:1px;
+   object-fit:cover;
+   }
+menu {
+  display: flex-end;
+  list-style-type: none;
+  margin: 10px 0;
+  padding: 0;
+}
+menu > li {
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  background-color: brown;
+  color: white;
+  text-align: center;
+}
+
+/*GreenJello | Eryn_1983_FL, remove floats from the menu, add display:flex; to #menu, add flex:1; to menulink  */
+ul.menu a {display:block; color:#CCC8B3; text-decoration:none; background-color:#333333}
+ul.menu li {position:relative; display:flex; margin-right:1px;background-color:#333333; list-style:none}
+ul.menu ul {position:absolute; top:28px; left:0; background:#333333; display:none; opacity:0; list-style:none}
+ul.menu ul li {position:relative; border:1px solid #aaa; border-top:none; width:200px; margin:0; background-color:#333333}
+ul.menu ul li a {display:block; padding:1px 7px 2px; background-color:#333333}
+ul.menu ul li a:hover {background-color:#808080}
+ul.menu ul ul {left:148px; top:-1px}
+ul.menu .menulink {border:1px solid #aaa; padding:5px 7px 7px; background-color:#333333 ; font-weight:bold;  width:100%;}
+ul.menu .menulink:hover, ul.menu .menuhover {background-color:#808080 }
+ul.menu .sub {background:#333333 url(/images/arrow.gif) 100px 8px no-repeat}
+ul.menu .topline {border-top:1px solid #aaa}

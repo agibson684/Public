@@ -1,0 +1,18 @@
+#New Hotel connection failure pattern
+PHPHOTELSCONNFAILURE %{NOTSPACE:[event][program]}%{SPACE}%{NOTSPACE:[venu][name]}%{SPACE}using%{SPACE}%{URIPATH:[path]}%{URIPARAM:[params]}%{SPACE}%{GREEDYDATA:[event][result]}
+
+# Old Deprecated Patterns (we'll remove them later)
+PHPQUERYERROR_OLD %{IPORHOST:host} %{INT:errornum} %{NOTSPACE:[filepath]} %{INT:line} \[%{DATA:request}\] \[%{DATA:query}\] %{GREEDYDATA:queryFailure}
+PHPRUNTIMEERROR_OLD %{IPORHOST:client} %{NOTSPACE:[filepath]} %{INT:line} \[%{DATA:request}\] %{IPORHOST:host} \[%{DATA:memberhash}\] %{INT:errornum} %{GREEDYDATA:phpError}
+
+# New Patterns
+PHPQUERYERROR %{IPORHOST:client} %{INT:errornum} %{NOTSPACE:[filepath]} %{INT:line} \[%{DATA:request}\] \[%{DATA:memberhash}\] \[%{DATA:query}\] %{GREEDYDATA:queryFailure}
+PHPRUNTIMEERROR %{IPORHOST:client} %{NOTSPACE:[filepath]} %{INT:line} \[%{DATA:request}\] \[%{DATA:memberhash}\] %{INT:errornum} %{GREEDYDATA:phpError}
+
+
+# ARI Message log SA-7819
+# Added for SA-8058
+PHPARIMSG %{WORD:ari},%{INT:channelManagerId:int},%{INT:hotelUniqueId:int},%{TIMESTAMP_ISO8601:receivedAt},%{WORD:messageType},%{WORD:processingStrategy},%{INT:elementCount:int},%{INT:totalDaysAffected:int}
+
+# ITO Worker Logs SA-7158
+PHPITOWORKER \[%{TIMESTAMP_ISO8601:timestamp}\] \[%{DATA:queue}\] %{INT:status} \[%{GREEDYDATA:message}\]

@@ -1,0 +1,16 @@
+# /etc/aliases
+mailer-daemon: esims684@gmail.com:
+postmaster: esims684@gmail.com:
+nobody: esims684@gmail.com:
+hostmaster: esims684@gmail.com:
+usenet: esims684@gmail.com:
+news: esims684@gmail.com:
+webmaster: esims684@gmail.com:
+www: esims684@gmail.com:
+ftp: esims684@gmail.com:
+abuse: esims684@gmail.com:
+noc: esims684@gmail.com:
+security: esims684@gmail.com:
+root: esims684@gmail.com:
+clamav: esims684@gmail.com:
+

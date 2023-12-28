@@ -1,0 +1,19 @@
+{
+  "service": {
+    "name": "domain-exporter",
+    "tags": [
+      "metrics"
+    ],
+    "port": 9203,
+     "checks": [
+      {
+          "interval" :"10s",
+          "timeout" : "2s",
+          "id": "domain",
+          "name": "domain Exporter HTTP 9203",
+          "http": "http://127.0.0.1:9203/metrics"
+      }
+    ]
+}
+}
+

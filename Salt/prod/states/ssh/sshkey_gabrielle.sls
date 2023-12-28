@@ -1,0 +1,27 @@
+
+? AAAAB3NzaC1yc2EAAAABIwAAAQEArVZgXQLZGhYCf9HooTQgZ/zPVrPuh1lEti6dXys/5+YzRF5StF7o9Xtr4GQUcDmtDd2dFX2XaCBwu43RtL0nDcPD//6xl62MGkoQEZFvTSvlF05BDyz+klFsBCbyc9JYFIJR/Xu+eMy2h6+uj/BZTk6ackGykUaE8RYlh8UmT9Yglx31Foxaax6Tr6YMyFHVadtMnW60GmM+gQBDxUUS3B3PY8GdgHH5Qo0tDXjKHFoKlGbXKLz5BedJOHhB621yBaCncdzylVGaBbA8MgnsGUwk7er/liEbU6HBlQY5Z4Eg7eX/h3TrX+pKMKxOITlRIwnlATMe1icg3molWJ0FOQ== 
+:
+  ssh_auth.present:
+    - user: erin
+    - enc: ssh-rsa
+? AAAAB3NzaC1yc2EAAAADAQABAAABAQCwkB4Z+fLaUgCXIHKXp0jLxryN3worQSkRzfRdVt2hjpI2U+q7i7AUfc442z5Vble3CL1D4gWBzTJg3oNlPgvoYk9dnacrN8nOA4wl2mEAToE9GTc+1m1sMNc4Am14Q7Fnzlv4qeIxaDjgfliDuyVyQib4vsD4odoq9psmjlyBO09UtuzHvxfPuZPEyXPOdl5OPwAfbLmx01P9y8jW7Ja2AIgp4wItDVV/A+tSqOMoFITg4Pvvueh1snPut5qlUmFNDGlgoNu5Nm4/WpyRk6w/whfExTlyGRgyYc5g9dxCjWjk3r15zVZ6GUrZ9ut2pOC1DPWn5hQLV12mbYZR+xa/
+:
+  ssh_auth.present:
+    - user: erin
+    - enc: ssh-rsa 
+? AAAAB3NzaC1yc2EAAAADAQABAAABAQDXbplkoj3P71HG/4FctxJeMoj4iQ1mB1WPqRaYjoR4QhLj3r13TBHTylCuQ8fI33qd2jjKRGMMSbQyHh01Z6TYkHLoqSK/XvSQZ+EDLv5uJbTZf7ZcrrI+EaIvCDPF6qfJJDyELr7icWKq/qsCv1vMjwUJqKiIIRp/CbRFrOqOd3Ng0V63DZnJ8jOFGoOhyVaekzSaeZjd54Xr3n3wZM0BsV8+vXdgYbcPRtShaC5z7LoYSG50vzyvE5sDbJhNXo6V40P0C8+xMDKxe5MWRkMsfN2maMgtj45QZfjRRqA5RSHI2m95kKUSHO3qdZhSX71EqGKzg582E1RZrPmvgFb9
+: 
+  ssh_auth.present:
+    - user: sync_user
+    - enc: ssh-rsa
+
+? AAAAB3NzaC1yc2EAAAADAQABAAABAQDb6p2Ar55VW7xkW4eVY/LcIzaBi60HsN4K5ZE9/mFaNaQ/1zBFIuBQU55Ov59J7yDj/RZOh53tvRm9vqq4/k5weGIAQzg0vZkDVuixZswvd9DLazLo4fyNkFN4ZhmpVUx1CMCi41tZu9a5E2G5C6fS3dsl43zvGFgNAVVBkKHPwD4B6wW6CUsS9iMijRCiPd2gW72iB7AAznts9QqYOt22f5coNE5Ft5dJUElxYNrCGYBg2JXrfha44EwGMz0RjQWV/Y7xSeJ2hDfou9klF8y122en6/eV3VWarLF0WZ/rIxxifWeWFCuc1eY7nbiSFaYdcaa5COtiKxnDOLNNGGGd
+:
+  ssh_auth.present: 
+    - user: erin   
+    - enc: ssh-rsa 
+? AAAAB3NzaC1yc2EAAAADAQABAAABAQC4v4SozftNAHMDXSsGAlgB7hhN+xszsbtqon2Bt3ldEBhgLwuKWQVQW9MAV4j6kFyyB+WqSAqwx7PXh1Wojyct4ryXdyPmNDCC85TgXpkgF8guPMuuAWJvkfRh1eyn/aVAj9UdCC6r9tlhaKtlss5Yq90KN40StAHUGo6qT40E+M9xCapTJO5h3Rfb+yHMytN3TKs5GLRKkONo4nXUr77AcFewUokZres7abZTfhDr9H4TKvbpx/UptALSwk0bF8kgahEUrPCwIZyP/xDLXcxZmPIv2r3CBq8q739ZkImp/U5OffM3JYNF5Qoi98VoopomlA99ebP0dnHCgWXAGVTZ
+:
+  ssh_auth.present:
+    - user: erin
+    - enc: ssh-rsa

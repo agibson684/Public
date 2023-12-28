@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="tvshows">
+    <name>guns and bots</name>
+    <match>one</match>
+    <rule field="title" operator="contains">
+        <value>csi</value>
+    </rule>
+    <rule field="title" operator="contains">
+        <value>person of interest</value>
+    </rule>
+    <rule field="title" operator="contains">
+        <value>fringe</value>
+    </rule>
+    <rule field="title" operator="contains">
+        <value>The X-Files</value>
+    </rule>
+    <rule field="title" operator="contains">
+        <value>The Mentalist</value>
+    </rule>
+    <rule field="title" operator="contains">
+        <value>The Pretender</value>
+    </rule>
+</smartplaylist>

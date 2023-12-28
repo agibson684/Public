@@ -1,0 +1,8 @@
+modules:
+  default:
+    user: ssh_check
+    private_key: /ssh_check/.ssh/ssh_check
+    command: uptime
+    command_expect: "load average"
+    timeout: 5
+

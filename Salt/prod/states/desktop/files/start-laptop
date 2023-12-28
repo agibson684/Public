@@ -1,0 +1,38 @@
+#!/bin/bash 
+
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+xcompmgr -c &
+xrdb -merge .Xresources
+xmodmap -e "clear Lock" -e "keycode 0x42 = Escape"
+
+xset s off -dpms
+
+xsetroot -cursor_name left_ptr
+xsetroot -solid 'purple'
+/home/THRACE/erin/bin/wallpaper.sh &
+PATH=$HOME/bin:/usr/sbin:$PATH
+#urxvt &
+tilix &
+sleep 5 
+#urxvt &
+#tilix &
+xscreensaver &
+sleep  5
+/home/erin/bin/tsurf &
+sleep 5
+/home/erin/bin/tsurf-bookmarks &
+sleep 5
+firefox  &
+sleep  5
+#redshift-gtk &
+#sleep  10 
+/home/THRACE/erin/bin/mount-sshfs.sh 1  &
+udiskie &
+sleep  5
+slack &
+sleep  5 
+
+#dbus-launch --exit-with-session /usr/local/bin/dwm
+#dbus-launch --exit-with-session xmonad
+wait $!
+/home/THRACE/erin/bin/mount-sshfs.sh 2 &

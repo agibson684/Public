@@ -1,0 +1,22 @@
+/home/THRACE/erin/.xsession-errors {
+	daily
+	missingok
+	rotate 4
+	compress
+	notifempty
+}
+/home/THRACE/erin/*.log {
+	daily
+	missingok
+	rotate 4
+	compress
+	notifempty
+}
+/home/THRACE/erin/.secondlife/logs/SecondLife.log {
+        daily
+        missingok
+        rotate 4
+        compress
+        notifempty
+}
+

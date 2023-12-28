@@ -1,0 +1,17 @@
+[connection]
+id={{ config.id }}
+type={{ config.type }}
+autoconnect-priority={{ config.priority }}
+permissions=
+interface={{ config.interface }}
+
+[ethernet]
+mac-address={{ config.macaddress }}
+mac-address-blacklist=
+
+[ipv4]
+address1=a{{ config.address }}
+dns={{ config.dns }}
+dns-search=
+method={{ config.method }}
+

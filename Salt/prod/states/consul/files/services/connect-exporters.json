@@ -1,0 +1,19 @@
+{
+  "service": {
+    "name": "connect-exporter",
+    "tags": [
+      "metrics"
+    ],
+    "port": 9293,
+     "checks": [
+      {
+          "interval" :"10s",
+          "timeout" : "2s",
+          "id": "connection",
+          "name": "connection Exporter HTTP 9293",
+          "http": "http://127.0.0.1:9293/metrics"
+      }
+    ]
+}
+}
+

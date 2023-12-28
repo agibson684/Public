@@ -1,0 +1,35 @@
+#this allows git command  to run the git hook command and check puppet
+#git services=NOPASSWD:/usr/bin/puppet agent --test
+#Some lines to fix nrpe and smartctl plugin..
+#this allows nagios to run the script smart command and look at that log. silly i know but it works
+#nagios ALL=(ALL) NOPASSWD:/usr/lib/nagios/plugins/check_smartctl
+#nagios ALL=(ALL) NOPASSWD:/usr/lib/nagios/plugins/check_smarterrors -w 0 -c 0 -s /dev/sda
+#nagios ALL=(ALL) NOPASSWD:/usr/lib/nagios/plugins/check_smarterrors -w 0 -c 0 -s /dev/sdb
+#nagios ALL=(ALL) NOPASSWD:/usr/lib/nagios/plugins/check_smarterrors -w 0 -c 0 -s /dev/sdc
+#nagios ALL=(ALL) NOPASSWD:/usr/lib/nagios/plugins/check_smarterrors -w 0 -c 0 -s /dev/sdd
+#nagios ALL=(ALL) NOPASSWD:/usr/lib/nagios/plugins/check_smarterrors -w 0 -c 0 -s /dev/sde
+#nagios ALL=(ALL) NOPASSWD:/usr/lib/nagios/plugins/check_smarterrors -w 0 -c 0 -s /dev/sdf
+#nagios ALL=(ALL) NOPASSWD:/usr/lib/nagios/plugins/check_smarterrors -w 0 -c 0 -s /dev/sdg
+#nagios ALL=(ALL) NOPASSWD:/usr/lib/nagios/plugins/check_smarterrors -w 0 -c 0 -s /dev/sdh
+#nagios ALL=(ALL) NOPASSWD:/usr/lib/nagios/plugins/check_smarterrors -w 0 -c 0 -s /dev/sdi
+#nagios ALL=(ALL) NOPASSWD:/usr/lib/nagios/plugins/check_smarterrors -w 0 -c 0 -s /dev/sdj
+#nagios ALL=(ALL) NOPASSWD:/usr/lib/nagios/plugins/check_fail2ban
+#nagios ALL=(ALL) NOPASSWD:/usr/lib/nagios/plugins/check_fail2ban.sh
+#nagios ALL=(ALL) NOPASSWD:/usr/lib/nagios/plugins/check_mpc
+#nagios ALL=(ALL) NOPASSWD:/usr/lib/nagios/plugins/check_puppet_agent -s /root/last_run_summary.yaml -w 7200 -c 14400
+#nagios ALL=(ALL) NOPASSWD:/media/private/Admin-Scripts/clean-up-backups.sh
+#nagios ALL=(ALL) NOPASSWD:/usr/lib/nagios/plugins/logrotate
+#nagios ALL=(ALL) NOPASSWD:/usr/share/nagios3/plugins/eventhandlers/fix-memory.sh
+#nagios ALL=(ALL) NOPASSWD:/usr/share/nagios3/plugins/eventhandlers/fix-mounts.sh /media/downloads/
+#nagios ALL=(ALL) NOPASSWD:/usr/share/nagios3/plugins/eventhandlers/fix-mounts.sh /media/private/
+#nagios ALL=(ALL) NOPASSWD:/usr/share/nagios3/plugins/eventhandlers/fix-mounts.sh /media/Backup/
+#nagios ALL=(ALL) NOPASSWD:/usr/share/nagios3/plugins/eventhandlers/fix-mounts.sh
+#nagios ALL=(ALL) NOPASSWD:/usr/share/nagios3/plugins/eventhandlers/fix-mpd.sh
+#nagios ALL=(ALL) NOPASSWD:/opt/scripts/puppet-summary.sh
+#nagios ALL=(ALL) NOPASSWD:/etc/init.d/puppetmaster restart
+#nagios ALL=(ALL) NOPASSWD:/usr/share/nagios3/plugins/eventhandlers/restart-service
+#nagios ALL=(ALL) NOPASSWD:/usr/lib/nagios/plugins/network-limit-monitoring.py
+erin terreis.thrace.lan=(ALL) NOPASSWD:/usr/bin/aptitude install *, /usr/bin/apt-get install *, /usr/bin/apt install *
+erin gabrielle.thrace.lan=(ALL) NOPASSWD:/usr/bin/mount /mnt/disk/
+erin gabrielle.thrace.lan=(ALL) NOPASSWD:/usr/bin/umount /mnt/disk/
+

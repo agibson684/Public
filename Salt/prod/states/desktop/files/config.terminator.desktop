@@ -1,0 +1,120 @@
+[global_config]
+  focus = mouse
+  window_state = hidden
+  tab_position = bottom
+  title_transmit_bg_color = "#793a8c"
+  title_receive_bg_color = "#da8ad8"
+  title_inactive_bg_color = "#782951"
+  inactive_color_offset = 0.5121951219512195
+  title_use_system_font = False
+  title_font = Sans 10
+[keybindings]
+  copy = <Primary>c
+  paste = <Primary>v
+[profiles]
+  [[default]]
+    background_color = "#180808"
+    background_darkness = 0.83
+    background_type = transparent
+    cursor_color = "#d4bacf"
+    font = Hack 10
+    foreground_color = "#c96feb"
+    scrollback_lines = 5000
+    use_system_font = False
+  [[black]]
+    background_color = "#effcff"
+    background_darkness = 0.8
+    background_type = transparent
+    cursor_color = "#170909"
+    font = Hack 20
+    foreground_color = "#020202"
+    use_system_font = False
+  [[default-small-font]]
+    background_darkness = 0.8
+    background_type = transparent
+    cursor_color = "#ebd6d6"
+    font = Hack 12
+    use_system_font = False
+  [[green]]
+    background_color = "#002b36"
+    background_darkness = 0.8
+    background_type = transparent
+    cursor_color = "#1ef209"
+    font = Hack 20
+    foreground_color = "#1ef209"
+    use_system_font = False
+  [[green-solid]]
+    background_color = "#5a1e6d"
+    cursor_color = "#1ef30d"
+    foreground_color = "#1ef30d"
+  [[solid-small-font]]
+    cursor_color = "#2ae41b"
+    font = Hack 12
+    foreground_color = "#2ae41b"
+    use_system_font = False
+  [[white]]
+    background_darkness = 0.8
+    background_type = transparent
+    cursor_color = "#eedbdb"
+    font = Hack 20
+    use_system_font = False
+  [[solidblack]]
+    cursor_color = "#aaaaaa"
+  [[Red]]
+    background_color = "#a40000"
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    foreground_color = "#11f9f9"
+    palette = "#000000:#cd0000:#00cd00:#cdcd00:#0000cd:#cd00cd:#00cdcd:#faebd7:#404040:#ff0000:#00ff00:#ffff00:#0000ff:#ff00ff:#00ffff:#ffffff"
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+  [[Erin]]
+    [[[child0]]]
+      order = 0
+      parent = ""
+      position = 2240:0
+      size = 958, 1064
+      type = Window
+    [[[child1]]]
+      labels = Alias, Nifty_Apps, root@terreis, Desktop, ServerNinja
+      order = 0
+      parent = child0
+      type = Notebook
+    [[[terminal1]]]
+      command = env startup_cmd="alias" bash
+      order = 1
+      parent = child1
+      profile = solid-small-font
+      type = Terminal
+    [[[terminal2]]]
+      command = env startup_cmd="nifty_apps" bash
+      order = 2
+      parent = child1
+      profile = solid-small-font
+      type = Terminal
+    [[[terminal3]]]
+      command = env startup_cmd="su" bash
+      order = 3
+      parent = child1
+      profile = default
+      type = Terminal
+    [[[terminal4]]]
+      command = env startup_cmd="desktop" bash
+      order = 4
+      parent = child1
+      profile = default
+      type = Terminal
+    [[[terminal5]]]
+      command = env startup_cmd="serverninja" bash
+      order = 5
+      parent = child1
+      profile = default
+      type = Terminal
+[plugins]

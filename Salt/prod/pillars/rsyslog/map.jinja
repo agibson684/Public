@@ -1,0 +1,24 @@
+# Rsyslog
+{% set rsyslog = salt['grains.filter_by']({
+    'home': {
+        'port': '5514',
+        'ip': '192.168.1.220',
+        'protocol': 'udp'
+    },
+    'vagrant': {
+        'port': '5514',
+        'ip': '192.168.1.220',
+        'protocol': 'udp'
+    },
+    'droplet': {
+        'port': '5514',
+        'ip': '127.0.0.1',
+        'protocol': 'udp'
+    },
+  'mobile': {
+        'port': '5514',
+        'ip': '127.0.0.1',
+        'protocol': 'udp'
+    },
+       
+}, grain='datacenter') %}

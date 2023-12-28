@@ -1,0 +1,223 @@
+# ~/.bashrc: executed by bash(1) for non-login shells.                    #
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)#
+# for examples                                                            #
+###########################################################################
+# If not running interactively, don't do anything:
+[ -z "$PS1" ] && return
+# enable color support of ls and also add handy aliases
+if [ "$TERM" != "dumb" ]; then
+    eval `dircolors -b ~/.dir_colors`
+    alias ls='ls --color=auto'
+fi
+#########################################################################
+# don't put duplicate lines in the history. See bash(1) for more options#
+#Make sure all terminals save history                                   #
+#########################################################################
+export PROMPT_COMMAND="history -a"
+####################################
+###############
+#history stuff#
+###############
+HISTSIZE=1000
+#HISTFILESIZE=1000
+HISTTIMEFORMAT='%F %T '
+HISTCONTROL=ignoredups:erasedups
+##############################################################
+# check the window size after each command and, if necessary,#
+# update the values of LINES and COLUMNS.                    #
+##############################################################
+shopt -s checkwinsize
+shopt -s histappend
+shopt -s autocd
+export EDITOR='vi'
+alias nano=vim
+#my personal aliases
+################################
+##########My Aliases############
+################################
+#alias changepassword='sudo bash  /media/private/Admin-Scripts/changepassword.sh'
+alias mkdir='mkdir -pv'
+alias diff='colordiff'
+alias grep='grep -n -A 5 -B 5 --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+# do not delete / or prompt if deleting more than 3 files at a time #
+alias Remove='rm -I --preserve-root -v'
+alias rm='/usr/bin/safe-rm -riv'
+alias trouble='kill -9 $(pidof xbmc.bin google-chrome xmobar)'
+
+ 
+# confirmation #
+alias mv='mv -iv'
+alias cp='cp -iv'
+alias ln='ln -iv'
+ 
+# Parenting changing perms on / #
+alias chown='chown -v --preserve-root'
+alias chmod='chmod -v --preserve-root'
+alias chgrp='chgrp -v --preserve-root'
+
+alias vi='vim'
+alias df='df -h'
+alias Mount='mount |column -t'
+# Stop after sending count ECHO_REQUEST packets #
+alias ping='ping -c 5'
+# Do not wait interval 1 second, go fast #
+alias fastping='ping -c 100 -s.2'
+alias ports='netstat -tulanp'
+## pass options to free ##
+alias meminfo='free -m -l -t'
+ 
+## get top process eating memory
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+ 
+## get top process eating cpu ##
+alias pscpu='ps auxf | sort -nr -k 3'
+alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
+ 
+## Get server cpu info ##
+alias cpuinfo='lscpu'
+ 
+## older system use /proc/cpuinfo ##
+##alias cpuinfo='less /proc/cpuinfo' ##
+ 
+## get GPU ram on desktop / laptop##
+alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
+
+alias dnstop='dnstop -l 5  br0'
+alias vnstat='vnstat -i br0'
+alias iftop='iftop -i br0'
+alias tcpdump='tcpdump -i br0'
+alias ethtool='ethtool br0'
+
+## get rid of command not found ##
+alias cd..='cd ..'
+ 
+## a quick way to get out of current directory ##
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
+
+alias apps='cd /media/apps'
+alias downloads='cd /media/downloads'
+alias files_misc='cd /media/files_misc'
+alias files_music='cd /media/files_music'
+alias misc='cd /media/misc'  
+alias movies='cd /media/movies/' 
+alias public='cd /media/public'
+alias Backup='cd /media/Backup'
+alias files_apps='cd /media/files_apps'
+alias files_movies='cd /media/files_movies' 
+alias misc_vids='cd /media/misc_vids'
+alias  private='cd /media/private'
+alias Mods='cd /etc/puppet/modules/'
+alias Mani='cd /etc/puppet/manifests/'
+alias check_puppet='/opt/scripts/puppet-summary.sh'
+alias puppet_debug='/opt/scripts/puppet-debug.sh'
+# distro specific  - Debian / Ubuntu and friends #
+# install with apt-get
+#alias apt-get=" aptitude safe-upgrade"
+alias updatey=" aptitude safe-upgrade -y"
+alias prompt="PS1='\[$bold\]\[$yellow\]\[$greenb\]\u\[$reset\]@\[$magenta\]\[$blackb\]\h\[$reset\]:\[$white\]:\[$reset\]\$'"
+ 
+# update on one command
+#echo the bash functioins
+alias  bash-functions='echo "the commands for this .bashrc are [$bold]h[$reset] for history stuff, [$bold][Copy][$reset] to copy files, and [$bold][ix][$reset] to pastebin your files."'
+alias  nifty_apps='cat /opt/nifty_apps.txt'
+################################
+##########My Functions##########
+################################
+h() { if [ -z "$1" ]; then history; else history | \grep "$@"; fi; }
+Copy () { cp "$1" "$1.$(date +%Y-%m-%d).bak" ; }
+pretty() { printf 'pretty(){ %s\n }; declare -f pretty' "$(cat)" | bash; }
+  ix() {
+            local opts
+            local OPTIND
+            [ -f "$HOME/.netrc" ] && opts='-n'
+            while getopts ":hd:i:n:" x; do
+                case $x in
+                    h) echo "ix [-d ID] [-i ID] [-n N] [opts]"; return;;
+                    d) $echo curl $opts -X DELETE ix.io/$OPTARG; return;;
+                    i) opts="$opts -X PUT"; local id="$OPTARG";;
+                    n) opts="$opts -F read:1=$OPTARG";;
+                esac
+            done
+            shift $(($OPTIND - 1))
+            [ -t 0 ] && {
+                local filename="$1"
+                shift
+                [ "$filename" ] && {
+                    curl $opts -F f:1=@"$filename" $* ix.io/$id
+                    return
+                }
+                echo "^C to cancel, ^D to send."
+            }
+            curl $opts -F f:1='<-' $* ix.io/$id
+        }
+###########SET THE DISPLAY#######################
+# DISPLAY=:0.0
+# export DISPLAY
+
+########################
+########################
+##set a fancy prompt####
+##edited by erin here ##
+########################
+  blackb=$(tput setab 0)
+  redb=$(tput setab 1)
+  greenb=$(tput setab 2)
+  yellowb=$(tput setab 3)
+  blueb=$(tput setab 4)
+  magentab=$(tput setab 5)
+  cyanb=$(tput setab 6)
+  whiteb=$(tput setab 7)
+  defaultb=$(tput setab 9)
+  black=$(tput setaf 0)
+  red=$(tput setaf 1)
+  green=$(tput setaf 2)
+  yellow=$(tput setaf 3)
+  blue=$(tput setaf 4)
+  magenta=$(tput setaf 5)
+  cyan=$(tput setaf 6)
+  white=$(tput setaf 7)
+  dfault=$(tput setaf 9)
+  reset=$(tput sgr0)
+  bold=$(tput bold)
+ PS1='\[$bold\]\[$red\]\[$yellowb\]\u\[$reset\]@\[$red\]\[$blackb\]\h\[$reset\]:\[$blue\]\w\[$reset\]\$ '
+######################################################################
+# enable programmable completion features (you don't need to enable  #
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profiles#
+# sources /etc/bash.bashrc).                                         #
+######################################################################
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+
+fi
+#######################
+#My Path              #
+#######################
+export PATH="$HOME/bin:/usr/sbin:$PATH"
+#PATH="$PATH:~/bin:/usr/sbin"
+lolcat="/usr/games/lolcat"
+############################
+#Setting a Timeout for ROOT#
+############################
+TMOUT=600
+##############
+#Auto SSH    #
+##############
+AUTOSSH_DEBUG=1
+AUTOSSH_GATETIME=0
+AUTOSSH_PORT=20000
+linux_logo  -u
+figlet -t $(hostname) with ROOT POWERS!
+echo "WELOME! THRACE.LAN WELCOMES YOU TO THE NETWORK. The programs included with the Debian GNU/Linux system are free software;the exact distribution terms for each program are described in the individual files in /usr/share/doc/*/copyright. Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extentpermitted by applicable law."
+echo "##################################################################################"
+echo "#Please checkout www.thrace-lan.info or www.thrace.lan for details on the network!#"
+echo "##################################################################################"
+echo 'With great power comes great responsibility!'
+	

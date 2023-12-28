@@ -1,0 +1,69 @@
+terreis.thrace.lan:
+    ----------
+    hwaddr_interfaces:
+        ----------
+        eno1:
+            04:92:26:59:85:b6
+        lo:
+            00:00:00:00:00:00
+        wlp5s0:
+            18:1d:ea:09:65:05
+calisto.thrace.lan:
+    ----------
+    hwaddr_interfaces:
+        ----------
+        eno1:
+            0c:c4:7a:cd:c7:b8
+        eno2:
+            0c:c4:7a:cd:c7:b9
+        lo:
+            00:00:00:00:00:00
+mediacenter.thrace.lan:
+    ----------
+    hwaddr_interfaces:
+        ----------
+        enp3s0:
+            1c:1b:0d:a2:72:28
+        lo:
+            00:00:00:00:00:00
+        wlp6s0:
+            94:b8:6d:87:15:5e
+kodi.thrace.lan:
+    ----------
+    hwaddr_interfaces:
+        ----------
+        eno1:
+            98:90:96:b0:ea:95
+        lo:
+            00:00:00:00:00:00
+solan.thrace.lan:
+    ----------
+    hwaddr_interfaces:
+        ----------
+        enp0s3:
+            08:00:27:18:0d:35
+        lo:
+            00:00:00:00:00:00
+gabrielle.thrace.lan:
+    ----------
+    hwaddr_interfaces:
+        ----------
+        eno1:
+            0c:c4:7a:90:24:a0
+        eno2:
+            0c:c4:7a:90:24:a1
+        lo:
+            00:00:00:00:00:00
+xena.thrace.lan:
+    ----------
+    hwaddr_interfaces:
+        ----------
+        docker0:
+            02:42:ea:68:2f:fe
+        enp5s0:
+            1c:6f:65:4a:96:bc
+        lo:
+            00:00:00:00:00:00
+        veth2199ea1:
+            ae:b7:e9:57:a4:16
+

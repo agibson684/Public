@@ -1,0 +1,27 @@
+$TTL    3600
+@ IN SOA        lyceus.thrace.lan. root.thrace.lan. (
+                   2007010402           ; Serial
+                         3600           ; Refresh [1h]
+                          600           ; Retry   [10m]
+                        86400           ; Expire  [1d]
+                          600 )         ; Negative Cache TTL [1h]
+;
+
+@       IN      NS      lyceus.
+207     IN      PTR      lyceus.thrace.lan.
+
+
+1         IN      PTR   gateway.thrace.lan.
+26        IN      PTR   cyane1.thrace.lan.
+27        IN      PTR   cyane2.thrace.lan.
+201       IN      PTR   gabrielle.thrace.lan.
+202       IN      PTR   xena.thrace.lan.
+203       IN      PTR   salmoneus.thrace.lan.
+204       IN      PTR   solans.thrace.lan.
+206       IN      PTR   eve.thrace.lan.
+208       IN      PTR   joxer.thrace.lan.
+217       IN      PTR   testing.thrace.lan.
+220       IN      PTR   calisto.thrace.lan.
+221       IN      PTR   aries.thrace.lan.
+222       IN      PTR   terreis.thrace.lan.
+

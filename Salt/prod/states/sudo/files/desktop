@@ -1,0 +1,1 @@
+Cmnd_Alias  DESKTOP  = /usr/bin/amdcccle, /usr/sbin/gparted, /bin/systemctl halt, /bin/systemctl poweroff, /bin/systemctl reboot, /bin/systemctl hibernate, /usr/sbin/update-flashplugin-nonfree --install, /usr/sbin/update-flashplugin-nonfree --status, /home/THRACE/erin/tmm/tinyMediaManager.sh, /usr/bin/quassel *,  /usr/bin/quasselcore *, /usr/bin/quassel-client *

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+ <title>calendar</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" >
+ <meta http-equiv="refresh" content="600">
+ <script language="JavaScript" src="/personal/clock.js"></script>
+ <script type="text/javascript" src="/personal/menu.js"></script>
+ <script src="jquery.js"></script>
+ <script>
+    $(function(){
+      $("#includedContent").load("/personal/include.html");
+    });
+ </script>
+ <link rel="stylesheet" type="text/css" href="/personal/styles.css" >
+</head>
+ <body>
+ <div id="doc" class="yui-t7">
+  <div id="hd" style="height:50px;">
+    <div id="header"><h1>Calendar</a></h1></div>
+  </div>
+<div id="hd" style="height:50px;">
+ <div id="header">
+<div class="included">
+   <div id="includedContent"></div>
+   </div>
+  </div>
+</div>
+</div>
+
+<script type="text/javascript">
+        var menu=new menu.dd("menu");
+        menu.init("menu","menuhover");
+</script>
+      <div class="yui-b" style="height:100%;">
+      <div id="secondary"><iframe src="https://www.google.com/calendar/embed?title=Erin's%20Calendar&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23cc66cc&amp;src=ltrj2qe9k0difatk37jturvjg0%40group.calendar.google.com&amp;color=%23B1365F&amp;src=tk5m9npmser3gtcdjkmthkcmi0%40group.calendar.google.com&amp;color=%237A367A&amp;src=agibson684%40gmail.com&amp;color=%236B3304&amp;src=p%23weather%40group.v.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FNew_York" style=" border:solid 1px #777" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

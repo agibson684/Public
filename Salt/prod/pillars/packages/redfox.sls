@@ -1,0 +1,38 @@
+packages:
+  enable: '1' 
+  target: '/etc/apt/apt.conf.d/02periodic'
+  unup : '0'
+  verbose: '1'
+  bkparch: '0'
+  bkplvl: '0'
+  maxage: '0'
+  minage: '0'
+  maxsize: '0'
+  dluppkgdelta: '0'
+  autocleanint: '0'
+  originpattern: 'origin=*'
+  blacklistpattern: '"elasticsearch*"; "kibana*"; "logstash*"; "linux-headers*";  "linux-image*";  "linux-generic*"; "linux-modules*"; "metricbeat*"; "filebeat*";'
+  autofixdpkg: 'true'
+  minimalsteps: 'false'
+  installonshutdown: 'false'
+  email: 'agibson684@gmail.com'
+  mailonlyonerr: 'false'
+  rmunuseddepend: 'true'
+  autoreboot: 'false'
+  uppkgls: '1'
+  dluppkg: '1'
+{#
+timer_type:
+   prometheus-node-exporter-apt:
+     descp: 'run apt metrics collection every 15 minutes, salt-stack timer do not edit'
+     onbootsec: '0'
+     onunitactivesec: '15min' 
+     wantedby: 'timers.target'
+   prometheus-node-exporter-smartmon:
+     descp: 'run smart metrics collections every 15 min, salt-stack timer do not edit'
+     pathexist: '/usr/sbin/smartctl'
+     pathexistglob: '/dev/sd*'
+     onbootsec: '0'
+     onunitactivesec: '15min'
+     wantedby: 'timers.targe' 
+#}

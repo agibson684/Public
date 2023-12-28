@@ -1,0 +1,6 @@
+SHELL=/bin/sh
+MAILTO=agibson684@gmail.com
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+# m h dom mon dow user  command
+PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin"
+*/15 * * * * root zfs-auto-snapshot  -s -q -g --label=frequent --keep=4  //

@@ -1,0 +1,12 @@
+#
+# config files included here displayed without "#" as first character
+# with  egrep -v '(^#|^ *$)' <filename>
+# currently NO extra commandlines are supported!
+#
+# uncomment next line to test the example:
+#FILES="/etc/adjtime /etc/paper.config"
+FILES=" /etc/krb5.conf /etc/pam.d/atd /etc/pam.d/chfn /etc/pam.d/chpasswd /etc/pam.d/chsh /etc/pam.d/common-account /etc/pam.d/common-auth /etc/pam.d/common-password /etc/pam.d/common-session /etc/pam.d/common-session-noninteractive /etc/pam.d/cron /etc/pam.d/cups /etc/pam.d/cvs /etc/pam.d/gdm /etc/pam.d/gdm-autologin /etc/pam.d/gnome-screensaver /etc/pam.d/kdm /etc/pam.d/kdm-np /etc/pam.d/login /etc/pam.d/netatalk /etc/pam.d/newusers /etc/pam.d/other /etc/pam.d/passwd /etc/pam.d/polkit /etc/pam.d/polkit-1 /etc/pam.d/ppp /etc/pam.d/samba /etc/pam.d/sshd /etc/pam.d/su /etc/pam.d/sudo /etc/pam.d/xscreensaver /etc/cfg2html/files /root/.bashrc /etc/fail2ban/jail.conf /etc/fail2ban/fail2ban.conf"
+
+
+# Future plans/enhancements:
+#CATFILES="/etc/motd /etc/issue"

@@ -1,0 +1,2 @@
+Cmnd_Alias  APT =  /usr/bin/aptitude update, /usr/bin/aptitude safe-upgrade -s -y, /usr/bin/aptitude safe-upgrade -q -y, /opt/scripts/aptitude_upgrade.sh, /usr/bin/apt-get upgrade, /usr/bin/apt *
+

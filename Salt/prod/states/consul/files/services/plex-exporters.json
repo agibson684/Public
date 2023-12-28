@@ -1,0 +1,19 @@
+{
+  "service": {
+    "name": "plex-exporter",
+    "tags": [
+      "metrics"
+    ],
+    "port": 9594,
+     "checks": [
+      {
+          "interval" :"10s",
+          "timeout" : "2s",
+          "id": "plex",
+          "name": "plex Exporter HTTP 9594",
+          "http": "http://127.0.0.1:9594/metrics"
+      }
+    ]
+}
+}
+

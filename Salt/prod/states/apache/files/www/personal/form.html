@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC >
+<html>
+<head>
+<title>Requests!</title>
+<script type="text/javascript" src="/personal/menu.js"></script>
+<link rel="stylesheet" type="text/css" href="/personal/styles.css" >
+<script src="jquery.js"></script>
+    <script>
+    $(function(){
+      $("#includedContent").load("/personal/include.html");
+    });
+    </script>
+</head>
+<body>
+<div id="header">
+  <div class="included">
+   <div id="includedContent"></div>
+   </div>
+  </div>
+<script type="text/javascript">
+        var menu=new menu.dd("menu");
+        menu.init("menu","menuhover");
+</script>
+<form name="contactform" method="post" action="send_form_email.php">
+<table width="450px"  align="center">
+<tr>
+ <td valign="top">
+  <label for="first_name">First Name </label>
+ </td>
+ <td valign="top">
+  <input  type="text" name="first_name" maxlength="50" size="50">
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+  <label for="last_name">Last Name </label>
+ </td>
+ <td valign="top">
+  <input  type="text" name="last_name" maxlength="50" size="50">
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+  <label for="email">Email Address </label>
+ </td>
+ <td valign="top">
+  <input  type="text" name="email" maxlength="80" size="50">
+ </td>
+</tr>
+<tr>
+<td valign="top">
+<select name="email_subject">
+	<option value="Credentials">Credentials</option>
+	<option value="Mac Address Filter">MAC Address Filter</option>
+	<option value="Static IP">Static Local IP</option>
+	<option value="DNS Name">DNS Entry</option>
+	<option value="SSH Access Local">SSH Access Local</option>
+	<option value="SSH Access Remote">SSH Access Remote</option>
+	<option value="Support">Support</option>
+	</select>
+</td>
+</tr>
+<tr>
+ <td valign="top">
+  <label for="comments">Comments</label>
+ </td>
+ <td valign="top">
+  <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
+ </td>
+</tr>
+<tr>
+ <td colspan="2" style="text-align:center">
+  <input type="submit" value="Submit">   <a href="http://www.freecontactform.com/email_form.php">Email Form</a>
+ </td>
+</tr>
+</table>
+</form>
+</body>
+</html>

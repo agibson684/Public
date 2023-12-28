@@ -1,0 +1,27 @@
+[connection]
+id=XT1575 6129
+uuid=cb24a52c-dec3-4186-9991-f54d0f3469d2
+type=wifi
+permissions=
+timestamp=1635889952
+
+[wifi]
+mac-address-blacklist=
+mode=infrastructure
+seen-bssids=1A:8F:36:50:6B:5D;4A:8F:C8:78:ED:75;56:86:4D:F0:F6:51;BE:F6:07:8E:54:33;D6:79:B5:A3:FD:58;F2:FD:87:7F:0B:C5;
+ssid=XT1575 6129
+
+[wifi-security]
+key-mgmt=wpa-psk
+psk=Hellokitty123
+
+[ipv4]
+dns-search=
+method=auto
+
+[ipv6]
+addr-gen-mode=stable-privacy
+dns-search=
+method=auto
+
+[proxy]

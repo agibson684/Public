@@ -1,0 +1,13 @@
+# File contains grok patterns for matching custom apache specific access and error logs
+
+
+CUSTOMAPACHELOG %{COMBINEDAPACHELOG} %{HOSTNAME:virtualhost} %{MD5HASH:memberhash}
+
+# php_memory_bytes for non php requests can be "-"
+CUSTOMAPACHELOG2 %{COMBINEDAPACHELOG} %{HOSTNAME:vhost_or_ip} %{NUMBER:response_time} %{NOTSPACE:php_memory_bytes} %{NUMBER:child_pid} %{MD5HASH:memberhash}
+
+#php memory bytes for simple curl and wget requests
+CUSTOMAPACHELOG3 %{COMBINEDAPACHELOG} %{HOSTNAME:vhost_or_ip} %{NUMBER:response_time} %{NOTSPACE:php_memory_bytes} %{NUMBER:child_pid} %{NOTSPACE:memberhash}
+
+# Custom Apache Error Message
+HTTPERROR \[error\] \[client %{IPORHOST:client}\] %{GREEDYDATA:httperror}

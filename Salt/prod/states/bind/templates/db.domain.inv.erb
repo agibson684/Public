@@ -1,0 +1,20 @@
+@ IN SOA        {{ grains['fqdn'] }}. root.thrace.lan. (
+                 {{ pillar["serial"] }}           ; Serial
+                 {{ pillar["refresh"] }}          ; Refresh [1h]
+                 {{ pillar["retry"] }}            ; Retry   [10m]
+                 {{ pillar["expire"] }}           ; Expire  [1d]
+                 {{ pillar["negcachettl"] }})         ; Negative Cache TTL [1h]
+;
+@       IN      NS    {{ grains['fqdn'] }}.
+
+ {{ pillar["fqdn_ptr"] }}  IN      PTR    {{ grains['fqdn'] }}.
+
+
+{% for domain in pillar['domains'] -%}
+{% set hostname = pillar ['domains'][domain]['hostname'] -%}
+{% set ip  = pillar['domains'][domain]['hostip'] -%}
+{{ ip }}  IN    PTR  {{ domain }}. 
+{% endfor %}
+
+
+

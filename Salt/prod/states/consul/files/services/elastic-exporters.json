@@ -1,0 +1,19 @@
+{
+  "service": {
+    "name": "elastic-exporter",
+    "tags": [
+      "metrics"
+    ],
+    "port": 9114,
+     "checks": [
+      {
+          "interval" :"10s",
+          "timeout" : "2s",
+          "id": "elastic",
+          "name": "elastic Exporter HTTP 9114",
+          "http": "http://127.0.0.1:9114/metrics"
+      }
+    ]
+}
+}
+

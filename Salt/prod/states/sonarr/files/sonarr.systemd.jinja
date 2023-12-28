@@ -1,0 +1,19 @@
+{%- from "sonarr/map.jinja" import sonarr with context -%}
+
+[Unit]
+Description=Sonarr (NZBDrone)
+Documentation={{ sonarr.release.reference_doc }}
+After=syslog.target
+After=network.target
+
+[Service]
+User={{ sonarr.user }}
+Group={{ sonarr.group }}
+Type=simple
+WorkingDirectory={{ sonarr.install_dir }}
+ExecStart={{ sonarr.mono_bin }} {{ sonarr.sonarr_bin }} -nobrowser
+TimeoutStopSec=20
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

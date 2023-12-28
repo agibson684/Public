@@ -1,0 +1,32 @@
+#This is the .screenrc file
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
+# Please do not modify this file it is being controlled by Salt
+#Thank you for your cooperation!
+screen -t Terreis:
+screen -t Terreis:
+chdir /home/THRACE/erin/Salt
+screen -t Salt:Terreis
+screen -t Root:Terreis sudo -i 
+screen -t Htop@Terreis  top
+chdir /home/THRACE/erin/Repository/
+#screen -t IRC weechat-curses
+screen -t Repo:Terreis 
+screen -t Repo:Tig tig
+chdir /home/THRACE/erin/Salt
+screen -t Salt:Terreis
+screen -t Salt:Tig tig
+chdir /media/tv/
+screen -t TV:Terreis
+chdir /media/sync_movies
+screen -t Movies:Terreis
+chdir /home/THRACE/erin/
+screen -t Terreis:  
+screen -t Terreis:
+screen -t transmission watch "transmission-remote docker.thrace.lan  -l"
+defscrollback 50000
+ bind = resize =
+ bind + resize +1
+ bind - resize -1
+ bind _ resize max
+
+

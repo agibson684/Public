@@ -1,0 +1,3 @@
+# Local logs for haproxy load balancer
+
+if $syslogfacility-text == 'local0' and ($programname == 'Keepalived_vrrp' or $programname == 'Keepalived_healthcheckers') then action(type="omfile" file="/var/log/keepalived.log")

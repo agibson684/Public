@@ -1,0 +1,11 @@
+subnet 192.168.1.0 netmask 255.255.255.0 { 
+  pool { 
+    failover peer "dhcp";
+    range 192.168.1.2  192.168.1.62;
+    deny dynamic bootp clients;
+  } 
+  option routers  192.168.1.1;
+  option subnet-mask 255.255.255.0;
+  option routers 192.168.1.1;
+}
+

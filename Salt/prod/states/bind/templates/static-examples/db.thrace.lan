@@ -1,0 +1,37 @@
+$TTL    3600
+@       IN      SOA     solan.thrace.lan. root.thrace.lan. (
+                   2007010402           ; Serial
+                         3600           ; Refresh [1h]
+                          600           ; Retry   [10m]
+                        86400           ; Expire  [1d]
+                          600 )         ; Negative Cache TTL [1h]
+;
+@         IN      NS      solan.thrace.lan.
+solan  IN      A       192.168.1.204
+
+
+gateway   IN      A       192.168.1.1 	
+gabrielle IN      A       192.168.1.201	
+xena      IN      A       192.168.1.202
+salmoneus IN      A       192.168.1.203	
+solan     IN      A       192.168.1.204	
+eve       IN      A       192.168.1.206	
+joxer     IN      A       192.168.1.208	
+testing   IN      A       192.168.1.217	
+calisto   IN      A       192.168.1.220	
+aries     IN      A       192.168.1.221	
+terreis   IN      A       192.168.1.222	
+cyane1    IN      A       192.168.1.26	
+cyane2    IN      A       192.168.1.27	
+
+
+www           IN      CNAME   solan
+puppet        IN      CNAME   solan
+puppetmaster  IN      CNAME   solan
+git           IN      CNAME   solan
+rundeck       IN      CNAME   solan
+phpmyadmin    IN      CNAME   solan
+cifs          IN      CNAME   gabrielle
+transmission  IN      CNAME   gabrielle
+registry      IN      CNAME   gabrielle
+

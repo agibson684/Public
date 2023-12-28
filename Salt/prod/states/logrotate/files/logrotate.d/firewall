@@ -1,0 +1,9 @@
+/var/log/firewall.log {
+	weekly
+	size 10M
+	missingok
+	rotate 4
+	compress
+	notifempty
+	 size 100k
+}

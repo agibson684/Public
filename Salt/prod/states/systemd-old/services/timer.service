@@ -1,0 +1,49 @@
+[Unit]
+{%- if config.descp is defined %}
+Description={{ config.descp }}
+{%- endif %}
+
+{%- if config.requires is defined %}
+
+Requires={{ config.requires }} 
+{%- endif %}
+
+{%- if config.after is defined %}
+
+After={{ config.after }}
+{%- endif %}
+
+{%- if config.fileisexec is defined  %}
+
+ConditionFileIsExecutable={{ config.fileisexec }}
+{%- endif %}
+
+{%- if config.pathexist  is defined %}
+
+ConditionPathExists={{ config.pathexist }}
+{%- endif %}
+
+{%- if config.pathexistglob is defined  %}
+
+ConditionPathExistsGlob={{ config.pathexistglob }}
+{%- endif %}
+
+{%- if config.pathisempty  is defined %}
+
+ConditionDirectoryNotEmpty={{ config.pathisempty }}
+{%- endif %}
+
+
+[Timer]
+{%- if config.onbootsec  is defined %}
+OnBootSec={{ config.onbootsec }}
+{%- endif %}
+{%- if config.onunitactivesec is defined  %}
+OnUnitActiveSec={{ config.onunitactivesec }}
+{%- endif %}
+
+[Install]
+
+{%- if config.wantedby is defined %}
+ WantedBy={{ config.wantedby }}
+{%- endif %}

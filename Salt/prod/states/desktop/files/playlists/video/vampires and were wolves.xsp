@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="tvshows">
+    <name>vampires and werewolves</name>
+    <match>one</match>
+    <rule field="plot" operator="contains">
+        <value>vampire</value>
+    </rule>
+    <rule field="plot" operator="contains">
+        <value>werewolf</value>
+    </rule>
+    <rule field="plot" operator="contains">
+        <value>werewolves</value>
+    </rule>
+</smartplaylist>

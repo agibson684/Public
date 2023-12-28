@@ -1,0 +1,25 @@
+sockets:
+  - name: hostname-http
+    host: 127.0.0.1
+    port: 80
+    protocol: tcp
+  - name: hostname-https
+    host: 127.0.0.1
+    port: 8080
+    timeout: 2
+#  - name: athena-https
+#    host: athena.thrace-lan.info
+#    port: 443
+#    timeout: 30
+  - name: zeus-https
+    host: zeus.thrace-lan.info
+    port: 443
+    timeout: 30
+  - name: transmission-http
+    host: 192.168.1.202
+    port: 9091
+    timeout: 30
+  - name: plex-tv
+    host: 192.168.1.202
+    port: 32400
+    timeout: 30

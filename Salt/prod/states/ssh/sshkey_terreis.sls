@@ -1,0 +1,16 @@
+
+? AAAAB3NzaC1yc2EAAAABIwAAAQEArVZgXQLZGhYCf9HooTQgZ/zPVrPuh1lEti6dXys/5+YzRF5StF7o9Xtr4GQUcDmtDd2dFX2XaCBwu43RtL0nDcPD//6xl62MGkoQEZFvTSvlF05BDyz+klFsBCbyc9JYFIJR/Xu+eMy2h6+uj/BZTk6ackGykUaE8RYlh8UmT9Yglx31Foxaax6Tr6YMyFHVadtMnW60GmM+gQBDxUUS3B3PY8GdgHH5Qo0tDXjKHFoKlGbXKLz5BedJOHhB621yBaCncdzylVGaBbA8MgnsGUwk7er/liEbU6HBlQY5Z4Eg7eX/h3TrX+pKMKxOITlRIwnlATMe1icg3molWJ0FOQ== 
+:
+  ssh_auth.present:
+    - user: erin
+    - enc: ssh-rsa
+? AAAAB3NzaC1yc2EAAAADAQABAAABAQCwkB4Z+fLaUgCXIHKXp0jLxryN3worQSkRzfRdVt2hjpI2U+q7i7AUfc442z5Vble3CL1D4gWBzTJg3oNlPgvoYk9dnacrN8nOA4wl2mEAToE9GTc+1m1sMNc4Am14Q7Fnzlv4qeIxaDjgfliDuyVyQib4vsD4odoq9psmjlyBO09UtuzHvxfPuZPEyXPOdl5OPwAfbLmx01P9y8jW7Ja2AIgp4wItDVV/A+tSqOMoFITg4Pvvueh1snPut5qlUmFNDGlgoNu5Nm4/WpyRk6w/whfExTlyGRgyYc5g9dxCjWjk3r15zVZ6GUrZ9ut2pOC1DPWn5hQLV12mbYZR+xa/
+:
+  ssh_auth.present:
+    - user: erin
+    - enc: ssh-rsa 
+? AAAAB3NzaC1yc2EAAAADAQABAAABAQDEdZomz14fazyKcCKIRoUP4XmkkGQF/LOrHe0Pt1lu514RAE3r+CzjqAKm8gR4GWeshbhn2Mg4YblcCpeMhYrlOxqJkIKmAZIZXhvcI8WHFSXLcjMdchO9Aj/nZxImXk+vAmhVniFIPSz9g5u7xXRrPJTPk03xu78cQGH5/ODi4xZLo6UC+rCNVF8G7Ue9d9S/TR6gG9wwGe+8UHd1UbUad+Qkq8d4tFEz35pcpJtZPgTUccZSyQn6pdd+jevQJZvQqZ1OmsQKjW9Kx1V0e4dGlIRSFMX/zCLbW7gBqj7+wogZ2RZTbwA/xeQJqce4W19VUyxbxMXWLX0Jb8Hr6tVp
+: 
+  ssh_auth.present:
+    - user: erin
+    - enc: ssh-rsa 

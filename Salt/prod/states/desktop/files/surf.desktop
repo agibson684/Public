@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Surf
+Type=Application
+Comment=a simple web browser based on WebKit/GTK+
+Exec=surf
+TryExec=surf
+Icon=surf
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;
+StartupWMClass=surf

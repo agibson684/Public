@@ -1,0 +1,19 @@
+{
+  "service": {
+    "name": "speedtest-exporter",
+    "tags": [
+      "metrics"
+    ],
+    "port": 9112,
+     "checks": [
+      {
+          "interval" :"10s",
+          "timeout" : "2s",
+          "id": "speedtest",
+          "name": "speedtest Exporter HTTP 9112",
+          "http": "http://127.0.0.1:9112/metrics"
+      }
+    ]
+}
+}
+

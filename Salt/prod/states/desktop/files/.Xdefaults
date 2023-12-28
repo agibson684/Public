@@ -1,0 +1,69 @@
+!!run this command to reload this file xrdb ~/.Xdefaults 
+xterm*dynamicColors::    true
+xterm*foreground::      white
+xterm*utf8::             2
+xterm*eightBitInput::    true
+xterm*saveLines::        32767
+xterm*scrollTtyKeypress::       true
+xterm*scrollTtyOutput::  false
+xterm*scrollBar::        false
+xterm*loginShell::       true
+!!xterm*faceName::         Monospace:pixelsize=11
+xterm*jumpScroll::       true
+xterm*multiScroll::      true
+xterm*toolBar::          false
+xterm*geometry::                100x30
+!!URxvt.font: xft:monospace:size:12
+URxvt.font:   xft:SauceCodePro Nerd Font Mono :style=Italic:size=13
+URxvt.cursorColor: magenta
+URxvt.cursorColor2: green
+URxvt.scrollBar: false
+URxvt.depth: 32
+URxvt.background: [80]DarkOrchid4
+!!#URxvt*background: [100]DarkOrchid4
+URxvt.foreground: green
+!!URxvt.perl-ext-common: default,matcher,url-select,keyboard-select
+!! Copy Paste & Other Extensions
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
+URxvt.copyCommand: xclip -i -selection primary
+URxvt.pasteCommand: xclip -o -selection primary
+!!URxvt.keysym.C-c: perl:clipboard:copy
+!!URxvt.keysym.C-v: perl:clipboard:paste
+!!URxvt.keysym.C-M-v: perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.urlLauncher: firefox
+URxvt.underlineURLs: true
+URxvt.urlButton: 1
+URxvt.urgentOnBell: false
+*color0: #073642
+*color8: #002b36
+
+!! red dark/light
+*color1: #dc322f
+*color9: #cb4b16
+
+!! green dark/light
+*color2: #859900
+*color10: #586e75
+
+!! yellow dark/light
+*color3: #b58900
+*color11: #657b83
+
+!! blue dark/light
+*color4: #268bd2
+*color12: #839496
+
+!! magenta dark/light
+*color5: #d33682
+*color13: #6c71c4
+
+!! cyan dark/light
+*color6: #2aa198
+*color14: #93a1a1
+
+!! white dark/light
+*color7: #eee8d5
+*color15: #fdf6e3

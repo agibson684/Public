@@ -1,0 +1,46 @@
+ag (1)               - The Silver Searcher. Like ack, but faster.
+calcurse (1)         - text-based organizer
+powertop (8)         - a power consumption and power management diagnosis tool.
+git-check-ignore (1) - Debug gitignore / exclude files
+gitignore (5)        - Specifies intentionally untracked files to ignore
+ss (8)               - another utility to investigate sockets
+tig (1)              - text-mode interface for Git
+tigmanual (7)        - text-mode interface for Git
+tigrc (5)            - Tig configuration file
+XkbSetIgnoreLockMods (3) - Sets the modifiers that, if locked, are not to be reported in matching events to passive grabs
+task-color (5)       - A color tutorial for the taskwarrior command line todo manager.
+tasksh (1)           - Interactive taskwarrior shell
+slurm (1)            - yet another network load monitor
+unison (1)           - a file-synchronization tool for Unix and Windows
+unison-2.40 (1)      - a file-synchronization tool for Unix and Windows
+unison-2.40.102 (1)  - a file-synchronization tool for Unix and Windows
+unison-latest-stable (1) - a file-synchronization tool for Unix and Windows
+xprop (1)            - property displayer for X
+xev (1)              - print contents of X events
+xwininfo (1)         - window information utility for X
+#located in /opt/scripts/
+gunzip-log-viewer.sh - Log viewer script 
+aptitude_upgrade.sh  - Unattended upgrade script
+backup./day/week/month/.sh - Backup scripts for systems
+cfg2html.sh          - Configuration details to HTML script 
+convert-mp4-mp3.sh   - Convert mp4 movie files into mp3 music files
+dead.letter.sh       - Notify that dead.letters are being made
+exclude.txt          - Files or directories that are being excluded for backup scripts
+kill_samba.sh        - Kills the smbd running process, used when it is stuck after upgrade
+puppet-summary.sh    - Pulls puppet repo into /etc/puppet/ and runs the puppet command on the master/develop/experimental branches as specified
+rsync-playlist-usbdisk.sh - Syncs the specified playlist to the specified usb disk location
+clean-up-backups.sh  - Cleans up backups in /media/Backup/*
+clean-up-meta-sneakernet.sh - Deletes extra info and picture files in movie or tv dir in /mnt/disk location. Useful for sneakernet to Parents house.
+clean_up_zfs.sh      - Removes ZFS snapshots, useful when you run out of space.
+fix-backups.sh       - Fix the backups in /media/Backup when they are not in proper dir.
+lock-permissions.sh  - Put permissions to read only on media storage
+unlock-permissions.sh - Put permissions to write on media storage
+mkdir-mv-avi.sh       - Makes directory for movie extensions with file name and moves the file into the directory.
+mkdir-seasons.sh      - Creates season directories for tv shows. 
+pull-backups.sh       - Pulls backups in to the day, week, month directory
+pull-backups-test.sh  - Pull backups test script
+push-downloads-movies-tv.sh - Pulls downloads from seedbox to local media server, then organizes the tv shows, or if specifed prompts to move all files to proper destination. 
+push_tv_show_test.sh  -  Push script test files creator
+sync-files-gabrielle-calisto.sh - Syncs files between media servers. helpful when files end up in wrong pool MISC or MUSIC dir and need to be pulled proper media server. 
+wakeup.sh             - Script to wake you up with pages or emails
+

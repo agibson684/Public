@@ -1,0 +1,18 @@
+{
+  "service": {
+    "name": "bind-exporter",
+    "tags": [
+      "metrics"
+    ],
+    "port": 9119,
+     "checks": [
+      {
+          "interval" :"10s",
+          "timeout" : "2s",
+          "id": "bind",
+          "name": "bind Exporter HTTP 9119",
+          "http": "http://127.0.0.1:9119/metrics"
+      }
+    ]
+}
+}

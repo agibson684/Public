@@ -1,0 +1,15 @@
+#This is the .screenrc file
+# Please do not modify this file it is being controlled by puppet
+#Thank you for your cooperation!
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
+screen -t gmail@esims684 mutt -F  ~/.mutt/account.com.gmail.esims684
+screen -t gmail@agibson684 mutt -F  ~/.mutt/account.com.gmail.agibson684
+screen -t gmail@bbelt16ag mutt -F  ~/.mutt/account.com.gmail.bbelt16ag
+screen -t gmail@egibson684  mutt -F  ~/.mutt/account.com.gmail.egibson684
+screen -t gmail@erin.1983.fl mutt -F  ~/.mutt/account.com.gmail.erin.1983.fl
+screen -t bookit@erin.sims mutt -F  ~/.mutt/account.com.bookit.erin.sims
+defscrollback 5000
+layout autosave on
+layout attach :last
+
+

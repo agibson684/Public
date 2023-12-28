@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name></name>
+    <match>all</match>
+    <rule field="studio" operator="contains">
+        <value>MARVEL</value>
+    </rule>
+</smartplaylist>

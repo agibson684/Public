@@ -1,0 +1,10 @@
+---
+client:
+  hosts:
+   - 127.0.0.1
+  port: 9200
+logging:
+  loglevel: INFO
+  logfile: "/var/log/curator/actions.log"
+  logformat: default
+  blacklist: ['elasticsearch', 'urllib3']

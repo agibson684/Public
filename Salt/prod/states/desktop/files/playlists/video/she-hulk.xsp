@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="tvshows">
+    <name></name>
+    <match>all</match>
+    <rule field="title" operator="contains">
+        <value>she-hulk</value>
+    </rule>
+</smartplaylist>
