@@ -58,7 +58,7 @@ function new {
 
 function sedme {
 
-    sed s?^?`date +%y-%m-%d`:? /tmp/database/tmp_sed.txt | sed s#^#`$name`:#| sed 's?^?'$cata':?' >> /tmp/database/tmp_sed1.txt
+    sed s?^?`date +%y-%m-%d`:? /tmp/database/tmp_sed.txt | sed s#^#`${name}`:#| sed 's?^?'${cata}':?' >> /tmp/database/tmp_sed1.txt
     cat /tmp/database/tmp_sed1.txt >> /home/erin/bin/database.db
     
     }
@@ -66,8 +66,7 @@ mkdir -p /tmp/database/
 echo 'the name of the disk'
    awk '{print $2}' /dev/sr0 | head -1 > /tmp/database/cdrom.txt
    cat /tmp/database/cdrom.txt
- a="cat /tmp/database/cdrom.txt"
-    name=$a 
+ name="cat /tmp/database/cdrom.txt"
 
       FILES=(/media/cdrom/shield*.rar); if [ -e "$FILES" ] ; then
       echo 'making directory /tmp/database/'
@@ -117,11 +116,11 @@ echo 'the name of the disk'
    echo 'example .ext'
    read ext
    echo 'found this many' "$ext"
-   cut -d: -f4  /home/erin/bin/database.db | sort -u | grep -i $ext | wc -l
+   cut -d: -f4  /home/erin/bin/database.db | sort -u | grep -i ${ext} | wc -l
    echo 'Amount of disks associated with extension' "$ext"
-   grep -i $ext  /home/erin/bin/database.db | cut -d: -f2 | sort -u | wc -l
+   grep -i ${ext}  /home/erin/bin/database.db | cut -d: -f2 | sort -u | wc -l
    echo 'Said disks containing extension' "$ext"
-   grep -i $ext /home/erin/bin/database.db | cut -d: -f2 | sort -u  
+   grep -i ${ext} /home/erin/bin/database.db | cut -d: -f2 | sort -u
    }
 function show_cata {
 cut -d: -f1  database.db | sort -u  | less
@@ -138,7 +137,7 @@ function multi {
 do
 echo ' what is the pattern?'  
 read pattern
-echo $pattern >> /tmp/database/pattern.txt
+echo ${pattern} >> /tmp/database/pattern.txt
 done
 grep  -i --file=/tmp/database/pattern.txt /home/erin/bin/database.db > /tmp/database/tmp_grep1.txt
 rm /tmp/database/pattern.txt
@@ -203,7 +202,7 @@ find_meta_file_ext
  "search" )
  echo 'What do you wish to search for?'
    read search 
-   grep -i $search /home/erin/bin/database.db | sort -u | less
+   grep -i ${search} /home/erin/bin/database.db | sort -u | less
    ;;
 "drill" )
  drill

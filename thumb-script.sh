@@ -27,7 +27,7 @@ GOOD=0
   if [[ ! -z  "$thumb_pid" ]] ; then
   if [[  "$$" -ne  "$thumb_pid" ]] ; then
         echo 'thumb script running'
-        kill -9  $thumb_pid
+        kill -9  ${thumb_pid}
 fi
   fi
   echo $$
@@ -58,12 +58,12 @@ fi
 fi
 fi
  done
- for hostname in gabrielle xena eve solan joxer lyceus services testing; do ls -l  /media/Backup/$hostname/daily/backup.day.`date +%Y-%m-%d`.tar.bz2; done
+ for hostname in gabrielle xena eve solan joxer lyceus services testing; do ls -l  /media/Backup/${hostname}/daily/backup.day.`date +%Y-%m-%d`.tar.bz2; done
  if [ $? ==  0 ] ;  then
-	 for hostname in gabrielle xena eve solan joxer lyceus services testing ; do ln -s   /media/Backup/$hostname/daily/backup.day.`date +%Y-%m-%d`.tar.bz2 $source/$hostname.tar.bz2; done   
-	ln -s /media/private $source
+	 for hostname in gabrielle xena eve solan joxer lyceus services testing ; do ln -s   /media/Backup/${hostname}/daily/backup.day.`date +%Y-%m-%d`.tar.bz2 ${source}/${hostname}.tar.bz2; done
+	ln -s /media/private ${source}
 	echo 'linking private'
-	ln -s /media/public  $source
+	ln -s /media/public  ${source}
 	echo 'linking public'
 else
 #send email when things go awry
@@ -80,21 +80,21 @@ echo BROKE-FI
 fi
 #mount drives here using variables
 #Files
-mount $usb1
+mount ${usb1}
 #Backup key
-mount $usb2
+mount ${usb2}
 #Backup
-mount $usb3
+mount ${usb3}
 	if [ $? ==  0 ] ;  then 
 	#list the keys  and export the  keys! 
-	 mkdir -p $source/keys
-	gpg  --list-keys > $source/keys/keys.txt 
-	gpg --export   > $source/keys/keys 
+	 mkdir -p ${source}/keys
+	gpg  --list-keys > ${source}/keys/keys.txt
+	gpg --export   > ${source}/keys/keys
 	#extract the DB and key
-	/bin/tar -xjvvf  $source/gabrielle.tar.bz2  -C $source  srv/  >/dev/null
+	/bin/tar -xjvvf  ${source}/gabrielle.tar.bz2  -C ${source}  srv/  >/dev/null
 		if [ $? ==  0 ] ;  then
 		#create the backups and put it in the usb1 key!
-		/bin/tar -chjvf   /tmp/backup.day.usb.$(date +%Y-%m-%d).tar.bz2  $source  > /dev/null
+		/bin/tar -chjvf   /tmp/backup.day.usb.$(date +%Y-%m-%d).tar.bz2  ${source}  > /dev/null
 		else
 	 	#send email when things go awry
                 echo  'To:  agibson684@gmail.com' > /tmp/Error.tmp
@@ -128,12 +128,12 @@ mount $usb3
 		##sync my files with the  server. minus the keys
 		#rsync -rvzP -c $usb3/ /media/private/erin --exclude='/cyane' --exclude='Repository/.git' --exclude='Repository/keys' --exclude='Repository/Budget/Backup/' 
 		## sync the  backup now.
-		cp -RvfL  /tmp/backup.day.usb.$(date +%Y-%m-%d).tar.bz2.asc  $usb1
+		cp -RvfL  /tmp/backup.day.usb.$(date +%Y-%m-%d).tar.bz2.asc  ${usb1}
 		if [ $? ==  0 ] ;  then
 		##sync the keys to usb2
-		rsync -rvzP  $source/keys  $usb2
+		rsync -rvzP  ${source}/keys  ${usb2}
 		##Sync the database of passwords and key 
-		rsync -rvzP  $source/srv  $usb2
+		rsync -rvzP  ${source}/srv  ${usb2}
 		else 	 
 		#send email when things go awry
 		echo  'To:  agibson684@gmail.com' > /tmp/Error.tmp
@@ -148,9 +148,9 @@ mount $usb3
 		exit 1
 		fi
 	#sync the keys to usb2
-	rsync -rvzP  $source/keys  $usb2
+	rsync -rvzP  ${source}/keys  ${usb2}
 	##Sync the database of passwords and key 
-	rsync -rvzP  $source/srv  $usb2
+	rsync -rvzP  ${source}/srv  ${usb2}
 	else
 #send email when things go awry
 echo  'To:  agibson684@gmail.com' > /tmp/Error.tmp
@@ -164,7 +164,7 @@ echo 'ALARM! ERROR! Thumbs NOT Sync! ' >> /tmp/Error.tmp
 echo BROKE-FI
 exit 1
 fi
-FILES=(/mnt/usb1/backup.day.usb.$(date +%Y-%m-%d).tar.bz2.asc ); if [ -a "$FILES" ] ; then 
+FILES=(/mnt/usb1/backup.day.usb.$(date +%F).tar.bz2.asc); if [ -a "$FILES" ] ; then
 	rm -f /tmp/*.done 
 	echo 'removing .done files!'	
 	exit 0
